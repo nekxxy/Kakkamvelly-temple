@@ -97,7 +97,7 @@
   <main>
 
     <!-- ───────────── HERO ───────────── -->
-    <section id="home" class="hero" aria-label="ക്ഷേത്ര ഹീറോ ബാനർ">
+    <section id="home" class="hero hero-photo" aria-label="ക്ഷേത്ര ഹീറോ ബാനർ" style="background-image:url('images/temple-entrance-deepam.jpg')">
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <p class="hero-tagline">ഹരേ കൃഷ്ണ</p>
@@ -159,20 +159,19 @@
         </div>
         <div class="about-grid">
           <div class="about-image-wrapper">
-            <!-- Temple photo card linking to Google Maps -->
-            <div class="about-image-placeholder about-maps-card" aria-label="ക്ഷേത്ര ചിത്രം">
-              <div class="about-temple-art" aria-hidden="true">
-                <div class="about-art-scene">
-                  <div class="about-art-sun"></div>
-                  <div class="about-art-gopuram"></div>
-                  <div class="about-art-base"></div>
-                </div>
-                <div class="about-om-symbol" aria-hidden="true">ॐ</div>
+            <div class="about-real-photo-card" aria-label="ക്ഷേത്ര ദൃശ്യം">
+              <img
+                src="images/temple-entrance-deepam.jpg"
+                alt="കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം — ദീപ ആരാധന"
+                class="about-real-photo"
+                loading="lazy"
+              />
+              <div class="about-photo-caption">
+                <span class="about-photo-label">🪔 കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം</span>
+                <a href="https://maps.app.goo.gl/LaTA1pWM8NhjW4gK6" target="_blank" rel="noopener noreferrer" class="about-maps-link-pill">
+                  <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i> Google Maps
+                </a>
               </div>
-              <p class="placeholder-caption">കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം</p>
-              <a href="https://maps.app.goo.gl/LaTA1pWM8NhjW4gK6" target="_blank" rel="noopener noreferrer" class="about-maps-link">
-                <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i> 📍 Google Maps-ൽ ദൃശ്യം
-              </a>
             </div>
           </div>
           <div class="about-content">
@@ -1523,72 +1522,48 @@
         <!-- Real Google Maps Photo Cards + CSS Art Cards -->
         <div class="gallery-grid gallery-maps-grid" role="list" aria-label="ക്ഷേത്ര ഫോട്ടോ ഗ്യാലറി">
 
-          <!-- Card 1 — Dawn / Google Maps Photo 1 -->
-          <div class="gallery-item gallery-maps-card" role="listitem">
-            <a href="https://maps.app.goo.gl/LaTA1pWM8NhjW4gK6" target="_blank" rel="noopener noreferrer" aria-label="Google Maps-ൽ ക്ഷേത്ര ചിത്രം 1 കാണുക" class="gallery-card-link">
-              <div class="gallery-art-scene gallery-art-dawn" aria-hidden="true">
-                <div class="art-sun" aria-hidden="true"></div>
-                <div class="art-temple-silhouette" aria-hidden="true"></div>
-                <div class="art-gopuram" aria-hidden="true"></div>
-              </div>
+          <!-- Card 1 — Real Photo: Temple entrance with deepam -->
+          <div class="gallery-item gallery-photo-card" role="listitem">
+            <div class="gallery-card-link">
+              <img src="images/temple-entrance-deepam.jpg" alt="കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം — ദീപം ഉഴിച്ചൽ" loading="lazy" class="gallery-real-photo"/>
               <div class="gallery-card-overlay">
-                <div class="gallery-maps-badge"><i class="fa-brands fa-google" aria-hidden="true"></i> Maps</div>
-                <p class="gallery-caption-ml">ക്ഷേത്ര പ്രവേശന കവാടം</p>
-                <span class="gallery-view-link">📸 Google Maps-ൽ കാണുക</span>
+                <p class="gallery-caption-ml">ക്ഷേത്ര ദർശനം – ദീപ ആരാധന</p>
+                <span class="gallery-photo-tag">📷 ക്ഷേത്ര ചിത്രം</span>
               </div>
-            </a>
+            </div>
           </div>
 
-          <!-- Card 2 — Daytime / Google Maps Photo 2 -->
-          <div class="gallery-item gallery-maps-card" role="listitem">
-            <a href="https://maps.app.goo.gl/wUZdDAjVvP4VtYNM9" target="_blank" rel="noopener noreferrer" aria-label="Google Maps-ൽ ക്ഷേത്ര ചിത്രം 2 കാണുക" class="gallery-card-link">
-              <div class="gallery-art-scene gallery-art-day" aria-hidden="true">
-                <div class="art-clouds" aria-hidden="true"><span></span><span></span><span></span></div>
-                <div class="art-temple-silhouette" aria-hidden="true"></div>
-                <div class="art-gopuram" aria-hidden="true"></div>
-                <div class="art-flag-row" aria-hidden="true"><span>🚩</span><span>🚩</span><span>🚩</span></div>
-              </div>
+          <!-- Card 2 — Real Photo: Interior deepam lamp -->
+          <div class="gallery-item gallery-photo-card" role="listitem">
+            <div class="gallery-card-link">
+              <img src="images/deepam-lamp-interior.jpg" alt="ക്ഷേത്ര ദീപം – ആഭ്യന്തര ദൃശ്യം" loading="lazy" class="gallery-real-photo"/>
               <div class="gallery-card-overlay">
-                <div class="gallery-maps-badge"><i class="fa-brands fa-google" aria-hidden="true"></i> Maps</div>
-                <p class="gallery-caption-ml">ശ്രീകൃഷ്ണ വിഗ്രഹം</p>
-                <span class="gallery-view-link">📸 Google Maps-ൽ കാണുക</span>
+                <p class="gallery-caption-ml">പഞ്ചദീപം – ആഭ്യന്തര ദൃശ്യം</p>
+                <span class="gallery-photo-tag">📷 ക്ഷേത്ര ചിത്രം</span>
               </div>
-            </a>
+            </div>
           </div>
 
-          <!-- Card 3 — Sunset / Google Maps Photo 3 -->
-          <div class="gallery-item gallery-maps-card" role="listitem">
-            <a href="https://maps.app.goo.gl/EoFUVTJt9j6RfXGE9" target="_blank" rel="noopener noreferrer" aria-label="Google Maps-ൽ ക്ഷേത്ര ചിത്രം 3 കാണുക" class="gallery-card-link">
-              <div class="gallery-art-scene gallery-art-sunset" aria-hidden="true">
-                <div class="art-sun art-sun--setting" aria-hidden="true"></div>
-                <div class="art-temple-silhouette" aria-hidden="true"></div>
-                <div class="art-gopuram" aria-hidden="true"></div>
-              </div>
+          <!-- Card 3 — Real Photo: Deepam closeup -->
+          <div class="gallery-item gallery-photo-card" role="listitem">
+            <div class="gallery-card-link">
+              <img src="images/deepam-closeup.jpg" alt="ദീപം അടുത്ത ദൃശ്യം" loading="lazy" class="gallery-real-photo"/>
               <div class="gallery-card-overlay">
-                <div class="gallery-maps-badge"><i class="fa-brands fa-google" aria-hidden="true"></i> Maps</div>
-                <p class="gallery-caption-ml">ഉത്സവ ആഘോഷങ്ങൾ</p>
-                <span class="gallery-view-link">📸 Google Maps-ൽ കാണുക</span>
+                <p class="gallery-caption-ml">ദീപ ജ്വാല – ഭക്തിയുടെ പ്രകാശം</p>
+                <span class="gallery-photo-tag">📷 ക്ഷേത്ര ചിത്രം</span>
               </div>
-            </a>
+            </div>
           </div>
 
-          <!-- Card 4 — Night/Festival / Google Maps Photo 4 -->
-          <div class="gallery-item gallery-maps-card" role="listitem">
-            <a href="https://maps.app.goo.gl/Rx8n8qmTBeCoc3UB6" target="_blank" rel="noopener noreferrer" aria-label="Google Maps-ൽ ക്ഷേത്ര ചിത്രം 4 കാണുക" class="gallery-card-link">
-              <div class="gallery-art-scene gallery-art-night" aria-hidden="true">
-                <div class="art-stars" aria-hidden="true"></div>
-                <div class="art-temple-silhouette" aria-hidden="true"></div>
-                <div class="art-gopuram" aria-hidden="true"></div>
-                <div class="art-diya-row" aria-hidden="true">
-                  <span class="art-diya">🪔</span><span class="art-diya">🪔</span><span class="art-diya">🪔</span><span class="art-diya">🪔</span><span class="art-diya">🪔</span>
-                </div>
-              </div>
+          <!-- Card 4 — Real Photo: Hanging lamps corridor -->
+          <div class="gallery-item gallery-photo-card" role="listitem">
+            <div class="gallery-card-link">
+              <img src="images/hanging-lamps-corridor.jpg" alt="തൂക്ക് ദീപം – ക്ഷേത്ര ഇടനാഴി" loading="lazy" class="gallery-real-photo"/>
               <div class="gallery-card-overlay">
-                <div class="gallery-maps-badge"><i class="fa-brands fa-google" aria-hidden="true"></i> Maps</div>
-                <p class="gallery-caption-ml">ദീപ ആരാധന</p>
-                <span class="gallery-view-link">📸 Google Maps-ൽ കാണുക</span>
+                <p class="gallery-caption-ml">തൂക്ക് ദീപം – ഇടനാഴി ദൃശ്യം</p>
+                <span class="gallery-photo-tag">📷 ക്ഷേത്ര ചിത്രം</span>
               </div>
-            </a>
+            </div>
           </div>
 
           <!-- Card 5 — CSS Rangoli Art -->
@@ -1634,6 +1609,16 @@
         </div>
       </div>
     </section>
+
+
+    <!-- ───────────── LAMP CORRIDOR PARALLAX STRIP ───────────── -->
+    <div class="lamp-parallax-strip" aria-hidden="true" role="presentation">
+      <div class="lamp-parallax-overlay"></div>
+      <div class="lamp-parallax-text">
+        <span class="lamp-mantra">🪔 ദീപ ജ്യോതി നമോഽസ്തു തേ 🪔</span>
+        <span class="lamp-mantra-en">Let the divine light guide us</span>
+      </div>
+    </div>
 
     <!-- ───────────── LOCATION / GOOGLE MAPS ───────────── -->
     <section id="location" class="section section-light" aria-labelledby="location-heading">

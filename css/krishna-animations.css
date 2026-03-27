@@ -553,3 +553,216 @@
   .flute-wave-container { display: none; }
   #krishna-canvas { opacity: 0.3; }
 }
+
+/* ══════════════════════════════════════════════
+   REAL PHOTO STYLES
+══════════════════════════════════════════════ */
+
+/* ── Hero with real photo background ── */
+.hero-photo {
+  background-size: cover !important;
+  background-position: center 30% !important;
+  background-repeat: no-repeat !important;
+}
+/* Stronger dark overlay so text remains readable */
+.hero-photo .hero-overlay {
+  background: rgba(0, 0, 0, 0.55) !important;
+}
+/* Extra warm gradient over photo */
+.hero-photo::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(80, 0, 0, 0.35) 0%,
+    rgba(0, 0, 0, 0.15) 40%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+.hero-photo .hero-content { z-index: 3; }
+.hero-photo .flute-wave-container { z-index: 3; }
+.hero-photo .hero-scroll-indicator { z-index: 3; }
+.hero-photo .hindu-anim-layer { z-index: 2; }
+
+/* ── Gallery real photo cards ── */
+.gallery-photo-card {
+  position: relative;
+  aspect-ratio: 3/4;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid rgba(240,192,64,0.3);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+.gallery-photo-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.55), 0 0 24px rgba(255,180,0,0.25);
+  border-color: var(--color-gold-light);
+}
+.gallery-photo-card .gallery-card-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.gallery-real-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.5s ease;
+}
+.gallery-photo-card:hover .gallery-real-photo {
+  transform: scale(1.06);
+}
+/* Overlay that appears on hover */
+.gallery-photo-card .gallery-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.82) 0%,
+    rgba(0,0,0,0.3) 50%,
+    transparent 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.2rem;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.gallery-photo-card:hover .gallery-card-overlay,
+.gallery-photo-card:focus-within .gallery-card-overlay {
+  opacity: 1;
+}
+/* Always show caption on mobile */
+@media (max-width: 768px) {
+  .gallery-photo-card .gallery-card-overlay { opacity: 1; }
+}
+.gallery-caption-ml {
+  font-family: 'Noto Serif Malayalam', serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.8);
+  margin-bottom: 0.3rem;
+}
+.gallery-photo-tag {
+  font-size: 0.72rem;
+  color: var(--color-gold-light);
+  letter-spacing: 0.06em;
+  font-family: 'Cinzel', serif;
+}
+
+/* ── LAMP CORRIDOR PARALLAX STRIP ── */
+.lamp-parallax-strip {
+  position: relative;
+  height: 260px;
+  background-image: url('images/hanging-lamps-corridor.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;   /* parallax */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Mobile: disable fixed (parallax) – not supported on iOS */
+@media (max-width: 768px) {
+  .lamp-parallax-strip {
+    background-attachment: scroll;
+    height: 200px;
+  }
+}
+.lamp-parallax-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(80, 0, 0, 0.65) 0%,
+    rgba(0, 0, 0, 0.45) 50%,
+    rgba(10, 20, 40, 0.65) 100%
+  );
+}
+.lamp-parallax-text {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.lamp-mantra {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  color: #ffd700;
+  letter-spacing: 0.12em;
+  text-shadow: 0 0 20px rgba(255,180,0,0.7), 0 2px 8px rgba(0,0,0,0.8);
+  animation: mantra-glow 3s ease-in-out infinite;
+}
+.lamp-mantra-en {
+  font-family: 'Lato', sans-serif;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  color: rgba(255,255,255,0.75);
+  letter-spacing: 0.1em;
+  font-style: italic;
+}
+
+/* ── About section real photo ── */
+.about-real-photo-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.35);
+  border: 2px solid rgba(200,134,10,0.4);
+}
+.about-real-photo {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+  transition: transform 0.6s ease;
+}
+@media (max-width: 768px) {
+  .about-real-photo { height: 260px; object-position: center 10%; }
+}
+.about-real-photo-card:hover .about-real-photo { transform: scale(1.04); }
+.about-photo-caption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.82) 0%, transparent 100%);
+  padding: 1.2rem 1rem 0.8rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.about-photo-label {
+  font-family: 'Noto Serif Malayalam', serif;
+  font-size: 0.88rem;
+  color: #fff;
+  font-weight: 600;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+}
+.about-maps-link-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: rgba(200,134,10,0.85);
+  color: #fff;
+  padding: 0.3rem 0.8rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s;
+  font-family: 'Lato', sans-serif;
+}
+.about-maps-link-pill:hover { background: var(--color-gold); }
