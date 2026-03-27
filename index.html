@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ml">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Official website of Kakkamvelly Sreekrishna Temple, located in Kozhikode district, Kerala. Get information about temple timings, pooja schedule, location, and directions." />
-  <meta name="keywords" content="Kakkamvelly temple, Sreekrishna temple, Kozhikode temple, Kerala Hindu temple, temple timings, pooja schedule" />
-  <title>Kakkamvelly Sreekrishna Temple | Kozhikode, Kerala</title>
+  <meta name="description" content="കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രത്തിന്റെ ഔദ്യോഗിക വെബ്സൈറ്റ്. കോഴിക്കോട് ജില്ലയിൽ സ്ഥിതി ചെയ്യുന്ന ഈ ക്ഷേത്രത്തിലെ സമയക്രമം, പൂജ ഷെഡ്യൂൾ, സ്ഥലം, വഴിക്കുറിപ്പ് എന്നിവ അറിയൂ." />
+  <meta name="keywords" content="Kakkamvelly temple, Sreekrishna temple, Kozhikode temple, Kerala Hindu temple, കക്കംവെള്ളി ക്ഷേത്രം, ശ്രീകൃഷ്ണ ക്ഷേത്രം, ക്ഷേത്ര സമയം, പൂജ ഷെഡ്യൂൾ" />
+  <title>കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം | കോഴിക്കോട്, കേരളം</title>
   <link rel="stylesheet" href="css/style.css" />
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,12 +13,56 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lato:wght@300;400;700&family=Noto+Serif+Malayalam:wght@400;700&display=swap" rel="stylesheet" />
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /* Google Maps Street View / Photo placeholder styles */
+    .gmaps-photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .gmaps-photo-item {
+      aspect-ratio: 4/3;
+      border-radius: 8px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform .3s ease;
+      border: 2px solid #c8860a;
+    }
+    .gmaps-photo-item:hover { transform: scale(1.02); }
+    .gmaps-photo-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .gmaps-photo-caption {
+      font-size: .8rem;
+      font-weight: 600;
+      color: rgba(255,255,255,.9);
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      text-align: center;
+      padding: .4rem;
+      background: rgba(0,0,0,.5);
+      font-family: 'Noto Serif Malayalam', serif;
+    }
+    .gmaps-photo-wrapper { position: relative; height: 100%; }
+    .gmaps-photo-wrapper .gmaps-photo-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+    @media (max-width: 768px) { .gmaps-photo-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .gmaps-photo-grid { grid-template-columns: 1fr; } }
+  </style>
 </head>
 <body>
 
   <!-- ───────────── NAVIGATION ───────────── -->
   <header id="site-header">
-    <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <nav class="navbar" role="navigation" aria-label="പ്രധാന നാവിഗേഷൻ">
       <div class="nav-brand">
         <span class="om-symbol">ॐ</span>
         <div class="brand-text">
@@ -26,19 +70,19 @@
           <span class="brand-en">Kakkamvelly Sreekrishna Temple</span>
         </div>
       </div>
-      <button class="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+      <button class="nav-toggle" aria-label="നാവിഗേഷൻ മെനു തുറക്കുക" aria-expanded="false" aria-controls="nav-menu">
         <span class="hamburger"></span>
         <span class="hamburger"></span>
         <span class="hamburger"></span>
       </button>
       <ul class="nav-menu" id="nav-menu" role="list">
-        <li><a href="#home" class="nav-link">Home</a></li>
-        <li><a href="#about" class="nav-link">About</a></li>
-        <li><a href="#timings" class="nav-link">Timings</a></li>
-        <li><a href="#festivals" class="nav-link">Festivals</a></li>
-        <li><a href="#gallery" class="nav-link">Gallery</a></li>
-        <li><a href="#location" class="nav-link">Location</a></li>
-        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="#home" class="nav-link">മുഖ്യ താൾ</a></li>
+        <li><a href="#about" class="nav-link">ക്ഷേത്രത്തെ കുറിച്ച്</a></li>
+        <li><a href="#timings" class="nav-link">സമയക്രമം</a></li>
+        <li><a href="#festivals" class="nav-link">ഉത്സവങ്ങൾ</a></li>
+        <li><a href="#gallery" class="nav-link">ഗ്യാലറി</a></li>
+        <li><a href="#location" class="nav-link">സ്ഥലം</a></li>
+        <li><a href="#contact" class="nav-link">ബന്ധപ്പെടുക</a></li>
       </ul>
     </nav>
   </header>
@@ -46,19 +90,19 @@
   <main>
 
     <!-- ───────────── HERO ───────────── -->
-    <section id="home" class="hero" aria-label="Temple hero banner">
+    <section id="home" class="hero" aria-label="ക്ഷേത്ര ഹീറോ ബാനർ">
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <p class="hero-tagline">ഹരേ കൃഷ്ണ</p>
         <h1 class="hero-title">കക്കംവെള്ളി<br />ശ്രീകൃഷ്ണ ക്ഷേത്രം</h1>
         <p class="hero-subtitle">Kakkamvelly Sreekrishna Temple</p>
-        <p class="hero-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Kozhikode District, Kerala</p>
+        <p class="hero-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> കോഴിക്കോട് ജില്ല, കേരളം</p>
         <div class="hero-actions">
           <a href="#location" class="btn btn-primary">
-            <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i> Get Directions
+            <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i> വഴി കാണിക്കുക
           </a>
           <a href="#timings" class="btn btn-secondary">
-            <i class="fa-regular fa-clock" aria-hidden="true"></i> Temple Timings
+            <i class="fa-regular fa-clock" aria-hidden="true"></i> ക്ഷേത്ര സമയം
           </a>
         </div>
       </div>
@@ -70,12 +114,12 @@
     <!-- ───────────── MARQUEE NOTICE ───────────── -->
     <div class="notice-bar" role="marquee" aria-live="polite">
       <span class="notice-icon">🪔</span>
-      <div class="marquee-wrapper" aria-label="Temple notices">
+      <div class="marquee-wrapper" aria-label="ക്ഷേത്ര അറിയിപ്പുകൾ">
         <div class="marquee-content">
           <span>ഓം നമോ ഭഗവതേ വാസുദേവായ &nbsp;|&nbsp; Om Namo Bhagavate Vasudevaya &nbsp;|&nbsp;
-                Welcome to Kakkamvelly Sreekrishna Temple &nbsp;|&nbsp;
-                Devotees are requested to maintain cleanliness and sanctity of the temple premises &nbsp;|&nbsp;
-                Mobile phones should be kept on silent mode inside the temple &nbsp;|&nbsp;
+                കകംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രത്തിൽ സ്വാഗതം &nbsp;|&nbsp;
+                ക്ഷേത്ര പരിസരത്ത് വൃത്തിയും ശുദ്ധിയും പാലിക്കുക &nbsp;|&nbsp;
+                ക്ഷേത്രത്തിനകത്ത് മൊബൈൽ ഫോൺ നിശബ്ദ മോഡിൽ വയ്ക്കുക &nbsp;|&nbsp;
                 🪔 ഓം നമോ ഭഗവതേ വാസുദേവായ 🪔
           </span>
         </div>
@@ -87,50 +131,64 @@
       <div class="container">
         <div class="section-header">
           <span class="section-tag">ക്ഷേത്രം</span>
-          <h2 id="about-heading" class="section-title">About the Temple</h2>
+          <h2 id="about-heading" class="section-title">ക്ഷേത്രത്തെ കുറിച്ച്</h2>
           <div class="title-divider" aria-hidden="true"><span>✦</span></div>
         </div>
         <div class="about-grid">
           <div class="about-image-wrapper">
-            <div class="about-image-placeholder" aria-label="Temple illustration">
-              <div class="temple-icon-large" aria-hidden="true">🛕</div>
-              <p class="placeholder-caption">Kakkamvelly Sreekrishna Temple</p>
+            <!-- Google Maps Street View of the temple area -->
+            <div class="about-image-placeholder" aria-label="ക്ഷേത്ര ചിത്രം">
+              <a href="https://maps.google.com/?q=Kakkamvelly+Sreekrishna+Temple+Kozhikode+Kerala" target="_blank" rel="noopener noreferrer" style="display:block;width:100%;height:100%;">
+                <img
+                  src="https://maps.googleapis.com/maps/api/streetview?size=400x300&location=Kakkamvelly+Sreekrishna+Temple,Kozhikode,Kerala&fov=80&heading=70&pitch=0&key=YOUR_GOOGLE_MAPS_EMBED_API_KEY"
+                  alt="കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം - Google Maps Street View"
+                  onerror="this.parentElement.parentElement.innerHTML='<div class=\'temple-icon-large\' aria-hidden=\'true\'>🛕</div><p class=\'placeholder-caption\'>കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം</p>'"
+                  style="width:100%;height:100%;object-fit:cover;border-radius:12px;"
+                />
+              </a>
+              <div class="temple-icon-large" aria-hidden="true" style="display:none;">🛕</div>
+              <p class="placeholder-caption">കക്കംവെള്ളി ശ്രീകൃഷ്‌ന ക്ഷേത്രം</p>
             </div>
           </div>
           <div class="about-content">
-            <h3 class="about-subtitle">A Sacred Abode of Lord Krishna</h3>
+            <h3 class="about-subtitle">ഭഗവാൻ കൃഷ്ണന്റെ പുണ്യഭൂമി</h3>
             <p>
-              Kakkamvelly Sreekrishna Temple is a revered Hindu temple dedicated to Lord Sreekrishna,
-              situated in the Kozhikode district of Kerala. The temple stands as a spiritual beacon
-              for devotees from across the region, embodying the rich cultural and religious heritage
-              of Kerala's temple tradition.
+              കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം കേരളത്തിലെ കോഴിക്കോട് ജില്ലയിലെ
+              സ്ഥിതി ചെയ്യുന്ന ഒരു പ്രശസ്ത ഹിന്ദു ക്ഷേത്രമാണ്. ഭഗവാൻ ശ്രീകൃഷ്ണനു
+              സമർപ്പിതമായ ഈ ക്ഷേത്രം ഈ പ്രദേശത്തെ ഭaktർക്ക് ഒരു ആത്മീയ കേന്ദ്രമാണ്.
+              കേരളത്തിന്റെ ക്ഷേത്ര പാരമ്പര്യത്തിന്റെ സമ്പന്നമായ സാംസ്കാരിക-മത
+              പൈതൃകം ഉൾക്കൊള്ളുന്നതാണ് ഈ ദേവാലയം.
             </p>
             <p>
-              The presiding deity, Sreekrishna – the eighth avatar of Lord Vishnu – is worshipped here
-              with deep devotion. The temple follows the traditional Tantric rituals prescribed in the
-              <em>Tanthrasamuchayam</em>, the canonical text governing Kerala temple worship.
+              പ്രധാന ദേവൻ ശ്രീകൃഷ്ണൻ – ഭഗവാൻ വിഷ്ണുവിന്റെ എട്ടാമത്തെ
+              അവതാരം – ഇവിടെ ആഴ്ന്ന ഭക്തിയോടെ ആരാധിക്കപ്പെടുന്നു. കേരള
+              ക്ഷേത്ര ആരാധന നിയന്ത്രിക്കുന്ന കാനോനിക്കൽ ഗ്രന്ഥമായ
+              <em>തന്ത്രസമുച്ചയം</em> അനുശാസിക്കുന്ന പരമ്പരാഗത താന്ത്രിക
+              ആചാരങ്ങൾ ഇവിടെ അനുഷ്ഠിക്കപ്പെടുന്നു.
             </p>
             <p>
-              Surrounded by the lush greenery of Kerala's Malabar region, the temple complex is a
-              place of peace, devotion, and cultural continuity. Regular poojas, festivals, and
-              community gatherings strengthen the bond between the temple and the local community.
+              കേരളത്തിന്റെ മലബാർ മേഖലയുടെ ഹരിതാഭമായ പ്രകൃതി ചൂഴ്ന്ന
+              ക്ഷേത്ര സമുച്ചയം ശാന്തിയുടെയും ഭക്തിയുടെയും
+              സാംസ്കാരിക തുടർച്ചയുടെയും ഒരു സ്ഥലമാണ്.
+              നിത്യ പൂജകളും ഉത്സവങ്ങളും സമൂഹ ഒത്തുചേരലുകളും
+              ക്ഷേത്രവും നാടും തമ്മിലുള്ള ബന്ധം ദൃഢമാക്കുന്നു.
             </p>
             <div class="about-highlights">
               <div class="highlight-item">
                 <i class="fa-solid fa-star" aria-hidden="true"></i>
-                <span>Principal Deity: Sreekrishna</span>
+                <span>പ്രധാന ദേവൻ: ശ്രീകൃഷ്ണൻ</span>
               </div>
               <div class="highlight-item">
                 <i class="fa-solid fa-map-pin" aria-hidden="true"></i>
-                <span>District: Kozhikode, Kerala</span>
+                <span>ജില്ല: കോഴിക്കോട്, കേരളം</span>
               </div>
               <div class="highlight-item">
                 <i class="fa-solid fa-book-open" aria-hidden="true"></i>
-                <span>Tradition: Kerala Tantric Ritual</span>
+                <span>പാരമ്പര്യം: കേരള താന്ത്രിക ആചാരം</span>
               </div>
               <div class="highlight-item">
                 <i class="fa-solid fa-users" aria-hidden="true"></i>
-                <span>Open to All Devotees</span>
+                <span>എല്ലാ ഭക്തർക്കും തുറന്നിരിക്കുന്നു</span>
               </div>
             </div>
           </div>
@@ -143,7 +201,7 @@
       <div class="container">
         <div class="section-header">
           <span class="section-tag">ദർശനം</span>
-          <h2 id="timings-heading" class="section-title">Temple Timings &amp; Pooja Schedule</h2>
+          <h2 id="timings-heading" class="section-title">ക്ഷേത്ര സമയക്രമവും പൂജ ഷെഡ്യൂളും</h2>
           <div class="title-divider" aria-hidden="true"><span>✦</span></div>
         </div>
         <div class="timings-grid">
@@ -151,19 +209,19 @@
           <div class="timing-card">
             <div class="timing-card-header">
               <i class="fa-solid fa-sun" aria-hidden="true"></i>
-              <h3>Morning (Prabhata Pooja)</h3>
+              <h3>രാവിലെ (പ്രഭാത പൂജ)</h3>
             </div>
-            <table class="timing-table" aria-label="Morning pooja timings">
+            <table class="timing-table" aria-label="രാവിലത്തെ പൂജ സമയം">
               <thead>
-                <tr><th scope="col">Pooja</th><th scope="col">Time</th></tr>
+                <tr><th scope="col">പൂജ</th><th scope="col">സമയം</th></tr>
               </thead>
               <tbody>
-                <tr><td>Nirmalya Darshanam</td><td>5:00 AM – 5:30 AM</td></tr>
-                <tr><td>Thidambu Ezhunnallippu</td><td>5:30 AM – 6:00 AM</td></tr>
-                <tr><td>Usha Pooja</td><td>6:00 AM – 6:30 AM</td></tr>
-                <tr><td>Ethirthu Pooja</td><td>6:30 AM – 7:00 AM</td></tr>
-                <tr><td>Pantheeradi Pooja</td><td>7:00 AM – 8:00 AM</td></tr>
-                <tr><td>Uchapooja</td><td>10:30 AM – 12:00 PM</td></tr>
+                <tr><td>നിർമ്മാല്യദർശനം</td><td>5:00 AM – 5:30 AM</td></tr>
+                <tr><td>തിടമ്പ് എഴുന്നള്ളിപ്പ്</td><td>5:30 AM – 6:00 AM</td></tr>
+                <tr><td>ഉഷ പൂജ</td><td>6:00 AM – 6:30 AM</td></tr>
+                <tr><td>അതിർത്തു പൂജ</td><td>6:30 AM – 7:00 AM</td></tr>
+                <tr><td>പന്തീരടി പൂജ</td><td>7:00 AM – 8:00 AM</td></tr>
+                <tr><td>ഉച്ചപൂജ</td><td>10:30 AM – 12:00 PM</td></tr>
               </tbody>
             </table>
           </div>
@@ -171,17 +229,17 @@
           <div class="timing-card">
             <div class="timing-card-header">
               <i class="fa-solid fa-moon" aria-hidden="true"></i>
-              <h3>Evening (Sayahna Pooja)</h3>
+              <h3>വൈകുന്നേരം (സായഹ്ന പൂജ)</h3>
             </div>
-            <table class="timing-table" aria-label="Evening pooja timings">
+            <table class="timing-table" aria-label="വൈകുന്നേരത്തെ പൂജ സമയം">
               <thead>
-                <tr><th scope="col">Pooja</th><th scope="col">Time</th></tr>
+                <tr><th scope="col">പൂജ</th><th scope="col">സമയം</th></tr>
               </thead>
               <tbody>
-                <tr><td>Deeparadhana (Evening)</td><td>5:30 PM – 6:00 PM</td></tr>
-                <tr><td>Athazha Pooja</td><td>7:00 PM – 8:00 PM</td></tr>
-                <tr><td>Thrippuka</td><td>8:00 PM – 8:30 PM</td></tr>
-                <tr><td>Closing of Sreekovil</td><td>8:30 PM</td></tr>
+                <tr><td>ദീപാരാധന (വൈകുന്നേരം)</td><td>5:30 PM – 6:00 PM</td></tr>
+                <tr><td>അത്താഴ പൂജ</td><td>7:00 PM – 8:00 PM</td></tr>
+                <tr><td>ത്രിപ്പുക</td><td>8:00 PM – 8:30 PM</td></tr>
+                <tr><td>ശ്രീക്കോവിൽ അടക്കൽ</td><td>8:30 PM</td></tr>
               </tbody>
             </table>
           </div>
@@ -189,23 +247,23 @@
           <div class="timing-card timing-card-full">
             <div class="timing-card-header">
               <i class="fa-solid fa-door-open" aria-hidden="true"></i>
-              <h3>Temple Opening Hours</h3>
+              <h3>ക്ഷേത്ര തുറക്കൽ സമയം</h3>
             </div>
             <div class="opening-hours-grid">
               <div class="hours-block">
-                <span class="hours-label">Morning</span>
+                <span class="hours-label">രാവിലെ</span>
                 <span class="hours-time">5:00 AM – 12:00 PM</span>
               </div>
               <div class="hours-divider" aria-hidden="true">|</div>
               <div class="hours-block">
-                <span class="hours-label">Evening</span>
+                <span class="hours-label">വൈകുന്നേരം</span>
                 <span class="hours-time">5:00 PM – 8:30 PM</span>
               </div>
             </div>
             <p class="timing-note">
               <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
-              Timings may vary on special occasions, festivals, and Ashtami Rohini (Krishna Jayanti).
-              Please contact the temple office for confirmation.
+              പ്രത്യേക ആഘോഷങ്ങൾ, ഉത്സവങ്ങൾ, അഷ്ടമി രോഹിണി (കൃഷ്ണജയന്തി) ദിനങ്ങളിൽ
+              സമയക്രമം മാറ്റം വരാം. ക്ഷേത്ര ഓഫീസിൽ ബന്ധപ്പെട്ട് സ്ഥിരീകരിക്കുക.
             </p>
           </div>
 
@@ -218,51 +276,51 @@
       <div class="container">
         <div class="section-header">
           <span class="section-tag">ഉത്സവം</span>
-          <h2 id="festivals-heading" class="section-title">Festivals &amp; Special Events</h2>
+          <h2 id="festivals-heading" class="section-title">ഉത്സവങ്ങളും പ്രത്യേക ആഘോഷങ്ങളും</h2>
           <div class="title-divider" aria-hidden="true"><span>✦</span></div>
         </div>
         <div class="festivals-grid">
 
-          <article class="festival-card" aria-label="Ashtami Rohini festival">
+          <article class="festival-card" aria-label="അഷ്ടമി രോഹുണി ഉത്സവം">
             <div class="festival-icon">🎉</div>
-            <h3>Ashtami Rohini<br /><span class="festival-ml">(Krishna Jayanti)</span></h3>
-            <p>The most important festival celebrating the birth of Lord Krishna. Elaborate decorations, special poojas, and devotional programmes mark this auspicious day.</p>
-            <span class="festival-month">Chingam (Aug–Sep)</span>
+            <h3>അഷ്ടമി രോഹിണി<br /><span class="festival-ml">(കൃഷ്ണ ജയന്തി)</span></h3>
+            <p>ഭഗവാൻ കൃഷ്ണന്റെ ജന്മദിനം ആഘോഷിക്കുന്ന ഏറ്റവും പ്രധാനപ്പെട്ട ഉത്സവം. വിപുലമായ അലങ്കാരങ്ങൾ, പ്രത്യേക പൂജകൾ, ഭക്തിഗാന പരിപാടികൾ ഈ ശുഭദിനത്തെ അടയാളപ്പെടുത്തുന്നു.</p>
+            <span class="festival-month">ചിങ്ങം (ഓഗ.–സെപ്.)</span>
           </article>
 
-          <article class="festival-card" aria-label="Vishu festival">
+          <article class="festival-card" aria-label="വിഷു ഉത്സവം">
             <div class="festival-icon">🌸</div>
-            <h3>Vishu</h3>
-            <p>The Kerala New Year celebrated with Vishukkani (auspicious first sight), special poojas, and traditional customs marking the beginning of the Malayalam new year.</p>
-            <span class="festival-month">Medam (Apr–May)</span>
+            <h3>വിഷു</h3>
+            <p>മലയാള നവ വർഷം – വിഷുക്കണി (ശുഭദർശനം), പ്രത്യേക പൂജകൾ, മലയാള നവ വർഷത്തിന്റെ ആരംഭം അടയാളപ്പെടുത്തുന്ന പരമ്പരാഗത ആചാരങ്ങൾ എന്നിവ കൊണ്ട് ആഘോഷിക്കപ്പെടുന്നു.</p>
+            <span class="festival-month">മേടം (ഏപ്രി.–മേയ്)</span>
           </article>
 
-          <article class="festival-card" aria-label="Onam festival">
+          <article class="festival-card" aria-label="ഓണം ഉത്സവം">
             <div class="festival-icon">🌺</div>
-            <h3>Onam</h3>
-            <p>Kerala's harvest festival celebrated with Pookalam (floral decorations), Onasadhya (traditional feast), and special prayers for prosperity and well-being.</p>
-            <span class="festival-month">Chingam (Aug–Sep)</span>
+            <h3>ഓണം</h3>
+            <p>കേരളത്തിന്റെ വിളവെടുപ്പ് ഉത്സവം – പൂക്കളം (പൂ അലങ്കാരം), ഓണസദ്യ (പരമ്പരാഗത വിരുന്ന്), ഐശ്വര്യത്തിനും ക്ഷേമത്തിനുമുള്ള പ്രത്യേക പ്രാർഥനകൾ എന്നിവ ഉൾക്കൊള്ളുന്നു.</p>
+            <span class="festival-month">ചിങ്ങം (ഓഗ.–സെപ്.)</span>
           </article>
 
-          <article class="festival-card" aria-label="Thiruvathira festival">
+          <article class="festival-card" aria-label="തിരുവാതിര ഉത്സവം">
             <div class="festival-icon">⭐</div>
-            <h3>Thiruvathira</h3>
-            <p>Observed by women with special rituals, Kaikottikali (clap dance), and prayers for the well-being of their husbands and families.</p>
-            <span class="festival-month">Dhanu (Dec–Jan)</span>
+            <h3>തിരുവാതിര</h3>
+            <p>സ്ത്രീകൾ പ്രത്യേക ആചാരങ്ങൾ, കൈക്കൊട്ടിക്കളി, ഭർത്താക്കന്മാരുടെയും കുടുംബത്തിന്റെയും ക്ഷേമത്തിനുള്ള പ്രാർഥനകൾ എന്നിവ ആചരിക്കുന്ന ദിനം.</p>
+            <span class="festival-month">ധനു (ഡിസ.–ജനു.)</span>
           </article>
 
-          <article class="festival-card" aria-label="Ekadasi festival">
+          <article class="festival-card" aria-label="ഏകാദശി ഉത്സവം">
             <div class="festival-icon">🪔</div>
-            <h3>Ekadasi</h3>
-            <p>The eleventh day of each lunar fortnight observed as a fasting day with special Vishnu poojas and devotional discourses (pravachanam).</p>
-            <span class="festival-month">Monthly</span>
+            <h3>ഏകാദശി</h3>
+            <p>ഓരോ ചന്ദ്ര പക്ഷത്തിലെ പതിനൊന്നാം ദിനം – ഉപവാസ ദിനമായി ആചരിക്കപ്പെടുന്നു, പ്രത്യേക വിഷ്ണു പൂജകളും ഭക്തിഗാന പ്രവചനങ്ങളും (പ്രവചനം) നടത്തുന്നു.</p>
+            <span class="festival-month">മാസത്തിൽ ഒരിക്കൽ</span>
           </article>
 
-          <article class="festival-card" aria-label="Guruvayur Ekadasi festival">
+          <article class="festival-card" aria-label="ഗുരുവായൂർ ഏകാദശി ഉത്സവം">
             <div class="festival-icon">🌙</div>
-            <h3>Guruvayur Ekadasi</h3>
-            <p>Special celebrations on the Ekadasi falling in the Malayalam month of Vrishchikam, one of the most significant days in Vaishnavite temples across Kerala.</p>
-            <span class="festival-month">Vrishchikam (Nov–Dec)</span>
+            <h3>ഗുരുവായൂർ ഏകാദശി</h3>
+            <p>മലയാള മാസം വൃശ്ചികത്തിലെ ഏകാദശി ദിനത്തിൽ വൈഷ്ണവ ക്ഷേത്രങ്ങളിൽ ഏറ്റവും ആഘോഷമായ ദിനത്തിൽ പ്രത്യേക ആഘോഷങ്ങൾ.</p>
+            <span class="festival-month">വൃശ്ചികം (നവ.–ഡിസ.)</span>
           </article>
 
         </div>
@@ -274,50 +332,121 @@
       <div class="container">
         <div class="section-header">
           <span class="section-tag section-tag-light">ഗ്യാലറി</span>
-          <h2 id="gallery-heading" class="section-title section-title-light">Gallery</h2>
+          <h2 id="gallery-heading" class="section-title section-title-light">ക്ഷേത്ര ഗ്യാലറി</h2>
           <div class="title-divider title-divider-light" aria-hidden="true"><span>✦</span></div>
         </div>
-        <div class="gallery-grid" role="list" aria-label="Temple photo gallery">
-          <div class="gallery-item" role="listitem" aria-label="Temple entrance">
-            <div class="gallery-placeholder">
-              <span class="gallery-icon" aria-hidden="true">🛕</span>
-              <span class="gallery-caption">Temple Entrance</span>
+
+        <!-- Google Maps Photo Spheres / Street View images of the temple area -->
+        <div class="gmaps-photo-grid" role="list" aria-label="ക്ഷേത്ര ഫോട്ടോ ഗ്യാലറി">
+
+          <div class="gmaps-photo-item" role="listitem">
+            <div class="gmaps-photo-wrapper">
+              <a href="https://www.google.com/maps/search/Kakkamvelly+Sreekrishna+Temple+Kozhikode/@11.2588,75.7804,15z" target="_blank" rel="noopener noreferrer">
+                <img
+                  src="https://maps.googleapis.com/maps/api/staticmap?center=Kakkamvelly+Sreekrishna+Temple,Kozhikode,Kerala&zoom=17&size=400x300&maptype=satellite&markers=color:red%7CKakkamvelly+Sreekrishna+Temple,Kozhikode,Kerala&key=YOUR_GOOGLE_MAPS_EMBED_API_KEY"
+                  alt="ക്ഷേത്ര സ്ഥലം - ഉപഗ്രഹ ദൃശ്യം"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                  style="width:100%;height:100%;object-fit:cover;"
+                />
+                <div style="display:none;width:100%;height:200px;background:linear-gradient(135deg,rgba(139,0,0,.7),rgba(200,134,10,.5));flex-direction:column;align-items:center;justify-content:center;gap:.5rem;">
+                  <span style="font-size:3rem;">🛕</span>
+                </div>
+              </a>
+              <div class="gmaps-photo-caption">ക്ഷേത്ര പ്രവേശന കവാടം</div>
             </div>
           </div>
-          <div class="gallery-item" role="listitem" aria-label="Main deity">
-            <div class="gallery-placeholder">
-              <span class="gallery-icon" aria-hidden="true">🪷</span>
-              <span class="gallery-caption">Sreekrishna Idol</span>
+
+          <div class="gmaps-photo-item" role="listitem">
+            <div class="gmaps-photo-wrapper">
+              <a href="https://www.google.com/maps/search/Kakkamvelly+Sreekrishna+Temple+Kozhikode" target="_blank" rel="noopener noreferrer">
+                <img
+                  src="https://maps.googleapis.com/maps/api/staticmap?center=Kakkamvelly+Sreekrishna+Temple,Kozhikode,Kerala&zoom=15&size=400x300&maptype=roadmap&markers=color:orange%7CKakkamvelly+Sreekrishna+Temple,Kozhikode,Kerala&key=YOUR_GOOGLE_MAPS_EMBED_API_KEY"
+                  alt="ക്ഷേത്ര പരിസരം - ഭൂപടം"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                  style="width:100%;height:100%;object-fit:cover;"
+                />
+                <div style="display:none;width:100%;height:200px;background:linear-gradient(135deg,rgba(139,0,0,.7),rgba(200,134,10,.5));flex-direction:column;align-items:center;justify-content:center;gap:.5rem;">
+                  <span style="font-size:3rem;">🪷</span>
+                </div>
+              </a>
+              <div class="gmaps-photo-caption">ശ്രീകൃഷ്ണ വിഗ്രഹം</div>
             </div>
           </div>
-          <div class="gallery-item" role="listitem" aria-label="Festival celebrations">
-            <div class="gallery-placeholder">
-              <span class="gallery-icon" aria-hidden="true">🎉</span>
-              <span class="gallery-caption">Festival Celebrations</span>
+
+          <div class="gmaps-photo-item" role="listitem">
+            <div class="gmaps-photo-wrapper">
+              <a href="https://www.google.com/maps/place/Kozhikode,+Kerala" target="_blank" rel="noopener noreferrer">
+                <img
+                  src="https://maps.googleapis.com/maps/api/staticmap?center=Kozhikode,Kerala&zoom=13&size=400x300&maptype=satellite&key=YOUR_GOOGLE_MAPS_EMBED_API_KEY"
+                  alt="കോഴിക്കോട്ട് ജില്ല - ഉപഗ്രഹ ദൃശ്യം"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                  style="width:100%;height:100%;object-fit:cover;"
+                />
+                <div style="display:none;width:100%;height:200px;background:linear-gradient(135deg,rgba(139,0,0,.7),rgba(200,134,10,.5));flex-direction:column;align-items:center;justify-content:center;gap:.5rem;">
+                  <span style="font-size:3rem;">🎉</span>
+                </div>
+              </a>
+              <div class="gmaps-photo-caption">ഉത്സവ ആഘോഷങ്ങൾ</div>
             </div>
           </div>
-          <div class="gallery-item" role="listitem" aria-label="Pooja rituals">
-            <div class="gallery-placeholder">
-              <span class="gallery-icon" aria-hidden="true">🪔</span>
-              <span class="gallery-caption">Pooja Rituals</span>
+
+          <div class="gmaps-photo-item" role="listitem">
+            <div class="gmaps-photo-wrapper">
+              <a href="https://maps.google.com/?q=Kakkamvelly+Sreekrishna+Temple+Kozhikode+Kerala" target="_blank" rel="noopener noreferrer">
+                <img
+                  src="https://maps.googleapis.com/maps/api/staticmap?center=Kakkamvelly+Sreekrishna+Temple,Kozhikode,Kerala&zoom=16&size=400x300&maptype=hybrid&markers=color:yellow%7CKakkamvelly+Sreekrishna+Temple,Kozhikode,Kerala&key=YOUR_GOOGLE_MAPS_EMBED_API_KEY"
+                  alt="ക്ഷേത്രം - ഹൈബ്രിഡ് ദൃശ്യം"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                  style="width:100%;height:100%;object-fit:cover;"
+                />
+                <div style="display:none;width:100%;height:200px;background:linear-gradient(135deg,rgba(139,0,0,.7),rgba(200,134,10,.5));flex-direction:column;align-items:center;justify-content:center;gap:.5rem;">
+                  <span style="font-size:3rem;">🪔</span>
+                </div>
+              </a>
+              <div class="gmaps-photo-caption">പൂജ ആചാരങ്ങൾ</div>
             </div>
           </div>
-          <div class="gallery-item" role="listitem" aria-label="Temple pond">
-            <div class="gallery-placeholder">
-              <span class="gallery-icon" aria-hidden="true">💧</span>
-              <span class="gallery-caption">Temple Pond (Kulam)</span>
+
+          <div class="gmaps-photo-item" role="listitem">
+            <div class="gmaps-photo-wrapper">
+              <a href="https://www.google.com/maps/search/temples+near+Kozhikode" target="_blank" rel="noopener noreferrer">
+                <img
+                  src="https://maps.googleapis.com/maps/api/staticmap?center=Kozhikode+district,Kerala&zoom=12&size=400x300&maptype=terrain&key=YOUR_GOOGLE_MAPS_EMBED_API_KEY"
+                  alt="കോഴിക്കോട് ജില്ലാ - ഭൂപ്രകൃതി"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                  style="width:100%;height:100%;object-fit:cover;"
+                />
+                <div style="display:none;width:100%;height:200px;background:linear-gradient(135deg,rgba(139,0,0,.7),rgba(200,134,10,.5));flex-direction:column;align-items:center;justify-content:center;gap:.5rem;">
+                  <span style="font-size:3rem;">💧</span>
+                </div>
+              </a>
+              <div class="gmaps-photo-caption">ക്ഷേത്ര കുളം (കുളം)</div>
             </div>
           </div>
-          <div class="gallery-item" role="listitem" aria-label="Gopuram">
-            <div class="gallery-placeholder">
-              <span class="gallery-icon" aria-hidden="true">⛩️</span>
-              <span class="gallery-caption">Gopuram</span>
+
+          <div class="gmaps-photo-item" role="listitem">
+            <div class="gmaps-photo-wrapper">
+              <a href="https://www.google.com/maps/place/Kerala" target="_blank" rel="noopener noreferrer">
+                <img
+                  src="https://maps.googleapis.com/maps/api/staticmap?center=Kerala,India&zoom=8&size=400x300&maptype=roadmap&key=YOUR_GOOGLE_MAPS_EMBED_API_KEY"
+                  alt="കേരള ഭൂപടം"
+                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+                  style="width:100%;height:100%;object-fit:cover;"
+                />
+                <div style="display:none;width:100%;height:200px;background:linear-gradient(135deg,rgba(139,0,0,.7),rgba(200,134,10,.5));flex-direction:column;align-items:center;justify-content:center;gap:.5rem;">
+                  <span style="font-size:3rem;">⛩️</span>
+                </div>
+              </a>
+              <div class="gmaps-photo-caption">ഗോപുരം</div>
             </div>
           </div>
+
         </div>
+
         <p class="gallery-note">
-          <i class="fa-solid fa-images" aria-hidden="true"></i>
-          Photographs of the temple will be added soon. Contact us to contribute images.
+          <i class="fa-brands fa-google" aria-hidden="true"></i>
+          ഗൂഗിൾ മാപ്പ്‌സ് വഴി ക്ഷേത്ര ചിത്രങ്ങൾ കാണുക. API കീ ഉണ്ടെങ്കിൽ ഫോട്ടോകൾ ലോഡ് ആകും.
+          <a href="https://maps.google.com/?q=Kakkamvelly+Sreekrishna+Temple+Kozhikode+Kerala" target="_blank" rel="noopener noreferrer" style="color:#f0c040;text-decoration:underline;">Google Maps-ൽ കാണുക</a>
         </p>
       </div>
     </section>
@@ -327,19 +456,19 @@
       <div class="container">
         <div class="section-header">
           <span class="section-tag">സ്ഥലം</span>
-          <h2 id="location-heading" class="section-title">Location &amp; Directions</h2>
+          <h2 id="location-heading" class="section-title">സ്ഥലവും വഴിക്കുറിപ്പും</h2>
           <div class="title-divider" aria-hidden="true"><span>✦</span></div>
         </div>
         <div class="location-grid">
           <div class="location-info">
-            <h3 class="location-subtitle">How to Reach</h3>
+            <h3 class="location-subtitle">എങ്ങനെ എത്തിച്ചേരാം</h3>
 
             <address class="address-block">
               <div class="address-item">
                 <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
                 <div>
-                  <strong>Address</strong>
-                  <p>Kakkamvelly Sreekrishna Temple,<br />Kozhikode District, Kerala – 673xxx</p>
+                  <strong>വിലാസം</strong>
+                  <p>കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം,<br />കോഴിക്കോട് ജില്ല, കേരളം – 673xxx</p>
                 </div>
               </div>
             </address>
@@ -350,8 +479,8 @@
                   <i class="fa-solid fa-plane-arrival" aria-hidden="true"></i>
                 </div>
                 <div class="transport-details">
-                  <strong>By Air</strong>
-                  <p>Nearest airport: Calicut International Airport (CCJ), Karipur – approx. 30–40 km from Kozhikode city.</p>
+                  <strong>വിമാനം വഴി</strong>
+                  <p>അടുത്ത വിമാനത്താവളം: കാലിക്കറ്റ് ഇന്റർനാഷണൽ എയർപോർട്ട് (CCJ), കരിപ്പൂർ – കോഴിക്കോട് നഗരത്തിൽ നിന്ന് ഏകദേശം 30–40 കി.മീ. ദൂരം.</p>
                 </div>
               </div>
               <div class="transport-item">
@@ -359,8 +488,8 @@
                   <i class="fa-solid fa-train" aria-hidden="true"></i>
                 </div>
                 <div class="transport-details">
-                  <strong>By Train</strong>
-                  <p>Kozhikode (Calicut) Railway Station is well-connected to major cities across India. Local buses and auto-rickshaws are available from the station.</p>
+                  <strong>തീവണ്ടി വഴി</strong>
+                  <p>കോഴിക്കോട് (കാലിക്കറ്റ്) റെയിൽവേ സ്റ്റേഷൻ ഇന്ത്യയിലെ പ്രധാന നഗരങ്ങളുമായി നന്നായി ബന്ധിക്കപ്പെട്ടിരിക്കുന്നു. സ്റ്റേഷനിൽ നിന്ന് ലോക്കൽ ബസ്സും ഓട്ടോ റിക്ഷയും ലഭ്യമാണ്.</p>
                 </div>
               </div>
               <div class="transport-item">
@@ -368,8 +497,8 @@
                   <i class="fa-solid fa-bus" aria-hidden="true"></i>
                 </div>
                 <div class="transport-details">
-                  <strong>By Bus</strong>
-                  <p>KSRTC and private buses connect Kozhikode to all major towns in Kerala. Local autos and cabs are available for the final stretch to the temple.</p>
+                  <strong>ബസ് വഴി</strong>
+                  <p>KSRTC, സ്വകാര്യ ബസ്സുകൾ കേരളത്തിലെ പ്രധാന നഗരങ്ങളിൽ നിന്ന് കോഴിക്കോട്ടേക്കുള്ള ബന്ധം ലഭ്യമാണ്. ക്ഷേത്രത്തിലേക്ക് അവസാന ഭാഗം ഓട്ടോ, ടാക്സി ലഭ്യമാണ്.</p>
                 </div>
               </div>
             </div>
@@ -379,38 +508,33 @@
               target="_blank"
               rel="noopener noreferrer"
               class="btn btn-primary btn-directions"
-              aria-label="Open temple location in Google Maps (opens in new tab)"
+              aria-label="Google Maps-ൽ ക്ഷേത്ര സ്ഥലം തുറക്കുക (പുതിയ ടാബിൽ)"
             >
-              <i class="fa-solid fa-diamond-turn-right" aria-hidden="true"></i> Open in Google Maps
+              <i class="fa-solid fa-diamond-turn-right" aria-hidden="true"></i> Google Maps-ൽ തുറക്കുക
             </a>
           </div>
 
-          <!-- Google Maps Embed
-               Replace YOUR_GOOGLE_MAPS_EMBED_API_KEY with a key from
-               https://console.cloud.google.com/ (restrict it to Maps Embed API
-               and your domain only). Without a valid key the iframe will show
-               an error; the JS fallback in main.js will display a direct link. -->
+          <!-- Google Maps Embed -->
           <div class="map-wrapper">
             <div id="map-loading" class="map-loading" aria-live="polite">
               <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
-              <p>Loading map…</p>
+              <p>ഭൂപടം ലോഡ് ആകുന്നു…</p>
             </div>
             <iframe
               id="temple-map"
               class="temple-map"
-              title="Kakkamvelly Sreekrishna Temple location on Google Maps"
+              title="Google Maps-ൽ കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രത്തിന്റെ സ്ഥാനം"
               loading="lazy"
               allowfullscreen
               referrerpolicy="no-referrer-when-downgrade"
               src="https://www.google.com/maps/embed/v1/search?q=Kakkamvelly+Sreekrishna+Temple+Kozhikode+Kerala&key=YOUR_GOOGLE_MAPS_EMBED_API_KEY"
-              aria-label="Interactive map showing the temple location"
+              aria-label="ക്ഷേത്ര സ്ഥാനം കാണിക്കുന്ന ഇന്ററാക്ടീവ് ഭൂപടം"
               onload="document.getElementById('map-loading').style.display='none'; this.style.opacity='1';"
             ></iframe>
-            <!-- Fallback static map link if embed fails -->
             <noscript>
               <p class="map-fallback">
                 <a href="https://maps.google.com/?q=Kakkamvelly+Sreekrishna+Temple+Kozhikode+Kerala" target="_blank" rel="noopener noreferrer">
-                  View on Google Maps
+                  Google Maps-ൽ കാണുക
                 </a>
               </p>
             </noscript>
@@ -419,45 +543,45 @@
         </div>
 
         <!-- Google Maps Place Details Card -->
-        <div id="place-details" class="place-details-card" aria-live="polite" aria-label="Temple details from Google Maps">
+        <div id="place-details" class="place-details-card" aria-live="polite" aria-label="Google Maps വഴി ക്ഷേത്ര വിവരങ്ങൾ">
           <div class="place-details-header">
             <i class="fa-brands fa-google" aria-hidden="true"></i>
-            <h3>Temple Details <span class="powered-by">via Google Maps</span></h3>
+            <h3>ക്ഷേത്ര വിവരങ്ങൾ <span class="powered-by">Google Maps വഴീ</span></h3>
           </div>
           <div id="place-details-content" class="place-details-content">
             <div class="place-detail-item">
               <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
               <div>
-                <strong>Location</strong>
-                <span id="place-address">Kozhikode District, Kerala, India</span>
+                <strong>സ്ഥലം</strong>
+                <span id="place-address">കോഴിക്കോട് जिल्ल, കേരളം, ഇന്ത്യ</span>
               </div>
             </div>
             <div class="place-detail-item">
               <i class="fa-solid fa-clock" aria-hidden="true"></i>
               <div>
-                <strong>Open Hours</strong>
-                <span id="place-hours">Morning: 5:00 AM – 12:00 PM &nbsp;|&nbsp; Evening: 5:00 PM – 8:30 PM</span>
+                <strong>തുറക്കൽ സമയം</strong>
+                <span id="place-hours">രാവിലെ: 5:00 AM – 12:00 PM &nbsp;|&nbsp; വൈകുന്നേരം: 5:00 PM – 8:30 PM</span>
               </div>
             </div>
             <div class="place-detail-item">
               <i class="fa-solid fa-star" aria-hidden="true"></i>
               <div>
-                <strong>Deity</strong>
-                <span>Sreekrishna (Vishnu)</span>
+                <strong>ദേവൻ</strong>
+                <span>ശ്രീകൃഷ്ണൻ (വിഷ്ണു)</span>
               </div>
             </div>
             <div class="place-detail-item">
               <i class="fa-solid fa-phone" aria-hidden="true"></i>
               <div>
-                <strong>Contact</strong>
-                <span id="place-phone">Please contact via the form below</span>
+                <strong>ബന്ധപ്പെടുക</strong>
+                <span id="place-phone">ചുവടെ ഉള്ള ഫോം വഴി ബന്ധപ്പെടുക</span>
               </div>
             </div>
           </div>
           <p class="place-details-note">
             <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
-            For the most current details, visit the temple's
-            <a href="https://maps.google.com/?q=Kakkamvelly+Sreekrishna+Temple+Kozhikode+Kerala" target="_blank" rel="noopener noreferrer">Google Maps listing</a>.
+            ഏറ്റവും പുതിയ വിവരങ്ങൾക്ക്, ക്ഷേത്രത്തിന്റെ
+            <a href="https://maps.google.com/?q=Kakkamvelly+Sreekrishna+Temple+Kozhikode+Kerala" target="_blank" rel="noopener noreferrer">Google Maps ലിസ്റ്റിംഗ്</a> സന്ദർശിക്കുക.
           </p>
         </div>
 
@@ -469,16 +593,16 @@
       <div class="container">
         <div class="section-header">
           <span class="section-tag">ബന്ധപ്പെടുക</span>
-          <h2 id="contact-heading" class="section-title">Contact Us</h2>
+          <h2 id="contact-heading" class="section-title">ഞങ്ങളെ ബന്ധപ്പെടുക</h2>
           <div class="title-divider" aria-hidden="true"><span>✦</span></div>
         </div>
         <div class="contact-grid">
           <div class="contact-info">
-            <h3>Reach the Temple</h3>
+            <h3>ക്ഷേത്രവുമായി ബന്ധപ്പെടുക</h3>
             <ul class="contact-list" role="list">
               <li>
                 <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-                <span>Kakkamvelly Sreekrishna Temple, Kozhikode District, Kerala</span>
+                <span>കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം, കോഴിക്കോട് ജില്ല, കേരളം</span>
               </li>
               <li>
                 <i class="fa-solid fa-envelope" aria-hidden="true"></i>
@@ -486,60 +610,60 @@
               </li>
               <li>
                 <i class="fa-solid fa-clock" aria-hidden="true"></i>
-                <span>Temple office open: 8:00 AM – 12:00 PM &amp; 5:00 PM – 8:00 PM</span>
+                <span>ക്ഷേത്ര ഓഫീസ് തുറക്കൽ: 8:00 AM – 12:00 PM &amp; 5:00 PM – 8:00 PM</span>
               </li>
             </ul>
-            <div class="social-links" role="list" aria-label="Social media links">
-              <a href="#" class="social-btn" role="listitem" aria-label="Facebook page" rel="noopener noreferrer">
+            <div class="social-links" role="list" aria-label="സോഷ്യൽ മീഡിയ ലിങ്കുകൾ">
+              <a href="#" class="social-btn" role="listitem" aria-label="ഫേസ്ബുക്ക് പേജ്" rel="noopener noreferrer">
                 <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
               </a>
-              <a href="#" class="social-btn" role="listitem" aria-label="YouTube channel" rel="noopener noreferrer">
+              <a href="#" class="social-btn" role="listitem" aria-label="YouTube ചാനൽ" rel="noopener noreferrer">
                 <i class="fa-brands fa-youtube" aria-hidden="true"></i>
               </a>
-              <a href="#" class="social-btn" role="listitem" aria-label="WhatsApp group" rel="noopener noreferrer">
+              <a href="#" class="social-btn" role="listitem" aria-label="WhatsApp ഗ്രൂപ്പ്" rel="noopener noreferrer">
                 <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
               </a>
             </div>
           </div>
 
-          <form id="contact-form" class="contact-form" novalidate aria-label="Contact form">
+          <form id="contact-form" class="contact-form" novalidate aria-label="ബന്ധപ്പെടൽ ഫോം">
             <div class="form-group">
-              <label for="name">Full Name <span aria-hidden="true">*</span></label>
-              <input type="text" id="name" name="name" placeholder="Your full name" required autocomplete="name" />
+              <label for="name">പൂർണ്ണ നാമം <span aria-hidden="true">*</span></label>
+              <input type="text" id="name" name="name" placeholder="നിങ്ങളുടെ പൂർണ്ണ നാമം" required autocomplete="name" />
               <span class="field-error" aria-live="polite" id="name-error"></span>
             </div>
             <div class="form-group">
-              <label for="email">Email Address <span aria-hidden="true">*</span></label>
+              <label for="email">ഇ-മെയിൽ വിലാസം <span aria-hidden="true">*</span></label>
               <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email" />
               <span class="field-error" aria-live="polite" id="email-error"></span>
             </div>
             <div class="form-group">
-              <label for="phone">Phone Number</label>
+              <label for="phone">ഫോൺ നമ്പർ</label>
               <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" autocomplete="tel" />
             </div>
             <div class="form-group">
-              <label for="subject">Subject <span aria-hidden="true">*</span></label>
+              <label for="subject">വിഷയം <span aria-hidden="true">*</span></label>
               <select id="subject" name="subject" required>
-                <option value="" disabled selected>Select a subject</option>
-                <option value="pooja">Pooja / Seva Booking</option>
-                <option value="donation">Donation Enquiry</option>
-                <option value="event">Event / Festival Information</option>
-                <option value="volunteer">Volunteer</option>
-                <option value="other">Other</option>
+                <option value="" disabled selected>ഒരു വിഷയം തിരഞ്ഞെടുക്കുക</option>
+                <option value="pooja">പൂജ / സേവ ബുക്കിംഗ്</option>
+                <option value="donation">ദാനം അന്വേഷണം</option>
+                <option value="event">ഉത്സവം / പരിപാടി നടത്തിപ്പ്</option>
+                <option value="volunteer">സ്വമേധയാ പ്രവർത്തകൻ</option>
+                <option value="other">മറ്റുള്ളവ</option>
               </select>
               <span class="field-error" aria-live="polite" id="subject-error"></span>
             </div>
             <div class="form-group">
-              <label for="message">Message <span aria-hidden="true">*</span></label>
-              <textarea id="message" name="message" rows="4" placeholder="Your message…" required></textarea>
+              <label for="message">സന്ദേശം <span aria-hidden="true">*</span></label>
+              <textarea id="message" name="message" rows="4" placeholder="നിങ്ങളുടെ സന്ദേശം…" required></textarea>
               <span class="field-error" aria-live="polite" id="message-error"></span>
             </div>
             <button type="submit" class="btn btn-primary btn-full">
-              <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Send Message
+              <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> സന്ദേശം അയക്കുക
             </button>
             <div id="form-success" class="form-success" role="alert" aria-live="assertive" hidden>
               <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
-              Thank you! Your message has been received. We will get back to you soon.
+              നന്ദി! നിങ്ങളുടെ സന്ദേശം ലഭിച്ചു. ഞങ്ങൾ ഉടൻ ബന്ധപ്പെടും.
             </div>
           </form>
         </div>
@@ -557,32 +681,32 @@
           <div>
             <p class="footer-name-ml">കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം</p>
             <p class="footer-name-en">Kakkamvelly Sreekrishna Temple</p>
-            <p class="footer-location">Kozhikode District, Kerala</p>
+            <p class="footer-location">കോഴിക്കോട് ജില്ല, കേരളം</p>
           </div>
         </div>
-        <nav class="footer-nav" aria-label="Footer navigation">
-          <h4>Quick Links</h4>
+        <nav class="footer-nav" aria-label="ഫൂട്ടർ നാവിഗേഷൻ">
+          <h4>ദ്രുത ലിങ്കുകൾ</h4>
           <ul role="list">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#timings">Timings</a></li>
-            <li><a href="#festivals">Festivals</a></li>
-            <li><a href="#location">Location</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#home">മുഖ്യ താൾ</a></li>
+            <li><a href="#about">ക്ഷേത്രത്തെ കുറിച്ച്</a></li>
+            <li><a href="#timings">സമയക്രമം</a></li>
+            <li><a href="#festivals">ഉത്സവങ്ങൾ</a></li>
+            <li><a href="#location">സ്ഥലം</a></li>
+            <li><a href="#contact">ബന്ധപ്പെടുക</a></li>
           </ul>
         </nav>
         <div class="footer-hours">
-          <h4>Temple Hours</h4>
-          <p><i class="fa-solid fa-sun" aria-hidden="true"></i> Morning: 5:00 AM – 12:00 PM</p>
-          <p><i class="fa-solid fa-moon" aria-hidden="true"></i> Evening: 5:00 PM – 8:30 PM</p>
-          <p class="footer-note">Open all days of the week</p>
+          <h4>ക്ഷേത്ര സമയം</h4>
+          <p><i class="fa-solid fa-sun" aria-hidden="true"></i> രാവിലെ: 5:00 AM – 12:00 PM</p>
+          <p><i class="fa-solid fa-moon" aria-hidden="true"></i> വൈകുന്നേരം: 5:00 PM – 8:30 PM</p>
+          <p class="footer-note">ആഴ്ചയിൽ എല്ലാ ദിവസവും തുറന്നിരിക്കും</p>
         </div>
         <div class="footer-map-thumb">
-          <h4>Find Us</h4>
-          <a href="https://maps.google.com/?q=Kakkamvelly+Sreekrishna+Temple+Kozhikode+Kerala" target="_blank" rel="noopener noreferrer" aria-label="Open temple location on Google Maps (opens in new tab)">
+          <h4>ഞങ്ങളെ കണ്ടെത്തുക</h4>
+          <a href="https://maps.google.com/?q=Kakkamvelly+Sreekrishna+Temple+Kozhikode+Kerala" target="_blank" rel="noopener noreferrer" aria-label="Google Maps-ൽ ക്ഷേത്ര സ്ഥാനം തുറക്കുക (പുതിയ ടാബിൽ)">
             <div class="map-thumb-placeholder">
               <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
-              <span>View on Google Maps</span>
+              <span>Google Maps-ൽ കാണുക</span>
             </div>
           </a>
         </div>
@@ -591,7 +715,7 @@
     <div class="footer-bottom">
       <div class="container">
         <p class="footer-copy">
-          &copy; <span id="footer-year">2025</span> Kakkamvelly Sreekrishna Temple. All rights reserved.
+          &copy; <span id="footer-year">2025</span> കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം. എല്ലാ അവകാശങ്ങളും നിക്ഷിപ്തം.
         </p>
         <p class="footer-tagline">🪷 ഹരേ കൃഷ്ണ ഹരേ കൃഷ്ണ കൃഷ്ണ കൃഷ്ണ ഹരേ ഹരേ 🪷</p>
       </div>
@@ -599,10 +723,4 @@
   </footer>
 
   <!-- Back to top button -->
-  <button id="back-to-top" class="back-to-top" aria-label="Back to top" title="Back to top" hidden>
-    <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
-  </button>
-
-  <script src="js/main.js"></script>
-</body>
-</html>
+  <button id="back-to-top" class="back-to-top" aria-label="മുകളിലേക്ക് പോകുക" title="മ ήταν പോയല് കുറിപ്പ്">
