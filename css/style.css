@@ -1281,6 +1281,533 @@ ul  { list-style: none; }
   .hours-divider { display: none; }
 }
 
+/* ─────────────────────────────────────────────────────────────
+   GALLERY — Real Maps Cards + CSS Art Scenes
+───────────────────────────────────────────────────────────── */
+.gallery-maps-grid { gap: 1.25rem; }
+
+.gallery-maps-card,
+.gallery-art-card {
+  position: relative;
+  aspect-ratio: 4/3;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform .35s ease, box-shadow .35s ease;
+  border: 2px solid rgba(240,192,64,.3);
+}
+.gallery-maps-card:hover,
+.gallery-art-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 12px 40px rgba(0,0,0,.5);
+  border-color: var(--color-gold-light);
+}
+
+.gallery-card-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-decoration: none;
+}
+
+/* ── Art Scenes (full-bleed backgrounds) ── */
+.gallery-art-scene {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+/* Dawn scene */
+.gallery-art-dawn {
+  background: linear-gradient(to bottom,
+    #fbc2eb 0%, #fddb92 30%, #f7971e 60%, #c8860a 80%, #1a1208 100%);
+}
+/* Daytime scene */
+.gallery-art-day {
+  background: linear-gradient(to bottom,
+    #74b9ff 0%, #a8edea 25%, #55efc4 50%, #2d6a2d 75%, #1a3300 100%);
+}
+/* Sunset scene */
+.gallery-art-sunset {
+  background: linear-gradient(to bottom,
+    #fc466b 0%, #ff6b35 25%, #f7c59f 50%, #c8860a 75%, #1a1208 100%);
+}
+/* Night scene */
+.gallery-art-night {
+  background: radial-gradient(ellipse at 50% 30%, rgba(200,134,10,.25) 0%, transparent 60%),
+    linear-gradient(to bottom, #0a0a1a 0%, #1a1208 60%, #2c1003 100%);
+}
+/* Rangoli art */
+.gallery-art-rangoli {
+  background: radial-gradient(ellipse at center, #fff3e0 0%, #ffe0b2 40%, #c8860a 80%, #600000 100%);
+  align-items: center;
+  justify-content: center;
+}
+/* Mandala scene */
+.gallery-art-mandala-scene {
+  background: radial-gradient(ellipse at center, #1a1208 0%, #600000 50%, #8b0000 100%);
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Temple Silhouette (CSS art) ── */
+.art-temple-silhouette {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 40%;
+  background: rgba(26,18,8,.85);
+  /* Temple silhouette: base walls (15-85%), tiered roofline rises to central peak at 50%
+     Points: left-base → left-wall → left-wing-base → left-wing-peak →
+             mid-shoulder → mid-peak (top) → right-mirror → right-base */
+  clip-path: polygon(15% 100%, 15% 60%, 10% 55%, 20% 30%, 30% 55%, 40% 45%, 50% 10%, 60% 45%, 70% 55%, 80% 30%, 90% 55%, 85% 60%, 85% 100%);
+}
+
+.art-gopuram {
+  position: absolute;
+  bottom: 38%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 18%;
+  height: 30%;
+  background: rgba(26,18,8,.9);
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+}
+
+/* Sun element */
+.art-sun {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff8e1 0%, #ffd54f 40%, #ff9800 70%, transparent 100%);
+  box-shadow: 0 0 30px rgba(255,200,50,.6);
+  animation: sun-pulse 4s ease-in-out infinite;
+}
+.art-sun--setting {
+  top: 45%;
+  background: radial-gradient(circle, #ffcc02 0%, #ff6b35 50%, #c0392b 80%, transparent 100%);
+  box-shadow: 0 0 50px rgba(255,107,53,.8);
+}
+@keyframes sun-pulse {
+  0%, 100% { transform: translateX(-50%) scale(1); opacity: .9; }
+  50%       { transform: translateX(-50%) scale(1.08); opacity: 1; }
+}
+
+/* Stars (night) */
+.art-stars {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,.9) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255,255,255,.6) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255,255,255,.7) 1px, transparent 1px);
+  background-size: 80px 80px, 50px 50px, 120px 120px;
+  background-position: 0 0, 25px 25px, 60px 10px;
+  animation: twinkle 3s ease-in-out infinite alternate;
+}
+@keyframes twinkle {
+  from { opacity: .6; }
+  to   { opacity: 1; }
+}
+
+/* Clouds */
+.art-clouds { position: absolute; top: 8%; width: 100%; display: flex; justify-content: space-around; }
+.art-clouds span {
+  width: 60px; height: 20px;
+  background: rgba(255,255,255,.7);
+  border-radius: 50px;
+  position: relative;
+  animation: cloud-drift 8s ease-in-out infinite;
+}
+.art-clouds span:nth-child(2) { animation-delay: 2s; width: 80px; }
+.art-clouds span:nth-child(3) { animation-delay: 4s; width: 50px; }
+@keyframes cloud-drift {
+  0%, 100% { transform: translateX(0); }
+  50%       { transform: translateX(10px); }
+}
+
+/* Diya row */
+.art-diya-row {
+  position: absolute;
+  bottom: 5%;
+  display: flex;
+  gap: .4rem;
+  z-index: 2;
+}
+.art-diya { font-size: 1.2rem; animation: diya-flicker 1.5s ease-in-out infinite alternate; }
+.art-diya:nth-child(2) { animation-delay: .3s; }
+.art-diya:nth-child(3) { animation-delay: .6s; }
+.art-diya:nth-child(4) { animation-delay: .9s; }
+.art-diya:nth-child(5) { animation-delay: 1.2s; }
+@keyframes diya-flicker {
+  from { opacity: .75; transform: scale(1) rotate(-3deg); filter: drop-shadow(0 0 4px rgba(255,150,0,.6)); }
+  to   { opacity: 1;   transform: scale(1.1) rotate(3deg); filter: drop-shadow(0 0 10px rgba(255,200,0,.9)); }
+}
+
+.art-diya-row--mandala { position: relative; margin-top: 1rem; bottom: auto; }
+
+/* Flag row */
+.art-flag-row {
+  position: absolute;
+  top: 8%;
+  display: flex;
+  gap: .5rem;
+  animation: flag-wave 2s ease-in-out infinite;
+}
+@keyframes flag-wave {
+  0%, 100% { transform: rotate(-2deg); }
+  50%       { transform: rotate(2deg); }
+}
+
+/* ── Gallery Card Overlay ── */
+.gallery-card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.8) 0%, rgba(0,0,0,.3) 40%, transparent 70%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: .75rem;
+  opacity: 0;
+  transition: opacity .35s ease;
+  z-index: 3;
+}
+.gallery-maps-card:hover .gallery-card-overlay,
+.gallery-art-card:hover .gallery-card-overlay { opacity: 1; }
+.gallery-card-overlay--visible { opacity: 1; background: linear-gradient(to top, rgba(0,0,0,.7) 0%, transparent 60%); }
+
+.gallery-maps-badge {
+  background: rgba(255,255,255,.9);
+  color: #333;
+  font-size: .68rem;
+  font-weight: 700;
+  padding: .2rem .5rem;
+  border-radius: 4px;
+  width: fit-content;
+  margin-bottom: .4rem;
+}
+.gallery-caption-ml {
+  font-family: 'Noto Serif Malayalam', serif;
+  color: #fff;
+  font-size: .9rem;
+  font-weight: 700;
+  margin-bottom: .3rem;
+}
+.gallery-view-link {
+  font-size: .75rem;
+  color: var(--color-gold-light);
+  font-weight: 600;
+}
+
+/* ── Rangoli & Mandala Art ── */
+.art-rangoli-container,
+.art-mandala-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.art-rangoli-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid;
+}
+.art-rangoli-ring--1 {
+  width: 140px; height: 140px;
+  border-color: #ff9933;
+  animation: rangoli-spin 12s linear infinite;
+  background: conic-gradient(from 0deg, #ff9933, #c8860a, #ff6b35, #f0c040, #ff9933);
+  opacity: .3;
+}
+.art-rangoli-ring--2 {
+  width: 100px; height: 100px;
+  border-color: #f0c040;
+  animation: rangoli-spin 8s linear infinite reverse;
+  background: conic-gradient(from 45deg, #f0c040, #ff9933, #c8860a, #f0c040);
+  opacity: .4;
+}
+.art-rangoli-ring--3 {
+  width: 60px; height: 60px;
+  border-color: #c8860a;
+  animation: rangoli-spin 5s linear infinite;
+  background: radial-gradient(circle, #fff3e0, #c8860a);
+  opacity: .6;
+}
+@keyframes rangoli-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+.art-rangoli-center {
+  position: absolute;
+  font-size: 2rem;
+  color: var(--color-red-temple);
+  font-weight: 900;
+  text-shadow: 0 0 10px rgba(200,134,10,.7);
+  z-index: 1;
+  animation: om-pulse 3s ease-in-out infinite;
+}
+
+.art-mandala-ring {
+  position: absolute;
+  border-radius: 50%;
+}
+.art-mandala-ring--outer {
+  width: 140px; height: 140px;
+  background: conic-gradient(
+    #c8860a, #f0c040, #ff9933, #c8860a, #f0c040, #ff9933,
+    #c8860a, #f0c040, #ff9933, #c8860a, #f0c040, #ff9933, #c8860a
+  );
+  opacity: .5;
+  animation: rangoli-spin 20s linear infinite;
+}
+.art-mandala-ring--mid {
+  width: 100px; height: 100px;
+  background: conic-gradient(
+    #ff9933, #c8860a, #f0c040, #ff9933, #c8860a, #f0c040, #ff9933, #c8860a
+  );
+  opacity: .6;
+  animation: rangoli-spin 15s linear infinite reverse;
+}
+.art-mandala-ring--inner {
+  width: 60px; height: 60px;
+  background: conic-gradient(#f0c040, #c8860a, #f0c040, #c8860a, #f0c040);
+  opacity: .8;
+  animation: rangoli-spin 10s linear infinite;
+}
+.art-mandala-center {
+  position: absolute;
+  font-size: 2rem;
+  z-index: 1;
+  animation: lotus-float 3s ease-in-out infinite;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   ABOUT — Maps Card
+───────────────────────────────────────────────────────────── */
+.about-maps-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  min-height: 280px;
+}
+
+.about-temple-art {
+  width: 100%;
+  height: 180px;
+  position: relative;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+}
+
+.about-art-scene {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #fbc2eb 0%, #fddb92 30%, #f7971e 60%, #1a1208 100%);
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.about-art-sun {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff8e1 0%, #ffd54f 50%, #ff9800 100%);
+  box-shadow: 0 0 25px rgba(255,200,50,.7);
+  animation: sun-pulse 4s ease-in-out infinite;
+}
+
+.about-art-gopuram {
+  width: 60px;
+  height: 80px;
+  background: rgba(26,18,8,.9);
+  clip-path: polygon(50% 0%, 90% 100%, 10% 100%);
+  margin-bottom: 0;
+  z-index: 2;
+}
+
+.about-art-base {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30%;
+  background: rgba(26,18,8,.85);
+}
+
+.about-om-symbol {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 3rem;
+  color: rgba(240,192,64,.6);
+  font-weight: 900;
+  animation: om-pulse 3s ease-in-out infinite;
+  z-index: 3;
+}
+
+@keyframes om-pulse {
+  0%, 100% { text-shadow: 0 0 10px rgba(200,134,10,.4); transform: translate(-50%,-50%) scale(1); }
+  50%       { text-shadow: 0 0 25px rgba(200,134,10,.8); transform: translate(-50%,-50%) scale(1.08); }
+}
+
+.about-maps-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  background: var(--color-gold);
+  color: var(--color-white);
+  padding: .5rem 1.25rem;
+  border-radius: 50px;
+  font-size: .85rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--transition);
+}
+.about-maps-link:hover {
+  background: var(--color-gold-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.about-maps-link i { color: var(--color-white); }
+
+/* ─────────────────────────────────────────────────────────────
+   MODERN HINDU ANIMATIONS — Hero Layer
+───────────────────────────────────────────────────────────── */
+.hindu-anim-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Floating Om symbols */
+.anim-om {
+  position: absolute;
+  font-size: 1.5rem;
+  color: rgba(240,192,64,.15);
+  font-weight: 900;
+  animation: om-float 12s ease-in-out infinite;
+  user-select: none;
+}
+/* Three Om symbols staggered: left edge (8%), right edge (88%), bottom-centre (50%).
+   Durations vary (14s/18s/16s) so they never sync up; delays (3s/6s) offset the phase. */
+.anim-om--1 { left: 8%;  top: 20%; animation-duration: 14s; font-size: 2.5rem; }
+.anim-om--2 { left: 88%; top: 35%; animation-duration: 18s; animation-delay: 3s; font-size: 1.8rem; }
+.anim-om--3 { left: 50%; top: 75%; animation-duration: 16s; animation-delay: 6s; font-size: 2rem; }
+@keyframes om-float {
+  0%, 100% { transform: translateY(0) rotate(-5deg); opacity: .12; }
+  25%       { transform: translateY(-20px) rotate(5deg); opacity: .2; }
+  50%       { transform: translateY(-10px) rotate(-3deg); opacity: .15; }
+  75%       { transform: translateY(-30px) rotate(8deg); opacity: .18; }
+}
+
+/* Floating Lotus flowers */
+.anim-lotus {
+  position: absolute;
+  animation: lotus-float 8s ease-in-out infinite;
+  font-size: 1.5rem;
+  opacity: .35;
+  user-select: none;
+}
+.anim-lotus--1 { left: 15%; top: 60%; animation-duration: 9s; }
+.anim-lotus--2 { left: 75%; top: 25%; animation-duration: 11s; animation-delay: 2s; }
+.anim-lotus--3 { left: 40%; top: 80%; animation-duration: 13s; animation-delay: 4s; }
+.anim-lotus--4 { left: 65%; top: 70%; animation-duration: 10s; animation-delay: 1s; font-size: 1.2rem; }
+@keyframes lotus-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); opacity: .35; }
+  50%       { transform: translateY(-25px) rotate(10deg); opacity: .5; }
+}
+
+/* Falling petals */
+.anim-petal {
+  position: absolute;
+  width: 12px;
+  height: 18px;
+  border-radius: 50% 0 50% 0;
+  animation: petal-fall linear infinite;
+  opacity: .4;
+}
+.anim-petal--1 { left: 10%; background: rgba(255,153,51,.6); animation-duration: 8s; animation-delay: 0s; top: -20px; }
+.anim-petal--2 { left: 30%; background: rgba(240,192,64,.6); animation-duration: 10s; animation-delay: 2s; top: -20px; }
+.anim-petal--3 { left: 55%; background: rgba(255,107,53,.5); animation-duration: 9s; animation-delay: 4s; top: -20px; }
+.anim-petal--4 { left: 75%; background: rgba(255,153,51,.5); animation-duration: 11s; animation-delay: 1s; top: -20px; }
+.anim-petal--5 { left: 90%; background: rgba(240,192,64,.5); animation-duration: 7s; animation-delay: 3s; top: -20px; }
+@keyframes petal-fall {
+  0%   { transform: translateY(-20px) rotate(0deg); opacity: .4; }
+  80%  { opacity: .4; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   HINDU DECORATION STRIP
+───────────────────────────────────────────────────────────── */
+.hindu-deco-strip {
+  background: linear-gradient(90deg, var(--color-red-darker), var(--color-dark-mid), var(--color-red-darker));
+  padding: .5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  overflow: hidden;
+}
+
+.deco-diya, .deco-om, .deco-lotus {
+  font-size: 1.1rem;
+  animation: deco-pulse 2s ease-in-out infinite;
+  user-select: none;
+}
+.deco-om {
+  font-size: .9rem;
+  color: rgba(240,192,64,.8);
+  font-weight: 900;
+  animation: deco-pulse 3s ease-in-out infinite;
+}
+.deco-diya--1, .deco-diya--3 { animation-delay: 0s; }
+.deco-diya--2, .deco-diya--4 { animation-delay: 1s; }
+.deco-om--1 { animation-delay: .5s; }
+.deco-om--2 { animation-delay: 1.5s; }
+.deco-om--3 { animation-delay: 2.5s; }
+.deco-lotus--1 { animation-delay: .25s; }
+.deco-lotus--2 { animation-delay: 1.25s; }
+.deco-lotus--3 { animation-delay: 2.25s; }
+
+@keyframes deco-pulse {
+  0%, 100% { transform: scale(1); opacity: .7; }
+  50%       { transform: scale(1.2); opacity: 1; }
+}
+
+/* Peacock feather dots */
+@keyframes peacock-glow {
+  0%, 100% { transform: scale(1); opacity: .25; box-shadow: none; }
+  50%       { transform: scale(3); opacity: .5; box-shadow: 0 0 12px currentColor; }
+}
+
 /* ── REDUCED MOTION ── */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
