@@ -1366,6 +1366,9 @@ ul  { list-style: none; }
   width: 70%;
   height: 40%;
   background: rgba(26,18,8,.85);
+  /* Temple silhouette: base walls (15-85%), tiered roofline rises to central peak at 50%
+     Points: left-base → left-wall → left-wing-base → left-wing-peak →
+             mid-shoulder → mid-peak (top) → right-mirror → right-base */
   clip-path: polygon(15% 100%, 15% 60%, 10% 55%, 20% 30%, 30% 55%, 40% 45%, 50% 10%, 60% 45%, 70% 55%, 80% 30%, 90% 55%, 85% 60%, 85% 100%);
 }
 
@@ -1712,6 +1715,8 @@ ul  { list-style: none; }
   animation: om-float 12s ease-in-out infinite;
   user-select: none;
 }
+/* Three Om symbols staggered: left edge (8%), right edge (88%), bottom-centre (50%).
+   Durations vary (14s/18s/16s) so they never sync up; delays (3s/6s) offset the phase. */
 .anim-om--1 { left: 8%;  top: 20%; animation-duration: 14s; font-size: 2.5rem; }
 .anim-om--2 { left: 88%; top: 35%; animation-duration: 18s; animation-delay: 3s; font-size: 1.8rem; }
 .anim-om--3 { left: 50%; top: 75%; animation-duration: 16s; animation-delay: 6s; font-size: 2rem; }
