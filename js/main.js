@@ -309,12 +309,12 @@
   if (!heroSection) return;
 
   // Create a few animated peacock feather dots
-  var featherColors = ['#00b4d8', '#48cae4', '#023e8a', '#c8860a', '#f0c040'];
-  var animLayer = heroSection.querySelector('.hindu-anim-layer');
+  const featherColors = ['#00b4d8', '#48cae4', '#023e8a', '#c8860a', '#f0c040'];
+  const animLayer = heroSection.querySelector('.hindu-anim-layer');
   if (!animLayer) return;
 
   featherColors.forEach(function(color, i) {
-    var dot = document.createElement('div');
+    const dot = document.createElement('div');
     dot.className = 'anim-peacock-dot';
     dot.setAttribute('aria-hidden', 'true');
     dot.style.cssText = [
