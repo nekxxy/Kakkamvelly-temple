@@ -109,6 +109,21 @@
       <div class="hero-scroll-indicator" aria-hidden="true">
         <div class="scroll-arrow"></div>
       </div>
+      <!-- Modern Hindu Animations Layer -->
+      <div class="hindu-anim-layer" aria-hidden="true">
+        <div class="anim-om anim-om--1">ॐ</div>
+        <div class="anim-om anim-om--2">ॐ</div>
+        <div class="anim-om anim-om--3">ॐ</div>
+        <div class="anim-lotus anim-lotus--1">🪷</div>
+        <div class="anim-lotus anim-lotus--2">🪷</div>
+        <div class="anim-lotus anim-lotus--3">🪷</div>
+        <div class="anim-lotus anim-lotus--4">🌸</div>
+        <div class="anim-petal anim-petal--1" aria-hidden="true"></div>
+        <div class="anim-petal anim-petal--2" aria-hidden="true"></div>
+        <div class="anim-petal anim-petal--3" aria-hidden="true"></div>
+        <div class="anim-petal anim-petal--4" aria-hidden="true"></div>
+        <div class="anim-petal anim-petal--5" aria-hidden="true"></div>
+      </div>
     </section>
 
     <!-- ───────────── MARQUEE NOTICE ───────────── -->
@@ -126,6 +141,20 @@
       </div>
     </div>
 
+    <!-- Animated Hindu Decoration Strip -->
+    <div class="hindu-deco-strip" aria-hidden="true">
+      <span class="deco-diya deco-diya--1">🪔</span>
+      <span class="deco-om deco-om--1">ॐ</span>
+      <span class="deco-lotus deco-lotus--1">🪷</span>
+      <span class="deco-diya deco-diya--2">🪔</span>
+      <span class="deco-om deco-om--2">ॐ</span>
+      <span class="deco-lotus deco-lotus--2">🌸</span>
+      <span class="deco-diya deco-diya--3">🪔</span>
+      <span class="deco-om deco-om--3">ॐ</span>
+      <span class="deco-lotus deco-lotus--3">🪷</span>
+      <span class="deco-diya deco-diya--4">🪔</span>
+    </div>
+
     <!-- ───────────── ABOUT ───────────── -->
     <section id="about" class="section section-light" aria-labelledby="about-heading">
       <div class="container">
@@ -136,18 +165,20 @@
         </div>
         <div class="about-grid">
           <div class="about-image-wrapper">
-            <!-- Google Maps Street View of the temple area -->
-            <div class="about-image-placeholder" aria-label="ക്ഷേത്ര ചിത്രം">
-              <a href="https://maps.google.com/?q=Kakkamvelly+Sreekrishna+Temple+Kozhikode+Kerala" target="_blank" rel="noopener noreferrer" style="display:block;width:100%;height:100%;">
-                <img
-                  src="https://maps.googleapis.com/maps/api/streetview?size=400x300&location=Kakkamvelly+Sreekrishna+Temple,Kozhikode,Kerala&fov=80&heading=70&pitch=0&key=YOUR_GOOGLE_MAPS_EMBED_API_KEY"
-                  alt="കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം - Google Maps Street View"
-                  onerror="this.parentElement.parentElement.innerHTML='<div class=\'temple-icon-large\' aria-hidden=\'true\'>🛕</div><p class=\'placeholder-caption\'>കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം</p>'"
-                  style="width:100%;height:100%;object-fit:cover;border-radius:12px;"
-                />
+            <!-- Temple photo card linking to Google Maps -->
+            <div class="about-image-placeholder about-maps-card" aria-label="ക്ഷേത്ര ചിത്രം">
+              <div class="about-temple-art" aria-hidden="true">
+                <div class="about-art-scene">
+                  <div class="about-art-sun"></div>
+                  <div class="about-art-gopuram"></div>
+                  <div class="about-art-base"></div>
+                </div>
+                <div class="about-om-symbol" aria-hidden="true">ॐ</div>
+              </div>
+              <p class="placeholder-caption">കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം</p>
+              <a href="https://maps.app.goo.gl/LaTA1pWM8NhjW4gK6" target="_blank" rel="noopener noreferrer" class="about-maps-link">
+                <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i> 📍 Google Maps-ൽ ദൃശ്യം
               </a>
-              <div class="temple-icon-large" aria-hidden="true" style="display:none;">🛕</div>
-              <p class="placeholder-caption">കക്കംവെള്ളി ശ്രീകൃഷ്‌ന ക്ഷേത്രം</p>
             </div>
           </div>
           <div class="about-content">
@@ -332,122 +363,122 @@
       <div class="container">
         <div class="section-header">
           <span class="section-tag section-tag-light">ഗ്യാലറി</span>
-          <h2 id="gallery-heading" class="section-title section-title-light">ക്ഷേത്ര ഗ്യാലറി</h2>
+          <h2 id="gallery-heading" class="section-title section-title-light">ക്ഷേത്ര ചിത്രങ്ങൾ</h2>
           <div class="title-divider title-divider-light" aria-hidden="true"><span>✦</span></div>
         </div>
 
-        <!-- Google Maps Photo Spheres / Street View images of the temple area -->
-        <div class="gmaps-photo-grid" role="list" aria-label="ക്ഷേത്ര ഫോട്ടോ ഗ്യാലറി">
+        <!-- Real Google Maps Photo Cards + CSS Art Cards -->
+        <div class="gallery-grid gallery-maps-grid" role="list" aria-label="ക്ഷേത്ര ഫോട്ടോ ഗ്യാലറി">
 
-          <div class="gmaps-photo-item" role="listitem">
-            <div class="gmaps-photo-wrapper">
-              <a href="https://www.google.com/maps/search/Kakkamvelly+Sreekrishna+Temple+Kozhikode/@11.2588,75.7804,15z" target="_blank" rel="noopener noreferrer">
-                <img
-                  src="https://maps.googleapis.com/maps/api/staticmap?center=Kakkamvelly+Sreekrishna+Temple,Kozhikode,Kerala&zoom=17&size=400x300&maptype=satellite&markers=color:red%7CKakkamvelly+Sreekrishna+Temple,Kozhikode,Kerala&key=YOUR_GOOGLE_MAPS_EMBED_API_KEY"
-                  alt="ക്ഷേത്ര സ്ഥലം - ഉപഗ്രഹ ദൃശ്യം"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                  style="width:100%;height:100%;object-fit:cover;"
-                />
-                <div style="display:none;width:100%;height:200px;background:linear-gradient(135deg,rgba(139,0,0,.7),rgba(200,134,10,.5));flex-direction:column;align-items:center;justify-content:center;gap:.5rem;">
-                  <span style="font-size:3rem;">🛕</span>
+          <!-- Card 1 — Dawn / Google Maps Photo 1 -->
+          <div class="gallery-item gallery-maps-card" role="listitem">
+            <a href="https://maps.app.goo.gl/LaTA1pWM8NhjW4gK6" target="_blank" rel="noopener noreferrer" aria-label="Google Maps-ൽ ക്ഷേത്ര ചിത്രം 1 കാണുക" class="gallery-card-link">
+              <div class="gallery-art-scene gallery-art-dawn" aria-hidden="true">
+                <div class="art-sun" aria-hidden="true"></div>
+                <div class="art-temple-silhouette" aria-hidden="true"></div>
+                <div class="art-gopuram" aria-hidden="true"></div>
+              </div>
+              <div class="gallery-card-overlay">
+                <div class="gallery-maps-badge"><i class="fa-brands fa-google" aria-hidden="true"></i> Maps</div>
+                <p class="gallery-caption-ml">ക്ഷേത്ര പ്രവേശന കവാടം</p>
+                <span class="gallery-view-link">📸 Google Maps-ൽ കാണുക</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Card 2 — Daytime / Google Maps Photo 2 -->
+          <div class="gallery-item gallery-maps-card" role="listitem">
+            <a href="https://maps.app.goo.gl/wUZdDAjVvP4VtYNM9" target="_blank" rel="noopener noreferrer" aria-label="Google Maps-ൽ ക്ഷേത്ര ചിത്രം 2 കാണുക" class="gallery-card-link">
+              <div class="gallery-art-scene gallery-art-day" aria-hidden="true">
+                <div class="art-clouds" aria-hidden="true"><span></span><span></span><span></span></div>
+                <div class="art-temple-silhouette" aria-hidden="true"></div>
+                <div class="art-gopuram" aria-hidden="true"></div>
+                <div class="art-flag-row" aria-hidden="true"><span>🚩</span><span>🚩</span><span>🚩</span></div>
+              </div>
+              <div class="gallery-card-overlay">
+                <div class="gallery-maps-badge"><i class="fa-brands fa-google" aria-hidden="true"></i> Maps</div>
+                <p class="gallery-caption-ml">ശ്രീകൃഷ്ണ വിഗ്രഹം</p>
+                <span class="gallery-view-link">📸 Google Maps-ൽ കാണുക</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Card 3 — Sunset / Google Maps Photo 3 -->
+          <div class="gallery-item gallery-maps-card" role="listitem">
+            <a href="https://maps.app.goo.gl/EoFUVTJt9j6RfXGE9" target="_blank" rel="noopener noreferrer" aria-label="Google Maps-ൽ ക്ഷേത്ര ചിത്രം 3 കാണുക" class="gallery-card-link">
+              <div class="gallery-art-scene gallery-art-sunset" aria-hidden="true">
+                <div class="art-sun art-sun--setting" aria-hidden="true"></div>
+                <div class="art-temple-silhouette" aria-hidden="true"></div>
+                <div class="art-gopuram" aria-hidden="true"></div>
+              </div>
+              <div class="gallery-card-overlay">
+                <div class="gallery-maps-badge"><i class="fa-brands fa-google" aria-hidden="true"></i> Maps</div>
+                <p class="gallery-caption-ml">ഉത്സവ ആഘോഷങ്ങൾ</p>
+                <span class="gallery-view-link">📸 Google Maps-ൽ കാണുക</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Card 4 — Night/Festival / Google Maps Photo 4 -->
+          <div class="gallery-item gallery-maps-card" role="listitem">
+            <a href="https://maps.app.goo.gl/Rx8n8qmTBeCoc3UB6" target="_blank" rel="noopener noreferrer" aria-label="Google Maps-ൽ ക്ഷേത്ര ചിത്രം 4 കാണുക" class="gallery-card-link">
+              <div class="gallery-art-scene gallery-art-night" aria-hidden="true">
+                <div class="art-stars" aria-hidden="true"></div>
+                <div class="art-temple-silhouette" aria-hidden="true"></div>
+                <div class="art-gopuram" aria-hidden="true"></div>
+                <div class="art-diya-row" aria-hidden="true">
+                  <span class="art-diya">🪔</span><span class="art-diya">🪔</span><span class="art-diya">🪔</span><span class="art-diya">🪔</span><span class="art-diya">🪔</span>
                 </div>
-              </a>
-              <div class="gmaps-photo-caption">ക്ഷേത്ര പ്രവേശന കവാടം</div>
+              </div>
+              <div class="gallery-card-overlay">
+                <div class="gallery-maps-badge"><i class="fa-brands fa-google" aria-hidden="true"></i> Maps</div>
+                <p class="gallery-caption-ml">ദീപ ആരാധന</p>
+                <span class="gallery-view-link">📸 Google Maps-ൽ കാണുക</span>
+              </div>
+            </a>
+          </div>
+
+          <!-- Card 5 — CSS Rangoli Art -->
+          <div class="gallery-item gallery-art-card" role="listitem">
+            <div class="gallery-art-scene gallery-art-rangoli" aria-label="CSS Rangoli art">
+              <div class="art-rangoli-container" aria-hidden="true">
+                <div class="art-rangoli-ring art-rangoli-ring--1"></div>
+                <div class="art-rangoli-ring art-rangoli-ring--2"></div>
+                <div class="art-rangoli-ring art-rangoli-ring--3"></div>
+                <div class="art-rangoli-center" aria-hidden="true">ॐ</div>
+              </div>
+            </div>
+            <div class="gallery-card-overlay gallery-card-overlay--visible">
+              <p class="gallery-caption-ml">രംഗോലി കല</p>
             </div>
           </div>
 
-          <div class="gmaps-photo-item" role="listitem">
-            <div class="gmaps-photo-wrapper">
-              <a href="https://www.google.com/maps/search/Kakkamvelly+Sreekrishna+Temple+Kozhikode" target="_blank" rel="noopener noreferrer">
-                <img
-                  src="https://maps.googleapis.com/maps/api/staticmap?center=Kakkamvelly+Sreekrishna+Temple,Kozhikode,Kerala&zoom=15&size=400x300&maptype=roadmap&markers=color:orange%7CKakkamvelly+Sreekrishna+Temple,Kozhikode,Kerala&key=YOUR_GOOGLE_MAPS_EMBED_API_KEY"
-                  alt="ക്ഷേത്ര പരിസരം - ഭൂപടം"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                  style="width:100%;height:100%;object-fit:cover;"
-                />
-                <div style="display:none;width:100%;height:200px;background:linear-gradient(135deg,rgba(139,0,0,.7),rgba(200,134,10,.5));flex-direction:column;align-items:center;justify-content:center;gap:.5rem;">
-                  <span style="font-size:3rem;">🪷</span>
-                </div>
-              </a>
-              <div class="gmaps-photo-caption">ശ്രീകൃഷ്ണ വിഗ്രഹം</div>
+          <!-- Card 6 — CSS Mandala Art -->
+          <div class="gallery-item gallery-art-card" role="listitem">
+            <div class="gallery-art-scene gallery-art-mandala-scene" aria-label="CSS Mandala art">
+              <div class="art-mandala-container" aria-hidden="true">
+                <div class="art-mandala-ring art-mandala-ring--outer"></div>
+                <div class="art-mandala-ring art-mandala-ring--mid"></div>
+                <div class="art-mandala-ring art-mandala-ring--inner"></div>
+                <div class="art-mandala-center" aria-hidden="true">🪷</div>
+              </div>
+              <div class="art-diya-row art-diya-row--mandala" aria-hidden="true">
+                <span class="art-diya">🪔</span><span class="art-diya">🪔</span><span class="art-diya">🪔</span>
+              </div>
             </div>
-          </div>
-
-          <div class="gmaps-photo-item" role="listitem">
-            <div class="gmaps-photo-wrapper">
-              <a href="https://www.google.com/maps/place/Kozhikode,+Kerala" target="_blank" rel="noopener noreferrer">
-                <img
-                  src="https://maps.googleapis.com/maps/api/staticmap?center=Kozhikode,Kerala&zoom=13&size=400x300&maptype=satellite&key=YOUR_GOOGLE_MAPS_EMBED_API_KEY"
-                  alt="കോഴിക്കോട്ട് ജില്ല - ഉപഗ്രഹ ദൃശ്യം"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                  style="width:100%;height:100%;object-fit:cover;"
-                />
-                <div style="display:none;width:100%;height:200px;background:linear-gradient(135deg,rgba(139,0,0,.7),rgba(200,134,10,.5));flex-direction:column;align-items:center;justify-content:center;gap:.5rem;">
-                  <span style="font-size:3rem;">🎉</span>
-                </div>
-              </a>
-              <div class="gmaps-photo-caption">ഉത്സവ ആഘോഷങ്ങൾ</div>
-            </div>
-          </div>
-
-          <div class="gmaps-photo-item" role="listitem">
-            <div class="gmaps-photo-wrapper">
-              <a href="https://maps.google.com/?q=Kakkamvelly+Sreekrishna+Temple+Kozhikode+Kerala" target="_blank" rel="noopener noreferrer">
-                <img
-                  src="https://maps.googleapis.com/maps/api/staticmap?center=Kakkamvelly+Sreekrishna+Temple,Kozhikode,Kerala&zoom=16&size=400x300&maptype=hybrid&markers=color:yellow%7CKakkamvelly+Sreekrishna+Temple,Kozhikode,Kerala&key=YOUR_GOOGLE_MAPS_EMBED_API_KEY"
-                  alt="ക്ഷേത്രം - ഹൈബ്രിഡ് ദൃശ്യം"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                  style="width:100%;height:100%;object-fit:cover;"
-                />
-                <div style="display:none;width:100%;height:200px;background:linear-gradient(135deg,rgba(139,0,0,.7),rgba(200,134,10,.5));flex-direction:column;align-items:center;justify-content:center;gap:.5rem;">
-                  <span style="font-size:3rem;">🪔</span>
-                </div>
-              </a>
-              <div class="gmaps-photo-caption">പൂജ ആചാരങ്ങൾ</div>
-            </div>
-          </div>
-
-          <div class="gmaps-photo-item" role="listitem">
-            <div class="gmaps-photo-wrapper">
-              <a href="https://www.google.com/maps/search/temples+near+Kozhikode" target="_blank" rel="noopener noreferrer">
-                <img
-                  src="https://maps.googleapis.com/maps/api/staticmap?center=Kozhikode+district,Kerala&zoom=12&size=400x300&maptype=terrain&key=YOUR_GOOGLE_MAPS_EMBED_API_KEY"
-                  alt="കോഴിക്കോട് ജില്ലാ - ഭൂപ്രകൃതി"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                  style="width:100%;height:100%;object-fit:cover;"
-                />
-                <div style="display:none;width:100%;height:200px;background:linear-gradient(135deg,rgba(139,0,0,.7),rgba(200,134,10,.5));flex-direction:column;align-items:center;justify-content:center;gap:.5rem;">
-                  <span style="font-size:3rem;">💧</span>
-                </div>
-              </a>
-              <div class="gmaps-photo-caption">ക്ഷേത്ര കുളം (കുളം)</div>
-            </div>
-          </div>
-
-          <div class="gmaps-photo-item" role="listitem">
-            <div class="gmaps-photo-wrapper">
-              <a href="https://www.google.com/maps/place/Kerala" target="_blank" rel="noopener noreferrer">
-                <img
-                  src="https://maps.googleapis.com/maps/api/staticmap?center=Kerala,India&zoom=8&size=400x300&maptype=roadmap&key=YOUR_GOOGLE_MAPS_EMBED_API_KEY"
-                  alt="കേരള ഭൂപടം"
-                  onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
-                  style="width:100%;height:100%;object-fit:cover;"
-                />
-                <div style="display:none;width:100%;height:200px;background:linear-gradient(135deg,rgba(139,0,0,.7),rgba(200,134,10,.5));flex-direction:column;align-items:center;justify-content:center;gap:.5rem;">
-                  <span style="font-size:3rem;">⛩️</span>
-                </div>
-              </a>
-              <div class="gmaps-photo-caption">ഗോപുരം</div>
+            <div class="gallery-card-overlay gallery-card-overlay--visible">
+              <p class="gallery-caption-ml">ദീപ ആരാധന</p>
             </div>
           </div>
 
         </div>
 
-        <p class="gallery-note">
-          <i class="fa-brands fa-google" aria-hidden="true"></i>
-          ഗൂഗിൾ മാപ്പ്‌സ് വഴി ക്ഷേത്ര ചിത്രങ്ങൾ കാണുക. API കീ ഉണ്ടെങ്കിൽ ഫോട്ടോകൾ ലോഡ് ആകും.
-          <a href="https://maps.google.com/?q=Kakkamvelly+Sreekrishna+Temple+Kozhikode+Kerala" target="_blank" rel="noopener noreferrer" style="color:#f0c040;text-decoration:underline;">Google Maps-ൽ കാണുക</a>
-        </p>
+        <!-- View all on Google Maps -->
+        <div class="gallery-cta" style="text-align:center;margin-top:2rem;">
+          <a href="https://maps.app.goo.gl/LaTA1pWM8NhjW4gK6" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            <i class="fa-brands fa-google" aria-hidden="true"></i> Google Maps-ൽ എല്ലാ ചിത്രങ്ങളും കാണുക
+          </a>
+        </div>
       </div>
     </section>
 

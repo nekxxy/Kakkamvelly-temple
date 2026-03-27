@@ -298,3 +298,37 @@
 
   targets.forEach(function (el) { observer.observe(el); });
 })();
+
+/* ─────────────────────────────────────────────
+   8. HINDU ANIMATIONS — Peacock Feather &
+      Particle System
+───────────────────────────────────────────── */
+(function initHinduAnimations() {
+  // Add peacock feather elements dynamically to hero
+  const heroSection = document.getElementById('home');
+  if (!heroSection) return;
+
+  // Create a few animated peacock feather dots
+  var featherColors = ['#00b4d8', '#48cae4', '#023e8a', '#c8860a', '#f0c040'];
+  var animLayer = heroSection.querySelector('.hindu-anim-layer');
+  if (!animLayer) return;
+
+  featherColors.forEach(function(color, i) {
+    var dot = document.createElement('div');
+    dot.className = 'anim-peacock-dot';
+    dot.setAttribute('aria-hidden', 'true');
+    dot.style.cssText = [
+      'position:absolute',
+      'width:6px',
+      'height:6px',
+      'border-radius:50%',
+      'background:' + color,
+      'opacity:0.25',
+      'left:' + (20 + i * 15) + '%',
+      'top:' + (10 + i * 12) + '%',
+      'animation:peacock-glow ' + (4 + i) + 's ease-in-out infinite',
+      'animation-delay:' + (i * 0.8) + 's'
+    ].join(';');
+    animLayer.appendChild(dot);
+  });
+})();
