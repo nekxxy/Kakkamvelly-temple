@@ -1,0 +1,305 @@
+/* =============================================
+   Baby Krishna SVG Section Styles
+   Kakkamvelly Sreekrishna Temple
+   ============================================= */
+
+/* ── Section Layout ── */
+#baby-krishna {
+  background: linear-gradient(160deg, #0d1b3e 0%, #1a1060 30%, #0a2a1a 60%, #1a0a30 100%);
+  padding: 5rem 0 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+#baby-krishna::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 40% at 20% 30%, rgba(255,215,0,0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 60% at 80% 70%, rgba(74,144,217,0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 50% 50%, rgba(0,200,160,0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+#baby-krishna .section-tag {
+  color: #ffd700;
+  background: rgba(255,215,0,0.12);
+  border: 1px solid rgba(255,215,0,0.3);
+}
+#baby-krishna .section-title {
+  color: #fff;
+}
+#baby-krishna .title-divider span {
+  color: #ffd700;
+}
+
+/* ── Stars twinkling behind ── */
+.krishna-stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.krishna-star {
+  position: absolute;
+  width: 2px; height: 2px;
+  background: #fff;
+  border-radius: 50%;
+  animation: star-twinkle ease-in-out infinite;
+}
+@keyframes star-twinkle {
+  0%, 100% { opacity: 0.2; transform: scale(1); }
+  50%       { opacity: 1;   transform: scale(1.8); }
+}
+
+/* ── Grid of Krishna Cards ── */
+.bk-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+@media (max-width: 900px) { .bk-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 540px) { .bk-grid { grid-template-columns: 1fr; } }
+
+.bk-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,215,0,0.2);
+  border-radius: 20px;
+  padding: 1.5rem 1rem 1.2rem;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+}
+.bk-card::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 22px;
+  background: conic-gradient(from var(--bk-angle,0deg), #ffd700, #00c8ff, #ff6b9d, #00e0a0, #ffd700);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  animation: bk-border-spin 4s linear infinite;
+}
+@property --bk-angle { syntax:'<angle>'; initial-value:0deg; inherits:false; }
+@keyframes bk-border-spin { to { --bk-angle: 360deg; } }
+
+.bk-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 20px 50px rgba(255,215,0,0.18), 0 0 30px rgba(0,200,255,0.12);
+  border-color: rgba(255,215,0,0.5);
+}
+.bk-card:hover::before { opacity: 1; }
+
+/* SVG wrapper */
+.bk-svg-wrap {
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto 1rem;
+  position: relative;
+}
+.bk-svg-wrap svg {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0 12px rgba(255,215,0,0.35));
+  transition: filter 0.3s ease;
+}
+.bk-card:hover .bk-svg-wrap svg {
+  filter: drop-shadow(0 0 22px rgba(255,215,0,0.7)) drop-shadow(0 0 8px rgba(0,200,255,0.4));
+}
+
+/* Aura ring behind SVG */
+.bk-aura {
+  position: absolute;
+  inset: -10px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,215,0,0.12) 0%, transparent 70%);
+  animation: bk-aura-pulse 3s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes bk-aura-pulse {
+  0%, 100% { transform: scale(1);   opacity: 0.6; }
+  50%       { transform: scale(1.15); opacity: 1; }
+}
+
+.bk-name-ml {
+  font-family: 'Noto Serif Malayalam', serif;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffd700;
+  display: block;
+  margin-bottom: 0.2rem;
+  text-shadow: 0 0 8px rgba(255,215,0,0.5);
+}
+.bk-name-en {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.bk-desc {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.5;
+  font-family: 'Noto Serif Malayalam', serif;
+}
+
+/* ── Hero Banner Krishna (large, centered) ── */
+.bk-hero-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  margin-bottom: 3.5rem;
+  flex-wrap: wrap;
+}
+.bk-hero-svg {
+  width: 260px;
+  flex-shrink: 0;
+  position: relative;
+}
+.bk-hero-svg svg {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0 30px rgba(255,215,0,0.5)) drop-shadow(0 0 15px rgba(0,200,255,0.3));
+  animation: bk-hero-float 5s ease-in-out infinite;
+}
+@keyframes bk-hero-float {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50%       { transform: translateY(-16px) rotate(1deg); }
+}
+.bk-hero-halo {
+  position: absolute;
+  inset: -20px;
+  border-radius: 50%;
+  border: 2px solid rgba(255,215,0,0.25);
+  animation: bk-halo-spin 8s linear infinite;
+  pointer-events: none;
+}
+.bk-hero-halo::after {
+  content: '';
+  position: absolute;
+  inset: 10px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,200,255,0.2);
+  animation: bk-halo-spin 5s linear infinite reverse;
+}
+@keyframes bk-halo-spin { to { transform: rotate(360deg); } }
+
+.bk-hero-text {
+  max-width: 440px;
+}
+.bk-hero-text h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.8rem;
+  color: #ffd700;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 0 20px rgba(255,215,0,0.4);
+}
+.bk-hero-text h3 span {
+  display: block;
+  font-family: 'Noto Serif Malayalam', serif;
+  font-size: 1.3rem;
+  color: rgba(255,255,255,0.85);
+}
+.bk-hero-text p {
+  color: rgba(255,255,255,0.75);
+  font-size: 0.95rem;
+  line-height: 1.8;
+  font-family: 'Noto Serif Malayalam', serif;
+  margin-bottom: 0.8rem;
+}
+.bk-mantra {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  color: #ffd700;
+  letter-spacing: 0.12em;
+  opacity: 0.9;
+  animation: mantra-glow 3s ease-in-out infinite;
+}
+@keyframes mantra-glow {
+  0%, 100% { text-shadow: 0 0 6px rgba(255,215,0,0.4); }
+  50%       { text-shadow: 0 0 18px rgba(255,215,0,0.9), 0 0 30px rgba(255,165,0,0.4); }
+}
+
+/* ── Temple Info Strip (from Google Maps data) ── */
+.bk-info-strip {
+  background: rgba(255,215,0,0.06);
+  border: 1px solid rgba(255,215,0,0.15);
+  border-radius: 16px;
+  padding: 1.5rem 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+@media (max-width: 768px) { .bk-info-strip { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .bk-info-strip { grid-template-columns: 1fr; } }
+
+.bk-info-item {
+  text-align: center;
+}
+.bk-info-icon {
+  font-size: 1.6rem;
+  margin-bottom: 0.4rem;
+  display: block;
+  filter: drop-shadow(0 0 6px rgba(255,215,0,0.5));
+  animation: deepam-flicker 2.5s ease-in-out infinite;
+}
+.bk-info-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  color: #ffd700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+.bk-info-value {
+  font-family: 'Noto Serif Malayalam', serif;
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.4;
+}
+
+/* ── SVG Animations ── */
+.bk-butter-swing { animation: butter-swing 2s ease-in-out infinite; transform-origin: top center; }
+@keyframes butter-swing {
+  0%, 100% { transform: rotate(-6deg); }
+  50%       { transform: rotate(6deg); }
+}
+.bk-flute-breath { animation: flute-breath 1.8s ease-in-out infinite; }
+@keyframes flute-breath {
+  0%, 100% { transform: scaleX(1) scaleY(1); }
+  50%       { transform: scaleX(1.02) scaleY(1.02); }
+}
+.bk-feather-sway { animation: feather-sway 3s ease-in-out infinite; transform-origin: bottom center; }
+@keyframes feather-sway {
+  0%, 100% { transform: rotate(-4deg); }
+  50%       { transform: rotate(4deg); }
+}
+.bk-lotus-open { animation: lotus-open 4s ease-in-out infinite; }
+@keyframes lotus-open {
+  0%, 100% { transform: scale(1);   opacity: 0.9; }
+  50%       { transform: scale(1.08); opacity: 1; }
+}
+.bk-dance-bounce { animation: dance-bounce 0.8s ease-in-out infinite; }
+@keyframes dance-bounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+.bk-halo-glow {
+  animation: halo-glow-svg 2s ease-in-out infinite;
+}
+@keyframes halo-glow-svg {
+  0%, 100% { opacity: 0.7; r: 38px; }
+  50%       { opacity: 1;   r: 42px; }
+}

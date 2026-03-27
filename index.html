@@ -8,6 +8,7 @@
   <title>കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം | കോഴിക്കോട്, കേരളം</title>
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/krishna-animations.css" />
+  <link rel="stylesheet" href="css/baby-krishna.css" />
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -79,6 +80,7 @@
       <ul class="nav-menu" id="nav-menu" role="list">
         <li><a href="#home" class="nav-link">മുഖ്യ താൾ</a></li>
         <li><a href="#about" class="nav-link">ക്ഷേത്രത്തെ കുറിച്ച്</a></li>
+        <li><a href="#baby-krishna" class="nav-link">ബാലകൃഷ്ണൻ</a></li>
         <li><a href="#timings" class="nav-link">സമയക്രമം</a></li>
         <li><a href="#festivals" class="nav-link">ഉത്സവങ്ങൾ</a></li>
         <li><a href="#gallery" class="nav-link">ഗ്യാലറി</a></li>
@@ -227,6 +229,782 @@
         </div>
       </div>
     </section>
+
+
+    <!-- ───────────── BABY KRISHNA ───────────── -->
+    <section id="baby-krishna" aria-labelledby="bk-heading">
+
+      <!-- Twinkling stars -->
+      <div class="krishna-stars" id="bk-stars" aria-hidden="true"></div>
+
+      <div class="container" style="position:relative;z-index:1;">
+
+        <div class="section-header">
+          <span class="section-tag">ഉണ്ണി കൃഷ്ണൻ</span>
+          <h2 id="bk-heading" class="section-title">ബാലകൃഷ്ണൻ – ദൈവകുമാരൻ</h2>
+          <div class="title-divider" aria-hidden="true"><span>✦</span></div>
+        </div>
+
+        <!-- Hero: Large Flute-Playing Krishna + text -->
+        <div class="bk-hero-wrap">
+          <div class="bk-hero-svg">
+            <div class="bk-hero-halo"></div>
+            <!-- HERO SVG: Krishna playing flute under moonlight -->
+            <svg viewBox="0 0 240 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Baby Krishna playing flute">
+              <defs>
+                <radialGradient id="hSkin" cx="50%" cy="40%" r="55%">
+                  <stop offset="0%" stop-color="#4a90c4"/>
+                  <stop offset="100%" stop-color="#1a4a7a"/>
+                </radialGradient>
+                <radialGradient id="hGlow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#ffd700" stop-opacity="0.5"/>
+                  <stop offset="100%" stop-color="#ffd700" stop-opacity="0"/>
+                </radialGradient>
+                <radialGradient id="hFace" cx="45%" cy="40%" r="55%">
+                  <stop offset="0%" stop-color="#5aa0d4"/>
+                  <stop offset="100%" stop-color="#2060a0"/>
+                </radialGradient>
+                <filter id="hGlowF">
+                  <feGaussianBlur stdDeviation="3" result="blur"/>
+                  <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+                </filter>
+                <linearGradient id="hYellow" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#ffe066"/>
+                  <stop offset="100%" stop-color="#c8860a"/>
+                </linearGradient>
+                <linearGradient id="hSilk" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#ffe080"/>
+                  <stop offset="50%" stop-color="#ffd700"/>
+                  <stop offset="100%" stop-color="#b8720a"/>
+                </linearGradient>
+              </defs>
+              <!-- Background glow -->
+              <ellipse cx="120" cy="160" rx="100" ry="140" fill="url(#hGlow)" opacity="0.6"/>
+              <!-- Divine halo ring -->
+              <circle cx="120" cy="80" r="48" fill="none" stroke="#ffd700" stroke-width="2" stroke-dasharray="8 4" opacity="0.8" class="bk-halo-glow"/>
+              <circle cx="120" cy="80" r="42" fill="rgba(255,215,0,0.08)"/>
+              <!-- Body / dhoti -->
+              <ellipse cx="120" cy="220" rx="44" ry="55" fill="url(#hSilk)"/>
+              <!-- Legs -->
+              <ellipse cx="100" cy="275" rx="16" ry="28" fill="url(#hSilk)" transform="rotate(-8,100,275)"/>
+              <ellipse cx="140" cy="275" rx="16" ry="28" fill="url(#hSilk)" transform="rotate(8,140,275)"/>
+              <!-- Feet -->
+              <ellipse cx="94" cy="298" rx="14" ry="8" fill="#4a90c4"/>
+              <ellipse cx="146" cy="298" rx="14" ry="8" fill="#4a90c4"/>
+              <!-- Torso -->
+              <ellipse cx="120" cy="195" rx="35" ry="42" fill="url(#hSkin)"/>
+              <!-- Right arm (raised, holding flute) -->
+              <path d="M88 180 Q60 155 50 140" stroke="#3a80b0" stroke-width="18" stroke-linecap="round" fill="none"/>
+              <path d="M88 180 Q60 155 50 140" stroke="#5aa0d4" stroke-width="14" stroke-linecap="round" fill="none"/>
+              <!-- Left arm -->
+              <path d="M152 180 Q174 158 182 148" stroke="#3a80b0" stroke-width="18" stroke-linecap="round" fill="none"/>
+              <path d="M152 180 Q174 158 182 148" stroke="#5aa0d4" stroke-width="14" stroke-linecap="round" fill="none"/>
+              <!-- Flute (across both hands) -->
+              <rect x="46" y="136" width="140" height="7" rx="3.5" fill="#8B6914" class="bk-flute-breath"/>
+              <rect x="46" y="136" width="140" height="4" rx="2" fill="#c8a020" opacity="0.7"/>
+              <!-- Finger holes on flute -->
+              <circle cx="80" cy="139" r="2.5" fill="#4a3000"/>
+              <circle cx="96" cy="139" r="2.5" fill="#4a3000"/>
+              <circle cx="112" cy="139" r="2.5" fill="#4a3000"/>
+              <circle cx="128" cy="139" r="2.5" fill="#4a3000"/>
+              <circle cx="144" cy="139" r="2.5" fill="#4a3000"/>
+              <!-- Hands -->
+              <circle cx="50" cy="140" r="11" fill="#5aa0d4"/>
+              <circle cx="182" cy="148" r="11" fill="#5aa0d4"/>
+              <!-- Head -->
+              <ellipse cx="120" cy="95" rx="40" ry="44" fill="url(#hFace)"/>
+              <!-- Crown / Mukuta -->
+              <path d="M84 68 Q90 30 120 22 Q150 30 156 68" fill="url(#hYellow)" stroke="#c8860a" stroke-width="1.5"/>
+              <ellipse cx="120" cy="22" rx="10" ry="8" fill="#ffd700"/>
+              <!-- Peacock feather in crown -->
+              <path d="M120 22 Q116 4 110 -8" stroke="#0a7a4a" stroke-width="3" fill="none" class="bk-feather-sway"/>
+              <ellipse cx="110" cy="-10" rx="10" ry="14" fill="#0a9a5a" opacity="0.8"/>
+              <ellipse cx="110" cy="-10" rx="6" ry="9" fill="#00c8d4"/>
+              <ellipse cx="110" cy="-10" rx="3" ry="5" fill="#ffd700"/>
+              <circle cx="110" cy="-10" r="2" fill="#1a1060"/>
+              <!-- Crown gems -->
+              <circle cx="104" cy="52" r="3.5" fill="#e94040"/>
+              <circle cx="120" cy="46" r="4" fill="#40c8e0"/>
+              <circle cx="136" cy="52" r="3.5" fill="#40e060"/>
+              <!-- Face features -->
+              <ellipse cx="108" cy="95" rx="7" ry="9" fill="white"/>
+              <ellipse cx="132" cy="95" rx="7" ry="9" fill="white"/>
+              <circle cx="110" cy="96" r="5" fill="#1a1060"/>
+              <circle cx="134" cy="96" r="5" fill="#1a1060"/>
+              <circle cx="111" cy="94" r="2" fill="white"/>
+              <circle cx="135" cy="94" r="2" fill="white"/>
+              <!-- Eyebrows -->
+              <path d="M102 84 Q108 80 114 84" stroke="#1a1060" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <path d="M126 84 Q132 80 138 84" stroke="#1a1060" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <!-- Nose -->
+              <ellipse cx="120" cy="104" rx="5" ry="4" fill="#4a80b4"/>
+              <circle cx="117" cy="106" r="1.5" fill="#2a5080"/>
+              <circle cx="123" cy="106" r="1.5" fill="#2a5080"/>
+              <!-- Smile -->
+              <path d="M110 114 Q120 122 130 114" stroke="#1a2060" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <!-- Tilak / forehead mark -->
+              <path d="M116 78 L120 70 L124 78 L120 75 Z" fill="#ffd700"/>
+              <!-- Earrings -->
+              <circle cx="80" cy="100" r="7" fill="url(#hYellow)" stroke="#c8860a" stroke-width="1"/>
+              <circle cx="160" cy="100" r="7" fill="url(#hYellow)" stroke="#c8860a" stroke-width="1"/>
+              <!-- Necklace -->
+              <path d="M90 152 Q120 168 150 152" stroke="#ffd700" stroke-width="3" fill="none" stroke-linecap="round"/>
+              <circle cx="106" cy="160" r="3" fill="#e94040"/>
+              <circle cx="120" cy="164" r="4" fill="#ffd700"/>
+              <circle cx="134" cy="160" r="3" fill="#40c8e0"/>
+              <!-- Bangles -->
+              <rect x="40" y="133" width="24" height="6" rx="3" fill="#ffd700" opacity="0.8"/>
+              <rect x="172" y="141" width="24" height="6" rx="3" fill="#ffd700" opacity="0.8"/>
+              <!-- Musical notes floating -->
+              <text x="16" y="120" font-size="18" fill="#ffd700" opacity="0.7" class="bk-flute-breath">♪</text>
+              <text x="200" y="105" font-size="14" fill="#00c8ff" opacity="0.6" class="bk-flute-breath" style="animation-delay:0.4s">♫</text>
+              <text x="190" y="130" font-size="10" fill="#ffd700" opacity="0.5" class="bk-flute-breath" style="animation-delay:0.8s">♩</text>
+              <!-- Lotus base -->
+              <ellipse cx="120" cy="308" rx="60" ry="12" fill="#ff6b9d" opacity="0.4"/>
+              <path d="M80 308 Q90 290 100 308" fill="#ff6b9d" opacity="0.7"/>
+              <path d="M100 308 Q110 288 120 308" fill="#ff9dc0" opacity="0.7"/>
+              <path d="M120 308 Q130 288 140 308" fill="#ff6b9d" opacity="0.7"/>
+              <path d="M140 308 Q150 290 160 308" fill="#ff9dc0" opacity="0.7"/>
+            </svg>
+          </div>
+          <div class="bk-hero-text">
+            <h3>
+              Unni Krishnan
+              <span>ഉണ്ണി കൃഷ്ണൻ – ബാലകൃഷ്ണൻ</span>
+            </h3>
+            <p>
+              കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രത്തിൽ ആരാധിക്കപ്പെടുന്ന ഭഗവാൻ ശ്രീകൃഷ്ണൻ,
+              ബ്രഹ്മാണ്ഡ സൃഷ്ടി കർത്താവ് വിഷ്ണുവിന്റെ അഷ്ടമ അവതാരം.
+              കോഴിക്കോട് ജില്ലയിലെ നാടപുരം പഞ്ചായത്തിൽ, നാടപുരത്തിൽ നിന്ന്
+              1.5 കി.മീ. അകലെ ഈ പുണ്യ ക്ഷേത്രം സ്ഥിതി ചെയ്യുന്നു.
+            </p>
+            <p>
+              ബാലകൃഷ്ണൻ — വെണ്ണ മോഷ്ടിക്കുന്ന കൗതുകപ്പൈതൽ, കടംബ മരത്തിൽ
+              ഓടിക്കളിക്കുന്ന ദൈവ ശിശു, കൊഴൽ വായിക്കുന്ന ദേവദൂതൻ —
+              ഭക്തരുടെ ഹൃദയം കവരുന്ന ദൈവ സ്നേഹത്തിന്റെ പ്രതീകം.
+            </p>
+            <p class="bk-mantra">ॐ नमो भगवते वासुदेवाय ✦ ഓം നമോ ഭഗവതേ വാസുദേവായ</p>
+          </div>
+        </div>
+
+        <!-- 5 Story Cards -->
+        <div class="bk-grid">
+
+          <!-- Card 1: Butter Thief -->
+          <div class="bk-card" tabindex="0" aria-label="Baby Krishna stealing butter">
+            <div class="bk-svg-wrap">
+              <div class="bk-aura"></div>
+              <svg viewBox="0 0 180 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <radialGradient id="cSkin1" cx="50%" cy="40%" r="55%">
+                    <stop offset="0%" stop-color="#5aabde"/>
+                    <stop offset="100%" stop-color="#1e60a0"/>
+                  </radialGradient>
+                  <radialGradient id="cPot" cx="40%" cy="30%" r="60%">
+                    <stop offset="0%" stop-color="#e0a060"/>
+                    <stop offset="100%" stop-color="#8b5a20"/>
+                  </radialGradient>
+                </defs>
+                <!-- Glow -->
+                <circle cx="90" cy="110" r="75" fill="rgba(255,215,0,0.06)"/>
+                <!-- Halo -->
+                <circle cx="90" cy="62" r="36" fill="none" stroke="#ffd700" stroke-width="1.5" stroke-dasharray="6 3" opacity="0.8"/>
+                <!-- Body sitting -->
+                <ellipse cx="90" cy="155" rx="38" ry="30" fill="#ffd700" opacity="0.9"/>
+                <!-- Left leg folded -->
+                <ellipse cx="62" cy="172" rx="24" ry="14" fill="#ffd700" transform="rotate(-20,62,172)"/>
+                <!-- Right leg out -->
+                <ellipse cx="118" cy="172" rx="24" ry="14" fill="#ffd700" transform="rotate(15,118,172)"/>
+                <!-- Torso -->
+                <ellipse cx="90" cy="128" rx="28" ry="36" fill="url(#cSkin1)"/>
+                <!-- Left arm reaching into pot -->
+                <path d="M68 125 Q46 120 38 115" stroke="#3a80b0" stroke-width="14" stroke-linecap="round" fill="none"/>
+                <path d="M68 125 Q46 120 38 115" stroke="#5aabde" stroke-width="10" stroke-linecap="round" fill="none"/>
+                <circle cx="38" cy="114" r="10" fill="#5aabde"/>
+                <!-- Right arm resting -->
+                <path d="M112 125 Q130 118 138 122" stroke="#3a80b0" stroke-width="14" stroke-linecap="round" fill="none"/>
+                <path d="M112 125 Q130 118 138 122" stroke="#5aabde" stroke-width="10" stroke-linecap="round" fill="none"/>
+                <circle cx="138" cy="122" r="10" fill="#5aabde"/>
+                <!-- Butter pot -->
+                <ellipse cx="32" cy="120" rx="22" ry="26" fill="url(#cPot)" class="bk-butter-swing"/>
+                <ellipse cx="32" cy="96" rx="22" ry="10" fill="#c87840" class="bk-butter-swing"/>
+                <ellipse cx="32" cy="94" rx="18" ry="7" fill="#e0d890"/><!-- butter -->
+                <!-- Rope on pot -->
+                <path d="M16 96 Q32 88 48 96" stroke="#8b5a20" stroke-width="2" fill="none" class="bk-butter-swing"/>
+                <!-- Head -->
+                <ellipse cx="90" cy="72" rx="32" ry="34" fill="url(#cSkin1)"/>
+                <!-- Crown -->
+                <path d="M62 56 Q68 28 90 20 Q112 28 118 56" fill="#ffd700" stroke="#c8860a" stroke-width="1.5"/>
+                <!-- Peacock feather -->
+                <path d="M90 20 Q86 4 80 -4" stroke="#0a7a4a" stroke-width="2.5" fill="none"/>
+                <ellipse cx="80" cy="-6" rx="8" ry="11" fill="#0a9a5a"/>
+                <ellipse cx="80" cy="-6" rx="5" ry="7" fill="#00c0d0"/>
+                <ellipse cx="80" cy="-6" rx="2.5" ry="4" fill="#ffd700"/>
+                <circle cx="80" cy="-6" r="1.5" fill="#1a1060"/>
+                <!-- Crown gems -->
+                <circle cx="78" cy="42" r="3" fill="#e94040"/>
+                <circle cx="90" cy="38" r="3.5" fill="#40c8e0"/>
+                <circle cx="102" cy="42" r="3" fill="#40e060"/>
+                <!-- Face -->
+                <ellipse cx="80" cy="74" rx="6" ry="8" fill="white"/>
+                <ellipse cx="100" cy="74" rx="6" ry="8" fill="white"/>
+                <circle cx="82" cy="75" r="4.5" fill="#1a1060"/>
+                <circle cx="102" cy="75" r="4.5" fill="#1a1060"/>
+                <circle cx="83" cy="73" r="1.8" fill="white"/>
+                <circle cx="103" cy="73" r="1.8" fill="white"/>
+                <!-- Cheeky smile (wide) -->
+                <path d="M78 86 Q90 96 102 86" stroke="#1a1060" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                <!-- Cheeks -->
+                <circle cx="76" cy="82" r="5" fill="#ff8080" opacity="0.4"/>
+                <circle cx="104" cy="82" r="5" fill="#ff8080" opacity="0.4"/>
+                <!-- Tilak -->
+                <path d="M87 62 L90 54 L93 62 L90 60 Z" fill="#ffd700"/>
+                <!-- Earrings -->
+                <circle cx="58" cy="76" r="5.5" fill="#ffd700" stroke="#c8860a" stroke-width="1"/>
+                <circle cx="122" cy="76" r="5.5" fill="#ffd700" stroke="#c8860a" stroke-width="1"/>
+                <!-- Butter smear on cheek/hand -->
+                <ellipse cx="38" cy="112" r="8" rx="8" ry="5" fill="#e0d890" opacity="0.7"/>
+                <!-- Butter drops -->
+                <circle cx="52" cy="100" r="3" fill="#e0d890" opacity="0.8"/>
+                <circle cx="58" cy="108" r="2" fill="#e0d890" opacity="0.6"/>
+                <!-- Necklace -->
+                <path d="M66 110 Q90 122 114 110" stroke="#ffd700" stroke-width="2" fill="none"/>
+                <circle cx="83" cy="116" r="2.5" fill="#e94040"/>
+                <circle cx="90" cy="119" r="3" fill="#ffd700"/>
+                <circle cx="97" cy="116" r="2.5" fill="#40c8e0"/>
+              </svg>
+            </div>
+            <span class="bk-name-ml">വെണ്ണ കൃഷ്ണൻ</span>
+            <span class="bk-name-en">The Butter Thief</span>
+            <p class="bk-desc">വെണ്ണ മോഷ്ടിക്കുന്ന ഉണ്ണിക്കൃഷ്ണൻ — ദൈവ ചപലതയുടെ സൗന്ദര്യം</p>
+          </div>
+
+          <!-- Card 2: Krishna with Peacock -->
+          <div class="bk-card" tabindex="0" aria-label="Baby Krishna with peacock">
+            <div class="bk-svg-wrap">
+              <div class="bk-aura"></div>
+              <svg viewBox="0 0 180 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <radialGradient id="cSkin2" cx="50%" cy="40%" r="55%">
+                    <stop offset="0%" stop-color="#5aabde"/>
+                    <stop offset="100%" stop-color="#1e60a0"/>
+                  </radialGradient>
+                  <radialGradient id="pBody" cx="50%" cy="40%" r="60%">
+                    <stop offset="0%" stop-color="#00c890"/>
+                    <stop offset="100%" stop-color="#006040"/>
+                  </radialGradient>
+                </defs>
+                <circle cx="90" cy="110" r="75" fill="rgba(0,200,160,0.05)"/>
+                <!-- Halo -->
+                <circle cx="75" cy="62" r="34" fill="none" stroke="#ffd700" stroke-width="1.5" stroke-dasharray="6 3" opacity="0.8"/>
+                <!-- PEACOCK -->
+                <!-- Peacock body -->
+                <ellipse cx="140" cy="148" rx="24" ry="18" fill="url(#pBody)" class="bk-dance-bounce"/>
+                <!-- Peacock neck -->
+                <path d="M126 138 Q118 115 120 100" stroke="#00a870" stroke-width="12" stroke-linecap="round" fill="none" class="bk-dance-bounce"/>
+                <path d="M126 138 Q118 115 120 100" stroke="#00d0a0" stroke-width="8" stroke-linecap="round" fill="none" class="bk-dance-bounce"/>
+                <!-- Peacock head -->
+                <circle cx="120" cy="95" r="12" fill="#00a870" class="bk-dance-bounce"/>
+                <circle cx="124" cy="89" r="5" fill="#00c8ff" class="bk-dance-bounce"/>
+                <!-- Peacock crest -->
+                <path d="M119 83 Q115 72 112 64" stroke="#00c8d4" stroke-width="2" fill="none" class="bk-dance-bounce"/>
+                <circle cx="112" cy="62" r="4" fill="#ffd700" class="bk-dance-bounce"/>
+                <!-- Peacock tail feathers (fan) -->
+                <path d="M148 140 Q175 110 178 88" stroke="#0a7a4a" stroke-width="3" fill="none" class="bk-feather-sway"/>
+                <path d="M150 145 Q180 125 184 104" stroke="#00a860" stroke-width="2.5" fill="none" class="bk-feather-sway" style="animation-delay:0.2s"/>
+                <path d="M148 152 Q178 148 182 130" stroke="#0a7a4a" stroke-width="2.5" fill="none" class="bk-feather-sway" style="animation-delay:0.4s"/>
+                <path d="M144 158 Q170 164 172 150" stroke="#00a860" stroke-width="2" fill="none" class="bk-feather-sway" style="animation-delay:0.6s"/>
+                <!-- Feather eyes -->
+                <ellipse cx="178" cy="87" rx="7" ry="9" fill="#0a9a5a"/>
+                <ellipse cx="178" cy="87" rx="4" ry="6" fill="#00c0d0"/>
+                <circle cx="178" cy="87" r="2" fill="#ffd700"/>
+                <circle cx="178" cy="87" r="1" fill="#1a1060"/>
+                <!-- KRISHNA body standing -->
+                <ellipse cx="75" cy="170" rx="28" ry="22" fill="#ffd700"/>
+                <!-- Legs -->
+                <ellipse cx="62" cy="182" rx="14" ry="20" fill="#ffd700" transform="rotate(-5,62,182)"/>
+                <ellipse cx="88" cy="182" rx="14" ry="20" fill="#ffd700" transform="rotate(5,88,182)"/>
+                <!-- Torso -->
+                <ellipse cx="75" cy="140" rx="24" ry="32" fill="url(#cSkin2)"/>
+                <!-- Left arm reaching to peacock -->
+                <path d="M55 138 Q36 132 28 128" stroke="#3a80b0" stroke-width="13" stroke-linecap="round" fill="none"/>
+                <path d="M55 138 Q36 132 28 128" stroke="#5aabde" stroke-width="9" stroke-linecap="round" fill="none"/>
+                <circle cx="28" cy="127" r="9" fill="#5aabde"/>
+                <!-- Right arm raised -->
+                <path d="M95 135 Q112 120 118 112" stroke="#3a80b0" stroke-width="13" stroke-linecap="round" fill="none"/>
+                <path d="M95 135 Q112 120 118 112" stroke="#5aabde" stroke-width="9" stroke-linecap="round" fill="none"/>
+                <circle cx="118" cy="111" r="9" fill="#5aabde"/>
+                <!-- Head -->
+                <ellipse cx="75" cy="72" rx="30" ry="32" fill="url(#cSkin2)"/>
+                <!-- Crown -->
+                <path d="M49 58 Q55 30 75 22 Q95 30 101 58" fill="#ffd700" stroke="#c8860a" stroke-width="1.5"/>
+                <!-- Peacock feather in crown - large -->
+                <path d="M75 22 Q68 2 60 -10" stroke="#0a7a4a" stroke-width="3" fill="none" class="bk-feather-sway"/>
+                <ellipse cx="59" cy="-12" rx="12" ry="16" fill="#0a9a5a" opacity="0.85"/>
+                <ellipse cx="59" cy="-12" rx="8" ry="10" fill="#00c0d0"/>
+                <ellipse cx="59" cy="-12" rx="4" ry="6" fill="#ffd700"/>
+                <circle cx="59" cy="-12" r="2.5" fill="#1a1060"/>
+                <!-- Crown gems -->
+                <circle cx="63" cy="44" r="3" fill="#e94040"/>
+                <circle cx="75" cy="40" r="3.5" fill="#40c8e0"/>
+                <circle cx="87" cy="44" r="3" fill="#40e060"/>
+                <!-- Face -->
+                <ellipse cx="65" cy="74" rx="6" ry="8" fill="white"/>
+                <ellipse cx="85" cy="74" rx="6" ry="8" fill="white"/>
+                <circle cx="67" cy="75" r="4.5" fill="#1a1060"/>
+                <circle cx="87" cy="75" r="4.5" fill="#1a1060"/>
+                <circle cx="68" cy="73" r="1.8" fill="white"/>
+                <circle cx="88" cy="73" r="1.8" fill="white"/>
+                <path d="M63 86 Q75 95 87 86" stroke="#1a1060" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                <path d="M59 64 Q65 60 71 64" stroke="#1a1060" stroke-width="1.8" fill="none"/>
+                <path d="M79 64 Q85 60 91 64" stroke="#1a1060" stroke-width="1.8" fill="none"/>
+                <ellipse cx="75" cy="81" rx="4" ry="3" fill="#4a80b4"/>
+                <path d="M75 22 L75 40" stroke="#ffd700" stroke-width="2" opacity="0.5"/>
+                <path d="M72 62 L75 54 L78 62 L75 60 Z" fill="#ffd700"/>
+                <circle cx="45" cy="76" r="5.5" fill="#ffd700" stroke="#c8860a" stroke-width="1"/>
+                <circle cx="105" cy="76" r="5.5" fill="#ffd700" stroke="#c8860a" stroke-width="1"/>
+                <path d="M54 118 Q75 130 96 118" stroke="#ffd700" stroke-width="2" fill="none"/>
+                <circle cx="68" cy="123" r="2.5" fill="#e94040"/>
+                <circle cx="75" cy="126" r="3" fill="#ffd700"/>
+                <circle cx="82" cy="123" r="2.5" fill="#40c8e0"/>
+                <!-- Sparkles -->
+                <text x="6" y="80" font-size="12" fill="#ffd700" opacity="0.7">✦</text>
+                <text x="150" y="60" font-size="10" fill="#00c8ff" opacity="0.6">✧</text>
+              </svg>
+            </div>
+            <span class="bk-name-ml">മയൂര കൃഷ്ണൻ</span>
+            <span class="bk-name-en">Krishna & Peacock</span>
+            <p class="bk-desc">മയൂരങ്ങൾക്കൊപ്പം കളിക്കുന്ന ദൈവ ബാലൻ — ഭൂമിയിലെ ദൈവ ലീലകൾ</p>
+          </div>
+
+          <!-- Card 3: Crawling Krishna -->
+          <div class="bk-card" tabindex="0" aria-label="Baby Krishna crawling">
+            <div class="bk-svg-wrap">
+              <div class="bk-aura"></div>
+              <svg viewBox="0 0 180 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <radialGradient id="cSkin3" cx="50%" cy="40%" r="55%">
+                    <stop offset="0%" stop-color="#5aabde"/>
+                    <stop offset="100%" stop-color="#1e60a0"/>
+                  </radialGradient>
+                </defs>
+                <circle cx="90" cy="110" r="75" fill="rgba(255,180,0,0.05)"/>
+                <!-- Halo -->
+                <circle cx="55" cy="90" r="36" fill="none" stroke="#ffd700" stroke-width="1.5" stroke-dasharray="6 3" opacity="0.8"/>
+                <!-- Ground -->
+                <path d="M10 165 Q90 158 170 165 Q90 172 10 165 Z" fill="rgba(255,215,0,0.12)"/>
+                <!-- CRAWLING POSITION -->
+                <!-- Back leg (right) -->
+                <ellipse cx="138" cy="152" rx="22" ry="12" fill="#ffd700" transform="rotate(-30,138,152)"/>
+                <!-- Back leg (left) -->
+                <ellipse cx="115" cy="158" rx="20" ry="11" fill="#ffd700" transform="rotate(10,115,158)"/>
+                <!-- Buttocks -->
+                <ellipse cx="126" cy="140" rx="22" ry="18" fill="#ffd700"/>
+                <!-- Body -->
+                <ellipse cx="90" cy="130" rx="36" ry="22" fill="url(#cSkin3)"/>
+                <!-- Front arm right -->
+                <path d="M70 140 Q50 152 38 158" stroke="#3a80b0" stroke-width="14" stroke-linecap="round" fill="none"/>
+                <path d="M70 140 Q50 152 38 158" stroke="#5aabde" stroke-width="10" stroke-linecap="round" fill="none"/>
+                <circle cx="38" cy="158" r="10" fill="#5aabde"/>
+                <!-- Front arm left -->
+                <path d="M72 128 Q58 116 50 110" stroke="#3a80b0" stroke-width="14" stroke-linecap="round" fill="none"/>
+                <path d="M72 128 Q58 116 50 110" stroke="#5aabde" stroke-width="10" stroke-linecap="round" fill="none"/>
+                <circle cx="50" cy="110" r="10" fill="#5aabde"/>
+                <!-- Head (turned slightly) -->
+                <ellipse cx="56" cy="100" rx="32" ry="34" fill="url(#cSkin3)" transform="rotate(-15,56,100)"/>
+                <!-- Crown -->
+                <path d="M32 82 Q40 56 56 50 Q72 56 78 82" fill="#ffd700" stroke="#c8860a" stroke-width="1.5" transform="rotate(-15,56,66)"/>
+                <!-- Peacock feather -->
+                <path d="M56 50 Q48 32 42 22" stroke="#0a7a4a" stroke-width="2.5" fill="none" transform="rotate(-15,56,50)" class="bk-feather-sway"/>
+                <ellipse cx="40" cy="20" rx="9" ry="12" fill="#0a9a5a" transform="rotate(-15,40,20)"/>
+                <ellipse cx="40" cy="20" rx="5.5" ry="8" fill="#00c0d0" transform="rotate(-15,40,20)"/>
+                <ellipse cx="40" cy="20" rx="2.5" ry="4" fill="#ffd700" transform="rotate(-15,40,20)"/>
+                <circle cx="40" cy="20" r="1.5" fill="#1a1060"/>
+                <!-- Crown gems -->
+                <circle cx="44" cy="70" r="2.5" fill="#e94040" transform="rotate(-15,44,70)"/>
+                <circle cx="56" cy="66" r="3" fill="#40c8e0" transform="rotate(-15,56,66)"/>
+                <circle cx="68" cy="70" r="2.5" fill="#40e060" transform="rotate(-15,68,70)"/>
+                <!-- Face -->
+                <ellipse cx="47" cy="100" rx="5.5" ry="7" fill="white" transform="rotate(-15,47,100)"/>
+                <ellipse cx="66" cy="98" rx="5.5" ry="7" fill="white" transform="rotate(-15,66,98)"/>
+                <circle cx="49" cy="101" r="4" fill="#1a1060" transform="rotate(-15,49,101)"/>
+                <circle cx="68" cy="99" r="4" fill="#1a1060" transform="rotate(-15,68,99)"/>
+                <circle cx="50" cy="99" r="1.6" fill="white" transform="rotate(-15,50,99)"/>
+                <circle cx="69" cy="97" r="1.6" fill="white" transform="rotate(-15,69,97)"/>
+                <!-- Big happy smile on crawling baby -->
+                <path d="M45 110 Q57 120 68 110" stroke="#1a1060" stroke-width="2.5" fill="none" stroke-linecap="round" transform="rotate(-15,57,115)"/>
+                <circle cx="43" cy="105" r="4.5" fill="#ff8080" opacity="0.35" transform="rotate(-15,43,105)"/>
+                <circle cx="70" cy="103" r="4.5" fill="#ff8080" opacity="0.35" transform="rotate(-15,70,103)"/>
+                <path d="M53 76 L56 69 L59 76 L56 74 Z" fill="#ffd700" transform="rotate(-15,56,73)"/>
+                <circle cx="28" cy="104" r="5" fill="#ffd700" stroke="#c8860a" stroke-width="1" transform="rotate(-15,28,104)"/>
+                <circle cx="84" cy="96" r="5" fill="#ffd700" stroke="#c8860a" stroke-width="1" transform="rotate(-15,84,96)"/>
+                <!-- Necklace -->
+                <path d="M42 118 Q56 126 70 118" stroke="#ffd700" stroke-width="2" fill="none" transform="rotate(-15,56,122)"/>
+                <circle cx="56" cy="126" r="3" fill="#ffd700" transform="rotate(-15,56,126)"/>
+                <!-- Tiny footprints -->
+                <ellipse cx="140" cy="175" rx="6" ry="9" fill="rgba(74,144,217,0.3)"/>
+                <ellipse cx="155" cy="170" rx="6" ry="9" fill="rgba(74,144,217,0.25)"/>
+                <!-- Stars -->
+                <text x="150" y="110" font-size="16" fill="#ffd700" opacity="0.6" class="bk-lotus-open">✦</text>
+                <text x="16" y="140" font-size="12" fill="#00c8ff" opacity="0.5">✧</text>
+                <text x="160" y="148" font-size="10" fill="#ff6b9d" opacity="0.5">✦</text>
+              </svg>
+            </div>
+            <span class="bk-name-ml">ഉണ്ണി കൃഷ്ണൻ</span>
+            <span class="bk-name-en">Crawling Krishna</span>
+            <p class="bk-desc">ഇഴഞ്ഞ് നടക്കുന്ന ദൈവ ശിശു — ഭൂമി ആ ചരണ സ്പർശത്തിൽ ധന്യ</p>
+          </div>
+
+          <!-- Card 4: Kaliya Mardana -->
+          <div class="bk-card" tabindex="0" aria-label="Krishna dancing on Kaliya snake">
+            <div class="bk-svg-wrap">
+              <div class="bk-aura"></div>
+              <svg viewBox="0 0 180 210" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <radialGradient id="cSkin4" cx="50%" cy="40%" r="55%">
+                    <stop offset="0%" stop-color="#5aabde"/>
+                    <stop offset="100%" stop-color="#1e60a0"/>
+                  </radialGradient>
+                  <radialGradient id="sBody" cx="50%" cy="40%" r="60%">
+                    <stop offset="0%" stop-color="#3a8040"/>
+                    <stop offset="100%" stop-color="#1a4020"/>
+                  </radialGradient>
+                </defs>
+                <circle cx="90" cy="115" r="78" fill="rgba(0,200,100,0.04)"/>
+                <!-- Water ripples -->
+                <ellipse cx="90" cy="185" rx="70" ry="14" fill="rgba(0,150,255,0.12)"/>
+                <ellipse cx="90" cy="185" rx="55" ry="9" fill="rgba(0,150,255,0.15)"/>
+                <ellipse cx="90" cy="185" rx="38" ry="6" fill="rgba(0,150,255,0.18)"/>
+                <!-- KALIYA SNAKE -->
+                <!-- Snake body coils -->
+                <path d="M30 185 Q20 155 50 140 Q80 125 60 100 Q40 80 70 70 Q100 60 90 40" stroke="url(#sBody)" stroke-width="20" stroke-linecap="round" fill="none" opacity="0.9"/>
+                <path d="M30 185 Q20 155 50 140 Q80 125 60 100 Q40 80 70 70 Q100 60 90 40" stroke="#2a6030" stroke-width="16" stroke-linecap="round" fill="none" opacity="0.7" class="bk-dance-bounce"/>
+                <!-- Snake scales pattern -->
+                <path d="M30 185 Q20 155 50 140 Q80 125 60 100 Q40 80 70 70 Q100 60 90 40" stroke="#50a060" stroke-width="3" stroke-linecap="round" fill="none" stroke-dasharray="5 8" opacity="0.5"/>
+                <!-- Right coil -->
+                <path d="M150 185 Q160 160 140 145 Q120 132 140 115 Q160 98 148 80" stroke="url(#sBody)" stroke-width="18" stroke-linecap="round" fill="none" opacity="0.85"/>
+                <!-- Snake heads (multiple) -->
+                <!-- Head 1 left -->
+                <ellipse cx="88" cy="36" rx="18" ry="14" fill="#3a8040"/>
+                <ellipse cx="88" cy="36" rx="14" ry="10" fill="#50a050"/>
+                <circle cx="83" cy="31" r="5" fill="#ffff00" opacity="0.9"/>
+                <circle cx="83" cy="31" r="2.5" fill="#1a1060"/>
+                <circle cx="93" cy="31" r="5" fill="#ffff00" opacity="0.9"/>
+                <circle cx="93" cy="31" r="2.5" fill="#1a1060"/>
+                <path d="M80 42 Q88 48 96 42" stroke="#1a4020" stroke-width="2" fill="none"/>
+                <!-- Head 2 right -->
+                <ellipse cx="148" cy="76" rx="16" ry="12" fill="#3a8040" transform="rotate(30,148,76)"/>
+                <ellipse cx="148" cy="76" rx="12" ry="8" fill="#50a050" transform="rotate(30,148,76)"/>
+                <circle cx="143" cy="71" r="4" fill="#ffff00" opacity="0.9"/>
+                <circle cx="153" cy="71" r="4" fill="#ffff00" opacity="0.9"/>
+                <!-- Head 3 top center (Krishna standing on) -->
+                <ellipse cx="90" cy="90" rx="26" ry="16" fill="#3a8040"/>
+                <ellipse cx="90" cy="90" rx="20" ry="12" fill="#50a050"/>
+                <!-- Hoods spread on main head -->
+                <ellipse cx="90" cy="82" rx="32" ry="8" fill="#3a8040" opacity="0.7"/>
+                <!-- KRISHNA dancing on snake -->
+                <!-- Krishna body (dancing pose) -->
+                <ellipse cx="90" cy="120" rx="20" ry="14" fill="#ffd700" class="bk-dance-bounce"/>
+                <!-- Left leg bent -->
+                <path d="M78 126 Q64 130 56 120" stroke="#3a80b0" stroke-width="13" stroke-linecap="round" fill="none" class="bk-dance-bounce"/>
+                <path d="M78 126 Q64 130 56 120" stroke="#5aabde" stroke-width="9" stroke-linecap="round" fill="none" class="bk-dance-bounce"/>
+                <!-- Right leg raised / dancing -->
+                <path d="M102 126 Q116 116 122 106" stroke="#3a80b0" stroke-width="13" stroke-linecap="round" fill="none" class="bk-dance-bounce"/>
+                <path d="M102 126 Q116 116 122 106" stroke="#5aabde" stroke-width="9" stroke-linecap="round" fill="none" class="bk-dance-bounce"/>
+                <!-- Foot on snake head -->
+                <ellipse cx="89" cy="102" rx="12" ry="7" fill="#5aabde" class="bk-dance-bounce"/>
+                <!-- Torso -->
+                <ellipse cx="90" cy="106" rx="18" ry="22" fill="url(#cSkin4)" class="bk-dance-bounce"/>
+                <!-- Arms in dancing mudra -->
+                <path d="M76 104 Q58 94 50 86" stroke="#3a80b0" stroke-width="12" stroke-linecap="round" fill="none" class="bk-dance-bounce"/>
+                <path d="M76 104 Q58 94 50 86" stroke="#5aabde" stroke-width="8" stroke-linecap="round" fill="none" class="bk-dance-bounce"/>
+                <path d="M104 104 Q122 92 128 84" stroke="#3a80b0" stroke-width="12" stroke-linecap="round" fill="none" class="bk-dance-bounce"/>
+                <path d="M104 104 Q122 92 128 84" stroke="#5aabde" stroke-width="8" stroke-linecap="round" fill="none" class="bk-dance-bounce"/>
+                <!-- Hands in mudra -->
+                <circle cx="50" cy="85" r="8" fill="#5aabde" class="bk-dance-bounce"/>
+                <circle cx="128" cy="83" r="8" fill="#5aabde" class="bk-dance-bounce"/>
+                <!-- Head -->
+                <ellipse cx="90" cy="74" rx="22" ry="24" fill="url(#cSkin4)" class="bk-dance-bounce"/>
+                <!-- Crown -->
+                <path d="M72 63 Q76 44 90 38 Q104 44 108 63" fill="#ffd700" stroke="#c8860a" stroke-width="1.5" class="bk-dance-bounce"/>
+                <!-- Feather -->
+                <path d="M90 38 Q84 24 78 14" stroke="#0a7a4a" stroke-width="2.5" fill="none" class="bk-feather-sway"/>
+                <ellipse cx="77" cy="12" rx="8" ry="11" fill="#0a9a5a"/>
+                <ellipse cx="77" cy="12" rx="5" ry="7" fill="#00c0d0"/>
+                <ellipse cx="77" cy="12" rx="2.5" ry="4" fill="#ffd700"/>
+                <circle cx="77" cy="12" r="1.5" fill="#1a1060"/>
+                <!-- Crown gems -->
+                <circle cx="80" cy="50" r="2.5" fill="#e94040" class="bk-dance-bounce"/>
+                <circle cx="90" cy="47" r="3" fill="#40c8e0" class="bk-dance-bounce"/>
+                <circle cx="100" cy="50" r="2.5" fill="#40e060" class="bk-dance-bounce"/>
+                <!-- Face -->
+                <ellipse cx="83" cy="75" rx="5" ry="6.5" fill="white" class="bk-dance-bounce"/>
+                <ellipse cx="97" cy="75" rx="5" ry="6.5" fill="white" class="bk-dance-bounce"/>
+                <circle cx="84.5" cy="76" r="4" fill="#1a1060" class="bk-dance-bounce"/>
+                <circle cx="98.5" cy="76" r="4" fill="#1a1060" class="bk-dance-bounce"/>
+                <circle cx="85" cy="74.5" r="1.5" fill="white" class="bk-dance-bounce"/>
+                <circle cx="99" cy="74.5" r="1.5" fill="white" class="bk-dance-bounce"/>
+                <path d="M81 84 Q90 91 99 84" stroke="#1a1060" stroke-width="2" fill="none" class="bk-dance-bounce"/>
+                <path d="M78 66 L90 60 L102 66 L90 63 Z" fill="#ffd700" class="bk-dance-bounce"/>
+                <circle cx="68" cy="77" r="5" fill="#ffd700" stroke="#c8860a" stroke-width="1" class="bk-dance-bounce"/>
+                <circle cx="112" cy="77" r="5" fill="#ffd700" stroke="#c8860a" stroke-width="1" class="bk-dance-bounce"/>
+              </svg>
+            </div>
+            <span class="bk-name-ml">കാളിയ മർദ്ദനം</span>
+            <span class="bk-name-en">Kaliya Mardana</span>
+            <p class="bk-desc">കാളിയ നാഗത്തിന്മേൽ നൃത്തം ചെയ്ത് ദ്വാരകനദിയെ ശുദ്ധമാക്കിയ ഉണ്ണി</p>
+          </div>
+
+          <!-- Card 5: Lotus Krishna -->
+          <div class="bk-card" tabindex="0" aria-label="Baby Krishna on lotus">
+            <div class="bk-svg-wrap">
+              <div class="bk-aura"></div>
+              <svg viewBox="0 0 180 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <radialGradient id="cSkin5" cx="50%" cy="40%" r="55%">
+                    <stop offset="0%" stop-color="#5aabde"/>
+                    <stop offset="100%" stop-color="#1e60a0"/>
+                  </radialGradient>
+                  <radialGradient id="lPetal" cx="50%" cy="30%" r="60%">
+                    <stop offset="0%" stop-color="#ff9dc0"/>
+                    <stop offset="100%" stop-color="#e0408a"/>
+                  </radialGradient>
+                </defs>
+                <circle cx="90" cy="110" r="75" fill="rgba(255,107,157,0.05)"/>
+                <!-- Halo glowing disc -->
+                <circle cx="90" cy="72" r="58" fill="rgba(255,215,0,0.06)"/>
+                <circle cx="90" cy="72" r="48" fill="none" stroke="#ffd700" stroke-width="1.5" stroke-dasharray="8 4" opacity="0.8"/>
+                <circle cx="90" cy="72" r="54" fill="none" stroke="rgba(255,215,0,0.3)" stroke-width="0.5"/>
+                <!-- LOTUS BASE -->
+                <!-- Outer petals -->
+                <path d="M90 175 Q68 148 62 130 Q80 140 90 165 Q100 140 118 130 Q112 148 90 175Z" fill="url(#lPetal)" opacity="0.6" class="bk-lotus-open"/>
+                <path d="M90 175 Q48 158 40 138 Q66 142 90 170 Q114 142 140 138 Q132 158 90 175Z" fill="url(#lPetal)" opacity="0.5" class="bk-lotus-open" style="animation-delay:0.3s"/>
+                <path d="M90 175 Q28 170 22 150 Q58 148 90 172 Q122 148 158 150 Q152 170 90 175Z" fill="url(#lPetal)" opacity="0.4" class="bk-lotus-open" style="animation-delay:0.6s"/>
+                <!-- Inner petals -->
+                <path d="M90 165 Q72 142 70 128 Q82 136 90 158 Q98 136 110 128 Q108 142 90 165Z" fill="#ff9dc0" class="bk-lotus-open"/>
+                <path d="M90 165 Q58 150 54 136 Q72 140 90 162 Q108 140 126 136 Q122 150 90 165Z" fill="#ffb3d0" opacity="0.8" class="bk-lotus-open" style="animation-delay:0.2s"/>
+                <!-- Center -->
+                <circle cx="90" cy="150" r="18" fill="#ffe060"/>
+                <circle cx="90" cy="150" r="12" fill="#ffd700"/>
+                <circle cx="90" cy="150" r="7" fill="#c8860a"/>
+                <!-- Lotus stem -->
+                <path d="M90 168 Q86 182 82 192" stroke="#2a7a2a" stroke-width="4" fill="none"/>
+                <!-- Water ripple -->
+                <ellipse cx="90" cy="192" rx="40" ry="8" fill="rgba(0,150,255,0.15)"/>
+                <ellipse cx="90" cy="192" rx="28" ry="5" fill="rgba(0,150,255,0.12)"/>
+                <!-- KRISHNA sitting on lotus (meditation/blessing pose) -->
+                <!-- Body sitting cross-legged -->
+                <ellipse cx="90" cy="130" rx="30" ry="18" fill="#ffd700"/>
+                <!-- Legs crossed -->
+                <ellipse cx="68" cy="140" rx="22" ry="12" fill="#ffd700" transform="rotate(10,68,140)"/>
+                <ellipse cx="112" cy="140" rx="22" ry="12" fill="#ffd700" transform="rotate(-10,112,140)"/>
+                <!-- Torso -->
+                <ellipse cx="90" cy="108" rx="24" ry="28" fill="url(#cSkin5)"/>
+                <!-- Arms in blessing / abhaya mudra -->
+                <!-- Right arm raised in blessing -->
+                <path d="M108 108 Q122 96 126 82" stroke="#3a80b0" stroke-width="13" stroke-linecap="round" fill="none"/>
+                <path d="M108 108 Q122 96 126 82" stroke="#5aabde" stroke-width="9" stroke-linecap="round" fill="none"/>
+                <circle cx="126" cy="81" r="10" fill="#5aabde"/>
+                <!-- Left arm in varada mudra (giving) -->
+                <path d="M72 108 Q58 96 54 82" stroke="#3a80b0" stroke-width="13" stroke-linecap="round" fill="none"/>
+                <path d="M72 108 Q58 96 54 82" stroke="#5aabde" stroke-width="9" stroke-linecap="round" fill="none"/>
+                <circle cx="54" cy="81" r="10" fill="#5aabde"/>
+                <!-- Divine light rays from hands -->
+                <path d="M126 81 Q138 72 146 60" stroke="#ffd700" stroke-width="1.5" opacity="0.5" stroke-dasharray="3 4"/>
+                <path d="M126 81 Q132 68 130 52" stroke="#ffd700" stroke-width="1" opacity="0.4" stroke-dasharray="3 4"/>
+                <path d="M54 81 Q42 72 34 60" stroke="#ffd700" stroke-width="1.5" opacity="0.5" stroke-dasharray="3 4"/>
+                <path d="M54 81 Q48 68 50 52" stroke="#ffd700" stroke-width="1" opacity="0.4" stroke-dasharray="3 4"/>
+                <!-- Head -->
+                <ellipse cx="90" cy="74" rx="28" ry="30" fill="url(#cSkin5)"/>
+                <!-- Crown ornate -->
+                <path d="M66 60 Q72 34 90 26 Q108 34 114 60" fill="#ffd700" stroke="#c8860a" stroke-width="1.5"/>
+                <!-- Top of crown - jewel -->
+                <circle cx="90" cy="24" r="8" fill="#ffd700" stroke="#c8860a" stroke-width="1.5"/>
+                <circle cx="90" cy="24" r="4" fill="#40c8e0"/>
+                <!-- Peacock feather -->
+                <path d="M90 24 Q84 8 78 -2" stroke="#0a7a4a" stroke-width="2.5" fill="none" class="bk-feather-sway"/>
+                <ellipse cx="77" cy="-4" rx="9" ry="12" fill="#0a9a5a"/>
+                <ellipse cx="77" cy="-4" rx="6" ry="8" fill="#00c0d0"/>
+                <ellipse cx="77" cy="-4" rx="3" ry="4.5" fill="#ffd700"/>
+                <circle cx="77" cy="-4" r="2" fill="#1a1060"/>
+                <!-- Crown gems row -->
+                <circle cx="76" cy="46" r="3" fill="#e94040"/>
+                <circle cx="90" cy="41" r="3.5" fill="#40c8e0"/>
+                <circle cx="104" cy="46" r="3" fill="#40e060"/>
+                <!-- Side gems -->
+                <circle cx="70" cy="55" r="2.5" fill="#ffd700"/>
+                <circle cx="110" cy="55" r="2.5" fill="#ffd700"/>
+                <!-- Face serene -->
+                <ellipse cx="81" cy="76" rx="6" ry="7.5" fill="white"/>
+                <ellipse cx="99" cy="76" rx="6" ry="7.5" fill="white"/>
+                <circle cx="82.5" cy="77" r="4.5" fill="#1a1060"/>
+                <circle cx="100.5" cy="77" r="4.5" fill="#1a1060"/>
+                <circle cx="83" cy="75.5" r="1.8" fill="white"/>
+                <circle cx="101" cy="75.5" r="1.8" fill="white"/>
+                <!-- Eyebrows curved -->
+                <path d="M76 67 Q82 63 87 67" stroke="#1a1060" stroke-width="1.8" fill="none"/>
+                <path d="M93 67 Q99 63 104 67" stroke="#1a1060" stroke-width="1.8" fill="none"/>
+                <!-- Gentle smile -->
+                <path d="M79 87 Q90 94 101 87" stroke="#1a1060" stroke-width="2" fill="none" stroke-linecap="round"/>
+                <!-- Tilak -->
+                <path d="M87 62 L90 54 L93 62 L90 60 Z" fill="#ffd700"/>
+                <!-- Third eye / sandal paste -->
+                <ellipse cx="90" cy="62" rx="3" ry="2" fill="rgba(255,215,0,0.4)"/>
+                <!-- Earrings ornate -->
+                <circle cx="62" cy="78" r="6" fill="#ffd700" stroke="#c8860a" stroke-width="1.2"/>
+                <circle cx="62" cy="78" r="3" fill="#e94040"/>
+                <circle cx="118" cy="78" r="6" fill="#ffd700" stroke="#c8860a" stroke-width="1.2"/>
+                <circle cx="118" cy="78" r="3" fill="#40c8e0"/>
+                <!-- Necklace double -->
+                <path d="M68 102 Q90 116 112 102" stroke="#ffd700" stroke-width="2.5" fill="none"/>
+                <path d="M72 110 Q90 122 108 110" stroke="#ffd700" stroke-width="1.5" fill="none" opacity="0.6"/>
+                <circle cx="82" cy="110" r="3" fill="#e94040"/>
+                <circle cx="90" cy="114" r="4" fill="#ffd700"/>
+                <circle cx="98" cy="110" r="3" fill="#40c8e0"/>
+                <!-- Divine sparkles -->
+                <text x="138" y="72" font-size="14" fill="#ffd700" opacity="0.7" class="bk-lotus-open">✦</text>
+                <text x="30" y="66" font-size="11" fill="#00c8ff" opacity="0.6" class="bk-lotus-open" style="animation-delay:0.5s">✧</text>
+                <text x="148" y="110" font-size="10" fill="#ff6b9d" opacity="0.5">✦</text>
+                <text x="22" y="112" font-size="12" fill="#ffd700" opacity="0.4">✧</text>
+              </svg>
+            </div>
+            <span class="bk-name-ml">പദ്മ കൃഷ്ണൻ</span>
+            <span class="bk-name-en">Lotus Krishna</span>
+            <p class="bk-desc">താമര പൂക്കൾ മേൽ ആസനസ്ഥനായ ദൈവ ശിശു — ആനന്ദ രൂപം</p>
+          </div>
+
+          <!-- Card 6: Govardhana -->
+          <div class="bk-card" tabindex="0" aria-label="Krishna lifting Govardhana hill">
+            <div class="bk-svg-wrap">
+              <div class="bk-aura"></div>
+              <svg viewBox="0 0 180 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <radialGradient id="cSkin6" cx="50%" cy="40%" r="55%">
+                    <stop offset="0%" stop-color="#5aabde"/>
+                    <stop offset="100%" stop-color="#1e60a0"/>
+                  </radialGradient>
+                  <radialGradient id="mtnGrad" cx="40%" cy="20%" r="70%">
+                    <stop offset="0%" stop-color="#6a7a5a"/>
+                    <stop offset="60%" stop-color="#4a5a3a"/>
+                    <stop offset="100%" stop-color="#2a3a1a"/>
+                  </radialGradient>
+                </defs>
+                <circle cx="90" cy="110" r="75" fill="rgba(100,180,80,0.04)"/>
+                <!-- Rain clouds behind -->
+                <ellipse cx="40" cy="30" rx="28" ry="16" fill="rgba(80,100,140,0.4)"/>
+                <ellipse cx="65" cy="22" rx="24" ry="14" fill="rgba(80,100,140,0.35)"/>
+                <ellipse cx="130" cy="28" rx="26" ry="15" fill="rgba(80,100,140,0.38)"/>
+                <!-- Rain drops -->
+                <line x1="28" y1="46" x2="24" y2="62" stroke="rgba(180,220,255,0.6)" stroke-width="1.5"/>
+                <line x1="42" y1="46" x2="38" y2="62" stroke="rgba(180,220,255,0.6)" stroke-width="1.5"/>
+                <line x1="56" y1="36" x2="52" y2="52" stroke="rgba(180,220,255,0.6)" stroke-width="1.5"/>
+                <line x1="120" y1="43" x2="116" y2="59" stroke="rgba(180,220,255,0.6)" stroke-width="1.5"/>
+                <line x1="138" y1="43" x2="134" y2="59" stroke="rgba(180,220,255,0.6)" stroke-width="1.5"/>
+                <!-- GOVARDHANA HILL (balanced on finger) -->
+                <path d="M30 100 Q90 42 150 100 Q140 115 90 118 Q40 115 30 100 Z" fill="url(#mtnGrad)"/>
+                <!-- Hill highlights -->
+                <path d="M56 80 Q90 52 124 80" stroke="rgba(255,255,255,0.15)" stroke-width="2" fill="none"/>
+                <!-- Trees on hill -->
+                <path d="M60 95 Q58 82 62 78" stroke="#2a5020" stroke-width="3" fill="none"/>
+                <circle cx="62" cy="76" r="7" fill="#3a7030"/>
+                <path d="M80 94 Q78 80 82 76" stroke="#2a5020" stroke-width="3" fill="none"/>
+                <circle cx="82" cy="74" r="6" fill="#3a7030"/>
+                <path d="M100 93 Q98 78 104 74" stroke="#2a5020" stroke-width="3" fill="none"/>
+                <circle cx="102" cy="72" r="7" fill="#3a7030"/>
+                <path d="M118 95 Q116 82 120 78" stroke="#2a5020" stroke-width="3" fill="none"/>
+                <circle cx="120" cy="76" r="6" fill="#3a7030"/>
+                <!-- KRISHNA body -->
+                <ellipse cx="90" cy="168" rx="26" ry="18" fill="#ffd700"/>
+                <!-- Legs spread for balance -->
+                <ellipse cx="70" cy="178" rx="18" ry="12" fill="#ffd700" transform="rotate(-15,70,178)"/>
+                <ellipse cx="110" cy="178" rx="18" ry="12" fill="#ffd700" transform="rotate(15,110,178)"/>
+                <!-- Feet planted -->
+                <ellipse cx="60" cy="188" rx="14" ry="7" fill="#5aabde"/>
+                <ellipse cx="120" cy="188" rx="14" ry="7" fill="#5aabde"/>
+                <!-- Torso -->
+                <ellipse cx="90" cy="148" rx="22" ry="26" fill="url(#cSkin6)"/>
+                <!-- RIGHT ARM raised FULLY - holding mountain on little finger -->
+                <path d="M102 146 Q115 128 118 108" stroke="#3a80b0" stroke-width="15" stroke-linecap="round" fill="none"/>
+                <path d="M102 146 Q115 128 118 108" stroke="#5aabde" stroke-width="11" stroke-linecap="round" fill="none"/>
+                <!-- Little finger raised -->
+                <circle cx="120" cy="106" r="9" fill="#5aabde"/>
+                <line x1="120" y1="97" x2="120" y2="104" stroke="#5aabde" stroke-width="5" stroke-linecap="round"/>
+                <!-- Left arm for balance -->
+                <path d="M78 146 Q62 136 52 130" stroke="#3a80b0" stroke-width="13" stroke-linecap="round" fill="none"/>
+                <path d="M78 146 Q62 136 52 130" stroke="#5aabde" stroke-width="9" stroke-linecap="round" fill="none"/>
+                <circle cx="52" cy="130" r="9" fill="#5aabde"/>
+                <!-- Head -->
+                <ellipse cx="90" cy="118" rx="22" ry="24" fill="url(#cSkin6)"/>
+                <!-- Halo -->
+                <circle cx="90" cy="118" r="30" fill="none" stroke="#ffd700" stroke-width="1.5" stroke-dasharray="5 3" opacity="0.75"/>
+                <!-- Crown -->
+                <path d="M72 105 Q76 82 90 76 Q104 82 108 105" fill="#ffd700" stroke="#c8860a" stroke-width="1.5"/>
+                <!-- Feather -->
+                <path d="M90 76 Q83 62 76 52" stroke="#0a7a4a" stroke-width="2.5" fill="none" class="bk-feather-sway"/>
+                <ellipse cx="76" cy="50" rx="8" ry="11" fill="#0a9a5a"/>
+                <ellipse cx="76" cy="50" rx="5" ry="7" fill="#00c0d0"/>
+                <ellipse cx="76" cy="50" rx="2.5" ry="4" fill="#ffd700"/>
+                <circle cx="76" cy="50" r="1.5" fill="#1a1060"/>
+                <!-- Gems -->
+                <circle cx="80" cy="91" r="2.5" fill="#e94040"/>
+                <circle cx="90" cy="87" r="3" fill="#40c8e0"/>
+                <circle cx="100" cy="91" r="2.5" fill="#40e060"/>
+                <!-- Face -->
+                <ellipse cx="83" cy="120" rx="5.5" ry="7" fill="white"/>
+                <ellipse cx="97" cy="120" rx="5.5" ry="7" fill="white"/>
+                <circle cx="84.5" cy="121" r="4" fill="#1a1060"/>
+                <circle cx="98.5" cy="121" r="4" fill="#1a1060"/>
+                <circle cx="85" cy="119" r="1.5" fill="white"/>
+                <circle cx="99" cy="119" r="1.5" fill="white"/>
+                <path d="M80 130 Q90 137 100 130" stroke="#1a1060" stroke-width="2" fill="none"/>
+                <!-- Determined brow -->
+                <path d="M78 111 Q84 107 89 111" stroke="#1a1060" stroke-width="2" fill="none"/>
+                <path d="M91 111 Q97 107 102 111" stroke="#1a1060" stroke-width="2" fill="none"/>
+                <path d="M87 104 L90 98 L93 104 L90 102 Z" fill="#ffd700"/>
+                <circle cx="68" cy="122" r="5" fill="#ffd700" stroke="#c8860a" stroke-width="1"/>
+                <circle cx="112" cy="122" r="5" fill="#ffd700" stroke="#c8860a" stroke-width="1"/>
+                <path d="M72 142 Q90 152 108 142" stroke="#ffd700" stroke-width="2" fill="none"/>
+                <!-- Cows sheltering under hill -->
+                <ellipse cx="26" cy="186" rx="16" ry="9" fill="#c8a060" opacity="0.7"/>
+                <circle cx="16" cy="180" r="6" fill="#c8a060" opacity="0.7"/>
+                <ellipse cx="154" cy="186" rx="16" ry="9" fill="#c8a060" opacity="0.7"/>
+                <circle cx="164" cy="180" r="6" fill="#c8a060" opacity="0.7"/>
+              </svg>
+            </div>
+            <span class="bk-name-ml">ഗോവർദ്ധന ഗിരിധർ</span>
+            <span class="bk-name-en">Govardhan Giridhar</span>
+            <p class="bk-desc">ഗോവർദ്ധന ഗിരി ചൂഴ്ന്ന് ഗോകുലത്തെ കരുക്കിൽ നിന്ന് രക്ഷിച്ച ദൈവ ബാലൻ</p>
+          </div>
+
+        </div><!-- end bk-grid -->
+
+        <!-- Temple Info Strip (Google Maps data) -->
+        <div class="bk-info-strip">
+          <div class="bk-info-item">
+            <span class="bk-info-icon">🛕</span>
+            <span class="bk-info-label">ക്ഷേത്രം</span>
+            <span class="bk-info-value">കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം</span>
+          </div>
+          <div class="bk-info-item">
+            <span class="bk-info-icon">📍</span>
+            <span class="bk-info-label">സ്ഥലം</span>
+            <span class="bk-info-value">നാടപുരം, കോഴിക്കോട്<br/>കേരളം, ഇന്ത്യ</span>
+          </div>
+          <div class="bk-info-item">
+            <span class="bk-info-icon">🌅</span>
+            <span class="bk-info-label">തുറക്കൽ സമയം</span>
+            <span class="bk-info-value">5:00 AM – 12:00 PM<br/>5:00 PM – 8:30 PM</span>
+          </div>
+          <div class="bk-info-item">
+            <span class="bk-info-icon">🎉</span>
+            <span class="bk-info-label">പ്രധാന ഉത്സവം</span>
+            <span class="bk-info-value">അഷ്ടമി രോഹിണി<br/>(കൃഷ്ണ ജയന്തി)</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
 
     <!-- ───────────── TIMINGS ───────────── -->
     <section id="timings" class="section section-saffron" aria-labelledby="timings-heading">
@@ -762,5 +1540,27 @@
   <!-- Scripts -->
   <script src="js/main.js" defer></script>
   <script src="js/krishna-animations.js" defer></script>
+  <script>
+  // Baby Krishna section stars
+  (function() {
+    var container = document.getElementById('bk-stars');
+    if (!container) return;
+    for (var i = 0; i < 80; i++) {
+      var s = document.createElement('div');
+      s.className = 'krishna-star';
+      s.style.cssText = 'left:' + Math.random()*100 + '%;top:' + Math.random()*100 + '%;'
+        + 'animation-duration:' + (1.5 + Math.random()*3) + 's;'
+        + 'animation-delay:' + (Math.random()*4) + 's;'
+        + 'width:' + (1+Math.random()*2.5) + 'px;height:' + (1+Math.random()*2.5) + 'px;';
+      container.appendChild(s);
+    }
+    // Keyboard accessibility for bk-cards
+    document.querySelectorAll('.bk-card').forEach(function(card) {
+      card.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); }
+      });
+    });
+  })();
+  </script>
 </body>
 </html>
