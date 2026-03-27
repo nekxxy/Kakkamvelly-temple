@@ -255,16 +255,9 @@
 })();
 
 /* ─────────────────────────────────────────────
-   6. MARQUEE DUPLICATE (seamless loop)
+   6. MARQUEE – removed
 ───────────────────────────────────────────── */
-(function initMarquee() {
-  const content = document.querySelector('.marquee-content');
-  if (!content) return;
-  // Duplicate the text so the animation loops without a visible gap
-  const clone = content.cloneNode(true);
-  clone.setAttribute('aria-hidden', 'true');
-  content.parentNode.appendChild(clone);
-})();
+// Marquee notice bar has been removed
 
 /* ─────────────────────────────────────────────
    7. INTERSECTION OBSERVER – fade-in sections

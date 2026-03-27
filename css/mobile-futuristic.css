@@ -348,18 +348,8 @@ html { scroll-padding-top: calc(var(--mob-nav-h) + 8px); }
 }
 
 /* ============================================================
-   4. NOTICE BAR — MOBILE
+   4. NOTICE BAR — removed
    ============================================================ */
-@media (max-width: 768px) {
-  .notice-bar {
-    background: linear-gradient(90deg, #8a5e00, #c8860a, #ffd700, #c8860a, #8a5e00);
-    background-size: 300% 100%;
-    animation: bar-sweep 4s linear infinite, gold-shimmer 5s linear infinite;
-    padding: 0.55rem 0;
-  }
-  .notice-icon { font-size: 1rem; padding-left: 0.8rem; }
-  .marquee-content { font-size: 0.82rem; }
-}
 
 /* ============================================================
    5. SECTION HEADERS — MOBILE
@@ -882,4 +872,56 @@ html { scroll-padding-top: calc(var(--mob-nav-h) + 8px); }
     overflow-x: auto;
     scroll-snap-type: none;
   }
+}
+
+/* ============================================================
+   OVERFLOW / WHITE STRIP FIX
+   Prevents any element from causing horizontal scroll
+   ============================================================ */
+html,
+body {
+  overflow-x: hidden !important;
+  max-width: 100vw;
+}
+
+/* Clamp fixed/absolute elements that can overflow right */
+#krishna-canvas,
+.krishna-float-element,
+.peacock-feather,
+.cursor-sparkle {
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+/* Prevent nav drawer from widening body */
+.nav-menu {
+  max-width: 100vw;
+}
+
+/* Any element that might overflow */
+* {
+  box-sizing: border-box;
+}
+
+section,
+.container,
+.section-header,
+header,
+footer,
+main {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Carousels clip within their parent */
+.festivals-grid,
+.bk-grid {
+  max-width: 100%;
+}
+
+/* Fix for marquee-related JS clone if any leftover */
+.marquee-wrapper,
+.marquee-content,
+.notice-bar {
+  display: none !important;
 }
