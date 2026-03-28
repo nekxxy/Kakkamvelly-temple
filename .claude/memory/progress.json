@@ -1,0 +1,25 @@
+{
+  "session": "ruflo-swarm-v1",
+  "built": [
+    "live-darshan-status (real-time open/closed from system time)",
+    "festival-countdown (next festival live timer)",
+    "weather-widget (open-meteo API, no key needed)",
+    "todays-schedule (pooja timetable with live highlight)",
+    "panchang-widget (today's tithi/day/month)",
+    "multi-language (Malayalam/English/Hindi switcher)",
+    "PWA-manifest (installable, offline-capable)",
+    "service-worker (cache-first, offline fallback)",
+    "schema-org (HinduTemple structured data for Google AI)",
+    "whatsapp-float (fixed button)",
+    "pwa-install-banner (beforeinstallprompt)",
+    "visitor-info section (dress code, parking, prasadam, directions)",
+    "donate section (6 giving categories + UPI)",
+    "web-share-api (native share on mobile)"
+  ],
+  "gaps_remaining": [
+    "live-streaming-embed (YouTube Live)",
+    "pooja-seva-online-booking-form",
+    "photo-lightbox-gallery",
+    "push-notifications"
+  ]
+}

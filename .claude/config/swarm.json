@@ -1,0 +1,28 @@
+{
+  "project": "kakkamvelly-temple",
+  "version": "2.0",
+  "agents": [
+    { "id": "ux-agent",       "role": "Mobile UX & PWA specialist" },
+    { "id": "feature-agent",  "role": "Live widgets & interactive features" },
+    { "id": "perf-agent",     "role": "Performance & SEO optimizer" },
+    { "id": "content-agent",  "role": "Malayalam/English content & accessibility" },
+    { "id": "seo-agent",      "role": "Structured data & local SEO" }
+  ],
+  "gaps_vs_competitors": [
+    "live_darshan_status",
+    "festival_countdown",
+    "weather_widget",
+    "multi_language",
+    "pwa_installable",
+    "pooja_booking_form",
+    "donation_section",
+    "live_stream_section",
+    "prasadam_info",
+    "dress_code_guide",
+    "nearby_facilities",
+    "schema_org_markup",
+    "whatsapp_float_button",
+    "today_schedule_widget",
+    "dynamic_panchang"
+  ]
+}

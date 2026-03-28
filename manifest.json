@@ -1,0 +1,55 @@
+{
+  "name": "കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം",
+  "short_name": "KV Temple",
+  "description": "Kakkamvelly Sreekrishna Temple — Kozhikode, Kerala. Pooja timings, festivals, live status & directions.",
+  "start_url": "/kakkamvelly-temple/",
+  "scope": "/kakkamvelly-temple/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#1a0620",
+  "theme_color": "#ffd700",
+  "lang": "ml",
+  "icons": [
+    {
+      "src": "images/temple-entrance-deepam.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/temple-entrance-deepam.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["religion", "lifestyle", "travel"],
+  "screenshots": [
+    {
+      "src": "images/temple-entrance-deepam.jpg",
+      "sizes": "533x800",
+      "type": "image/jpeg",
+      "label": "Kakkamvelly Temple Entrance"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "ക്ഷേത്ര സമയം",
+      "short_name": "Timings",
+      "url": "/kakkamvelly-temple/#timings",
+      "description": "View pooja timings"
+    },
+    {
+      "name": "ഉത്സവങ്ങൾ",
+      "short_name": "Festivals",
+      "url": "/kakkamvelly-temple/#festivals",
+      "description": "Upcoming festivals"
+    },
+    {
+      "name": "വഴി കാണിക്കുക",
+      "short_name": "Directions",
+      "url": "/kakkamvelly-temple/#location",
+      "description": "Get directions to temple"
+    }
+  ]
+}

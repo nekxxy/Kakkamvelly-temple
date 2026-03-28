@@ -1,0 +1,332 @@
+/* ============================================================
+   LIVE WIDGETS CSS — Ruflo feature-agent
+   Darshan Status, Countdown, Weather, Schedule, Panchang,
+   WhatsApp, Donate, Dress Code, Language, Schema
+   ============================================================ */
+
+/* ── Section wrapper ── */
+#live-section {
+  background: linear-gradient(160deg, #08041c 0%, #14062a 50%, #040e0a 100%);
+  padding: 2.5rem 0 3rem;
+  position: relative;
+  overflow: hidden;
+}
+#live-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 40% at 20% 30%, rgba(255,215,0,.06) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 60% at 80% 70%, rgba(0,200,255,.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ── Live grid ── */
+.live-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+.live-grid-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+@media (max-width: 900px) {
+  .live-grid        { grid-template-columns: 1fr 1fr; }
+  .live-grid-bottom { grid-template-columns: 1fr; }
+}
+@media (max-width: 540px) {
+  .live-grid        { grid-template-columns: 1fr; }
+}
+
+/* ── Shared card ── */
+.live-card {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,215,0,.15);
+  border-radius: 16px;
+  padding: 1.2rem 1.1rem;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: border-color .3s, box-shadow .3s;
+}
+.live-card:hover {
+  border-color: rgba(255,215,0,.35);
+  box-shadow: 0 8px 32px rgba(255,215,0,.1);
+}
+.live-card-title {
+  font-family: 'Cinzel', serif;
+  font-size: .72rem;
+  color: rgba(255,215,0,.7);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin-bottom: .8rem;
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+}
+
+/* ─── 1. DARSHAN STATUS ─── */
+.ds-indicator {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  margin-bottom: .5rem;
+}
+.ds-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.ds-open  .ds-dot { background: #00ff88; box-shadow: 0 0 8px #00ff88; animation: blink 1.5s ease-in-out infinite; }
+.ds-closed .ds-dot { background: #ff4444; box-shadow: 0 0 8px #ff4444; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+.ds-label { font-family: 'Noto Serif Malayalam', serif; font-weight: 700; color: #fff; font-size: .95rem; }
+.ds-eng   { font-size: .72rem; color: rgba(255,255,255,.5); margin-left: auto; }
+.ds-pooja { font-family: 'Noto Serif Malayalam', serif; font-size: .82rem; color: #ffd700; margin-top: .4rem; }
+.ds-next  { font-size: .78rem; color: rgba(255,200,100,.8); margin-top: .3rem; }
+.ds-time  { font-family: 'Cinzel', serif; font-size: 1.1rem; color: rgba(255,215,0,.9); text-align: center; margin-top: .6rem; letter-spacing: .08em; }
+
+/* ─── 2. FESTIVAL COUNTDOWN ─── */
+.fc-label     { margin-bottom: .7rem; }
+.fc-name      { font-family: 'Noto Serif Malayalam', serif; font-weight: 700; color: #fff; font-size: 1rem; display: block; }
+.fc-eng       { font-size: .72rem; color: rgba(255,215,0,.6); }
+.fc-units     { display: flex; align-items: center; gap: .4rem; }
+.fc-unit      { text-align: center; background: rgba(255,215,0,.08); border: 1px solid rgba(255,215,0,.2); border-radius: 8px; padding: .4rem .5rem; flex: 1; }
+.fc-num       { display: block; font-family: 'Cinzel', serif; font-size: 1.3rem; color: #ffd700; font-weight: 700; line-height: 1; }
+.fc-unit-label{ display: block; font-family: 'Noto Serif Malayalam', serif; font-size: .6rem; color: rgba(255,255,255,.5); margin-top: .15rem; }
+.fc-sep       { color: rgba(255,215,0,.5); font-size: 1.2rem; font-weight: 700; flex-shrink: 0; }
+
+/* ─── 3. WEATHER ─── */
+.ww-loading, .ww-err { color: rgba(255,255,255,.5); font-size: .85rem; }
+.ww-main  { display: flex; align-items: center; gap: .6rem; margin-bottom: .3rem; }
+.ww-icon  { font-size: 2rem; line-height: 1; }
+.ww-temp  { font-family: 'Cinzel', serif; font-size: 2rem; color: #ffd700; font-weight: 700; }
+.ww-desc  { font-size: .85rem; color: rgba(255,255,255,.75); margin-bottom: .5rem; }
+.ww-meta  { display: flex; gap: 1rem; font-size: .75rem; color: rgba(255,255,255,.55); flex-wrap: wrap; }
+.ww-loc   { color: rgba(255,215,0,.6); }
+.ww-advice{ margin-top: .5rem; font-size: .78rem; color: rgba(255,215,0,.8); font-family: 'Lato', sans-serif; }
+
+/* ─── 4. TODAY'S SCHEDULE ─── */
+.ts-row {
+  display: grid;
+  grid-template-columns: 70px 22px 1fr;
+  align-items: center;
+  gap: .4rem;
+  padding: .45rem .2rem;
+  border-bottom: 1px solid rgba(255,215,0,.06);
+  transition: background .2s;
+}
+.ts-row:last-child { border-bottom: none; }
+.ts-active { background: rgba(255,215,0,.08); border-radius: 8px; }
+.ts-past   { opacity: .45; }
+.ts-time   { font-family: 'Cinzel', serif; font-size: .72rem; color: rgba(255,215,0,.8); }
+.ts-dot    { font-size: .75rem; text-align: center; }
+.ts-info   { display: flex; flex-direction: column; }
+.ts-ml     { font-family: 'Noto Serif Malayalam', serif; font-size: .82rem; color: #fff; line-height: 1.3; }
+.ts-en     { font-size: .68rem; color: rgba(255,255,255,.45); }
+
+/* ─── 5. PANCHANG ─── */
+.pc-row   { display: flex; justify-content: space-between; align-items: center; padding: .45rem 0; border-bottom: 1px solid rgba(255,215,0,.07); }
+.pc-row:last-child { border-bottom: none; }
+.pc-label { font-size: .75rem; color: rgba(255,215,0,.65); font-family: 'Cinzel', serif; }
+.pc-value { font-family: 'Noto Serif Malayalam', serif; font-size: .85rem; color: #fff; text-align: right; max-width: 60%; }
+
+/* ============================================================
+   LANGUAGE SWITCHER
+   ============================================================ */
+.lang-switcher {
+  position: fixed;
+  top: 14px;
+  right: 70px;
+  z-index: 1100;
+  display: flex;
+  gap: 4px;
+  background: rgba(15,8,35,.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,215,0,.2);
+  border-radius: 20px;
+  padding: 3px 6px;
+}
+.lang-btn {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,.55);
+  font-size: .72rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 3px 7px;
+  border-radius: 12px;
+  transition: all .2s;
+  letter-spacing: .04em;
+  font-family: 'Lato', sans-serif;
+}
+.lang-btn.active,
+.lang-btn:hover {
+  background: rgba(255,215,0,.15);
+  color: #ffd700;
+}
+@media (max-width: 768px) {
+  .lang-switcher { top: 14px; right: 60px; }
+  .lang-btn { font-size: .65rem; padding: 2px 5px; }
+}
+
+/* ============================================================
+   WHATSAPP FLOATING BUTTON
+   ============================================================ */
+#whatsapp-float {
+  position: fixed;
+  bottom: calc(76px + env(safe-area-inset-bottom, 0px) + 12px);
+  right: 1.1rem;
+  z-index: 850;
+  width: 52px; height: 52px;
+  background: #25d366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,.5);
+  text-decoration: none;
+  animation: wa-pulse 3s ease-in-out infinite;
+  border: 2px solid rgba(255,255,255,.2);
+  -webkit-tap-highlight-color: transparent;
+}
+@keyframes wa-pulse {
+  0%,100%{ box-shadow: 0 4px 20px rgba(37,211,102,.5); }
+  50%    { box-shadow: 0 4px 30px rgba(37,211,102,.8), 0 0 0 8px rgba(37,211,102,.1); }
+}
+#whatsapp-float i { color: #fff; font-size: 1.4rem; }
+#whatsapp-float .wa-tooltip {
+  position: absolute;
+  right: calc(100% + 10px);
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(15,8,35,.9);
+  border: 1px solid rgba(37,211,102,.3);
+  color: #fff;
+  font-size: .72rem;
+  padding: .3rem .7rem;
+  border-radius: 8px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .2s;
+  font-family: 'Noto Serif Malayalam', serif;
+}
+#whatsapp-float:hover .wa-tooltip { opacity: 1; }
+
+/* Desktop: move above back-to-top */
+@media (min-width: 769px) {
+  #whatsapp-float { bottom: 5.5rem; }
+}
+
+/* ============================================================
+   DONATE SECTION
+   ============================================================ */
+#donate {
+  background: linear-gradient(135deg, #1a0a00, #3a1a00, #1a0a00);
+  padding: 3rem 0;
+  text-align: center;
+  border-top: 1px solid rgba(255,215,0,.12);
+}
+.donate-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+@media (max-width: 768px) { .donate-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 400px) { .donate-grid { grid-template-columns: 1fr; } }
+
+.donate-card {
+  background: rgba(255,215,0,.06);
+  border: 1px solid rgba(255,215,0,.18);
+  border-radius: 14px;
+  padding: 1.2rem .8rem;
+  transition: all .3s;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.donate-card:hover, .donate-card:active {
+  background: rgba(255,215,0,.12);
+  border-color: rgba(255,215,0,.4);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(255,215,0,.15);
+}
+.donate-icon  { font-size: 2rem; display: block; margin-bottom: .5rem; }
+.donate-name  { font-family: 'Noto Serif Malayalam', serif; font-size: .88rem; font-weight: 700; color: #ffd700; display: block; margin-bottom: .2rem; }
+.donate-desc  { font-size: .72rem; color: rgba(255,255,255,.55); }
+.donate-upi   { margin-top: 1.5rem; background: rgba(255,255,255,.04); border: 1px solid rgba(255,215,0,.15); border-radius: 12px; padding: 1rem; display: inline-block; }
+.donate-upi p { font-size: .82rem; color: rgba(255,255,255,.7); font-family: 'Lato', sans-serif; margin-bottom: .4rem; }
+.donate-upi code { font-size: .95rem; color: #ffd700; font-family: monospace; letter-spacing: .04em; }
+
+/* ============================================================
+   DRESS CODE & VISITOR INFO
+   ============================================================ */
+#visitor-info {
+  background: linear-gradient(135deg, #fff8ec, #fdf0d0);
+  padding: 3rem 0;
+}
+.vi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+@media (max-width: 768px) { .vi-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 400px) { .vi-grid { grid-template-columns: 1fr; } }
+
+.vi-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.2rem;
+  border: 1px solid rgba(200,134,10,.2);
+  box-shadow: 0 2px 16px rgba(0,0,0,.06);
+  text-align: center;
+  transition: transform .3s, box-shadow .3s;
+}
+.vi-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 28px rgba(200,134,10,.15);
+}
+.vi-icon  { font-size: 2.2rem; display: block; margin-bottom: .5rem; }
+.vi-title { font-family: 'Noto Serif Malayalam', serif; font-size: .9rem; font-weight: 700; color: #8b0000; margin-bottom: .4rem; }
+.vi-text  { font-size: .82rem; color: #5a4a2a; line-height: 1.5; }
+.vi-text strong { color: #8b0000; }
+
+/* ============================================================
+   SCHEMA / SEO BADGE (hidden but present)
+   ============================================================ */
+.seo-badge { display: none; }
+
+/* ============================================================
+   INSTALL PWA BANNER
+   ============================================================ */
+#pwa-banner {
+  position: fixed;
+  bottom: calc(76px + env(safe-area-inset-bottom,0px) + 8px);
+  left: 1rem; right: 1rem;
+  background: linear-gradient(135deg, rgba(8,4,28,.96), rgba(20,6,40,.96));
+  border: 1px solid rgba(255,215,0,.25);
+  border-radius: 16px;
+  padding: .9rem 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  z-index: 800;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 8px 32px rgba(0,0,0,.4);
+  transform: translateY(120%);
+  transition: transform .4s cubic-bezier(.23,1,.32,1);
+}
+#pwa-banner.show { transform: translateY(0); }
+.pwa-icon  { font-size: 2rem; flex-shrink: 0; }
+.pwa-text  { flex: 1; }
+.pwa-title { font-family: 'Noto Serif Malayalam', serif; font-size: .88rem; color: #fff; font-weight: 700; display: block; }
+.pwa-sub   { font-size: .72rem; color: rgba(255,255,255,.55); }
+.pwa-install { background: linear-gradient(135deg, #c8860a, #ffd700); color: #1a0800; border: none; border-radius: 50px; padding: .45rem 1rem; font-size: .78rem; font-weight: 700; cursor: pointer; white-space: nowrap; font-family: 'Lato', sans-serif; transition: transform .2s; }
+.pwa-install:active { transform: scale(.96); }
+.pwa-dismiss { background: none; border: none; color: rgba(255,255,255,.4); cursor: pointer; font-size: 1.1rem; padding: .2rem; flex-shrink: 0; }
+@media (min-width: 769px) { #pwa-banner { display: none; } }

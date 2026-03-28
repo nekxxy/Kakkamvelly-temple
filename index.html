@@ -9,6 +9,8 @@
   <meta name="description" content="കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രത്തിന്റെ ഔദ്യോഗിക വെബ്സൈറ്റ്. കോഴിക്കോട് ജില്ലയിൽ സ്ഥിതി ചെയ്യുന്ന ഈ ക്ഷേത്രത്തിലെ സമയക്രമം, പൂജ ഷെഡ്യൂൾ, സ്ഥലം, വഴിക്കുറിപ്പ് എന്നിവ അറിയൂ." />
   <meta name="keywords" content="Kakkamvelly temple, Sreekrishna temple, Kozhikode temple, Kerala Hindu temple, കക്കംവെള്ളി ക്ഷേത്രം, ശ്രീകൃഷ്ണ ക്ഷേത്രം, ക്ഷേത്ര സമയം, പൂജ ഷെഡ്യൂൾ" />
   <title>കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം | കോഴിക്കോട്, കേരളം</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="css/live-widgets.css" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/krishna-animations.css" />
   <link rel="stylesheet" href="css/baby-krishna.css" />
@@ -89,6 +91,7 @@
         <li><a href="#festivals" class="nav-link">ഉത്സവങ്ങൾ</a></li>
         <li><a href="#gallery" class="nav-link">ഗ്യാലറി</a></li>
         <li><a href="#location" class="nav-link">സ്ഥലം</a></li>
+        <li><a href="#donate" class="nav-link">ദാനം</a></li>
         <li><a href="#contact" class="nav-link">ബന്ധപ്പെടുക</a></li>
       </ul>
     </nav>
@@ -134,6 +137,49 @@
     </section>
 
     <!-- ───────────── MARQUEE NOTICE ───────────── -->
+
+
+    <!-- ── LIVE STATUS SECTION (Ruflo feature-agent) ── -->
+    <section id="live-section" aria-labelledby="live-heading">
+      <div class="container" style="position:relative;z-index:1;">
+        <div class="section-header">
+          <span class="section-tag" style="color:#ffd700;background:rgba(255,215,0,.12);border-color:rgba(255,215,0,.3);">ലൈവ് സ്റ്റാറ്റസ്</span>
+          <h2 id="live-heading" class="section-title" style="color:#fff;">ഇന്നത്തെ ക്ഷേത്ര വിവരം</h2>
+          <div class="title-divider" aria-hidden="true"><span>✦</span></div>
+        </div>
+
+        <div class="live-grid">
+          <!-- Darshan Status -->
+          <div class="live-card">
+            <div class="live-card-title">🛕 ദർശന സ്റ്റാറ്റസ്</div>
+            <div id="darshan-status-widget"><span style="color:rgba(255,255,255,.4)">Loading…</span></div>
+          </div>
+          <!-- Festival Countdown -->
+          <div class="live-card">
+            <div class="live-card-title">🎉 അടുത്ത ഉത്സവം</div>
+            <div id="festival-countdown"></div>
+          </div>
+          <!-- Weather -->
+          <div class="live-card">
+            <div class="live-card-title">🌤 കാലാവസ്ഥ · Nadapuram</div>
+            <div id="weather-widget"></div>
+          </div>
+        </div>
+
+        <div class="live-grid-bottom">
+          <!-- Today's Schedule -->
+          <div class="live-card">
+            <div class="live-card-title">⏰ ഇന്നത്തെ പൂജ ഷെഡ്യൂൾ</div>
+            <div id="today-schedule"></div>
+          </div>
+          <!-- Panchang -->
+          <div class="live-card">
+            <div class="live-card-title">📅 ഇന്നത്തെ പഞ്ചാംഗം</div>
+            <div id="panchang-widget"></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Animated Hindu Decoration Strip -->
     <div class="hindu-deco-strip" aria-hidden="true">
@@ -1757,6 +1803,57 @@
       </div>
     </section>
 
+
+    <!-- ── VISITOR INFO (Ruflo content-agent) ── -->
+    <section id="visitor-info" aria-labelledby="vi-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">സന്ദർശക വിവരം</span>
+          <h2 id="vi-heading" class="section-title">ക്ഷേത്ര സന്ദർശന ഗൈഡ്</h2>
+          <div class="title-divider" aria-hidden="true"><span>✦</span></div>
+        </div>
+        <div class="vi-grid">
+          <div class="vi-card">
+            <span class="vi-icon">👔</span>
+            <div class="vi-title">വേഷ വിധാനം</div>
+            <div class="vi-text">
+              <strong>പുരുഷൻ:</strong> മുണ്ട് / ധോത്തി<br>
+              <strong>സ്ത്രീ:</strong> സാരി / ചുരിദാർ<br>
+              ജീൻസ്, ഷോർട്ട് നിഷിദ്ധം
+            </div>
+          </div>
+          <div class="vi-card">
+            <span class="vi-icon">🚗</span>
+            <div class="vi-title">പാർക്കിംഗ്</div>
+            <div class="vi-text">ക്ഷേത്ര പരിസരത്ത് വാഹന പാർക്കിംഗ് സൗകര്യം ലഭ്യം. നാടപുരം ഭാഗം വഴി എത്തുക.</div>
+          </div>
+          <div class="vi-card">
+            <span class="vi-icon">🙏</span>
+            <div class="vi-title">ആചാര നിയമങ്ങൾ</div>
+            <div class="vi-text">മൊബൈൽ നിശബ്ദ മോഡ്. ചെരുപ്പ് പ്രവേശനം നിരോധിതം. ശുദ്ധിയോടെ പ്രവേശിക്കുക.</div>
+          </div>
+          <div class="vi-card">
+            <span class="vi-icon">🍛</span>
+            <div class="vi-title">പ്രസാദം</div>
+            <div class="vi-text">നൈവേദ്യം, ഉദ്ദേശം, പൂജ ബുക്കിംഗ് — ക്ഷേത്ര ഓഫീസ് വഴി. 8:00 AM – 12:00 PM.</div>
+          </div>
+          <div class="vi-card">
+            <span class="vi-icon">🚌</span>
+            <div class="vi-title">എങ്ങനെ എത്താം</div>
+            <div class="vi-text">നാടപുരം ബസ് സ്റ്റോപ്പിൽ നിന്ന് 1.5 കി.മീ. കോഴിക്കോടിൽ നിന്ന് 45 കി.മീ.</div>
+          </div>
+          <div class="vi-card">
+            <span class="vi-icon">📞</span>
+            <div class="vi-title">ബന്ധപ്പെടൽ</div>
+            <div class="vi-text">
+              <a href="mailto:kakkamvellytemple@gmail.com" style="color:#8b0000;">kakkamvellytemple@gmail.com</a><br>
+              <a href="#contact" class="share-btn" style="color:#8b0000;cursor:pointer;">📤 Share Temple</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ───────────── CONTACT ───────────── -->
     <section id="contact" class="section section-saffron" aria-labelledby="contact-heading">
       <div class="container">
@@ -1841,6 +1938,57 @@
 
   </main>
 
+
+    <!-- ── DONATE SECTION (Ruflo feature-agent) ── -->
+    <section id="donate" aria-labelledby="donate-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag" style="color:#ffd700;background:rgba(255,215,0,.1);border-color:rgba(255,215,0,.25);">ദാനം</span>
+          <h2 id="donate-heading" class="section-title" style="color:#ffd700;">ക്ഷേത്ര വഴിപാട് &amp; ദാനം</h2>
+          <div class="title-divider" aria-hidden="true"><span>✦</span></div>
+          <p style="color:rgba(255,255,255,.65);font-size:.9rem;margin-top:.8rem;font-family:'Noto Serif Malayalam',serif;">
+            ക്ഷേത്ര നിർമ്മാണത്തിനും നിത്യ പൂജകൾക്കും ഭക്തരുടെ സഹകരണം ക്ഷണിക്കുന്നു
+          </p>
+        </div>
+        <div class="donate-grid">
+          <div class="donate-card">
+            <span class="donate-icon">🪔</span>
+            <span class="donate-name">നിത്യ ദീപം</span>
+            <span class="donate-desc">Daily lamp offering</span>
+          </div>
+          <div class="donate-card">
+            <span class="donate-icon">🌸</span>
+            <span class="donate-name">പൂജ വഴിപാട്</span>
+            <span class="donate-desc">Sponsor a pooja</span>
+          </div>
+          <div class="donate-card">
+            <span class="donate-icon">🍛</span>
+            <span class="donate-name">അന്നദാനം</span>
+            <span class="donate-desc">Feed devotees prasadam</span>
+          </div>
+          <div class="donate-card">
+            <span class="donate-icon">🏗️</span>
+            <span class="donate-name">ക്ഷേത്ര ജീർണ്ണോദ്ധാരണം</span>
+            <span class="donate-desc">Temple renovation fund</span>
+          </div>
+          <div class="donate-card">
+            <span class="donate-icon">🎉</span>
+            <span class="donate-name">ഉത്സവ ആഘോഷം</span>
+            <span class="donate-desc">Festival sponsorship</span>
+          </div>
+          <div class="donate-card">
+            <span class="donate-icon">📚</span>
+            <span class="donate-name">വേദ പഠനം</span>
+            <span class="donate-desc">Support Vedic education</span>
+          </div>
+        </div>
+        <div class="donate-upi">
+          <p>UPI / ഓൺലൈൻ ദാനം — ക്ഷേത്ര ഓഫീസ് വഴി ബന്ധപ്പെടുക</p>
+          <code>kakkamvellytemple@upi</code>
+        </div>
+      </div>
+    </section>
+
   <!-- ───────────── FOOTER ───────────── -->
   <footer class="site-footer" role="contentinfo">
     <div class="footer-top">
@@ -1896,10 +2044,24 @@
     <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
   </button>
 
+
+  <!-- PWA Install Banner -->
+  <div id="pwa-banner" role="banner" aria-label="Install App">
+    <span class="pwa-icon">🛕</span>
+    <div class="pwa-text">
+      <span class="pwa-title">ആപ്പ് ഇൻസ്റ്റോൾ ചെയ്യൂ</span>
+      <span class="pwa-sub">Offline access · Faster · Home screen</span>
+    </div>
+    <button class="pwa-install">Install</button>
+    <button class="pwa-dismiss" aria-label="Dismiss">✕</button>
+  </div>
+
   <!-- Scripts -->
   <script src="js/main.js" defer></script>
   <script src="js/krishna-animations.js" defer></script>
   <script src="js/mobile-futuristic.js" defer></script>
+  <script src="js/live-features.js" defer></script>
+  <script src="js/enhancements.js" defer></script>
   <script>
   // Baby Krishna section stars
   (function() {
