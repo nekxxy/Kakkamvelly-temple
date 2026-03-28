@@ -131,7 +131,7 @@
 (function initWhatsApp() {
   const btn = document.createElement('a');
   btn.id   = 'whatsapp-float';
-  btn.href = 'https://wa.me/+919447000000?text=ഹരേ%20കൃഷ്ണ%20🙏%20Kakkamvelly%20Sreekrishna%20Temple%20query';
+  btn.href = 'https://wa.me/919446844145?text=ഹരേ%20കൃഷ%20🙏%20Kakkamvelly%20Sreekrishna%20Temple';
   btn.target = '_blank';
   btn.rel    = 'noopener noreferrer';
   btn.setAttribute('aria-label', 'WhatsApp ൽ ബന്ധപ്പെടുക');

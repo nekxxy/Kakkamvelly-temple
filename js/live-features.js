@@ -22,19 +22,19 @@ const isMob = () => window.innerWidth <= 768;
     const h    = now.getHours();
     const m    = now.getMinutes();
     const mins = h * 60 + m;
-    // Morning: 5:00–12:00  (300–720)
-    // Evening: 17:00–20:30 (1020–1230)
-    const morningOpen  = 5*60, morningClose  = 12*60;
-    const eveningOpen  = 17*60, eveningClose  = 20*60+30;
+    // Morning: 5:30–9:00  (330–540)
+    // Evening: 17:45–18:45 (1065–1125)
+    const morningOpen  = 5*60+30, morningClose  = 9*60;
+    const eveningOpen  = 17*60+45, eveningClose  = 18*60+45;
     const isOpen = (mins >= morningOpen && mins < morningClose) ||
                    (mins >= eveningOpen && mins < eveningClose);
 
     // Next opening
     let nextLabel = '';
     if (!isOpen) {
-      if (mins < morningOpen)  nextLabel = 'Opens at 5:00 AM';
-      else if (mins < eveningOpen) nextLabel = 'Opens at 5:00 PM';
-      else nextLabel = 'Opens tomorrow at 5:00 AM';
+      if (mins < morningOpen)  nextLabel = 'Opens at 5:30 AM';
+      else if (mins < eveningOpen) nextLabel = 'Opens at 5:45 PM';
+      else nextLabel = 'Opens tomorrow at 5:30 AM';
     }
 
     // Current pooja
@@ -263,4 +263,71 @@ const isMob = () => window.innerWidth <= 768;
   const d = now.getDate();
   const sp = $('pc-special');
   if (sp) sp.textContent = special[d] || 'സാധാരണ ദിനം';
+})();
+
+/* ═══════════════════════════════════════════════
+   6. ANNADHANAM NEXT DATE CALCULATOR
+   First Sunday of every month, noon
+═══════════════════════════════════════════════ */
+(function initAnnadhanam() {
+  const el = document.getElementById('ann-next-date');
+  if (!el) return;
+
+  function getFirstSunday(year, month) {
+    // month is 0-indexed
+    const d = new Date(year, month, 1);
+    const day = d.getDay(); // 0=Sun
+    const diff = day === 0 ? 0 : 7 - day;
+    return new Date(year, month, 1 + diff);
+  }
+
+  const now = new Date();
+  let nextSunday = getFirstSunday(now.getFullYear(), now.getMonth());
+
+  // If this month's first Sunday is in the past (or today after noon), move to next month
+  const noonToday = new Date(nextSunday);
+  noonToday.setHours(12, 0, 0, 0);
+  if (now > noonToday) {
+    const nextMonth = new Date(now.getFullYear(), now.getMonth() + 1, 1);
+    nextSunday = getFirstSunday(nextMonth.getFullYear(), nextMonth.getMonth());
+  }
+
+  const months = ['January','February','March','April','May','June',
+                  'July','August','September','October','November','December'];
+  const mlMonths = ['ജനുവരി','ഫെബ്രുവരി','മാർച്ച്','ഏപ്രിൽ','മേയ്','ജൂൺ',
+                    'ജൂലൈ','ഓഗസ്റ്റ്','സെപ്റ്റംബർ','ഒക്ടോബർ','നവംബർ','ഡിസംബർ'];
+
+  const m = nextSunday.getMonth();
+  const d = nextSunday.getDate();
+  const y = nextSunday.getFullYear();
+
+  el.innerHTML = `🍛 അടുത്ത അന്നദാനം: ${d} ${mlMonths[m]} ${y} (${months[m]} ${d}) · ഉച്ചക്ക് 12:00`;
+
+  // Countdown if within 7 days
+  const diff = nextSunday - now;
+  const days = Math.floor(diff / 86400000);
+  if (days <= 7 && days >= 0) {
+    el.innerHTML += ` · <strong style="color:#ff9933">${days === 0 ? 'ഇന്ന്! 🎉' : days + ' days away'}</strong>`;
+  }
+})();
+
+/* ═══════════════════════════════════════════════
+   7. VISHU SPECIAL HOURS BADGE
+   Show auto-badge on or near Vishu (Apr 14-15)
+═══════════════════════════════════════════════ */
+(function initSpecialHoursBadge() {
+  const now   = new Date();
+  const month = now.getMonth(); // 3 = April
+  const date  = now.getDate();
+
+  // Show badge in April 10-20 window
+  if (month === 3 && date >= 10 && date <= 20) {
+    const cards = document.querySelectorAll('.timing-card-full, .timing-card');
+    if (cards.length > 0) {
+      const badge = document.createElement('div');
+      badge.className = 'special-hours-badge';
+      badge.innerHTML = `🌸 <strong>വിഷു 2026 (Apr 15):</strong> &nbsp;ക്ഷേത്രം 5:00 AM – 7:30 PM&nbsp; (Special Hours)`;
+      cards[cards.length - 1].appendChild(badge);
+    }
+  }
 })();
