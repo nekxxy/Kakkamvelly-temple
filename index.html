@@ -931,6 +931,70 @@
 
 
 
+
+  <!-- Audio unlock — inline (not deferred) for immediate registration -->
+  <script>
+  (function() {
+    'use strict';
+    var _audioStarted = false;
+
+    function _unlockAudio() {
+      if (_audioStarted) return;
+      _audioStarted = true;
+
+      var audio = document.getElementById('krishna-audio');
+      if (!audio) return;
+
+      audio.loop    = true;
+      audio.volume  = 0;
+      audio.preload = 'auto';
+
+      // play() called with zero conditions — gesture context intact
+      var p = audio.play();
+      if (p && p.then) {
+        p.then(function() {
+          // Fade up to 20%
+          var step = 0;
+          var t = setInterval(function() {
+            step++;
+            audio.volume = Math.min(0.20, step / 40 * 0.20);
+            if (step >= 40) clearInterval(t);
+          }, 75);
+          // Update button UI
+          var btn = document.getElementById('audio-toggle');
+          if (btn) {
+            btn.classList.add('playing');
+            btn.classList.remove('muted');
+            var ic = btn.querySelector('.audio-icon');
+            if (ic) ic.textContent = '🎵';
+          }
+          // Expose state to galaxy.js
+          window._audioPlaying = true;
+          window._audioEl = audio;
+        }).catch(function() {
+          _audioStarted = false; // allow retry
+        });
+      }
+    }
+
+    // Register on document SYNCHRONOUSLY before defer scripts load
+    // false = bubble phase, not passive — iOS gesture preserved
+    document.addEventListener('touchstart', _unlockAudio, false);
+    document.addEventListener('touchend',   _unlockAudio, false);
+    document.addEventListener('click',      _unlockAudio, false);
+
+    // Register on document SYNCHRONOUSLY — before any defer script loads
+    // old-style false = not passive, bubbling — iOS gesture preserved
+    document.addEventListener('touchstart', _unlockAudio, false);
+    document.addEventListener('touchend',   _unlockAudio, false);
+    document.addEventListener('click',      _unlockAudio, false);
+
+    // Expose for galaxy.js to sync state
+    window._unlockAudio  = _unlockAudio;
+    window._audioStarted = function() { return _audioStarted; };
+  })();
+  </script>
+
   <!-- 🎵 Krishna Bhakti Audio — fade in on load -->
   <audio id="krishna-audio" loop preload="auto">
     <source src="audio/krishna-loop.mp3" type="audio/mpeg" />

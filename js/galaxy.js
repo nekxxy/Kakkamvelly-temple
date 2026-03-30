@@ -225,124 +225,77 @@
 })();
 
 /* ─────────────────────────────────────────────
-   2. AUDIO PLAYER — bulletproof iOS/Android
-   Strategy: unlock on first touch, then play.
-   iOS needs: call play() as the VERY FIRST LINE
-   of the handler with ZERO conditions before it.
+   2. AUDIO PLAYER — syncs with inline unlock script
+   The inline script in HTML handles first-touch.
+   This module manages the toggle button UI only.
 ───────────────────────────────────────────── */
-(function initAudio() {
-  var btn    = document.getElementById('audio-toggle');
-  var icon   = btn ? btn.querySelector('.audio-icon') : null;
-  var lbl    = btn ? btn.querySelector('.audio-label') : null;
-  var audio  = document.getElementById('krishna-audio');
-  var VOL    = 0.20;
-  var isPlaying = false;
-  var unlocked  = false;
+(function initAudioUI() {
+  var btn  = document.getElementById('audio-toggle');
+  var icon = btn ? btn.querySelector('.audio-icon') : null;
+  var lbl  = btn ? btn.querySelector('.audio-label') : null;
+  if (!btn) return;
 
-  if (!audio) return;
-  audio.loop    = true;
-  audio.preload = 'auto';
+  function getAudio() {
+    return window._audioEl || document.getElementById('krishna-audio');
+  }
+  function isPlaying() {
+    var a = getAudio();
+    return a && !a.paused;
+  }
 
-  /* ── UI helpers ── */
   function showPlaying() {
-    isPlaying = true;
-    if (!btn) return;
     btn.classList.add('playing');
     btn.classList.remove('muted');
     if (icon) icon.textContent = '🎵';
     if (lbl)  lbl.textContent  = 'ഭക്തി';
   }
   function showPaused() {
-    isPlaying = false;
-    if (!btn) return;
     btn.classList.remove('playing');
     btn.classList.add('muted');
     if (icon) icon.textContent = '🔇';
     if (lbl)  lbl.textContent  = 'pause';
   }
 
-  /* ── Fade in volume ── */
-  function fadeUp() {
-    audio.volume = 0;
-    var step = 0, total = 40;
-    var t = setInterval(function() {
-      step++;
-      audio.volume = Math.min(VOL, step / total * VOL);
-      if (step >= total) clearInterval(t);
-    }, 75);
-  }
+  // Poll audio state every 500ms to keep UI in sync
+  setInterval(function() {
+    if (isPlaying()) showPlaying();
+  }, 500);
 
-  /* ── The play call — MUST be synchronous ── */
-  function doPlay() {
-    var p = audio.play();
-    if (p && p.then) {
-      p.then(function() {
-        showPlaying();
-        fadeUp();
-      }).catch(function() {
-        showPaused();
-        unlocked = false;
-      });
+  // Toggle button — use inline unlock if not started
+  function handleToggle(e) {
+    e.preventDefault && e.preventDefault();
+    e.stopImmediatePropagation && e.stopImmediatePropagation();
+
+    var audio = getAudio();
+    if (!audio) return;
+
+    if (isPlaying()) {
+      audio.pause();
+      showPaused();
     } else {
-      showPlaying();
-      fadeUp();
+      // Use the global unlock function from inline script
+      if (window._unlockAudio) {
+        window._audioStarted = false; // reset so it can retry
+        window._unlockAudio();
+      } else {
+        audio.volume = 0;
+        var p = audio.play();
+        if (p && p.then) p.then(showPlaying).catch(function(){});
+      }
     }
   }
 
-  /* ── FIRST USER TOUCH — iOS unlock pattern ──
-     Call audio.play() as the ABSOLUTE FIRST LINE.
-     Any code before play() breaks iOS gesture trust.
-     Using old-style addEventListener(,, false) for
-     max browser compat (not options object).
-  ── */
-  function firstTouch() {
-    if (unlocked) return;
-    unlocked = true;
-    /* play() is the first expression — gesture intact */
-    doPlay();
-    document.removeEventListener('touchend',   firstTouch, false);
-    document.removeEventListener('click',      firstTouch, false);
-    document.removeEventListener('touchstart', firstTouch, false);
-  }
+  btn.addEventListener('touchend', handleToggle, false);
+  btn.addEventListener('click',    handleToggle, false);
 
-  /* Use old-style false (= bubble, not passive) for iOS */
-  document.addEventListener('touchend',   firstTouch, false);
-  document.addEventListener('touchstart', firstTouch, false);
-  document.addEventListener('click',      firstTouch, false);
-
-  /* ── Toggle button ── */
-  if (btn) {
-    btn.addEventListener('touchend', function(e) {
-      e.preventDefault();
-      e.stopImmediatePropagation();
-      if (!isPlaying) {
-        unlocked = true;
-        doPlay();
-      } else {
-        audio.pause();
-        showPaused();
-      }
-    }, false);
-
-    btn.addEventListener('click', function(e) {
-      e.stopImmediatePropagation();
-      if (!isPlaying) {
-        unlocked = true;
-        doPlay();
-      } else {
-        audio.pause();
-        showPaused();
-      }
-    }, false);
-  }
-
-  /* ── Tab visibility ── */
+  // Tab visibility
   document.addEventListener('visibilitychange', function() {
-    if (!isPlaying) return;
-    if (document.hidden) {
+    var audio = getAudio();
+    if (!audio) return;
+    if (document.hidden && !audio.paused) {
       audio.pause();
-    } else {
-      audio.play().catch(function() {});
+    } else if (!document.hidden && window._audioPlaying) {
+      audio.play().catch(function(){});
     }
   });
 })();
