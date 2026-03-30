@@ -190,30 +190,7 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 /* ─────────────────────────────────────────────────
    5. FLUTE SOUND WAVE IN HERO
 ───────────────────────────────────────────────── */
-(function initFluteWave() {
-  if (prefersReducedMotion) return;
-  const hero = document.querySelector('.hero');
-  if (!hero) return;
-
-  const container = document.createElement('div');
-  container.className = 'flute-wave-container';
-  container.setAttribute('aria-hidden', 'true');
-
-  const BAR_COUNT = 24;
-  const heights   = [6,10,18,28,36,42,46,42,36,28,18,10,6,8,14,22,34,40,44,38,28,18,10,6];
-
-  for (let i = 0; i < BAR_COUNT; i++) {
-    const bar = document.createElement('div');
-    bar.className = 'flute-bar';
-    bar.style.cssText = `
-      height: ${heights[i]}px;
-      animation-duration: ${rand(0.4, 1.1)}s;
-      animation-delay: ${(i * 0.06).toFixed(2)}s;
-    `;
-    container.appendChild(bar);
-  }
-  hero.appendChild(container);
-})();
+/* initFluteWave removed */);
 
 /* ─────────────────────────────────────────────────
    6. FLOATING KRISHNA ELEMENTS (page-wide)

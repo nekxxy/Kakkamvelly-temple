@@ -343,8 +343,8 @@ html { scroll-padding-top: calc(var(--mob-nav-h) + 8px); }
   .peacock-feather:nth-child(-n+4) { opacity: 1 !important; }
 
   /* Flute wave — shorter on mobile */
-  .flute-wave-container { bottom: calc(var(--mob-bottom-h) + 70px); }
-  .flute-bar { width: 2px; }
+  
+  
 }
 
 /* ============================================================
