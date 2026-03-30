@@ -4,26 +4,16 @@
  * Caches core assets for offline access
  */
 
-const CACHE = 'kvt-v1';
-const CORE  = [
+const CACHE = 'kvt-v5';
+const CORE = [
   '/kakkamvelly-temple/',
   '/kakkamvelly-temple/index.html',
-  '/kakkamvelly-temple/css/style.css',
-  '/kakkamvelly-temple/css/krishna-animations.css',
-  '/kakkamvelly-temple/css/baby-krishna.css',
-  '/kakkamvelly-temple/css/mobile-futuristic.css',
-  '/kakkamvelly-temple/css/live-widgets.css',
-  '/kakkamvelly-temple/js/main.js',
-  '/kakkamvelly-temple/js/krishna-animations.js',
-  '/kakkamvelly-temple/js/mobile-futuristic.js',
-  '/kakkamvelly-temple/js/live-features.js',
-  '/kakkamvelly-temple/images/temple-entrance-deepam.jpg',
-  '/kakkamvelly-temple/images/deepam-lamp-interior.jpg',
-  '/kakkamvelly-temple/images/deepam-closeup.jpg',
-  '/kakkamvelly-temple/images/hanging-lamps-corridor.jpg',
+  '/kakkamvelly-temple/css/temple.min.css',
+  '/kakkamvelly-temple/js/app.min.js',
+  '/kakkamvelly-temple/js/galaxy.min.js',
+  '/kakkamvelly-temple/images/baby-krishna-hero.avif',
+  '/kakkamvelly-temple/images/mobile/baby-krishna-hero.avif',
   '/kakkamvelly-temple/audio/krishna-loop.mp3',
-  'https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lato:wght@300;400;700&family=Noto+Serif+Malayalam:wght@400;700&display=swap',
-  'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css',
 ];
 
 self.addEventListener('install', e => {
