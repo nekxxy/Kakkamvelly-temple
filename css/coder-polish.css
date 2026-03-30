@@ -711,3 +711,88 @@ html {
 
 /* Horizontal nav scroll — hide scrollbar entirely */
 .nav-menu::-webkit-scrollbar { display: none; }
+
+/* ══════════════════════════════════════════════
+   HERO BABY KRISHNA IMAGE
+══════════════════════════════════════════════ */
+.hero-krishna-img-wrap {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.hero-krishna-img {
+  width: clamp(160px, 38vw, 280px);
+  height: auto;
+  display: block;
+  filter:
+    drop-shadow(0 0 30px rgba(255, 215, 0, 0.55))
+    drop-shadow(0 0 60px rgba(255, 180, 0, 0.3));
+  animation: krishna-float 4s ease-in-out infinite;
+  transform-origin: center bottom;
+  /* White background blends with dark hero */
+  mix-blend-mode: normal;
+  border-radius: 0;
+}
+
+/* Remove white background using luminosity blend */
+@supports (mix-blend-mode: multiply) {
+  .hero-section-dark .hero-krishna-img,
+  .hero .hero-krishna-img {
+    mix-blend-mode: luminosity;
+  }
+}
+
+/* Gentle float + subtle glow pulse */
+@keyframes krishna-float {
+  0%,100% {
+    transform: translateY(0px) scale(1);
+    filter:
+      drop-shadow(0 0 25px rgba(255,215,0,0.5))
+      drop-shadow(0 0 50px rgba(255,180,0,0.25));
+  }
+  50% {
+    transform: translateY(-12px) scale(1.02);
+    filter:
+      drop-shadow(0 0 40px rgba(255,215,0,0.75))
+      drop-shadow(0 0 80px rgba(255,180,0,0.4))
+      drop-shadow(0 20px 30px rgba(0,0,0,0.3));
+  }
+}
+
+/* Halo glow ring behind image */
+.hero-krishna-img-wrap::before {
+  content: '';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: clamp(180px, 42vw, 300px);
+  height: clamp(180px, 42vw, 300px);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255,215,0,0.18) 0%,
+    rgba(255,165,0,0.08) 50%,
+    transparent 70%
+  );
+  animation: halo-breathe 4s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes halo-breathe {
+  0%,100% { transform: translate(-50%,-50%) scale(1);   opacity: 0.7; }
+  50%      { transform: translate(-50%,-50%) scale(1.15); opacity: 1; }
+}
+
+/* Mobile — slightly smaller */
+@media (max-width: 480px) {
+  .hero-krishna-img {
+    width: clamp(130px, 45vw, 200px);
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero-krishna-img { animation: none; }
+  .hero-krishna-img-wrap::before { animation: none; }
+}
