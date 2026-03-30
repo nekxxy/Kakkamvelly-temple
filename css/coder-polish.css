@@ -726,8 +726,9 @@ html {
   flex-shrink: 0;
 }
 
-/* Clean transparent image — no blend mode needed */
+/* Transparent PNG — mix-blend-mode:multiply removes any white fringe */
 .hero-krishna-img {
+  mix-blend-mode: multiply; /* kills white on dark backgrounds */
   width: 280px;
   height: auto;
   display: block;
