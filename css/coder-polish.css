@@ -637,3 +637,77 @@ img { max-width: 100%; height: auto; display: block; }
   body { font-size: 11pt; color: #000; }
   a[href]::after { content: " (" attr(href) ")"; font-size: 9pt; }
 }
+
+/* ══════════════════════════════════════════════
+   PERFORMANCE: will-change + contain + GPU hints
+══════════════════════════════════════════════ */
+#galaxy-canvas {
+  will-change: contents;
+  contain: strict;
+}
+
+.hero-content,
+.hero-title,
+.peacock-feather,
+.cursor-sparkle,
+.krishna-float-element {
+  will-change: transform, opacity;
+}
+
+.festival-card,
+.bk-card,
+.timing-card,
+.gallery-photo-card,
+.vi-card,
+.donate-card {
+  contain: layout style;
+}
+
+/* Reduce paint on scroll */
+.site-footer,
+#live-section,
+.annadhanam-kulam-wrapper {
+  contain: layout;
+}
+
+/* ══════════════════════════════════════════════
+   SMOOTH SCROLLING — all browsers
+══════════════════════════════════════════════ */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 110px; /* account for sticky nav + nav strip */
+}
+
+/* Mobile: less scroll-padding */
+@media (max-width: 768px) {
+  html { scroll-padding-top: 115px; }
+}
+
+/* ══════════════════════════════════════════════
+   PERFORMANCE: Reduce expensive animations on mobile
+══════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  /* Fewer floating elements */
+  .krishna-float-element:nth-child(n+6) { display: none; }
+  /* No cursor trail on mobile (no cursor) */
+  .cursor-sparkle { display: none !important; }
+  /* Simpler box shadows */
+  .bk-card:hover,
+  .festival-card:hover {
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  }
+}
+
+/* ══════════════════════════════════════════════
+   SCROLLBAR — thin, themed
+══════════════════════════════════════════════ */
+* { scrollbar-width: thin; scrollbar-color: #c8860a #1a0a00; }
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#c8860a, #ffd700);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-track { background: rgba(0,0,0,0.1); }
+
+/* Horizontal nav scroll — hide scrollbar entirely */
+.nav-menu::-webkit-scrollbar { display: none; }

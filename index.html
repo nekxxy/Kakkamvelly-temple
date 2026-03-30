@@ -2,6 +2,13 @@
 <html lang="ml">
 <head>
   <meta charset="UTF-8" />
+  <!-- Resource hints for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+  <link rel="preload" href="css/style.css" as="style" />
+  <link rel="preload" href="images/temple-entrance-deepam.jpg" as="image" />
+  <link rel="dns-prefetch" href="https://api.open-meteo.com" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#1a0620" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -964,7 +971,7 @@
 
 
   <!-- 🎵 Krishna Bhakti Audio — fade in on load -->
-  <audio id="krishna-audio" loop preload="none">
+  <audio id="krishna-audio" loop preload="auto">
     <source src="audio/krishna-bhakti-web.mp3" type="audio/mpeg" />
   </audio>
 

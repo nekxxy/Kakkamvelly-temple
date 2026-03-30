@@ -25,7 +25,7 @@
   window.addEventListener('resize', resize, { passive: true });
 
   // ── Star field ──
-  const STAR_COUNT = window.innerWidth < 600 ? 180 : 350;
+  const STAR_COUNT = window.innerWidth < 600 ? 100 : window.innerWidth < 1024 ? 200 : 350;
   const stars = [];
 
   class Star {
@@ -171,7 +171,15 @@
   }
 
   // ── Main loop ──
+  let frameCount = 0;
+  const isMobileGalaxy = window.innerWidth < 768;
   function loop(timestamp) {
+    frameCount++;
+    // Mobile: render every 2nd frame (30fps) to save battery
+    if (isMobileGalaxy && frameCount % 2 !== 0) {
+      requestAnimationFrame(loop);
+      return;
+    }
     tick = timestamp * 0.001;
     ctx.clearRect(0, 0, W, H);
 
@@ -200,6 +208,8 @@
     drawShooters();
 
     requestAnimationFrame(loop);
+  // Apply will-change hint to canvas for GPU compositing
+  canvas.style.willChange = 'contents';
   }
   requestAnimationFrame(loop);
 
@@ -215,51 +225,67 @@
 })();
 
 /* ─────────────────────────────────────────────
-   2. AUDIO PLAYER — fade in, user-initiated
-   Autoplay policy: start on first user gesture
+   2. AUDIO PLAYER — iOS/Android compatible
+   RULE: audio.play() MUST be called synchronously
+   inside the user gesture handler (same call stack).
+   Any async gap (setTimeout, .then, fetch) breaks it.
 ───────────────────────────────────────────── */
 (function initAudio() {
-  const audio  = document.getElementById('krishna-audio');
-  const btn    = document.getElementById('audio-toggle');
-  const icon   = btn ? btn.querySelector('.audio-icon') : null;
+  const audio = document.getElementById('krishna-audio');
+  const btn   = document.getElementById('audio-toggle');
+  const icon  = btn ? btn.querySelector('.audio-icon') : null;
   if (!audio || !btn) return;
 
-  let started  = false;
+  const TARGET_VOL = 0.20;
   let playing  = false;
-  const TARGET_VOL = 0.20;   // Low volume — 20%
-  const FADE_STEPS = 60;
-  const FADE_MS    = 3000;   // 3 second fade in
+  let started  = false;
+  let fadeTimer = null;
 
-  function fadeIn() {
-    audio.volume = 0;
-    audio.play().then(() => {
-      playing = true;
-      btn.classList.add('playing');
-      btn.classList.remove('muted');
-      if (icon) icon.textContent = '🎵';
-      btn.title = 'ഭക്തി സംഗീതം — Click to pause';
+  // Set preload to auto so audio buffers early
+  audio.preload = 'auto';
 
-      let step = 0;
-      const interval = setInterval(() => {
-        step++;
-        audio.volume = Math.min(TARGET_VOL, (step / FADE_STEPS) * TARGET_VOL);
-        if (step >= FADE_STEPS) clearInterval(interval);
-      }, FADE_MS / FADE_STEPS);
-
-    }).catch(() => {
-      // Autoplay blocked — wait for toggle click
-    });
+  // ── UI update helpers ──
+  function setPlayingUI() {
+    playing = true;
+    btn.classList.add('playing');
+    btn.classList.remove('muted');
+    if (icon) icon.textContent = '🎵';
+    btn.setAttribute('title','ഭക്തി സംഗീതം — pause');
+    btn.setAttribute('aria-label','Pause background music');
+  }
+  function setPausedUI() {
+    playing = false;
+    btn.classList.remove('playing');
+    btn.classList.add('muted');
+    if (icon) icon.textContent = '🔇';
+    btn.setAttribute('title','ഭക്തി സംഗീതം — play');
+    btn.setAttribute('aria-label','Play background music');
   }
 
-  function fadeOut(cb) {
+  // ── Fade volume up after play starts ──
+  function fadeUp() {
+    clearInterval(fadeTimer);
+    audio.volume = 0;
+    let step = 0;
+    const steps = 40;
+    fadeTimer = setInterval(() => {
+      step++;
+      audio.volume = Math.min(TARGET_VOL, (step / steps) * TARGET_VOL);
+      if (step >= steps) clearInterval(fadeTimer);
+    }, 80); // 40 steps × 80ms = 3.2s fade
+  }
+
+  // ── Fade volume down then pause ──
+  function fadeDown(cb) {
+    clearInterval(fadeTimer);
     let v = audio.volume;
-    const step = v / 30;
-    const interval = setInterval(() => {
+    const step = Math.max(0.002, v / 25);
+    fadeTimer = setInterval(() => {
       v -= step;
       if (v <= 0) {
         audio.volume = 0;
         audio.pause();
-        clearInterval(interval);
+        clearInterval(fadeTimer);
         if (cb) cb();
       } else {
         audio.volume = v;
@@ -267,73 +293,85 @@
     }, 50);
   }
 
-  // Try to autoplay immediately on page load
-  function tryAutoPlay() {
-    if (started) return;
+  // ── The ONLY correct way on iOS ──
+  // Call audio.play() SYNCHRONOUSLY inside the gesture,
+  // then adjust volume asynchronously after.
+  function startAudio() {
+    if (started && playing) return;
     started = true;
-    audio.volume = 0;
-    audio.play().then(() => {
-      playing = true;
-      btn.classList.add('playing');
-      if (icon) icon.textContent = '🎵';
-      // Fade in
-      let step = 0;
-      const interval = setInterval(() => {
-        step++;
-        audio.volume = Math.min(TARGET_VOL, (step / FADE_STEPS) * TARGET_VOL);
-        if (step >= FADE_STEPS) clearInterval(interval);
-      }, FADE_MS / FADE_STEPS);
-    }).catch(() => {
-      // Autoplay blocked by browser — wait for first touch/click
-      started = false;
-    });
-  }
 
-  // Try immediately when page loads
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', tryAutoPlay);
-  } else {
-    tryAutoPlay();
-  }
-  // Also try after a short delay (some browsers need this)
-  setTimeout(tryAutoPlay, 800);
+    // SYNCHRONOUS play call — preserves gesture context
+    const promise = audio.play();
 
-  // Fallback: first user interaction
-  function autoStart(e) {
-    if (started) return;
-    if (e && e.target && e.target.closest('#audio-toggle')) return;
-    started = true;
-    fadeIn();
-    ['click','touchstart','keydown','scroll','touchend'].forEach(ev =>
-      document.removeEventListener(ev, autoStart)
-    );
-  }
-  ['click','touchstart','touchend','keydown','scroll'].forEach(ev =>
-    document.addEventListener(ev, autoStart, { passive: true })
-  );
-
-  // Manual toggle
-  btn.addEventListener('click', () => {
-    started = true;
-    if (playing) {
-      fadeOut(() => {
-        playing = false;
-        btn.classList.remove('playing');
-        btn.classList.add('muted');
-        if (icon) icon.textContent = '🔇';
-        btn.title = 'ഭക്തി സംഗീതം — Click to play';
+    if (promise !== undefined) {
+      promise.then(() => {
+        setPlayingUI();
+        fadeUp();
+      }).catch(err => {
+        // Still blocked (e.g. data saver mode) — show muted state
+        console.warn('Audio play blocked:', err.message);
+        setPausedUI();
+        started = false;
       });
     } else {
-      fadeIn();
+      // Old browser — assume it worked
+      setPlayingUI();
+      fadeUp();
+    }
+  }
+
+  // ── FIRST TOUCH / CLICK anywhere on page ──
+  // Must be passive:false NOT passive:true on touchstart
+  // so we can call play() in the same synchronous frame
+  function onFirstGesture(e) {
+    if (started) return;
+    // Don't double-trigger from audio button (it has its own handler)
+    if (e.target && e.target.closest && e.target.closest('#audio-toggle')) return;
+
+    startAudio();
+
+    // Remove all gesture listeners after first trigger
+    document.removeEventListener('touchstart', onFirstGesture);
+    document.removeEventListener('click',      onFirstGesture);
+    document.removeEventListener('keydown',    onFirstGesture);
+  }
+
+  // passive:false on touchstart ensures iOS gesture context is preserved
+  document.addEventListener('touchstart', onFirstGesture, { passive: false, once: true });
+  document.addEventListener('click',      onFirstGesture, { once: true });
+  document.addEventListener('keydown',    onFirstGesture, { once: true });
+
+  // ── Manual toggle button ──
+  btn.addEventListener('click', e => {
+    e.stopPropagation(); // don't also trigger onFirstGesture
+    if (!started || !playing) {
+      startAudio();
+    } else {
+      fadeDown(() => setPausedUI());
     }
   });
 
-  // Pause when tab hidden, resume when visible
+  btn.addEventListener('touchend', e => {
+    e.preventDefault(); // prevent ghost click
+    e.stopPropagation();
+    if (!started || !playing) {
+      startAudio();
+    } else {
+      fadeDown(() => setPausedUI());
+    }
+  }, { passive: false });
+
+  // ── Pause when tab hidden ──
   document.addEventListener('visibilitychange', () => {
     if (document.hidden && playing) {
       audio.pause();
     } else if (!document.hidden && playing) {
       audio.play().catch(() => {});
     }
+  });
+
+  // ── Audio ended (shouldn't happen with loop, but safety) ──
+  audio.addEventListener('ended', () => {
+    if (playing) audio.play().catch(() => {});
   });
 })();
