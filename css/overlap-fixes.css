@@ -991,3 +991,34 @@ html, body {
 #audio-toggle {
   touch-action: manipulation;
 }
+
+/* ══════════════════════════════════════════════
+   TIMINGS SECTION — explicit scroll through
+   Ensures touch scroll passes through all cards
+   to the page scroll (not trapped in cards)
+══════════════════════════════════════════════ */
+#timings,
+#timings .container,
+#timings .timings-grid,
+#timings .timing-card,
+#timings .timing-card-full,
+#timings .timing-table,
+#timings .opening-hours-grid,
+.section-saffron {
+  touch-action: pan-y !important;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: none;
+}
+
+/* Remove any height constraint that could make it scroll internally */
+#timings .timing-card {
+  overflow: visible !important;
+  height: auto !important;
+  max-height: none !important;
+}
+
+/* Section itself must not create a scroll container */
+#timings {
+  overflow: visible !important;
+  position: relative;
+}

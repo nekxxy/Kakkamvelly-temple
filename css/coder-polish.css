@@ -643,7 +643,7 @@ img { max-width: 100%; height: auto; display: block; }
 ══════════════════════════════════════════════ */
 #galaxy-canvas {
   will-change: contents;
-  contain: strict;
+  /* contain:strict removed — was too aggressive, affected child scroll events */
 }
 
 .hero-content,
@@ -654,20 +654,16 @@ img { max-width: 100%; height: auto; display: block; }
   will-change: transform, opacity;
 }
 
+/* contain: layout style removed — it creates scroll containers on iOS
+   trapping touch events inside cards instead of propagating to page scroll */
 .festival-card,
 .bk-card,
 .timing-card,
 .gallery-photo-card,
 .vi-card,
 .donate-card {
-  contain: layout style;
-}
-
-/* Reduce paint on scroll */
-.site-footer,
-#live-section,
-.annadhanam-kulam-wrapper {
-  contain: layout;
+  /* contain removed — was blocking touch scroll propagation on mobile */
+  isolation: isolate; /* use isolation instead for stacking context */
 }
 
 /* ══════════════════════════════════════════════
