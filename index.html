@@ -982,12 +982,16 @@
     document.addEventListener('touchstart', _unlockAudio, false);
     document.addEventListener('touchend',   _unlockAudio, false);
     document.addEventListener('click',      _unlockAudio, false);
+    document.addEventListener('scroll',     _unlockAudio, false);
+    document.addEventListener('touchmove',  _unlockAudio, false);
 
     // Register on document SYNCHRONOUSLY — before any defer script loads
     // old-style false = not passive, bubbling — iOS gesture preserved
     document.addEventListener('touchstart', _unlockAudio, false);
     document.addEventListener('touchend',   _unlockAudio, false);
     document.addEventListener('click',      _unlockAudio, false);
+    document.addEventListener('scroll',     _unlockAudio, false);
+    document.addEventListener('touchmove',  _unlockAudio, false);
 
     // Expose for galaxy.js to sync state
     window._unlockAudio  = _unlockAudio;
