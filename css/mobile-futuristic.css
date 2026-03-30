@@ -269,7 +269,7 @@ html { scroll-padding-top: calc(var(--mob-nav-h) + 8px); }
 @media (max-width: 768px) {
   .hero {
     min-height: 100dvh;
-    padding-top: var(--mob-nav-h);
+    padding-top: 0; /* hero-content handles its own top padding */
     background: linear-gradient(
       170deg,
       #2a0008 0%,
@@ -991,8 +991,9 @@ main {
   .nav-link::before { display: none !important; } /* no left bar */
 
   /* Push main content down to account for nav strip */
-  main { padding-top: calc(var(--mob-nav-h) + 42px) !important; }
-  .hero { padding-top: calc(var(--mob-nav-h) + 42px) !important; }
+  main { padding-top: calc(var(--mob-nav-h) + 44px) !important; }
+  /* Hero is FIRST child of main — no extra padding needed */
+  main > section#home:first-of-type { margin-top: 0; }
 
   /* Brand text — show both lines */
   .brand-ml { font-size: 0.76rem; }
