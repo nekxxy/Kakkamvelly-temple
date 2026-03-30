@@ -986,50 +986,77 @@
 
   <!-- ───────────── FOOTER ───────────── -->
   <footer class="site-footer footer-temple-bg" role="contentinfo">
-    <div class="footer-top">
-      <div class="container footer-grid">
-        <div class="footer-brand">
-          <span class="om-symbol-footer" aria-hidden="true">ॐ</span>
-          <div>
-            <p class="footer-name-ml">കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം</p>
-            <p class="footer-name-en">Kakkamvelly Sreekrishna Temple</p>
-            <p class="footer-location">പുറമേരി, കോഴിക്കോട്, കേരളം</p>
-          </div>
-        </div>
-        <nav class="footer-nav" aria-label="ഫൂട്ടർ നാവിഗേഷൻ">
-          <h4>ദ്രുത ലിങ്കുകൾ</h4>
-          <ul role="list">
-            <li><a href="#home">മുഖ്യ താൾ</a></li>
-            <li><a href="#about">ക്ഷേത്രത്തെ കുറിച്ച്</a></li>
-            <li><a href="#timings">സമയക്രമം</a></li>
-            <li><a href="#festivals">ഉത്സവങ്ങൾ</a></li>
-            <li><a href="#location">സ്ഥലം</a></li>
-            <li><a href="#contact">ബന്ധപ്പെടുക</a></li>
-          </ul>
-        </nav>
-        <div class="footer-hours">
-          <h4>ക്ഷേത്ര സമയം</h4>
-          <p><i class="fa-solid fa-sun" aria-hidden="true"></i> രാവിലെ: 5:30 AM – 9:00 AM</p>
-          <p><i class="fa-solid fa-moon" aria-hidden="true"></i> വൈകുന്നേരം: 5:45 PM – 6:45 PM</p>
-          <p class="footer-note">ആഴ്ചയിൽ 7 ദിവസവും · Daily Open</p>
-        </div>
-        <div class="footer-map-thumb">
-          <h4>ഞങ്ങളെ കണ്ടെത്തുക</h4>
-          <a href="https://maps.google.com/?q=Kakkamvelly+Sreekrishna+Temple+Kozhikode+Kerala" target="_blank" rel="noopener noreferrer" aria-label="Google Maps-ൽ ക്ഷേത്ര സ്ഥാനം തുറക്കുക (പുതിയ ടാബിൽ)">
-            <div class="map-thumb-placeholder">
-              <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
-              <span>Google Maps-ൽ കാണുക</span>
+    <div class="footer-main">
+      <div class="container">
+
+        <!-- Row 1: Brand + Hours + Direction (horizontal) -->
+        <div class="footer-row-top">
+          <!-- Brand -->
+          <div class="footer-brand-compact">
+            <span class="footer-om" aria-hidden="true">ॐ</span>
+            <div>
+              <p class="footer-name-ml">കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം</p>
+              <p class="footer-name-en">Kakkamvelly Sreekrishna Temple</p>
+              <p class="footer-loc">📍 പുറമേരി, കോഴിക്കോട്, Kerala 673503</p>
             </div>
+          </div>
+
+          <!-- Hours (horizontal pills) -->
+          <div class="footer-hours-compact">
+            <p class="footer-hours-label">🕐 ദർശന സമയം</p>
+            <div class="footer-hours-row">
+              <span class="footer-hour-pill">
+                <i class="fa-solid fa-sun" aria-hidden="true"></i>
+                5:30 – 9:00 AM
+              </span>
+              <span class="footer-hours-sep">·</span>
+              <span class="footer-hour-pill">
+                <i class="fa-solid fa-moon" aria-hidden="true"></i>
+                5:45 – 6:45 PM
+              </span>
+              <span class="footer-hours-sep">·</span>
+              <span class="footer-hour-note">7 ദിവസവും</span>
+            </div>
+          </div>
+
+          <!-- Direction button -->
+          <a href="https://maps.app.goo.gl/LaTA1pWM8NhjW4gK6"
+             target="_blank" rel="noopener noreferrer"
+             class="footer-direction-btn">
+            <i class="fa-solid fa-diamond-turn-right" aria-hidden="true"></i>
+            Get Directions
           </a>
         </div>
+
+        <!-- Row 2: Quick links (horizontal) -->
+        <nav class="footer-links-row" aria-label="Footer navigation">
+          <a href="#home">മുഖ്യ</a>
+          <span aria-hidden="true">·</span>
+          <a href="#about">ക്ഷേത്രം</a>
+          <span aria-hidden="true">·</span>
+          <a href="#timings">സമയം</a>
+          <span aria-hidden="true">·</span>
+          <a href="#festivals">ഉത്സവം</a>
+          <span aria-hidden="true">·</span>
+          <a href="#gallery">ഗ്യാലറി</a>
+          <span aria-hidden="true">·</span>
+          <a href="#location">സ്ഥലം</a>
+          <span aria-hidden="true">·</span>
+          <a href="#contact">ബന്ധം</a>
+          <span aria-hidden="true">·</span>
+          <a href="#donate">ദാനം</a>
+        </nav>
+
       </div>
     </div>
+
+    <!-- Bottom bar -->
     <div class="footer-bottom">
-      <div class="container">
+      <div class="container footer-bottom-row">
         <p class="footer-copy">
-          &copy; <span id="footer-year"></span> കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം. എല്ലാ അവകാശങ്ങളും നിക്ഷിപ്തം.
+          &copy; <span id="footer-year"></span> കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം · All rights reserved
         </p>
-        <p class="footer-tagline">🪔 ഹരേ കൃഷ്ണ ഹരേ കൃഷ്ണ കൃഷ്ണ കൃഷ്ണ ഹരേ ഹരേ 🪔</p>
+        <p class="footer-tagline">🪔 ഹരേ കൃഷ്ണ 🪔</p>
       </div>
     </div>
   </footer>

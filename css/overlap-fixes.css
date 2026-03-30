@@ -460,3 +460,238 @@ body:has(.vishu-alert) .nav-menu { top: calc(var(--mob-nav-h) + 44px + 34px) !im
   font-size: 0.9rem;
   text-align: center;
 }
+
+/* ══════════════════════════════════════════════
+   FOOTER REDESIGN — Compact, Horizontal, Readable
+   Stronger overlay + clean layout
+══════════════════════════════════════════════ */
+
+/* STRONGER background overlay for readability */
+.footer-temple-bg::before {
+  background: linear-gradient(
+    180deg,
+    rgba(5, 2, 0, 0.92) 0%,
+    rgba(8, 4, 0, 0.96) 100%
+  ) !important; /* was 0.93 — bumped to 0.96 */
+}
+
+/* ── Footer main area ── */
+.footer-main {
+  padding: 2rem 0 1.2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Row 1: Brand + Hours + Button ── */
+.footer-row-top {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid rgba(255,215,0,0.15);
+  margin-bottom: 0.9rem;
+}
+
+/* Brand compact */
+.footer-brand-compact {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  flex-shrink: 0;
+}
+.footer-om {
+  font-size: 1.8rem;
+  color: #ffd700;
+  text-shadow: 0 0 12px rgba(255,215,0,0.5);
+  flex-shrink: 0;
+}
+.footer-name-ml {
+  font-family: 'Noto Serif Malayalam', serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #ffd700;
+  margin: 0;
+  line-height: 1.3;
+}
+.footer-name-en {
+  font-family: 'Cinzel', serif;
+  font-size: 0.68rem;
+  color: rgba(255,215,0,0.7);
+  letter-spacing: 0.06em;
+  margin: 0;
+}
+.footer-loc {
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.5);
+  margin: 0.1rem 0 0;
+  font-family: 'Lato', sans-serif;
+}
+
+/* Hours horizontal pills */
+.footer-hours-compact {
+  flex: 1;
+  min-width: 200px;
+}
+.footer-hours-label {
+  font-family: 'Noto Serif Malayalam', serif;
+  font-size: 0.72rem;
+  color: rgba(255,215,0,0.7);
+  font-weight: 700;
+  margin: 0 0 0.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.footer-hours-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.footer-hour-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: rgba(255,215,0,0.1);
+  border: 1px solid rgba(255,215,0,0.2);
+  border-radius: 50px;
+  padding: 0.2rem 0.65rem;
+  font-size: 0.76rem;
+  color: rgba(255,255,255,0.9);
+  font-family: 'Lato', sans-serif;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.footer-hour-pill i { color: #ffd700; font-size: 0.7rem; }
+.footer-hours-sep { color: rgba(255,215,0,0.35); font-size: 0.9rem; }
+.footer-hour-note {
+  font-size: 0.68rem;
+  color: rgba(255,255,255,0.45);
+  font-style: italic;
+  font-family: 'Noto Serif Malayalam', serif;
+}
+
+/* Direction button */
+.footer-direction-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: linear-gradient(135deg, #c8860a, #ffd700);
+  color: #1a0800;
+  font-weight: 700;
+  font-size: 0.78rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: 50px;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 3px 12px rgba(200,134,10,0.35);
+  font-family: 'Lato', sans-serif;
+}
+.footer-direction-btn:hover { transform: translateY(-2px); box-shadow: 0 5px 16px rgba(200,134,10,0.5); }
+.footer-direction-btn:active { transform: scale(0.97); }
+
+/* ── Row 2: Quick links horizontal ── */
+.footer-links-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding-bottom: 0.6rem;
+}
+.footer-links-row a {
+  font-family: 'Noto Serif Malayalam', serif;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+  transition: color 0.2s;
+  padding: 0.1rem 0;
+}
+.footer-links-row a:hover { color: #ffd700; }
+.footer-links-row span {
+  color: rgba(255,215,0,0.25);
+  font-size: 0.75rem;
+}
+
+/* ── Footer bottom bar ── */
+.footer-bottom {
+  background: rgba(0,0,0,0.4);
+  border-top: 1px solid rgba(255,215,0,0.1);
+  padding: 0.65rem 0;
+  position: relative;
+  z-index: 1;
+}
+.footer-bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.footer-copy {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.45);
+  margin: 0;
+  font-family: 'Lato', sans-serif;
+}
+.footer-tagline {
+  font-size: 0.78rem;
+  color: rgba(255,215,0,0.5);
+  font-family: 'Noto Serif Malayalam', serif;
+  margin: 0;
+}
+
+/* ── Mobile footer ── */
+@media (max-width: 768px) {
+  .footer-row-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    text-align: left;
+  }
+  .footer-brand-compact { width: 100%; }
+  .footer-hours-compact { width: 100%; min-width: auto; }
+  .footer-direction-btn { align-self: flex-start; }
+  .footer-links-row {
+    gap: 0.4rem;
+    font-size: 0.74rem;
+  }
+  .footer-bottom-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    text-align: center;
+  }
+  .footer-main { padding: 1.5rem 0 0.8rem; }
+}
+
+/* ── Also darken the lower sections overlay ── */
+#location.section-temple-bg::before {
+  background: linear-gradient(
+    180deg,
+    rgba(245, 240, 210, 0.94) 0%,
+    rgba(240, 232, 200, 0.92) 100%
+  ) !important;
+}
+#visitor-info.section-temple-bg::before {
+  background: linear-gradient(
+    180deg,
+    rgba(248, 242, 220, 0.94) 0%,
+    rgba(242, 234, 208, 0.92) 100%
+  ) !important;
+}
+#contact.section-temple-bg::before {
+  background: linear-gradient(
+    180deg,
+    rgba(252, 244, 215, 0.95) 0%,
+    rgba(246, 236, 200, 0.93) 100%
+  ) !important;
+}
+#donate.section-temple-bg::before {
+  background: linear-gradient(
+    180deg,
+    rgba(10, 5, 0, 0.92) 0%,
+    rgba(15, 7, 0, 0.95) 100%
+  ) !important;
+}
