@@ -94,12 +94,11 @@
 /* ── SECTIONS — no bleed into each other ── */
 .section {
   position: relative;
-  overflow: hidden; /* contain internal floats/absolutes */
+  /* overflow:hidden removed — blocks iOS touch scroll */
 }
 
 /* Annadhanam + Kulam wrapper — no overflow */
 .annadhanam-kulam-wrapper {
-  overflow: hidden;
   width: 100%;
 }
 
@@ -119,7 +118,6 @@
 
 /* ── GALLERY — prevent card overflow ── */
 .gallery-photo-card {
-  overflow: hidden;
   width: 100%;
 }
 .gallery-real-photo {
@@ -967,4 +965,29 @@ a[href^="upi://"],
 @media (max-width: 360px) {
   .hero-actions .btn { padding: 0.5rem 0.85rem !important; font-size: 0.76rem !important; }
   .hero-actions { gap: 0.45rem !important; }
+}
+
+/* ══════════════════════════════════════════════
+   SCROLL FIX — explicitly allow touch scroll everywhere
+   touch-action:pan-y = vertical scroll always allowed
+   Never restrict scroll on document/body level
+══════════════════════════════════════════════ */
+html, body {
+  touch-action: pan-y !important;  /* vertical scroll always enabled */
+  overscroll-behavior-y: auto;     /* natural scroll behaviour */
+  -webkit-overflow-scrolling: touch; /* iOS momentum scroll */
+}
+
+/* Scrollable containers must NOT prevent touch scroll */
+.nav-menu,
+.festivals-grid,
+.bk-grid,
+.gallery-grid {
+  touch-action: pan-x pan-y;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Audio button: only restrict on the button itself, not page */
+#audio-toggle {
+  touch-action: manipulation;
 }

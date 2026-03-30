@@ -878,9 +878,12 @@ html { scroll-padding-top: calc(var(--mob-nav-h) + 8px); }
    OVERFLOW / WHITE STRIP FIX
    Prevents any element from causing horizontal scroll
    ============================================================ */
-html,
-body {
+html {
   overflow-x: hidden !important;
+  max-width: 100vw;
+}
+body {
+  overflow-x: hidden; /* only horizontal, never vertical */
   max-width: 100vw;
 }
 
@@ -910,7 +913,7 @@ header,
 footer,
 main {
   max-width: 100%;
-  overflow-x: hidden;
+  /* overflow-x:hidden removed — it blocks iOS scroll on child elements */
 }
 
 /* Carousels clip within their parent */

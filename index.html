@@ -999,9 +999,9 @@
     // Register on document SYNCHRONOUSLY before defer scripts load
     // false = bubble phase, not passive — iOS gesture preserved
     // Touch gestures — non-passive for gesture context
-    document.addEventListener('touchstart', _unlockAudio, false);
-    document.addEventListener('touchend',   _unlockAudio, false);
-    document.addEventListener('click',      _unlockAudio, false);
+    document.addEventListener('touchstart', _unlockAudio, { passive: true, once: true });
+    document.addEventListener('touchend',   _unlockAudio, { passive: true, once: true });
+    document.addEventListener('click',      _unlockAudio, { once: true });
 
     // Scroll triggers — passive:true (browsers enforce this for scroll)
     // Use a wrapper that still calls play() in the same tick
@@ -1012,21 +1012,6 @@
     // Mobile scroll = touchmove — passive to avoid jank
     document.addEventListener('touchmove', _onScroll, { passive: true, once: true });
 
-    // Register on document SYNCHRONOUSLY — before any defer script loads
-    // old-style false = not passive, bubbling — iOS gesture preserved
-    // Touch gestures — non-passive for gesture context
-    document.addEventListener('touchstart', _unlockAudio, false);
-    document.addEventListener('touchend',   _unlockAudio, false);
-    document.addEventListener('click',      _unlockAudio, false);
-
-    // Scroll triggers — passive:true (browsers enforce this for scroll)
-    // Use a wrapper that still calls play() in the same tick
-    function _onScroll() { _unlockAudio(); }
-    window.addEventListener('scroll',    _onScroll, { passive: true, once: true });
-    document.addEventListener('wheel',   _onScroll, { passive: true, once: true });
-
-    // Mobile scroll = touchmove — passive to avoid jank
-    document.addEventListener('touchmove', _onScroll, { passive: true, once: true });
 
     // Expose for galaxy.js to sync state
     window._unlockAudio  = _unlockAudio;
