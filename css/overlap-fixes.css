@@ -941,3 +941,30 @@ a[href^="upi://"],
 }
 .upi-deep-link:hover { transform: translateY(-2px); }
 .upi-deep-link:active { transform: scale(0.97); }
+
+/* ══════════════════════════════════════════════
+   HERO BUTTONS — horizontal, compact
+══════════════════════════════════════════════ */
+.hero-actions {
+  flex-direction: row !important;
+  justify-content: center !important;
+  gap: 0.65rem !important;
+  flex-wrap: nowrap !important;
+  margin-top: 0.6rem !important;
+  width: 100%;
+}
+.hero-actions .btn {
+  flex: 0 1 auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  padding: 0.55rem 1.1rem !important;
+  font-size: 0.82rem !important;
+  border-radius: 50px !important;
+  white-space: nowrap;
+  font-weight: 700;
+}
+
+@media (max-width: 360px) {
+  .hero-actions .btn { padding: 0.5rem 0.85rem !important; font-size: 0.76rem !important; }
+  .hero-actions { gap: 0.45rem !important; }
+}
