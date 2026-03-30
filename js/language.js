@@ -334,6 +334,11 @@ function initLangButtons() {
   document.querySelectorAll('.nlp-btn').forEach(btn => {
     btn.addEventListener('click', e => {
       e.stopPropagation();
+      if (btn.dataset.lang === 'en') {
+        document.body.classList.add('lang-en');
+      } else {
+        document.body.classList.remove('lang-en');
+      }
       applyLang(btn.dataset.lang);
     });
   });

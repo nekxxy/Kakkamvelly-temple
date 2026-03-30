@@ -752,3 +752,192 @@ body:has(.vishu-alert) .nav-menu { top: calc(var(--mob-nav-h) + 44px + 34px) !im
 
 /* Annadhanam section scroll anchor */
 #annadhanam { scroll-margin-top: 115px; }
+
+/* ══════════════════════════════════════════════
+   LIVE STATUS BAR — compact computed darshan
+══════════════════════════════════════════════ */
+#live-section {
+  background: transparent;
+  padding: 0 !important;
+  position: sticky;
+  top: calc(var(--mob-nav-h, 64px) + 44px);
+  z-index: 990;
+}
+.live-status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.6rem 1rem;
+  background: rgba(10,6,0,0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,215,0,0.15);
+  flex-wrap: wrap;
+}
+.dsw-main {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  min-width: 160px;
+}
+.dsw-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: #6b7280;
+  flex-shrink: 0;
+  transition: background 0.3s;
+}
+.dsw-dot.open  { background: #22c55e; box-shadow: 0 0 6px #22c55e; animation: dot-pulse 2s infinite; }
+.dsw-dot.closed { background: #ef4444; }
+@keyframes dot-pulse {
+  0%,100% { box-shadow: 0 0 6px #22c55e; }
+  50%      { box-shadow: 0 0 12px #22c55e, 0 0 20px rgba(34,197,94,0.4); }
+}
+.dsw-text {
+  font-family: 'Noto Serif Malayalam', serif;
+  font-size: clamp(0.75rem, 2.5vw, 0.88rem);
+  color: rgba(255,255,255,0.9);
+  font-weight: 600;
+}
+.dsw-actions {
+  display: flex;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+.dsw-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.38rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-decoration: none;
+  min-height: 32px;
+  font-family: 'Noto Serif Malayalam', serif;
+  transition: opacity 0.2s;
+  -webkit-tap-highlight-color: transparent;
+  white-space: nowrap;
+}
+.dsw-btn:active { opacity: 0.8; }
+.dsw-call { background: #166534; color: #fff; }
+.dsw-dir  { background: rgba(255,215,0,0.15); border: 1px solid rgba(255,215,0,0.3); color: #ffd700; }
+.dsw-wa   { background: #14532d; color: #4ade80; }
+
+@media (max-width: 360px) {
+  .dsw-btn { padding: 0.35rem 0.55rem; font-size: 0.68rem; }
+  .dsw-btn i { display: none; }
+}
+
+/* ══════════════════════════════════════════════
+   GALLERY LIGHTBOX
+══════════════════════════════════════════════ */
+.lightbox-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(0,0,0,0.92);
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+.lightbox-overlay.active { display: flex; }
+.lightbox-overlay img {
+  max-width: 95vw;
+  max-height: 88vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.8);
+}
+.lightbox-close {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  width: 48px; height: 48px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(255,255,255,0.15);
+  border-radius: 50%;
+  color: #fff;
+  font-size: 1.3rem;
+  cursor: pointer;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.lightbox-caption {
+  position: absolute;
+  bottom: 1.2rem; left: 50%;
+  transform: translateX(-50%);
+  color: rgba(255,255,255,0.8);
+  font-size: 0.82rem;
+  font-family: 'Noto Serif Malayalam', serif;
+  text-align: center;
+  white-space: nowrap;
+}
+
+/* Gallery images: tap to open lightbox */
+.gallery-real-photo { cursor: pointer; }
+.gallery-photo-card:hover .gallery-real-photo { opacity: 0.9; }
+
+/* ══════════════════════════════════════════════
+   TIMING TABLE — mobile overflow fix
+══════════════════════════════════════════════ */
+@media (max-width: 480px) {
+  .timing-table {
+    width: 100%;
+    table-layout: fixed;
+  }
+  .timing-table td:first-child {
+    width: 58%;
+    word-wrap: break-word;
+    font-size: 0.78rem;
+    hyphens: auto;
+  }
+  .timing-table td:last-child {
+    width: 42%;
+    white-space: nowrap;
+    font-size: 0.78rem;
+    text-align: right;
+    padding-right: 0.5rem;
+  }
+}
+
+/* ══════════════════════════════════════════════
+   TOUCH TARGETS — 48px minimum
+══════════════════════════════════════════════ */
+a[href^="tel:"],
+a[href^="https://wa.me"],
+a[href^="upi://"],
+.dsw-btn,
+.kulam-btn,
+.map-open-btn,
+.footer-direction-btn {
+  min-height: 44px;
+}
+/* Tappable gallery images */
+.gallery-photo-card .gallery-card-link {
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(255,215,0,0.1);
+}
+
+/* ══════════════════════════════════════════════
+   UPI DEEP LINK BUTTON
+══════════════════════════════════════════════ */
+.upi-deep-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #fff;
+  padding: 0.65rem 1.5rem;
+  border-radius: 50px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(99,102,241,0.4);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.upi-deep-link:hover { transform: translateY(-2px); }
+.upi-deep-link:active { transform: scale(0.97); }

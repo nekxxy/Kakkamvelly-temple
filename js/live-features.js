@@ -1,3 +1,54 @@
+/* ═══════════════════════════════════════════
+   LIVE DARSHAN STATUS — computed from schedule
+   No backend. Runs every minute.
+═══════════════════════════════════════════ */
+(function initDarshanBar() {
+  const widget = document.getElementById('darshan-status-widget');
+  if (!widget) return;
+
+  const MORNING = { o: 5*60+30, c: 9*60 };       // 5:30–9:00
+  const EVENING = { o: 17*60+45, c: 18*60+45 };  // 5:45–6:45
+
+  function fmt(mins) {
+    const h = Math.floor(mins/60), m = mins%60;
+    const ampm = h < 12 ? 'AM' : 'PM';
+    return `${h>12?h-12:h||12}:${String(m).padStart(2,'0')} ${ampm}`;
+  }
+
+  function update() {
+    const now = new Date();
+    const cur = now.getHours()*60 + now.getMinutes();
+    const dot = widget.querySelector('.dsw-dot');
+    const txt = widget.querySelector('.dsw-text');
+    if (!dot || !txt) return;
+
+    let open=false, msg='';
+    if (cur >= MORNING.o && cur < MORNING.c) {
+      open=true;
+      const left = MORNING.c - cur;
+      msg = `ക്ഷേത്രം തുറന്നിരിക്കുന്നു · ${Math.floor(left/60)}h ${left%60}m കൂടി`;
+    } else if (cur >= EVENING.o && cur < EVENING.c) {
+      open=true;
+      const left = EVENING.c - cur;
+      msg = `ക്ഷേത്രം തുറന്നിരിക്കുന്നു · ${left}m കൂടി`;
+    } else {
+      let next;
+      if (cur < MORNING.o)       next = { time: MORNING.o, label: '5:30 AM' };
+      else if (cur < EVENING.o)  next = { time: EVENING.o, label: '5:45 PM' };
+      else                        next = { time: MORNING.o + 24*60, label: 'നാളെ 5:30 AM' };
+      const diff = next.time - (cur > next.time ? cur-24*60 : cur);
+      const h=Math.floor(Math.abs(diff)/60), m=Math.abs(diff)%60;
+      msg = `ക്ഷേത്രം അടഞ്ഞിരിക്കുന്നു · ${next.label}-ന് തുറക്കും (${h}h ${m}m)`;
+    }
+
+    dot.className = 'dsw-dot ' + (open ? 'open' : 'closed');
+    txt.textContent = msg;
+  }
+
+  update();
+  setInterval(update, 60000);
+})();
+
 /**
  * RUFLO AGENT: feature-agent
  * Live Darshan Status, Festival Countdown, Weather, Today's Schedule

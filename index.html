@@ -32,6 +32,13 @@
   <meta name="description" content="Kakkamvelly Sreekrishna Temple, Purameri, Kozhikode, Kerala. Baby Krishna temple near Nadapuram. Darshan: 5:30 AM–9 AM &amp; 5:45–6:45 PM. Monthly Annadhanam. കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രത്തിന്റെ ഔദ്യോഗിക വെബ്സൈറ്റ്. കോഴിക്കോട് ജില്ലയിൽ സ്ഥിതി ചെയ്യുന്ന ഈ ക്ഷേത്രത്തിലെ സമയക്രമം, പൂജ ഷെഡ്യൂൾ, സ്ഥലം, വഴിക്കുറിപ്പ് എന്നിവ അറിയൂ." />
   <meta name="keywords" content="Kakkamvelly temple, Sreekrishna temple, Kozhikode temple, Kerala Hindu temple, കക്കംവെള്ളി ക്ഷേത്രം, ശ്രീകൃഷ്ണ ക്ഷേത്രം, ക്ഷേത്ര സമയം, പൂജ ഷെഡ്യൂൾ" />
   <title>കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം | കോഴിക്കോട്, കേരളം</title>
+  <style id="lang-toggle-css">
+    /* Language toggle */
+    .lang-ml-only { display: block; }
+    .lang-en-only { display: none; }
+    body.lang-en .lang-ml-only { display: none; }
+    body.lang-en .lang-en-only { display: block; }
+  </style>
   <link rel="manifest" href="manifest.json" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/krishna-animations.css" />
@@ -181,9 +188,6 @@
       </div>
       <!-- Modern Hindu Animations Layer -->
       <div class="hindu-anim-layer" aria-hidden="true">
-        <div class="anim-om anim-om--1">ॐ</div>
-        <div class="anim-om anim-om--2">ॐ</div>
-        <div class="anim-om anim-om--3">ॐ</div>
         <div class="anim-lotus anim-lotus--1">🪔</div>
         <div class="anim-lotus anim-lotus--2">🪔</div>
         <div class="anim-lotus anim-lotus--3">🪔</div>
@@ -200,46 +204,28 @@
 
 
     <!-- ── LIVE STATUS SECTION (Ruflo feature-agent) ── -->
-    <section id="live-section" aria-labelledby="live-heading">
-      <div class="container" style="position:relative;z-index:1;">
-        <div class="section-header">
-          <span class="section-tag" style="color:#ffd700;background:rgba(255,215,0,.12);border-color:rgba(255,215,0,.3);">ലൈവ് സ്റ്റാറ്റസ്</span>
-          <h2 id="live-heading" class="section-title" style="color:#fff;">ഇന്നത്തെ ക്ഷേത്ര വിവരം</h2>
-          <div class="title-divider" aria-hidden="true"><span>✦</span></div>
+    <!-- Live Status — computed from schedule, no backend needed -->
+    <section id="live-section" aria-label="ക്ഷേത്ര സ്റ്റാറ്റസ്">
+      <div class="live-status-bar container">
+        <div id="darshan-status-widget" class="dsw-main">
+          <span class="dsw-dot"></span>
+          <span class="dsw-text">ദർശന സ്ഥിതി കണക്കാക്കുന്നു...</span>
         </div>
-
-        <div class="live-grid">
-          <!-- Darshan Status -->
-          <div class="live-card">
-            <div class="live-card-title">🛕 ദർശന സ്റ്റാറ്റസ്</div>
-            <div id="darshan-status-widget"><span style="color:rgba(255,255,255,.4)">Loading…</span></div>
-          </div>
-          <!-- Festival Countdown -->
-          <div class="live-card">
-            <div class="live-card-title">🎉 അടുത്ത ഉത്സവം</div>
-            <div id="festival-countdown"></div>
-          </div>
-          <!-- Weather -->
-          <div class="live-card">
-            <div class="live-card-title">🌤 കാലാവസ്ഥ · Purameri</div>
-            <div id="weather-widget"></div>
-          </div>
-        </div>
-
-        <div class="live-grid-bottom">
-          <!-- Today's Schedule -->
-          <div class="live-card">
-            <div class="live-card-title">⏰ ഇന്നത്തെ പൂജ ഷെഡ്യൂൾ</div>
-            <div id="today-schedule"></div>
-          </div>
-          <!-- Panchang -->
-          <div class="live-card">
-            <div class="live-card-title">📅 ഇന്നത്തെ പഞ്ചാംഗം</div>
-            <div id="panchang-widget"></div>
-          </div>
+        <div class="dsw-actions">
+          <a href="tel:+919446844145" class="dsw-btn dsw-call">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i> വിളിക്കുക
+          </a>
+          <a href="https://maps.app.goo.gl/LaTA1pWM8NhjW4gK6" target="_blank" rel="noopener noreferrer" class="dsw-btn dsw-dir">
+            <i class="fa-solid fa-diamond-turn-right" aria-hidden="true"></i> വഴി
+          </a>
+          <a href="https://wa.me/919446844145" target="_blank" rel="noopener noreferrer" class="dsw-btn dsw-wa">
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp
+          </a>
         </div>
       </div>
     </section>
+
+
 
     <!-- Animated Hindu Decoration Strip -->
     <div class="hindu-deco-strip" aria-hidden="true">
@@ -263,7 +249,6 @@
         <div class="section-header">
           <span class="section-tag">ദർശനം</span>
           <h2 id="timings-heading" class="section-title">ക്ഷേത്ര സമയക്രമവും പൂജ ഷെഡ്യൂളും</h2>
-          <div class="title-divider" aria-hidden="true"><span>✦</span></div>
         </div>
         <div class="timings-grid">
 
@@ -395,7 +380,6 @@
         <div class="section-header">
           <span class="section-tag">ക്ഷേത്രം</span>
           <h2 id="about-heading" class="section-title">ക്ഷേത്രത്തെ കുറിച്ച്</h2>
-          <div class="title-divider" aria-hidden="true"><span>✦</span></div>
         </div>
         <div class="about-grid">
           <div class="about-image-wrapper">
@@ -416,7 +400,7 @@
             </div>
           </div>
           <div class="about-content">
-            <h3 class="about-subtitle">ഉണ്ണിക്കൃഷ്ണന്റെ പുണ്യ ഭൂമി</h3>
+            <h3 class="about-subtitle" lang="ml">ഉണ്ണിക്കൃഷ്ണന്റെ പുണ്യ ഭൂമി</h3>
 
             <!-- History badge -->
             <div class="about-history-badge">
@@ -430,7 +414,7 @@
               and devotion. Renovated and lovingly maintained by the local community, it is now a
               serene place for prayer and worship.
             </p>
-            <p class="about-ml-text">
+            <p class="about-ml-text" lang="ml">
               ടിപ്പുവിന്റെ ആക്രമണത്തിൽ തകർന്നിട്ടുണ്ടായ ഈ ക്ഷേത്രം ഇന്ന്
               സമാധാനത്തിന്റെയും ഭക്തിയുടെയും ഒരു പ്രതീകമായി നിലനിൽക്കുന്നു.
               ഗുരുവായൂരിലെ പ്രതിമയെ ഓർമ്മിപ്പിക്കുന്ന കുട്ടികൃഷ്ണന്റെ രൂപത്തിൽ
@@ -483,7 +467,6 @@
         <div class="section-header">
           <span class="section-tag section-tag-light">ഗ്യാലറി</span>
           <h2 id="gallery-heading" class="section-title section-title-light">ക്ഷേത്ര ചിത്രങ്ങൾ</h2>
-          <div class="title-divider title-divider-light" aria-hidden="true"><span>✦</span></div>
         </div>
 
         <!-- Real Google Maps Photo Cards + CSS Art Cards -->
@@ -491,7 +474,7 @@
 
           <!-- Card 1 — Real Photo: Temple entrance with deepam -->
           <div class="gallery-item gallery-photo-card" role="listitem">
-            <div class="gallery-card-link">
+            <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
               <picture><source srcset="images/temple-entrance-deepam.webp" type="image/webp" /><img src="images/temple-entrance-deepam.jpg"  alt="കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം — ദീപം ഉഴിച്ചൽ" loading="lazy" class="gallery-real-photo"/></picture>
               <div class="gallery-card-overlay">
                 <p class="gallery-caption-ml">ക്ഷേത്ര ദർശനം – ദീപ ആരാധന</p>
@@ -502,7 +485,7 @@
 
           <!-- Card 2 — Real Photo: Interior deepam lamp -->
           <div class="gallery-item gallery-photo-card" role="listitem">
-            <div class="gallery-card-link">
+            <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
               <picture><source srcset="images/deepam-lamp-interior.webp" type="image/webp" /><img src="images/deepam-lamp-interior.jpg"  alt="ക്ഷേത്ര ദീപം – ആഭ്യന്തര ദൃശ്യം" loading="lazy" class="gallery-real-photo"/></picture>
               <div class="gallery-card-overlay">
                 <p class="gallery-caption-ml">പഞ്ചദീപം – ആഭ്യന്തര ദൃശ്യം</p>
@@ -513,7 +496,7 @@
 
           <!-- Card 3 — Real Photo: Deepam closeup -->
           <div class="gallery-item gallery-photo-card" role="listitem">
-            <div class="gallery-card-link">
+            <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
               <picture><source srcset="images/deepam-closeup.webp" type="image/webp" /><img src="images/deepam-closeup.jpg"  alt="ദീപം അടുത്ത ദൃശ്യം" loading="lazy" class="gallery-real-photo"/></picture>
               <div class="gallery-card-overlay">
                 <p class="gallery-caption-ml">ദീപ ജ്വാല – ഭക്തിയുടെ പ്രകാശം</p>
@@ -524,7 +507,7 @@
 
           <!-- Card 4 — Real Photo: Hanging lamps corridor -->
           <div class="gallery-item gallery-photo-card" role="listitem">
-            <div class="gallery-card-link">
+            <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
               <picture><source srcset="images/hanging-lamps-corridor.webp" type="image/webp" /><img src="images/hanging-lamps-corridor.jpg"  alt="തൂക്ക് ദീപം – ക്ഷേത്ര ഇടനാഴി" loading="lazy" class="gallery-real-photo"/></picture>
               <div class="gallery-card-overlay">
                 <p class="gallery-caption-ml">തൂക്ക് ദീപം – ഇടനാഴി ദൃശ്യം</p>
@@ -535,7 +518,7 @@
 
           <!-- Card 5 — Real Photo: Temple gate entrance -->
           <div class="gallery-item gallery-photo-card" role="listitem">
-            <div class="gallery-card-link">
+            <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
               <picture><source srcset="images/temple-gate-entrance.webp" type="image/webp" /><img src="images/temple-gate-entrance.jpg"
                 
                 data-orient="landscape"
@@ -552,7 +535,7 @@
 
           <!-- Card 6 — Real Photo: Temple front with lamps -->
           <div class="gallery-item gallery-photo-card" role="listitem">
-            <div class="gallery-card-link">
+            <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
               <picture><source srcset="images/temple-front-view.webp" type="image/webp" /><img src="images/temple-front-view.jpg"
                 
                 alt="കക്കംവെള്ളി ക്ഷേത്രം — മുൻഭാഗ ദൃശ്യം"
@@ -569,7 +552,7 @@
 
           <!-- Card 7 — Real Photo: Temple side grounds -->
           <div class="gallery-item gallery-photo-card" role="listitem">
-            <div class="gallery-card-link">
+            <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
               <picture><source srcset="images/temple-side-grounds.webp" type="image/webp" /><img src="images/temple-side-grounds.jpg"
                 
                 data-orient="landscape"
@@ -645,7 +628,6 @@
         <div class="section-header">
           <span class="section-tag">സ്ഥലം</span>
           <h2 id="location-heading" class="section-title">സ്ഥലവും വഴിക്കുറിപ്പും</h2>
-          <div class="title-divider" aria-hidden="true"><span>✦</span></div>
         </div>
         <div class="location-grid">
           <div class="location-info">
@@ -744,7 +726,6 @@
         <div class="section-header">
           <span class="section-tag">ബന്ധപ്പെടുക</span>
           <h2 id="contact-heading" class="section-title">ഞങ്ങളെ ബന്ധപ്പെടുക</h2>
-          <div class="title-divider" aria-hidden="true"><span>✦</span></div>
         </div>
         <div class="contact-grid">
           <div class="contact-info">
@@ -786,12 +767,12 @@
             </div>
             <div class="form-group">
               <label for="email">ഇ-മെയിൽ വിലാസം <span aria-hidden="true">*</span></label>
-              <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email" />
+              <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email" inputmode="email" />
               <span class="field-error" aria-live="polite" id="email-error"></span>
             </div>
             <div class="form-group">
               <label for="phone">ഫോൺ നമ്പർ</label>
-              <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" autocomplete="tel" />
+              <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" autocomplete="tel" inputmode="numeric" />
             </div>
             <div class="form-group">
               <label for="subject">വിഷയം <span aria-hidden="true">*</span></label>
@@ -832,7 +813,6 @@
         <div class="section-header">
           <span class="section-tag" style="color:#ffd700;background:rgba(255,215,0,.1);border-color:rgba(255,215,0,.25);">ദാനം</span>
           <h2 id="donate-heading" class="section-title" style="color:#ffd700;">ക്ഷേത്ര വഴിപാട് &amp; ദാനം</h2>
-          <div class="title-divider" aria-hidden="true"><span>✦</span></div>
           <p style="color:rgba(255,255,255,.65);font-size:.9rem;margin-top:.8rem;font-family:'Noto Serif Malayalam',serif;">
             ക്ഷേത്ര നിർമ്മാണത്തിനും നിത്യ പൂജകൾക്കും ഭക്തരുടെ സഹകരണം ക്ഷണിക്കുന്നു
           </p>
@@ -872,6 +852,11 @@
         <div class="donate-upi">
           <p>UPI / ഓൺലൈൻ ദാനം — ക്ഷേത്ര ഓഫീസ് വഴി ബന്ധപ്പെടുക</p>
           <code>kakkamvellytemple@upi</code>
+            <a href="upi://pay?pa=kakkamvellytemple@upi&amp;pn=Kakkamvelly%20Temple&amp;cu=INR"
+               class="btn btn-primary upi-deep-link">
+              <i class="fa-solid fa-mobile-screen" aria-hidden="true"></i>
+              UPI ആപ്പിൽ ദാനം ചെയ്യുക
+            </a>
         </div>
         <div style="margin-top:1.2rem;background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.2);border-radius:12px;padding:1rem;max-width:400px;margin-left:auto;margin-right:auto;">
           <p style="color:#ffd700;font-family:'Noto Serif Malayalam',serif;font-size:.9rem;font-weight:700;margin-bottom:.4rem;">📞 ദാനം / അന്വേഷണം</p>
@@ -1102,5 +1087,37 @@
   })();
   </script>
   <script>document.getElementById("footer-year").textContent=new Date().getFullYear();</script>
+
+  <!-- Gallery Lightbox -->
+  <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="ചിത്രം">
+    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">✕</button>
+    <img id="lightbox-img" src="" alt="" />
+    <p class="lightbox-caption" id="lightbox-cap"></p>
+  </div>
+
+  <script>
+  function openLightbox(el) {
+    const src = el.querySelector('img').src
+      .replace('/thumb/', '/')
+      .replace('.webp', '.jpg');
+    const alt = el.querySelector('img').alt;
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox-cap').textContent = alt;
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.getElementById('lightbox-img').src = '';
+    document.body.style.overflow = '';
+  }
+  document.getElementById('lightbox').addEventListener('click', function(e) {
+    if (e.target === this) closeLightbox();
+  });
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+  </script>
+
 </body>
 </html>
