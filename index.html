@@ -87,6 +87,17 @@
         <span class="hamburger"></span>
       </button>
       <ul class="nav-menu" id="nav-menu" role="list">
+        <!-- Language switcher inside drawer (mobile) -->
+        <li class="nav-lang-item" aria-label="Language">
+          <div class="nav-lang-switcher">
+            <span class="nav-lang-label">🌐 Language</span>
+            <div class="nav-lang-btns">
+              <button class="nav-lang-btn active" data-lang="ml" aria-label="Malayalam">മലയാളം</button>
+              <button class="nav-lang-btn" data-lang="en" aria-label="English">English</button>
+            </div>
+          </div>
+        </li>
+        <li class="nav-divider" aria-hidden="true"></li>
         <li><a href="#home" class="nav-link">മുഖ്യ താൾ</a></li>
         <li><a href="#about" class="nav-link">ക്ഷേത്രത്തെ കുറിച്ച്</a></li>
         <li><a href="#timings" class="nav-link">സമയക്രമം</a></li>
@@ -991,6 +1002,7 @@
   <script src="js/mobile-futuristic.js" defer></script>
   <script src="js/live-features.js" defer></script>
   <script src="js/enhancements.js" defer></script>
+  <script src="js/language.js" defer></script>
   <script>
   // Baby Krishna section stars
   (function() {

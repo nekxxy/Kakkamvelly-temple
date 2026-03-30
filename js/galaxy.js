@@ -226,7 +226,7 @@
 
   let started  = false;
   let playing  = false;
-  const TARGET_VOL = 0.12;   // Low volume — 12%
+  const TARGET_VOL = 0.20;   // Low volume — 20%
   const FADE_STEPS = 60;
   const FADE_MS    = 3000;   // 3 second fade in
 
@@ -267,19 +267,49 @@
     }, 50);
   }
 
-  // Auto-start on first user interaction (satisfies browser policy)
+  // Try to autoplay immediately on page load
+  function tryAutoPlay() {
+    if (started) return;
+    started = true;
+    audio.volume = 0;
+    audio.play().then(() => {
+      playing = true;
+      btn.classList.add('playing');
+      if (icon) icon.textContent = '🎵';
+      // Fade in
+      let step = 0;
+      const interval = setInterval(() => {
+        step++;
+        audio.volume = Math.min(TARGET_VOL, (step / FADE_STEPS) * TARGET_VOL);
+        if (step >= FADE_STEPS) clearInterval(interval);
+      }, FADE_MS / FADE_STEPS);
+    }).catch(() => {
+      // Autoplay blocked by browser — wait for first touch/click
+      started = false;
+    });
+  }
+
+  // Try immediately when page loads
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', tryAutoPlay);
+  } else {
+    tryAutoPlay();
+  }
+  // Also try after a short delay (some browsers need this)
+  setTimeout(tryAutoPlay, 800);
+
+  // Fallback: first user interaction
   function autoStart(e) {
     if (started) return;
-    // Don't auto-start if they click the audio button itself
     if (e && e.target && e.target.closest('#audio-toggle')) return;
     started = true;
     fadeIn();
-    ['click','touchstart','keydown','scroll'].forEach(ev =>
+    ['click','touchstart','keydown','scroll','touchend'].forEach(ev =>
       document.removeEventListener(ev, autoStart)
     );
   }
-  ['click','touchstart','keydown','scroll'].forEach(ev =>
-    document.addEventListener(ev, autoStart, { passive: true, once: false })
+  ['click','touchstart','touchend','keydown','scroll'].forEach(ev =>
+    document.addEventListener(ev, autoStart, { passive: true })
   );
 
   // Manual toggle

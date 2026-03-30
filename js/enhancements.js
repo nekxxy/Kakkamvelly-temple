@@ -8,7 +8,8 @@
    1. MULTI-LANGUAGE SWITCHER
    Translates key UI strings
 ───────────────────────────────── */
-(function initLanguage() {
+(function initLanguage() { return; // Replaced by language.js — full bilingual system
+
   const LANGS = {
     ml: {
       home:'മുഖ്യ', about:'ക്ഷേത്രം', timings:'സമയം',
