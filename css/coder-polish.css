@@ -809,3 +809,65 @@ html {
 }e; }
   .hero-krishna-img-wrap::before { animation: none; }
 }
+
+/* ══════════════════════════════════════════════
+   HERO GRADIENT BACKGROUND
+   radial-gradient: golden center → near black
+══════════════════════════════════════════════ */
+.hero-gradient {
+  background: radial-gradient(
+    circle at center,
+    #f5d37a 0%,
+    #c8860a 25%,
+    #3a1800 55%,
+    #0b0b0b 70%
+  ) !important;
+  position: relative;
+}
+
+/* Subtle galaxy still peeks through via overlay */
+.hero-gradient::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 42%,
+    rgba(245, 211, 122, 0.18) 0%,
+    transparent 65%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure hero content sits above gradient overlay */
+.hero-gradient .hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Krishna image over golden gradient ── */
+.hero-gradient .hero-krishna-img {
+  /* Transparent PNG over golden bg — clean render, no blend mode */
+  filter:
+    drop-shadow(0 6px 20px rgba(0,0,0,0.5))
+    drop-shadow(0 0 50px rgba(245,211,122,0.6))
+    drop-shadow(0 0 100px rgba(200,134,10,0.3));
+}
+
+/* Floating animation stays the same */
+.hero-gradient .hero-krishna-img-wrap::before {
+  background: radial-gradient(
+    circle at 50% 65%,
+    rgba(245,211,122,0.30) 0%,
+    rgba(200,134,10,0.12) 45%,
+    transparent 70%
+  );
+}
+
+/* Tagline and title on gradient bg */
+.hero-gradient .hero-tagline {
+  text-shadow: 0 0 20px rgba(245,211,122,0.8), 0 2px 8px rgba(0,0,0,0.6);
+}
+.hero-gradient .hero-title {
+  text-shadow: 0 2px 12px rgba(0,0,0,0.7), 0 0 30px rgba(245,211,122,0.2);
+}
