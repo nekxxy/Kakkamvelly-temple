@@ -225,149 +225,124 @@
 })();
 
 /* ─────────────────────────────────────────────
-   2. AUDIO PLAYER — iOS/Android compatible
-   RULE: audio.play() MUST be called synchronously
-   inside the user gesture handler (same call stack).
-   Any async gap (setTimeout, .then, fetch) breaks it.
+   2. AUDIO PLAYER — bulletproof iOS/Android
+   Strategy: unlock on first touch, then play.
+   iOS needs: call play() as the VERY FIRST LINE
+   of the handler with ZERO conditions before it.
 ───────────────────────────────────────────── */
 (function initAudio() {
-  const audio = document.getElementById('krishna-audio');
-  const btn   = document.getElementById('audio-toggle');
-  const icon  = btn ? btn.querySelector('.audio-icon') : null;
-  if (!audio || !btn) return;
+  var btn    = document.getElementById('audio-toggle');
+  var icon   = btn ? btn.querySelector('.audio-icon') : null;
+  var lbl    = btn ? btn.querySelector('.audio-label') : null;
+  var audio  = document.getElementById('krishna-audio');
+  var VOL    = 0.20;
+  var isPlaying = false;
+  var unlocked  = false;
 
-  const TARGET_VOL = 0.20;
-  let playing  = false;
-  let started  = false;
-  let fadeTimer = null;
-
-  // Set preload to auto so audio buffers early
+  if (!audio) return;
+  audio.loop    = true;
   audio.preload = 'auto';
 
-  // ── UI update helpers ──
-  function setPlayingUI() {
-    playing = true;
+  /* ── UI helpers ── */
+  function showPlaying() {
+    isPlaying = true;
+    if (!btn) return;
     btn.classList.add('playing');
     btn.classList.remove('muted');
     if (icon) icon.textContent = '🎵';
-    btn.setAttribute('title','ഭക്തി സംഗീതം — pause');
-    btn.setAttribute('aria-label','Pause background music');
+    if (lbl)  lbl.textContent  = 'ഭക്തി';
   }
-  function setPausedUI() {
-    playing = false;
+  function showPaused() {
+    isPlaying = false;
+    if (!btn) return;
     btn.classList.remove('playing');
     btn.classList.add('muted');
     if (icon) icon.textContent = '🔇';
-    btn.setAttribute('title','ഭക്തി സംഗീതം — play');
-    btn.setAttribute('aria-label','Play background music');
+    if (lbl)  lbl.textContent  = 'pause';
   }
 
-  // ── Fade volume up after play starts ──
+  /* ── Fade in volume ── */
   function fadeUp() {
-    clearInterval(fadeTimer);
     audio.volume = 0;
-    let step = 0;
-    const steps = 40;
-    fadeTimer = setInterval(() => {
+    var step = 0, total = 40;
+    var t = setInterval(function() {
       step++;
-      audio.volume = Math.min(TARGET_VOL, (step / steps) * TARGET_VOL);
-      if (step >= steps) clearInterval(fadeTimer);
-    }, 80); // 40 steps × 80ms = 3.2s fade
+      audio.volume = Math.min(VOL, step / total * VOL);
+      if (step >= total) clearInterval(t);
+    }, 75);
   }
 
-  // ── Fade volume down then pause ──
-  function fadeDown(cb) {
-    clearInterval(fadeTimer);
-    let v = audio.volume;
-    const step = Math.max(0.002, v / 25);
-    fadeTimer = setInterval(() => {
-      v -= step;
-      if (v <= 0) {
-        audio.volume = 0;
-        audio.pause();
-        clearInterval(fadeTimer);
-        if (cb) cb();
-      } else {
-        audio.volume = v;
-      }
-    }, 50);
-  }
-
-  // ── The ONLY correct way on iOS ──
-  // Call audio.play() SYNCHRONOUSLY inside the gesture,
-  // then adjust volume asynchronously after.
-  function startAudio() {
-    if (started && playing) return;
-    started = true;
-
-    // SYNCHRONOUS play call — preserves gesture context
-    const promise = audio.play();
-
-    if (promise !== undefined) {
-      promise.then(() => {
-        setPlayingUI();
+  /* ── The play call — MUST be synchronous ── */
+  function doPlay() {
+    var p = audio.play();
+    if (p && p.then) {
+      p.then(function() {
+        showPlaying();
         fadeUp();
-      }).catch(err => {
-        // Still blocked (e.g. data saver mode) — show muted state
-        console.warn('Audio play blocked:', err.message);
-        setPausedUI();
-        started = false;
+      }).catch(function() {
+        showPaused();
+        unlocked = false;
       });
     } else {
-      // Old browser — assume it worked
-      setPlayingUI();
+      showPlaying();
       fadeUp();
     }
   }
 
-  // ── START ON ANY INTERACTION — click, touch, keydown ──
-  // passive:false is CRITICAL on iOS — preserves gesture context
-  // once:true — fires only once, then auto-removes
-  function onFirstGesture(e) {
-    if (started) return;
-    // Audio btn has its own dedicated handler below — skip here
-    if (e.target && e.target.closest && e.target.closest('#audio-toggle')) return;
-    startAudio();
+  /* ── FIRST USER TOUCH — iOS unlock pattern ──
+     Call audio.play() as the ABSOLUTE FIRST LINE.
+     Any code before play() breaks iOS gesture trust.
+     Using old-style addEventListener(,, false) for
+     max browser compat (not options object).
+  ── */
+  function firstTouch() {
+    if (unlocked) return;
+    unlocked = true;
+    /* play() is the first expression — gesture intact */
+    doPlay();
+    document.removeEventListener('touchend',   firstTouch, false);
+    document.removeEventListener('click',      firstTouch, false);
+    document.removeEventListener('touchstart', firstTouch, false);
   }
 
-  document.addEventListener('touchstart', onFirstGesture, { passive: false, once: true });
-  document.addEventListener('touchend',   onFirstGesture, { passive: false, once: true });
-  document.addEventListener('click',      onFirstGesture, { once: true });
-  document.addEventListener('pointerdown',onFirstGesture, { once: true });
-  document.addEventListener('keydown',    onFirstGesture, { once: true });
-  document.addEventListener('scroll',     onFirstGesture, { passive: true, once: true });
+  /* Use old-style false (= bubble, not passive) for iOS */
+  document.addEventListener('touchend',   firstTouch, false);
+  document.addEventListener('touchstart', firstTouch, false);
+  document.addEventListener('click',      firstTouch, false);
 
-  // ── Manual toggle button ──
-  btn.addEventListener('click', e => {
-    e.stopPropagation(); // don't also trigger onFirstGesture
-    if (!started || !playing) {
-      startAudio();
-    } else {
-      fadeDown(() => setPausedUI());
-    }
-  });
+  /* ── Toggle button ── */
+  if (btn) {
+    btn.addEventListener('touchend', function(e) {
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      if (!isPlaying) {
+        unlocked = true;
+        doPlay();
+      } else {
+        audio.pause();
+        showPaused();
+      }
+    }, false);
 
-  btn.addEventListener('touchend', e => {
-    e.preventDefault(); // prevent ghost click
-    e.stopPropagation();
-    if (!started || !playing) {
-      startAudio();
-    } else {
-      fadeDown(() => setPausedUI());
-    }
-  }, { passive: false });
+    btn.addEventListener('click', function(e) {
+      e.stopImmediatePropagation();
+      if (!isPlaying) {
+        unlocked = true;
+        doPlay();
+      } else {
+        audio.pause();
+        showPaused();
+      }
+    }, false);
+  }
 
-  // ── Pause when tab hidden ──
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden && playing) {
+  /* ── Tab visibility ── */
+  document.addEventListener('visibilitychange', function() {
+    if (!isPlaying) return;
+    if (document.hidden) {
       audio.pause();
-    } else if (!document.hidden && playing) {
-      audio.play().catch(() => {});
+    } else {
+      audio.play().catch(function() {});
     }
-  });
-
-  // ── Audio ended (shouldn't happen with loop, but safety) ──
-  audio.addEventListener('ended', () => {
-    if (playing) audio.play().catch(() => {});
   });
 })();

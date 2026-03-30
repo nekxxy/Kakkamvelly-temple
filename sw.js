@@ -21,6 +21,7 @@ const CORE  = [
   '/kakkamvelly-temple/images/deepam-lamp-interior.jpg',
   '/kakkamvelly-temple/images/deepam-closeup.jpg',
   '/kakkamvelly-temple/images/hanging-lamps-corridor.jpg',
+  '/kakkamvelly-temple/audio/krishna-loop.mp3',
   'https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lato:wght@300;400;700&family=Noto+Serif+Malayalam:wght@400;700&display=swap',
   'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css',
 ];
