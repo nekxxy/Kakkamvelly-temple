@@ -695,3 +695,60 @@ body:has(.vishu-alert) .nav-menu { top: calc(var(--mob-nav-h) + 44px + 34px) !im
     rgba(15, 7, 0, 0.95) 100%
   ) !important;
 }
+
+/* ══════════════════════════════════════════════
+   TIMINGS SECTION — Priority position (top)
+   Enhanced visual weight since it's first content
+══════════════════════════════════════════════ */
+.section-timings-priority {
+  border-top: 3px solid rgba(200,134,10,0.3);
+}
+
+/* Opening hours grid — 2 pills side by side */
+.opening-hours-grid {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 1.5rem !important;
+  padding: 1rem 1.2rem !important;
+  flex-wrap: nowrap !important;
+}
+.hours-block {
+  flex: 1;
+  text-align: center;
+  background: rgba(200,134,10,0.06);
+  border: 1px solid rgba(200,134,10,0.15);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+}
+.hours-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8b5e00;
+  margin-bottom: 0.2rem;
+}
+.hours-time {
+  display: block;
+  font-size: clamp(1rem, 3.5vw, 1.25rem);
+  font-weight: 700;
+  color: #3a2a00;
+  white-space: nowrap;
+}
+.hours-divider {
+  color: rgba(200,134,10,0.3);
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+  .opening-hours-grid { gap: 0.8rem !important; padding: 0.75rem !important; }
+  .hours-block { padding: 0.6rem 0.5rem; }
+  .hours-time { font-size: 0.95rem; }
+  .hours-divider { font-size: 1rem; }
+}
+
+/* Annadhanam section scroll anchor */
+#annadhanam { scroll-margin-top: 115px; }
