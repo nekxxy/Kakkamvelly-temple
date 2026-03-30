@@ -185,7 +185,7 @@ const Toast = (function() {
   if (!isMobile()) return;
   const toastMap = {
     'അഷ്ടമി രോഹിണി': '🎉 Janmashtami – ചിങ്ങം',
-    'വിഷു':           '🌸 Vishu – മേടം',
+    'വിഷു':           '🪔 Vishu – മേടം',
     'ഓണം':            '🌺 Onam – ചിങ്ങം',
     'തിരുവാതിര':      '⭐ Thiruvatira – ധനു',
     'ഏകാദശി':         '🪔 Ekadashi – Monthly',
@@ -210,7 +210,7 @@ const Toast = (function() {
     '🦚 മയൂര കൃഷ്ണൻ – Krishna & Peacock',
     '👶 ഉണ്ണി കൃഷ്ണൻ – Crawling Baby Krishna',
     '🐍 കാളിയ മർദ്ദനം – Kaliya Mardana',
-    '🪷 പദ്മ കൃഷ്ണൻ – Lotus Krishna',
+    '🪔 പദ്മ കൃഷ്ണൻ – Lotus Krishna',
     '🏔️ ഗോവർദ്ധന ഗിരിധർ – Giridhar'
   ];
   document.querySelectorAll('.bk-card').forEach((card, i) => {

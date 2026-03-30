@@ -320,26 +320,22 @@
     }
   }
 
-  // ── FIRST TOUCH / CLICK anywhere on page ──
-  // Must be passive:false NOT passive:true on touchstart
-  // so we can call play() in the same synchronous frame
+  // ── START ON ANY INTERACTION — click, touch, keydown ──
+  // passive:false is CRITICAL on iOS — preserves gesture context
+  // once:true — fires only once, then auto-removes
   function onFirstGesture(e) {
     if (started) return;
-    // Don't double-trigger from audio button (it has its own handler)
+    // Audio btn has its own dedicated handler below — skip here
     if (e.target && e.target.closest && e.target.closest('#audio-toggle')) return;
-
     startAudio();
-
-    // Remove all gesture listeners after first trigger
-    document.removeEventListener('touchstart', onFirstGesture);
-    document.removeEventListener('click',      onFirstGesture);
-    document.removeEventListener('keydown',    onFirstGesture);
   }
 
-  // passive:false on touchstart ensures iOS gesture context is preserved
   document.addEventListener('touchstart', onFirstGesture, { passive: false, once: true });
+  document.addEventListener('touchend',   onFirstGesture, { passive: false, once: true });
   document.addEventListener('click',      onFirstGesture, { once: true });
+  document.addEventListener('pointerdown',onFirstGesture, { once: true });
   document.addEventListener('keydown',    onFirstGesture, { once: true });
+  document.addEventListener('scroll',     onFirstGesture, { passive: true, once: true });
 
   // ── Manual toggle button ──
   btn.addEventListener('click', e => {

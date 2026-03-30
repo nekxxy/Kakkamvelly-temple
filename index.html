@@ -25,6 +25,7 @@
   <link rel="stylesheet" href="css/mobile-futuristic.css" />
   <link rel="stylesheet" href="css/galaxy.css" />
   <link rel="stylesheet" href="css/coder-polish.css" />
+  <link rel="stylesheet" href="css/overlap-fixes.css" />
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -76,7 +77,7 @@
     @media (max-width: 480px) { .gmaps-photo-grid { grid-template-columns: 1fr; } }
   </style>
 </head>
-<body>
+<body data-audio-ready="true">
 
   <!-- ───────────── NAVIGATION ───────────── -->
   <header id="site-header">
@@ -134,10 +135,10 @@
         <div class="anim-om anim-om--1">ॐ</div>
         <div class="anim-om anim-om--2">ॐ</div>
         <div class="anim-om anim-om--3">ॐ</div>
-        <div class="anim-lotus anim-lotus--1">🪷</div>
-        <div class="anim-lotus anim-lotus--2">🪷</div>
-        <div class="anim-lotus anim-lotus--3">🪷</div>
-        <div class="anim-lotus anim-lotus--4">🌸</div>
+        <div class="anim-lotus anim-lotus--1">🪔</div>
+        <div class="anim-lotus anim-lotus--2">🪔</div>
+        <div class="anim-lotus anim-lotus--3">🪔</div>
+        <div class="anim-lotus anim-lotus--4">🪔</div>
         <div class="anim-petal anim-petal--1" aria-hidden="true"></div>
         <div class="anim-petal anim-petal--2" aria-hidden="true"></div>
         <div class="anim-petal anim-petal--3" aria-hidden="true"></div>
@@ -195,13 +196,13 @@
     <div class="hindu-deco-strip" aria-hidden="true">
       <span class="deco-diya deco-diya--1">🪔</span>
       <span class="deco-om deco-om--1">ॐ</span>
-      <span class="deco-lotus deco-lotus--1">🪷</span>
+      <span class="deco-lotus deco-lotus--1">🪔</span>
       <span class="deco-diya deco-diya--2">🪔</span>
       <span class="deco-om deco-om--2">ॐ</span>
-      <span class="deco-lotus deco-lotus--2">🌸</span>
+      <span class="deco-lotus deco-lotus--2">🪔</span>
       <span class="deco-diya deco-diya--3">🪔</span>
       <span class="deco-om deco-om--3">ॐ</span>
-      <span class="deco-lotus deco-lotus--3">🪷</span>
+      <span class="deco-lotus deco-lotus--3">🪔</span>
       <span class="deco-diya deco-diya--4">🪔</span>
     </div>
 
@@ -433,7 +434,7 @@
           </article>
 
           <article class="festival-card" aria-label="വിഷു ഉത്സവം">
-            <div class="festival-icon">🌸</div>
+            <div class="festival-icon">🪔</div>
             <h3>വിഷു</h3>
             <p>മലയാള നവ വർഷം – വിഷുക്കണി (ശുഭദർശനം), പ്രത്യേക പൂജകൾ, മലയാള നവ വർഷത്തിന്റെ ആരംഭം അടയാളപ്പെടുത്തുന്ന പരമ്പരാഗത ആചാരങ്ങൾ എന്നിവ കൊണ്ട് ആഘോഷിക്കപ്പെടുന്നു.</p>
             <span class="festival-month">മേടം (ഏപ്രി.–മേയ്)</span>
@@ -549,7 +550,7 @@
                 <div class="art-mandala-ring art-mandala-ring--outer"></div>
                 <div class="art-mandala-ring art-mandala-ring--mid"></div>
                 <div class="art-mandala-ring art-mandala-ring--inner"></div>
-                <div class="art-mandala-center" aria-hidden="true">🪷</div>
+                <div class="art-mandala-center" aria-hidden="true">🪔</div>
               </div>
               <div class="art-diya-row art-diya-row--mandala" aria-hidden="true">
                 <span class="art-diya">🪔</span><span class="art-diya">🪔</span><span class="art-diya">🪔</span>
@@ -634,7 +635,7 @@
             </div>
 
             <a
-              href="https://maps.google.com/?q=Kakkamvelly+Sreekrishna+Temple+Kozhikode+Kerala"
+              href="https://maps.app.goo.gl/LaTA1pWM8NhjW4gK6"
               target="_blank"
               rel="noopener noreferrer"
               class="btn btn-primary btn-directions"
@@ -644,76 +645,36 @@
             </a>
           </div>
 
-          <!-- Google Maps Embed -->
-          <div class="map-wrapper">
-            <div id="map-loading" class="map-loading" aria-live="polite">
-              <i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i>
-              <p>ഭൂപടം ലോഡ് ആകുന്നു…</p>
+
+          <!-- Google Maps — Open in App Button (no API key needed) -->
+          <div class="map-static-card">
+            <div class="map-static-preview">
+              <div class="map-static-pin">📍</div>
+              <div class="map-static-info">
+                <p class="map-static-name">കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം</p>
+                <p class="map-static-addr">പുറമേരി, കോഴിക്കോട്, Kerala 673503</p>
+                <p class="map-static-dist">Kakkamvelly Sreekrishna Temple · Purameri</p>
+              </div>
             </div>
-            <iframe
-              id="temple-map"
-              class="temple-map"
-              title="Google Maps-ൽ കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രത്തിന്റെ സ്ഥാനം"
-              loading="lazy"
-              allowfullscreen
-              referrerpolicy="no-referrer-when-downgrade"
-              src="https://www.google.com/maps/embed/v1/search?q=Kakkamvelly+Sreekrishna+Temple+Kozhikode+Kerala&key=YOUR_GOOGLE_MAPS_EMBED_API_KEY"
-              aria-label="ക്ഷേത്ര സ്ഥാനം കാണിക്കുന്ന ഇന്ററാക്ടീവ് ഭൂപടം"
-              onload="document.getElementById('map-loading').style.display='none'; this.style.opacity='1';"
-            ></iframe>
-            <noscript>
-              <p class="map-fallback">
-                <a href="https://maps.google.com/?q=Kakkamvelly+Sreekrishna+Temple+Kozhikode+Kerala" target="_blank" rel="noopener noreferrer">
-                  Google Maps-ൽ കാണുക
-                </a>
-              </p>
-            </noscript>
+            <div class="map-static-actions">
+              <a href="https://maps.app.goo.gl/LaTA1pWM8NhjW4gK6"
+                 target="_blank" rel="noopener noreferrer"
+                 class="map-open-btn">
+                <i class="fa-solid fa-map-location-dot"></i>
+                Google Maps-ൽ തുറക്കുക
+              </a>
+              <a href="https://maps.apple.com/?q=Kakkamvelly+Sreekrishna+Temple+Purameri+Kerala"
+                 target="_blank" rel="noopener noreferrer"
+                 class="map-open-btn map-open-apple">
+                <i class="fa-solid fa-map"></i>
+                Apple Maps
+              </a>
+            </div>
           </div>
 
-        </div>
 
-        <!-- Google Maps Place Details Card -->
-        <div id="place-details" class="place-details-card" aria-live="polite" aria-label="Google Maps വഴി ക്ഷേത്ര വിവരങ്ങൾ">
-          <div class="place-details-header">
-            <i class="fa-brands fa-google" aria-hidden="true"></i>
-            <h3>ക്ഷേത്ര വിവരങ്ങൾ <span class="powered-by">Google Maps വഴീ</span></h3>
-          </div>
-          <div id="place-details-content" class="place-details-content">
-            <div class="place-detail-item">
-              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-              <div>
-                <strong>സ്ഥലം</strong>
-                <span id="place-address">കോഴിക്കോട് जिल्ल, കേരളം, ഇന്ത്യ</span>
-              </div>
-            </div>
-            <div class="place-detail-item">
-              <i class="fa-solid fa-clock" aria-hidden="true"></i>
-              <div>
-                <strong>തുറക്കൽ സമയം</strong>
-                <span id="place-hours">രാവിലെ: 5:30 AM – 9:00 AM &nbsp;|&nbsp; വൈകുന്നേരം: 5:45 PM – 6:45 PM</span>
-              </div>
-            </div>
-            <div class="place-detail-item">
-              <i class="fa-solid fa-star" aria-hidden="true"></i>
-              <div>
-                <strong>ദേവൻ</strong>
-                <span>ശ്രീകൃഷ്ണൻ (വിഷ്ണു)</span>
-              </div>
-            </div>
-            <div class="place-detail-item">
-              <i class="fa-solid fa-phone" aria-hidden="true"></i>
-              <div>
-                <strong>ബന്ധപ്പെടുക</strong>
-                <span id="place-phone">ചുവടെ ഉള്ള ഫോം വഴി ബന്ധപ്പെടുക</span>
-              </div>
-            </div>
-          </div>
-          <p class="place-details-note">
-            <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
-            ഏറ്റവും പുതിയ വിവരങ്ങൾക്ക്, ക്ഷേത്രത്തിന്റെ
-            <a href="https://maps.google.com/?q=Kakkamvelly+Sreekrishna+Temple+Kozhikode+Kerala" target="_blank" rel="noopener noreferrer">Google Maps ലിസ്റ്റിംഗ്</a> സന്ദർശിക്കുക.
-          </p>
-        </div>
+        <!-- end location -->
+        
 
       </div>
     </section>
@@ -874,7 +835,7 @@
             <span class="donate-desc">Daily lamp offering</span>
           </div>
           <div class="donate-card">
-            <span class="donate-icon">🌸</span>
+            <span class="donate-icon">🪔</span>
             <span class="donate-name">പൂജ വഴിപാട്</span>
             <span class="donate-desc">Sponsor a pooja</span>
           </div>
@@ -957,7 +918,7 @@
         <p class="footer-copy">
           &copy; <span id="footer-year">2026</span> കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം. എല്ലാ അവകാശങ്ങളും നിക്ഷിപ്തം.
         </p>
-        <p class="footer-tagline">🪷 ഹരേ കൃഷ്ണ ഹരേ കൃഷ്ണ കൃഷ്ണ കൃഷ്ണ ഹരേ ഹരേ 🪷</p>
+        <p class="footer-tagline">🪔 ഹരേ കൃഷ്ണ ഹരേ കൃഷ്ണ കൃഷ്ണ കൃഷ്ണ ഹരേ ഹരേ 🪔</p>
       </div>
     </div>
   </footer>

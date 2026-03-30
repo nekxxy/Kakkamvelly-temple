@@ -91,7 +91,7 @@ const TRANSLATIONS = {
     footer_hours:  'ക്ഷേത്ര സമയം',
     footer_find:   'ഞങ്ങളെ കണ്ടെത്തുക',
     footer_copy:   'കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം. എല്ലാ അവകാശങ്ങളും നിക്ഷിപ്തം.',
-    footer_mantra: '🪷 ഹരേ കൃഷ്ണ ഹരേ കൃഷ്ണ കൃഷ്ണ കൃഷ്ണ ഹരേ ഹരേ 🪷',
+    footer_mantra: '🪔 ഹരേ കൃഷ്ണ ഹരേ കൃഷ്ണ കൃഷ്ണ കൃഷ്ണ ഹരേ ഹരേ 🪔',
 
     /* ── OPEN/CLOSED ── */
     temple_open:   'ദർശനം തുറന്നിരിക്കുന്നു',
@@ -179,7 +179,7 @@ const TRANSLATIONS = {
     footer_hours:  'Temple Hours',
     footer_find:   'Find Us',
     footer_copy:   'Kakkamvelly Sreekrishna Temple. All rights reserved.',
-    footer_mantra: '🪷 Hare Krishna Hare Krishna Krishna Krishna Hare Hare 🪷',
+    footer_mantra: '🪔 Hare Krishna Hare Krishna Krishna Krishna Hare Hare 🪔',
 
     /* ── OPEN/CLOSED ── */
     temple_open:   'Temple Open for Darshan',

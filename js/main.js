@@ -85,7 +85,8 @@
 /* ─────────────────────────────────────────────
    3. GOOGLE MAPS EMBED – graceful error handling
 ───────────────────────────────────────────── */
-(function initMap() {
+(function initMap() { return; // Map iframe removed — no API key
+
   const iframe  = document.getElementById('temple-map');
   const loading = document.getElementById('map-loading');
 

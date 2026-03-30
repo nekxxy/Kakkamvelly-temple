@@ -326,7 +326,7 @@ const isMob = () => window.innerWidth <= 768;
     if (cards.length > 0) {
       const badge = document.createElement('div');
       badge.className = 'special-hours-badge';
-      badge.innerHTML = `🌸 <strong>വിഷു 2026 (Apr 15):</strong> &nbsp;ക്ഷേത്രം 5:00 AM – 7:30 PM&nbsp; (Special Hours)`;
+      badge.innerHTML = `🪔 <strong>വിഷു 2026 (Apr 15):</strong> &nbsp;ക്ഷേത്രം 5:00 AM – 7:30 PM&nbsp; (Special Hours)`;
       cards[cards.length - 1].appendChild(badge);
     }
   }

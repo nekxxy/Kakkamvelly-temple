@@ -245,7 +245,7 @@
 /* Lotus petals appearing on either side */
 .title-divider::before,
 .title-divider::after {
-  content: '🪷';
+  content: '🪔';
   position: absolute;
   top: 50%; transform: translateY(-50%);
   font-size: 1.2rem;

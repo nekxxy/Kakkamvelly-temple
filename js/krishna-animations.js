@@ -112,7 +112,7 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 ───────────────────────────────────────────────── */
 (function initCursorTrail() {
   if (prefersReducedMotion) return;
-  const sparkles = ['✦', '✧', '⁕', '✺', '❋', '🪷', '🌸'];
+  const sparkles = ['✦', '✧', '⁕', '✺', '❋', '🪔', '🪔'];
   const colors   = ['#ffd700', '#00c8ff', '#ff6b9d', '#0ff', '#fff'];
   let lastTime = 0;
   const THROTTLE = 40; // ms between sparkles
@@ -222,7 +222,7 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 (function initFloatingElements() {
   if (prefersReducedMotion) return;
 
-  const SYMBOLS = ['🪈', '🌸', '🧈', '🦚', '🌺', '🪷', '⭐', '✨'];
+  const SYMBOLS = ['🪈', '🪔', '🧈', '🦚', '🌺', '🪔', '⭐', '✨'];
   const COUNT = 10;
 
   function spawn() {
@@ -275,7 +275,7 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 ───────────────────────────────────────────────── */
 (function initFestivalBurst() {
   if (prefersReducedMotion) return;
-  const symbols = ['🪷','✨','🌸','⭐','🎉','🪔'];
+  const symbols = ['🪔','✨','🪔','⭐','🎉','🪔'];
   const colors  = ['#ffd700','#ff6b9d','#00c8ff','#ff9933'];
 
   document.querySelectorAll('.festival-card').forEach(card => {
