@@ -925,3 +925,83 @@ main {
 .notice-bar {
   display: none !important;
 }
+
+/* ══════════════════════════════════════════════
+   MOBILE NAV — No hamburger, horizontal scroll
+   Lang pill lives in top-right of navbar
+══════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  /* Nav toggle hidden — removed */
+  .nav-toggle { display: none !important; }
+
+  /* Navbar: brand left, lang pill right */
+  .navbar {
+    padding: 0 0.9rem;
+    height: var(--mob-nav-h);
+    gap: 0.5rem;
+  }
+
+  /* Nav menu: horizontal scroll strip below header */
+  .nav-menu {
+    /* Override drawer styles — now a horizontal scrollable strip */
+    position: fixed !important;
+    top: var(--mob-nav-h) !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    transform: none !important;
+    background: rgba(8,4,24,0.95) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
+    border-bottom: 1px solid rgba(255,215,0,0.12) !important;
+    border-left: none !important;
+    flex-direction: row !important;
+    display: flex !important;
+    padding: 0.4rem 0.6rem !important;
+    gap: 0 !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    scrollbar-width: none !important;
+    -webkit-overflow-scrolling: touch;
+    z-index: 998 !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4) !important;
+  }
+  .nav-menu::-webkit-scrollbar { display: none; }
+
+  /* Nav links — compact horizontal pills */
+  .nav-menu li { flex-shrink: 0; }
+
+  .nav-link {
+    font-size: 0.72rem !important;
+    padding: 0.4rem 0.85rem !important;
+    border-radius: 50px !important;
+    border: 1px solid transparent !important;
+    white-space: nowrap;
+    font-family: 'Noto Serif Malayalam', serif;
+    color: rgba(255,255,255,0.65) !important;
+  }
+  .nav-link:hover,
+  .nav-link.active {
+    background: rgba(255,215,0,0.12) !important;
+    border-color: rgba(255,215,0,0.25) !important;
+    color: #ffd700 !important;
+    padding-left: 0.85rem !important; /* override drawer indent */
+  }
+  .nav-link::before { display: none !important; } /* no left bar */
+
+  /* Push main content down to account for nav strip */
+  main { padding-top: calc(var(--mob-nav-h) + 42px) !important; }
+  .hero { padding-top: calc(var(--mob-nav-h) + 42px) !important; }
+
+  /* Brand text — show both lines */
+  .brand-ml { font-size: 0.76rem; }
+  .brand-en { font-size: 0.65rem; }
+  .om-symbol { font-size: 1.6rem; }
+}
+
+/* Very small screens */
+@media (max-width: 360px) {
+  .nav-link { font-size: 0.66rem !important; padding: 0.38rem 0.65rem !important; }
+  .nlp-btn  { font-size: 0.65rem; padding: 4px 7px; }
+}

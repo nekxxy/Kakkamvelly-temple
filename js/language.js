@@ -25,7 +25,7 @@ const TRANSLATIONS = {
     hero_tagline:  'ഹരേ കൃഷ്ണ',
     hero_title:    'കക്കംവെള്ളി\nശ്രീകൃഷ്ണ ക്ഷേത്രം',
     hero_subtitle: 'Kakkamvelly Sreekrishna Temple',
-    hero_location: 'കോഴിക്കോട് ജില്ല, കേരളം',
+    hero_location: 'പുറമേരി, കോഴിക്കോട്, കേരളം',
     hero_btn1:     'വഴി കാണിക്കുക',
     hero_btn2:     'ക്ഷേത്ര സമയം',
 
@@ -34,7 +34,7 @@ const TRANSLATIONS = {
     live_title:    'ഇന്നത്തെ ക്ഷേത്ര വിവരം',
     live_darshan:  '🛕 ദർശന സ്റ്റാറ്റസ്',
     live_festival: '🎉 അടുത്ത ഉത്സവം',
-    live_weather:  '🌤 കാലാവസ്ഥ · Nadapuram',
+    live_weather:  '🌤 കാലാവസ്ഥ · Purameri',
     live_schedule: '⏰ ഇന്നത്തെ പൂജ ഷെഡ്യൂൾ',
     live_panchang: '📅 ഇന്നത്തെ പഞ്ചാംഗം',
 
@@ -113,7 +113,7 @@ const TRANSLATIONS = {
     hero_tagline:  'Hare Krishna',
     hero_title:    'Kakkamvelly\nSreekrishna Temple',
     hero_subtitle: 'കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം',
-    hero_location: 'Kozhikode District, Kerala',
+    hero_location: 'Purameri, Kozhikode, Kerala',
     hero_btn1:     'Get Directions',
     hero_btn2:     'Temple Timings',
 
@@ -122,7 +122,7 @@ const TRANSLATIONS = {
     live_title:    'Today\'s Temple Information',
     live_darshan:  '🛕 Darshan Status',
     live_festival: '🎉 Next Festival',
-    live_weather:  '🌤 Weather · Nadapuram',
+    live_weather:  '🌤 Weather · Purameri',
     live_schedule: '⏰ Today\'s Pooja Schedule',
     live_panchang: '📅 Today\'s Panchang',
 
@@ -308,8 +308,8 @@ function applyLang(lang) {
   // Update <html lang> attribute
   document.documentElement.lang = lang === 'ml' ? 'ml' : 'en';
 
-  // Update all nav-lang-btns active state
-  document.querySelectorAll('.nav-lang-btn, .old-lang-btn').forEach(b => {
+  // Sync ALL lang buttons (pill + drawer)
+  document.querySelectorAll('.nlp-btn, .nav-lang-btn, .lang-btn').forEach(b => {
     b.classList.toggle('active', b.dataset.lang === lang);
   });
 
@@ -330,24 +330,21 @@ function applyLang(lang) {
    WIRE UP BUTTONS — drawer + desktop
 ════════════════════════════════════════════════════ */
 function initLangButtons() {
-  // Drawer buttons (in nav)
-  document.querySelectorAll('.nav-lang-btn').forEach(btn => {
+  // New nav pill buttons (.nlp-btn) — replaces hamburger
+  document.querySelectorAll('.nlp-btn').forEach(btn => {
     btn.addEventListener('click', e => {
       e.stopPropagation();
       applyLang(btn.dataset.lang);
     });
   });
 
-  // Desktop floating switcher (built by old enhancements.js)
-  // Override it — remove after build & replace with our own mini pill on desktop
-  const oldSwitcher = document.querySelector('.lang-switcher');
-  if (oldSwitcher) {
-    oldSwitcher.querySelectorAll('.lang-btn').forEach(btn => {
-      btn.addEventListener('click', () => applyLang(btn.dataset.lang));
+  // Old drawer buttons (legacy — keep for safety)
+  document.querySelectorAll('.nav-lang-btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      applyLang(btn.dataset.lang);
     });
-    // Hide on mobile — it's in drawer now
-    if (window.innerWidth <= 768) oldSwitcher.style.display = 'none';
-  }
+  });
 
   // Apply saved lang on load
   applyLang(currentLang);

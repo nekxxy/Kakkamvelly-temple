@@ -138,7 +138,7 @@ const isMob = () => window.innerWidth <= 768;
   const el = $('weather-widget');
   if (!el) return;
 
-  const LAT = 11.675, LON = 75.638; // Nadapuram
+  const LAT = 11.6814, LON = 75.6478; // Purameri
   const url = `https://api.open-meteo.com/v1/forecast?latitude=${LAT}&longitude=${LON}&current=temperature_2m,weathercode,windspeed_10m,relative_humidity_2m&timezone=Asia%2FKolkata`;
 
   const WMO = {
@@ -169,7 +169,7 @@ const isMob = () => window.innerWidth <= 768;
         <div class="ww-meta">
           <span>💧 ${humidity}%</span>
           <span>💨 ${wind} km/h</span>
-          <span class="ww-loc">📍 Nadapuram</span>
+          <span class="ww-loc">📍 Purameri</span>
         </div>
         <div class="ww-advice">${temp > 33 ? '☂️ Carry umbrella & water' : temp < 22 ? '🧣 Light wrap advised' : '✅ Good time to visit'}</div>
       `;

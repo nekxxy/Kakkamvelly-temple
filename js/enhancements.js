@@ -153,16 +153,16 @@
     "@type": "HinduTemple",
     "name": "Kakkamvelly Sreekrishna Temple",
     "alternateName": "കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം",
-    "description": "Kakkamvelly Sreekrishna Temple is a Hindu temple in Nadapuram Panchayat, Kozhikode District, Kerala, dedicated to Lord Sreekrishna. Traditional tantric rituals as per Tantrasamuchayam.",
+    "description": "Kakkamvelly Sreekrishna Temple is a Hindu temple in Purameri, Kozhikode District, Kerala, dedicated to Lord Sreekrishna. Traditional tantric rituals as per Tantrasamuchayam.",
     "url": "https://deloitte-us-consulting.github.io/kakkamvelly-temple",
     "telephone": "+91-0000000000",
     "email": "kakkamvellytemple@gmail.com",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Kakkamvelly",
-      "addressLocality": "Nadapuram",
+      "addressLocality": "Purameri",
       "addressRegion": "Kozhikode",
-      "postalCode": "673504",
+      "postalCode": "673503",
       "addressCountry": "IN"
     },
     "geo": {

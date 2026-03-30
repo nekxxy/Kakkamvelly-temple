@@ -53,42 +53,22 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  // Mobile nav toggle
-  if (toggle && navMenu) {
-    toggle.addEventListener('click', function () {
-      const isOpen = navMenu.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', String(isOpen));
-      document.body.style.overflow = isOpen ? 'hidden' : '';
+  // Hamburger replaced by lang pill — nav always visible on desktop
+  // Mobile: nav is hidden by default; lang pill does NOT open it
+  // Nav links close any open state for safety
+  navLinks.forEach(function (link) {
+    link.addEventListener('click', function () {
+      navMenu.classList.remove('open');
+      document.body.style.overflow = '';
     });
-
-    // Close on link click
-    navLinks.forEach(function (link) {
-      link.addEventListener('click', function () {
-        navMenu.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      });
-    });
-
-    // Close on outside click
-    document.addEventListener('click', function (e) {
-      if (!header.contains(e.target) && navMenu.classList.contains('open')) {
-        navMenu.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      }
-    });
-
-    // Keyboard: close on Escape
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && navMenu.classList.contains('open')) {
-        navMenu.classList.remove('open');
-        toggle.setAttribute('aria-expanded', 'false');
-        toggle.focus();
-        document.body.style.overflow = '';
-      }
-    });
-  }
+  });
+  // Close on outside click (safety)
+  document.addEventListener('click', function (e) {
+    if (header && !header.contains(e.target) && navMenu.classList.contains('open')) {
+      navMenu.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
 })();
 
 /* ─────────────────────────────────────────────
