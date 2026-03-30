@@ -1,55 +1,81 @@
 <!DOCTYPE html>
 <html lang="ml">
 <head>
-  <meta charset="UTF-8" />
-  <!-- Resource hints for performance -->
-  <link rel="preload" href="images/baby-krishna-hero.webp" as="image" type="image/webp" />
-  <link rel="preload" href="images/mobile/baby-krishna-hero.webp" as="image" type="image/webp" media="(max-width:480px)" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
-  <link rel="preload" href="css/temple.min.css" as="style" />
-  <link rel="preload" href="images/temple-entrance-deepam.jpg" as="image" />
-  <link rel="dns-prefetch" href="https://api.open-meteo.com" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Open Graph — WhatsApp/Social sharing -->
-  <meta property="og:type"        content="website" />
-  <meta property="og:site_name"   content="Kakkamvelly Sreekrishna Temple" />
-  <meta property="og:title"       content="കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം — Kakkamvelly Sreekrishna Temple" />
-  <meta property="og:description" content="Kakkamvelly Sreekrishna Temple, Purameri, Kozhikode. Baby Krishna temple. Darshan: 5:30–9:00 AM &amp; 5:45–6:45 PM. Monthly Annadhanam every first Sunday." />
-  <meta property="og:url"         content="https://kakkamvellytemple.page/" />
-  <meta property="og:image"       content="https://kakkamvellytemple.page/images/temple-front-view.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="805" />
-  <meta property="og:locale"      content="ml_IN" />
-  <meta property="og:locale:alternate" content="en_IN" />
-  <!-- Twitter Card -->
-  <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:title"       content="Kakkamvelly Sreekrishna Temple, Purameri, Kozhikode" />
-  <meta name="twitter:description" content="Baby Krishna temple in Purameri, Kozhikode. Daily darshan 5:30–9:00 AM &amp; 5:45–6:45 PM." />
-  <meta name="twitter:image"       content="https://kakkamvellytemple.page/images/temple-front-view.jpg" />
-  <meta name="theme-color" content="#1a0620" />
-  <meta name="apple-mobile-web-app-capable" content="yes" />
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="description" content="Kakkamvelly Sreekrishna Temple, Purameri, Kozhikode, Kerala. Baby Krishna temple near Nadapuram. Darshan: 5:30 AM–9 AM &amp; 5:45–6:45 PM. Monthly Annadhanam. കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രത്തിന്റെ ഔദ്യോഗിക വെബ്സൈറ്റ്. കോഴിക്കോട് ജില്ലയിൽ സ്ഥിതി ചെയ്യുന്ന ഈ ക്ഷേത്രത്തിലെ സമയക്രമം, പൂജ ഷെഡ്യൂൾ, സ്ഥലം, വഴിക്കുറിപ്പ് എന്നിവ അറിയൂ." />
-  <meta name="keywords" content="Kakkamvelly temple, Sreekrishna temple, Kozhikode temple, Kerala Hindu temple, കക്കംവെള്ളി ക്ഷേത്രം, ശ്രീകൃഷ്ണ ക്ഷേത്രം, ക്ഷേത്ര സമയം, പൂജ ഷെഡ്യൂൾ" />
-  <title>കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം | കോഴിക്കോട്, കേരളം</title>
-  <style id="lang-toggle-css">
+ <meta charset="UTF-8" />
+ <link rel="preload" href="images/baby-krishna-hero.avif" as="image" type="image/avif" />
+ <link rel="preload" href="images/mobile/baby-krishna-hero.avif" as="image" type="image/avif" media="(max-width:480px)" />
+ <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+ <link rel="preload" href="css/temple.min.css" as="style" />
+ <link rel="dns-prefetch" href="https://api.open-meteo.com" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <meta property="og:type" content="website" />
+ <meta property="og:site_name" content="Kakkamvelly Sreekrishna Temple" />
+ <meta property="og:title" content="കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം — Kakkamvelly Sreekrishna Temple" />
+ <meta property="og:description" content="Kakkamvelly Sreekrishna Temple, Purameri, Kozhikode. Baby Krishna temple. Darshan: 5:30–9:00 AM &amp; 5:45–6:45 PM. Monthly Annadhanam every first Sunday." />
+ <meta property="og:url" content="https://kakkamvellytemple.page/" />
+ <meta property="og:image" content="https://kakkamvellytemple.page/images/temple-front-view.jpg" />
+ <meta property="og:image:width" content="1200" />
+ <meta property="og:image:height" content="805" />
+ <meta property="og:locale" content="ml_IN" />
+ <meta property="og:locale:alternate" content="en_IN" />
+ <meta name="twitter:card" content="summary_large_image" />
+ <meta name="twitter:title" content="Kakkamvelly Sreekrishna Temple, Purameri, Kozhikode" />
+ <meta name="twitter:description" content="Baby Krishna temple in Purameri, Kozhikode. Daily darshan 5:30–9:00 AM &amp; 5:45–6:45 PM." />
+ <meta name="twitter:image" content="https://kakkamvellytemple.page/images/temple-front-view.jpg" />
+ <meta name="theme-color" content="#1a0620" />
+ <meta name="apple-mobile-web-app-capable" content="yes" />
+ <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+ <meta name="description" content="Kakkamvelly Sreekrishna Temple, Purameri, Kozhikode, Kerala. Baby Krishna temple near Nadapuram. Darshan: 5:30 AM–9 AM &amp; 5:45–6:45 PM. Monthly Annadhanam. കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രത്തിന്റെ ഔദ്യോഗിക വെബ്സൈറ്റ്. കോഴിക്കോട് ജില്ലയിൽ സ്ഥിതി ചെയ്യുന്ന ഈ ക്ഷേത്രത്തിലെ സമയക്രമം, പൂജ ഷെഡ്യൂൾ, സ്ഥലം, വഴിക്കുറിപ്പ് എന്നിവ അറിയൂ." />
+ <meta name="keywords" content="Kakkamvelly temple, Sreekrishna temple, Kozhikode temple, Kerala Hindu temple, കക്കംവെള്ളി ക്ഷേത്രം, ശ്രീകൃഷ്ണ ക്ഷേത്രം, ക്ഷേത്ര സമയം, പൂജ ഷെഡ്യൂൾ" />
+ <title>കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം | കോഴിക്കോട്, കേരളം</title>
+ <style id="lang-toggle-css">
     /* Language toggle */
     .lang-ml-only { display: block; }
     .lang-en-only { display: none; }
     body.lang-en .lang-ml-only { display: none; }
     body.lang-en .lang-en-only { display: block; }
   </style>
-  <link rel="manifest" href="manifest.json" />
-  <link rel="stylesheet" href="css/temple.min.css" />
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lato:wght@300;400;700&family=Noto+Serif+Malayalam:wght@400;700&display=swap" rel="stylesheet" />
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <style>
+ <link rel="manifest" href="manifest.json" />
+ <style id="critical-css">/* CRITICAL CSS — above fold only */
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden;max-width:100vw}
+body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',system-ui,-apple-system,sans-serif;overflow-x:hidden;touch-action:pan-y;-webkit-overflow-scrolling:touch}
+:root{--mob-nav-h:64px;--color-gold:#ffd700;--color-white:#fff}
+#site-header{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(8,4,24,.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.navbar{display:flex;align-items:center;justify-content:space-between;padding:0 1rem;height:var(--mob-nav-h);gap:.5rem}
+.nav-brand{display:flex;align-items:center;gap:.6rem;text-decoration:none}
+.om-symbol{font-size:1.8rem;color:#ffd700}
+.brand-ml{font-size:.78rem;color:#ffd700;font-weight:700;font-family:'Noto Serif Malayalam',serif}
+.brand-en{font-size:.62rem;color:rgba(255,215,0,.7);letter-spacing:.06em}
+.nav-lang-pill{display:flex;align-items:center;gap:0;background:rgba(255,255,255,.07);border:1px solid rgba(255,215,0,.25);border-radius:50px;padding:3px}
+.nlp-btn{background:none;border:none;cursor:pointer;font-family:'Noto Serif Malayalam',serif;font-size:.72rem;font-weight:700;color:rgba(255,255,255,.5);padding:5px 12px;border-radius:50px;transition:all .25s}
+.nlp-btn.active{background:linear-gradient(135deg,#c8860a,#ffd700);color:#1a0800}
+.hero{min-height:100dvh;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(circle at center,#f5d37a 0%,#c8860a 25%,#3a1800 55%,#0b0b0b 70%);overflow:visible;padding:0}
+.hero-content{display:flex;flex-direction:column;align-items:center;text-align:center;width:100%;max-width:680px;margin:0 auto;padding:0 1.25rem 2rem;padding-top:calc(var(--mob-nav-h) + 44px + 1rem);gap:.4rem;position:relative;z-index:2;box-sizing:border-box}
+.hero-krishna-img-wrap{position:relative;display:flex;justify-content:center;align-items:flex-end;margin-bottom:.2rem;flex-shrink:0;width:100%}
+.hero-krishna-img{width:clamp(150px,42vw,260px);height:auto;display:block;filter:drop-shadow(0 8px 24px rgba(0,0,0,.45)) drop-shadow(0 0 40px rgba(255,215,0,.5));animation:krishna-hero-float 4s ease-in-out infinite}
+@keyframes krishna-hero-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+.hero-tagline{margin:0;font-family:'Noto Serif Malayalam',serif;font-size:clamp(.85rem,3.5vw,1.1rem);color:#ffd700;letter-spacing:.15em}
+.hero-title{margin:.2rem 0 0;font-family:'Noto Serif Malayalam',serif;font-size:clamp(1.7rem,7.5vw,3.5rem);font-weight:700;color:#fff;line-height:1.2}
+.hero-subtitle{margin:0;font-family:'Cinzel',serif;font-size:clamp(.78rem,3vw,1rem);color:rgba(255,215,0,.85);letter-spacing:.08em}
+.hero-location{margin:.1rem 0 .4rem;font-size:clamp(.75rem,2.8vw,.9rem);color:rgba(255,255,255,.8)}
+.hero-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:.65rem;margin-top:.6rem;width:100%;flex-direction:row!important;flex-wrap:nowrap!important}
+.hero-actions .btn{flex:0 1 auto!important;padding:.55rem 1.1rem!important;font-size:.82rem!important;border-radius:50px!important;font-weight:700;white-space:nowrap;text-decoration:none;display:inline-flex;align-items:center;gap:.4rem}
+.btn-primary{background:linear-gradient(135deg,#c8860a,#ffd700);color:#1a0800}
+.btn-secondary{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.25);color:#fff}
+#live-section{padding:0;position:sticky;top:calc(var(--mob-nav-h) + 44px);z-index:990}
+.live-status-bar{display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:.6rem 1rem;background:rgba(10,6,0,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,215,0,.15);flex-wrap:wrap}
+.dsw-dot{width:10px;height:10px;border-radius:50%;background:#6b7280;flex-shrink:0}
+.dsw-text{font-family:'Noto Serif Malayalam',serif;font-size:clamp(.75rem,2.5vw,.88rem);color:rgba(255,255,255,.9);font-weight:600}
+.nav-menu{position:fixed;top:var(--mob-nav-h);left:0;right:0;background:rgba(8,4,24,.95);border-bottom:1px solid rgba(255,215,0,.12);display:flex;padding:.4rem .6rem;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;z-index:998;height:44px;align-items:center}</style>
+ <link rel="stylesheet" href="css/temple.min.css" media="print" onload="this.media='all';this.onload=null" />
+ <noscript><link rel="stylesheet" href="css/temple.min.css" /></noscript>
+ <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@400;700&family=Noto+Serif+Malayalam:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+ <noscript><link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@400;700&family=Noto+Serif+Malayalam:wght@400;700&display=swap" rel="stylesheet" /></noscript>
+ <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'" crossorigin="anonymous" />
+ <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" /></noscript>
+ <style>
     /* Google Maps Street View / Photo placeholder styles */
     .gmaps-photo-grid {
       display: grid;
@@ -95,840 +121,714 @@
   </style>
 </head>
 <body data-audio-ready="true">
-  <!-- Vishu 2026 Special Hours Banner -->
-  <div id="vishu-banner" class="vishu-alert" role="alert" aria-live="polite">
-    <span class="vishu-icon">🌸</span>
-    <span class="vishu-text">
-      <strong>വിഷു 2026 (ഏപ്രിൽ 15)</strong> — ക്ഷേത്രം: 5:00 AM – 7:30 PM &nbsp;·&nbsp; Special Darshan
-    </span>
-    <button class="vishu-close" aria-label="Close" onclick="this.parentElement.remove()">✕</button>
-  </div>
-
-
-
-  <!-- ───────────── NAVIGATION ───────────── -->
-  <header id="site-header">
-    <nav class="navbar" role="navigation" aria-label="പ്രധാന നാവിഗേഷൻ">
-      <div class="nav-brand">
-        <span class="om-symbol">ॐ</span>
-        <div class="brand-text">
-          <span class="brand-ml">കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം</span>
-          <span class="brand-en">Kakkamvelly Sreekrishna Temple</span>
-        </div>
-      </div>
-      <!-- Language switcher replaces hamburger — full names -->
-      <div class="nav-lang-pill" role="group" aria-label="Language selector">
-        <button class="nlp-btn active" data-lang="ml" aria-label="Switch to Malayalam">മലയാളം</button>
-        <button class="nlp-btn" data-lang="en" aria-label="Switch to English">English</button>
-      </div>
-      <ul class="nav-menu" id="nav-menu" role="list">
-
-        <li><a href="#home" class="nav-link">മുഖ്യ താൾ</a></li>
-        <li><a href="#about" class="nav-link">ക്ഷേത്രത്തെ കുറിച്ച്</a></li>
-        <li><a href="#timings" class="nav-link">സമയക്രമം</a></li>
-        <li><a href="#festivals" class="nav-link">ഉത്സവങ്ങൾ</a></li>
-        <li><a href="#gallery" class="nav-link">ഗ്യാലറി</a></li>
-        <li><a href="#location" class="nav-link">സ്ഥലം</a></li>
-        <li><a href="#donate" class="nav-link">ദാനം</a></li>
-        <li><a href="#contact" class="nav-link">ബന്ധപ്പെടുക</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-
-    <!-- ───────────── HERO ───────────── -->
-    <section id="home" class="hero hero-gradient" aria-label="ക്ഷേത്ര ഹീറോ ബാനർ">
-      <div class="hero-overlay"></div>
-      <div class="hero-content">
-        <div class="hero-krishna-img-wrap">
+ <div id="vishu-banner" class="vishu-alert" role="alert" aria-live="polite">
+ <span class="vishu-icon">🌸</span>
+ <span class="vishu-text">
+ <strong>വിഷു 2026 (ഏപ്രിൽ 15)</strong> — ക്ഷേത്രം: 5:00 AM – 7:30 PM &nbsp;·&nbsp; Special Darshan
+ </span>
+ <button class="vishu-close" aria-label="Close" onclick="this.parentElement.remove()">✕</button>
+ </div>
+ <header id="site-header">
+ <nav class="navbar" role="navigation" aria-label="പ്രധാന നാവിഗേഷൻ">
+ <div class="nav-brand">
+ <span class="om-symbol">ॐ</span>
+ <div class="brand-text">
+ <span class="brand-ml">കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം</span>
+ <span class="brand-en">Kakkamvelly Sreekrishna Temple</span>
+ </div>
+ </div>
+ <div class="nav-lang-pill" role="group" aria-label="Language selector">
+ <button class="nlp-btn active" data-lang="ml" aria-label="Switch to Malayalam">മലയാളം</button>
+ <button class="nlp-btn" data-lang="en" aria-label="Switch to English">English</button>
+ </div>
+ <ul class="nav-menu" id="nav-menu" role="list">
+ <li><a href="#home" class="nav-link">മുഖ്യ താൾ</a></li>
+ <li><a href="#about" class="nav-link">ക്ഷേത്രത്തെ കുറിച്ച്</a></li>
+ <li><a href="#timings" class="nav-link">സമയക്രമം</a></li>
+ <li><a href="#festivals" class="nav-link">ഉത്സവങ്ങൾ</a></li>
+ <li><a href="#gallery" class="nav-link">ഗ്യാലറി</a></li>
+ <li><a href="#location" class="nav-link">സ്ഥലം</a></li>
+ <li><a href="#donate" class="nav-link">ദാനം</a></li>
+ <li><a href="#contact" class="nav-link">ബന്ധപ്പെടുക</a></li>
+ </ul>
+ </nav>
+ </header>
+ <main>
+ <section id="home" class="hero hero-gradient" aria-label="ക്ഷേത്ര ഹീറോ ബാനർ">
+ <div class="hero-overlay"></div>
+ <div class="hero-content">
+ <div class="hero-krishna-img-wrap">
 <picture>
+ <source media="(max-width: 480px)" srcset="images/mobile/baby-krishna-hero.avif" type="image/avif" />
             <source media="(max-width: 480px)" srcset="images/mobile/baby-krishna-hero.webp" type="image/webp" />
-            <source media="(max-width: 480px)" srcset="images/mobile/baby-krishna-hero.png" />
+ <source media="(max-width: 480px)" srcset="images/mobile/baby-krishna-hero.png" />
+ <source srcset="images/baby-krishna-hero.avif" type="image/avif" />
             <source srcset="images/baby-krishna-hero.webp" type="image/webp" />
-            <img
-              src="images/baby-krishna-hero.png"
-              alt="ഉണ്ണി കൃഷ്ണൻ — Baby Krishna"
-              class="hero-krishna-img"
-              width="400" height="600"
-              fetchpriority="high"
-              decoding="async"
-            />
-          </picture>
-        </div>
-        <p class="hero-tagline">ഹരേ കൃഷ്ണ</p>
-        <h1 class="hero-title">കക്കംവെള്ളി<br />ശ്രീകൃഷ്ണ ക്ഷേത്രം</h1>
-        <p class="hero-subtitle">Kakkamvelly Sreekrishna Temple</p>
-        <p class="hero-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> പുറമേരി, കോഴിക്കോട്, കേരളം</p>
-        <div class="hero-actions">
-          <a href="#location" class="btn btn-primary">
-            <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i> വഴി കാണിക്കുക
-          </a>
-          <a href="#timings" class="btn btn-secondary">
-            <i class="fa-regular fa-clock" aria-hidden="true"></i> ക്ഷേത്ര സമയം
-          </a>
-        </div>
-
-        <!-- Next Darshan Badge -->
-        <div id="next-darshan-countdown" class="next-darshan-badge nd-loading">
-          ⏳ ദർശന സമയം കണക്കാക്കുന്നു...
-        </div>
-
-        <!-- WhatsApp Share -->
-        <a href="https://wa.me/?text=🛕%20കക്കംവെള്ളി%20ശ്രീകൃഷ്ണ%20ക്ഷേത്രം%20-%20Purameri%2C%20Kozhikode%0Ahttps%3A%2F%2Fkakkamvellytemple.page"
-           target="_blank" rel="noopener noreferrer"
-           class="hero-share-btn" aria-label="WhatsApp വഴി പങ്കിടുക">
-          <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-          ക്ഷേത്ര വിവരം പങ്കിടുക
-        </a>
-
-      </div>
-      <div class="hero-scroll-indicator" aria-hidden="true">
-        <div class="scroll-arrow"></div>
-      </div>
-      <!-- Modern Hindu Animations Layer -->
-      <div class="hindu-anim-layer" aria-hidden="true">
-        <div class="anim-lotus anim-lotus--1">🪔</div>
-        <div class="anim-lotus anim-lotus--2">🪔</div>
-        <div class="anim-lotus anim-lotus--3">🪔</div>
-        <div class="anim-lotus anim-lotus--4">🪔</div>
-        <div class="anim-petal anim-petal--1" aria-hidden="true"></div>
-        <div class="anim-petal anim-petal--2" aria-hidden="true"></div>
-        <div class="anim-petal anim-petal--3" aria-hidden="true"></div>
-        <div class="anim-petal anim-petal--4" aria-hidden="true"></div>
-        <div class="anim-petal anim-petal--5" aria-hidden="true"></div>
-      </div>
-    </section>
-
-    <!-- ───────────── MARQUEE NOTICE ───────────── -->
-
-
-    <!-- ── LIVE STATUS SECTION (Ruflo feature-agent) ── -->
-    <!-- Live Status — computed from schedule, no backend needed -->
-    <section id="live-section" aria-label="ക്ഷേത്ര സ്റ്റാറ്റസ്">
-      <div class="live-status-bar container">
-        <div id="darshan-status-widget" class="dsw-main">
-          <span class="dsw-dot"></span>
-          <span class="dsw-text">ദർശന സ്ഥിതി കണക്കാക്കുന്നു...</span>
-        </div>
-        <div class="dsw-actions">
-          <a href="tel:+919446844145" class="dsw-btn dsw-call">
-            <i class="fa-solid fa-phone" aria-hidden="true"></i> വിളിക്കുക
-          </a>
-          <a href="https://maps.app.goo.gl/LaTA1pWM8NhjW4gK6" target="_blank" rel="noopener noreferrer" class="dsw-btn dsw-dir">
-            <i class="fa-solid fa-diamond-turn-right" aria-hidden="true"></i> വഴി
-          </a>
-          <a href="https://wa.me/919446844145" target="_blank" rel="noopener noreferrer" class="dsw-btn dsw-wa">
-            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp
-          </a>
-        </div>
-      </div>
-    </section>
-
-
-
-    <!-- Animated Hindu Decoration Strip -->
-    <div class="hindu-deco-strip" aria-hidden="true">
-      <span class="deco-diya deco-diya--1">🪔</span>
-      <span class="deco-om deco-om--1">ॐ</span>
-      <span class="deco-lotus deco-lotus--1">🪔</span>
-      <span class="deco-diya deco-diya--2">🪔</span>
-      <span class="deco-om deco-om--2">ॐ</span>
-      <span class="deco-lotus deco-lotus--2">🪔</span>
-      <span class="deco-diya deco-diya--3">🪔</span>
-      <span class="deco-om deco-om--3">ॐ</span>
-      <span class="deco-lotus deco-lotus--3">🪔</span>
-      <span class="deco-diya deco-diya--4">🪔</span>
-    </div>
-
-    <!-- ───────────── ABOUT ───────────── -->
-
-    <!-- ───────────── TIMINGS (moved to top priority) ──────────────────── -->
-    <section id="timings" class="section section-saffron section-timings-priority" aria-labelledby="timings-heading">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">ദർശനം</span>
-          <h2 id="timings-heading" class="section-title">ക്ഷേത്ര സമയക്രമവും പൂജ ഷെഡ്യൂളും</h2>
-        </div>
-        <div class="timings-grid">
-
-          <div class="timing-card">
-            <div class="timing-card-header">
-              <i class="fa-solid fa-sun" aria-hidden="true"></i>
-              <h3>രാവിലെ (പ്രഭാത പൂജ)</h3>
-            </div>
-            <table class="timing-table" aria-label="രാവിലത്തെ പൂജ സമയം">
-              <thead>
-                <tr><th scope="col">പൂജ</th><th scope="col">സമയം</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>നിർമ്മാല്യദർശനം</td><td>5:30 AM</td></tr>
-                <tr><td>ഉഷ പൂജ</td><td>6:00 AM</td></tr>
-                <tr><td>ദീപാരാധന</td><td>8:00 AM</td></tr>
-                <tr><td>നട അടക്കൽ</td><td>9:00 AM</td></tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div class="timing-card">
-            <div class="timing-card-header">
-              <i class="fa-solid fa-moon" aria-hidden="true"></i>
-              <h3>വൈകുന്നേരം (സായഹ്ന പൂജ)</h3>
-            </div>
-            <table class="timing-table" aria-label="വൈകുന്നേരത്തെ പൂജ സമയം">
-              <thead>
-                <tr><th scope="col">പൂജ</th><th scope="col">സമയം</th></tr>
-              </thead>
-              <tbody>
-                <tr><td>ദീപാരാധന</td><td>5:45 PM</td></tr>
-                <tr><td>നട അടക്കൽ</td><td>6:45 PM</td></tr>
-              </tbody>
-            </table>
-          </div>
-
-          <div class="timing-card timing-card-full">
-            <div class="timing-card-header">
-              <i class="fa-solid fa-door-open" aria-hidden="true"></i>
-              <h3>ക്ഷേത്ര തുറക്കൽ സമയം</h3>
-            </div>
-            <div class="opening-hours-grid">
-              <div class="hours-block">
-                <span class="hours-label">രാവിലെ</span>
-                <span class="hours-time">5:30 AM – 9:00 AM</span>
-              </div>
-              <div class="hours-divider" aria-hidden="true">|</div>
-              <div class="hours-block">
-                <span class="hours-label">വൈകുന്നേരം</span>
-                <span class="hours-time">5:45 PM – 6:45 PM</span>
-              </div>
-            </div>
-            <p class="timing-note">
-              <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
-              ഉത്സവ ദിനങ്ങളിൽ സമയക്രമം മാറ്റം വരാം.
-              <strong>വിഷു 2026 (ഏപ്രിൽ 15): 5:00 AM – 7:30 PM</strong> (Special).
-              ക്ഷേത്ര ഓഫീസ്: <a href="tel:+919446844145">+91 94468 44145</a>
-            </p>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ── ANNADHANAM + KULAM DONATION (Ruflo feature-agent) ── -->
-
-    <!-- ───────────── ANNADHANAM (moved to top priority) ─────────────────── -->
-    <div class="annadhanam-kulam-wrapper">
-
-      <!-- Annadhanam Banner -->
-      <div class="annadhanam-banner" aria-label="Monthly Annadhanam">
-        <div class="ann-flame-left" aria-hidden="true">🪔</div>
-        <div class="ann-content">
-          <div class="ann-icon">🍛</div>
-          <div class="ann-text">
-            <h3 class="ann-title">മാസം തോറും ഒന്നാം ഞായർ — അന്നദാനം</h3>
-            <p class="ann-sub">Monthly First Sunday · Free Prasadam at Noon for All Devotees</p>
-            <p class="ann-desc">
-              ഒരു പ്രാചീന പാരമ്പര്യമനുസരിച്ച്, ഓരോ മാസവും ആദ്യ ഞായറാഴ്ച ഉച്ചയ്ക്ക്
-              ക്ഷേത്ര പരിസരത്ത് അന്നദാനം നടത്തുന്നു. <em>എല്ലാ ഭക്തർക്കും സ്വാഗതം.</em>
-            </p>
-            <div class="ann-next" id="ann-next-date">⏳ Calculating next Annadhanam…</div>
-          </div>
-        </div>
-        <div class="ann-flame-right" aria-hidden="true">🪔</div>
-      </div>
-
-      <!-- Kulam Donation Banner -->
-      <div class="kulam-banner" aria-label="Temple pool renovation donation">
-        <div class="kulam-content">
-          <div class="kulam-icon">🌊</div>
-          <div class="kulam-text">
-            <h3 class="kulam-title">അമ്പലം കുളം നവീകരണം</h3>
-            <p class="kulam-sub">Temple Pool Renovation — Seeking Your Support</p>
-            <p class="kulam-desc">
-              ക്ഷേത്ര കുളത്തിന്റെ നവീകരണ പ്രവർത്തനങ്ങൾക്ക് ക്ഷേത്ര കമ്മിറ്റി
-              ഭക്തരുടെ സഹകരണം അഭ്യർത്ഥിക്കുന്നു. താൽപര്യമുള്ളവർ
-              ഞങ്ങളുമായി ബന്ധപ്പെടുക.
-            </p>
-          </div>
-          <div class="kulam-contact">
-            <a href="tel:+919446844145" class="kulam-btn kulam-call">
-              <i class="fa-solid fa-phone" aria-hidden="true"></i>
-              <span>9446844145</span>
-              <small>Secretary</small>
-            </a>
-            <a href="https://wa.me/919446844145?text=ഹരേ%20കൃഷ്ണ%20🙏%20Ambalam%20Kulam%20Naveekaranam%20donation%20enquiry" target="_blank" rel="noopener noreferrer" class="kulam-btn kulam-wa">
-              <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-              <span>WhatsApp</span>
-              <small>Quick message</small>
-            </a>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-
-    <!-- ── Temple Grounds Parallax Strip ── -->
-    <div class="temple-parallax-strip" role="img" aria-label="കക്കംവെള്ളി ക്ഷേത്ര മൈദാനം">
-      <div class="parallax-overlay">
-        <p class="parallax-caption">🛕 കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം · Purameri, Kozhikode</p>
-      </div>
-    </div>
-    <section id="about" class="section section-light" aria-labelledby="about-heading">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">ക്ഷേത്രം</span>
-          <h2 id="about-heading" class="section-title">ക്ഷേത്രത്തെ കുറിച്ച്</h2>
-        </div>
-        <div class="about-grid">
-          <div class="about-image-wrapper">
-            <div class="about-real-photo-card" aria-label="ക്ഷേത്ര ദൃശ്യം">
-              <picture><source srcset="images/thumbs/temple-entrance-deepam.webp" type="image/webp" /><img src="images/temple-entrance-deepam.jpg" alt="ക്ഷേത്ര ദർശനം – ദീപ ആരാധന" width="300" height="200" loading="lazy" decoding="async" class="gallery-real-photo" /></picture>
-              <div class="about-photo-caption">
-                <span class="about-photo-label">🪔 കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം</span>
-                <a href="https://maps.app.goo.gl/LaTA1pWM8NhjW4gK6" target="_blank" rel="noopener noreferrer" class="about-maps-link-pill">
-                  <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i> Google Maps
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="about-content">
-            <h3 class="about-subtitle" lang="ml">ഉണ്ണിക്കൃഷ്ണന്റെ പുണ്യ ഭൂമി</h3>
-
-            <!-- History badge -->
-            <div class="about-history-badge">
-              <span class="ahb-icon">🛕</span>
-              <span class="ahb-text">ചരിത്രത്തിൽ നിന്ന് പുനർജനിച്ച ഭക്തിയുടെ ഭവനം</span>
-            </div>
-
-            <p>
-              A small but beautiful temple — once destroyed during Tippu Sultan's rampage through
-              Malabar — Kakkamvelly Sreekrishna Temple stands today as a symbol of enduring faith
-              and devotion. Renovated and lovingly maintained by the local community, it is now a
-              serene place for prayer and worship.
-            </p>
-            <p class="about-ml-text" lang="ml">
-              ടിപ്പുവിന്റെ ആക്രമണത്തിൽ തകർന്നിട്ടുണ്ടായ ഈ ക്ഷേത്രം ഇന്ന്
-              സമാധാനത്തിന്റെയും ഭക്തിയുടെയും ഒരു പ്രതീകമായി നിലനിൽക്കുന്നു.
-              ഗുരുവായൂരിലെ പ്രതിമയെ ഓർമ്മിപ്പിക്കുന്ന കുട്ടികൃഷ്ണന്റെ രൂപത്തിൽ
-              പ്രതിഷ്ഠിതനായ ഭഗവാൻ കൃഷ്ണൻ, ഭക്തിയോടെ പ്രാർത്ഥിക്കുന്നവരുടെ
-              ആഗ്രഹങ്ങൾ സാക്ഷാത്കരിക്കുന്നു എന്ന് വിശ്വസിക്കുന്നു.
-            </p>
-            <p>
-              The presiding deity is <strong>Lord Krishna in his childhood form — Little Krishna (ഉണ്ണിക്കൃഷ്ണൻ)</strong>.
-              Many devotees believe the idol here resembles the sacred form at the famous
-              Guruvayur Temple. A powerful idol who fulfils the wishes of those who believe in
-              him with a whole heart. 🙏
-            </p>
-            <p>
-              This is a <em>quiet, intimate temple</em> — there are no vedikkett (fireworks)
-              during festivals, and elephants are not part of the celebrations here.
-              What you will find is pure, peaceful devotion.
-            </p>
-            <div class="about-highlights">
-              <div class="highlight-item">
-                <i class="fa-solid fa-baby" aria-hidden="true"></i>
-                <span>ഉണ്ണിക്കൃഷ്ണൻ — Little Krishna Form</span>
-              </div>
-              <div class="highlight-item">
-                <i class="fa-solid fa-map-pin" aria-hidden="true"></i>
-                <span>നാടപുരം, കോഴിക്കോട്, കേരളം</span>
-              </div>
-              <div class="highlight-item">
-                <i class="fa-solid fa-dove" aria-hidden="true"></i>
-                <span>ശാന്തവും ആത്മീയവുമായ അന്തരീക്ഷം</span>
-              </div>
-              <div class="highlight-item">
-                <i class="fa-solid fa-users" aria-hidden="true"></i>
-                <span>No vedikkett · No elephants · Pure bhakti</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ───────────── TIMINGS ───────────── -->
-
-
-    <!-- ───────────── FESTIVALS ───────────── -->
-
-    <!-- ───────────── GALLERY ───────────── -->
-    <section id="gallery" class="section section-dark" aria-labelledby="gallery-heading">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag section-tag-light">ഗ്യാലറി</span>
-          <h2 id="gallery-heading" class="section-title section-title-light">ക്ഷേത്ര ചിത്രങ്ങൾ</h2>
-        </div>
-
-        <!-- Real Google Maps Photo Cards + CSS Art Cards -->
-        <div class="gallery-grid gallery-maps-grid" role="list" aria-label="ക്ഷേത്ര ഫോട്ടോ ഗ്യാലറി">
-
-          <!-- Card 1 — Real Photo: Temple entrance with deepam -->
-          <div class="gallery-item gallery-photo-card" role="listitem">
-            <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
-              <picture><source srcset="images/thumbs/temple-entrance-deepam.webp" type="image/webp" /><img src="images/temple-entrance-deepam.jpg" alt="ക്ഷേത്ര ദർശനം – ദീപ ആരാധന" width="300" height="200" loading="lazy" decoding="async" class="gallery-real-photo" /></picture>
-              <div class="gallery-card-overlay">
-                <p class="gallery-caption-ml">ക്ഷേത്ര ദർശനം – ദീപ ആരാധന</p>
-                <span class="gallery-photo-tag">📷 ക്ഷേത്ര ചിത്രം</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 2 — Real Photo: Interior deepam lamp -->
-          <div class="gallery-item gallery-photo-card" role="listitem">
-            <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
-              <picture><source srcset="images/thumbs/deepam-lamp-interior.webp" type="image/webp" /><img src="images/deepam-lamp-interior.jpg" alt="പഞ്ചദീപം – ആഭ്യന്തര ദൃശ്യം" width="300" height="200" loading="lazy" decoding="async" class="gallery-real-photo" /></picture>
-              <div class="gallery-card-overlay">
-                <p class="gallery-caption-ml">പഞ്ചദീപം – ആഭ്യന്തര ദൃശ്യം</p>
-                <span class="gallery-photo-tag">📷 ക്ഷേത്ര ചിത്രം</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 3 — Real Photo: Deepam closeup -->
-          <div class="gallery-item gallery-photo-card" role="listitem">
-            <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
-              <picture><source srcset="images/thumbs/deepam-closeup.webp" type="image/webp" /><img src="images/deepam-closeup.jpg" alt="ദീപ ജ്വാല – ഭക്തിയുടെ പ്രകാശം" width="300" height="200" loading="lazy" decoding="async" class="gallery-real-photo" /></picture>
-              <div class="gallery-card-overlay">
-                <p class="gallery-caption-ml">ദീപ ജ്വാല – ഭക്തിയുടെ പ്രകാശം</p>
-                <span class="gallery-photo-tag">📷 ക്ഷേത്ര ചിത്രം</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 4 — Real Photo: Hanging lamps corridor -->
-          <div class="gallery-item gallery-photo-card" role="listitem">
-            <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
-              <picture><source srcset="images/thumbs/hanging-lamps-corridor.webp" type="image/webp" /><img src="images/hanging-lamps-corridor.jpg" alt="തൂക്ക് ദീപം – ഇടനാഴി ദൃശ്യം" width="300" height="200" loading="lazy" decoding="async" class="gallery-real-photo" /></picture>
-              <div class="gallery-card-overlay">
-                <p class="gallery-caption-ml">തൂക്ക് ദീപം – ഇടനാഴി ദൃശ്യം</p>
-                <span class="gallery-photo-tag">📷 ക്ഷേത്ര ചിത്രം</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 5 — Real Photo: Temple gate entrance -->
-          <div class="gallery-item gallery-photo-card" role="listitem">
-            <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
-              <picture><source srcset="images/thumbs/temple-gate-entrance.webp" type="image/webp" /><img src="images/temple-gate-entrance.jpg" alt="ക്ഷേത്ര കവാടം – പ്രവേശനം" width="300" height="200" loading="lazy" decoding="async" class="gallery-real-photo" /></picture>
-              <div class="gallery-card-overlay">
-                <p class="gallery-caption-ml">ക്ഷേത്ര കവാടം – പ്രവേശനം</p>
-                <span class="gallery-photo-tag">📷 ക്ഷേത്ര ചിത്രം</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 6 — Real Photo: Temple front with lamps -->
-          <div class="gallery-item gallery-photo-card" role="listitem">
-            <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
-              <picture><source srcset="images/thumbs/temple-front-view.webp" type="image/webp" /><img src="images/temple-front-view.jpg" alt="ക്ഷേത്രം – മുൻഭാഗ ദൃശ്യം" width="300" height="200" loading="lazy" decoding="async" class="gallery-real-photo" /></picture>
-              <div class="gallery-card-overlay">
-                <p class="gallery-caption-ml">ക്ഷേത്രം – മുൻഭാഗ ദൃശ്യം</p>
-                <span class="gallery-photo-tag">📷 ക്ഷേത്ര ചിത്രം</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Card 7 — Real Photo: Temple side grounds -->
-          <div class="gallery-item gallery-photo-card" role="listitem">
-            <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
-              <picture><source srcset="images/thumbs/temple-side-grounds.webp" type="image/webp" /><img src="images/temple-side-grounds.jpg" alt="ക്ഷേത്ര മൈദാനം – പ്രകൃതി ഭംഗി" width="300" height="200" loading="lazy" decoding="async" class="gallery-real-photo" /></picture>
-              <div class="gallery-card-overlay">
-                <p class="gallery-caption-ml">ക്ഷേത്ര മൈദാനം – പ്രകൃതി ഭംഗി</p>
-                <span class="gallery-photo-tag">📷 ക്ഷേത്ര ചിത്രം</span>
-              </div>
-            </div>
-          </div>
-
-
-          <!-- Card 8 — CSS Rangoli Art -->
-          <div class="gallery-item gallery-art-card" role="listitem">
-            <div class="gallery-art-scene gallery-art-rangoli" aria-label="CSS Rangoli art">
-              <div class="art-rangoli-container" aria-hidden="true">
-                <div class="art-rangoli-ring art-rangoli-ring--1"></div>
-                <div class="art-rangoli-ring art-rangoli-ring--2"></div>
-                <div class="art-rangoli-ring art-rangoli-ring--3"></div>
-                <div class="art-rangoli-center" aria-hidden="true">ॐ</div>
-              </div>
-            </div>
-            <div class="gallery-card-overlay gallery-card-overlay--visible">
-              <p class="gallery-caption-ml">രംഗോലി കല</p>
-            </div>
-          </div>
-
-          <!-- Card 6 — CSS Mandala Art -->
-          <div class="gallery-item gallery-art-card" role="listitem">
-            <div class="gallery-art-scene gallery-art-mandala-scene" aria-label="CSS Mandala art">
-              <div class="art-mandala-container" aria-hidden="true">
-                <div class="art-mandala-ring art-mandala-ring--outer"></div>
-                <div class="art-mandala-ring art-mandala-ring--mid"></div>
-                <div class="art-mandala-ring art-mandala-ring--inner"></div>
-                <div class="art-mandala-center" aria-hidden="true">🪔</div>
-              </div>
-              <div class="art-diya-row art-diya-row--mandala" aria-hidden="true">
-                <span class="art-diya">🪔</span><span class="art-diya">🪔</span><span class="art-diya">🪔</span>
-              </div>
-            </div>
-            <div class="gallery-card-overlay gallery-card-overlay--visible">
-              <p class="gallery-caption-ml">ദീപ ആരാധന</p>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- View all on Google Maps -->
-        <div class="gallery-cta" style="text-align:center;margin-top:2rem;">
-          <a href="https://maps.app.goo.gl/LaTA1pWM8NhjW4gK6" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-            <i class="fa-brands fa-google" aria-hidden="true"></i> Google Maps-ൽ എല്ലാ ചിത്രങ്ങളും കാണുക
-          </a>
-        </div>
-      </div>
-    </section>
-
-
-    <!-- ───────────── LAMP CORRIDOR PARALLAX STRIP ───────────── -->
-    <div class="lamp-parallax-strip" aria-hidden="true" role="presentation">
-      <div class="lamp-parallax-overlay"></div>
-      <div class="lamp-parallax-text">
-        <span class="lamp-mantra">🪔 ദീപ ജ്യോതി നമോഽസ്തു തേ 🪔</span>
-        <span class="lamp-mantra-en">Let the divine light guide us</span>
-      </div>
-    </div>
-
-    <!-- ───────────── LOCATION / GOOGLE MAPS ───────────── -->
-    <section id="location" class="section section-light section-temple-bg" aria-labelledby="location-heading">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">സ്ഥലം</span>
-          <h2 id="location-heading" class="section-title">സ്ഥലവും വഴിക്കുറിപ്പും</h2>
-        </div>
-        <div class="location-grid">
-          <div class="location-info">
-            <h3 class="location-subtitle">എങ്ങനെ എത്തിച്ചേരാം</h3>
-
-            <address class="address-block">
-              <div class="address-item">
-                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-                <div>
-                  <strong>വിലാസം</strong>
-                  <p>കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം,<br />പുറമേരി, കോഴിക്കോട്, കേരളം – 673503</p>
-                </div>
-              </div>
-            </address>
-
-            <div class="transport-options">
-              <div class="transport-item">
-                <div class="transport-icon">
-                  <i class="fa-solid fa-plane-arrival" aria-hidden="true"></i>
-                </div>
-                <div class="transport-details">
-                  <strong>വിമാനം വഴി</strong>
-                  <p>അടുത്ത വിമാനത്താവളം: കാലിക്കറ്റ് ഇന്റർനാഷണൽ എയർപോർട്ട് (CCJ), കരിപ്പൂർ – കോഴിക്കോട് നഗരത്തിൽ നിന്ന് ഏകദേശം 30–40 കി.മീ. ദൂരം.</p>
-                </div>
-              </div>
-              <div class="transport-item">
-                <div class="transport-icon">
-                  <i class="fa-solid fa-train" aria-hidden="true"></i>
-                </div>
-                <div class="transport-details">
-                  <strong>തീവണ്ടി വഴി</strong>
-                  <p>കോഴിക്കോട് (കാലിക്കറ്റ്) റെയിൽവേ സ്റ്റേഷൻ ഇന്ത്യയിലെ പ്രധാന നഗരങ്ങളുമായി നന്നായി ബന്ധിക്കപ്പെട്ടിരിക്കുന്നു. സ്റ്റേഷനിൽ നിന്ന് ലോക്കൽ ബസ്സും ഓട്ടോ റിക്ഷയും ലഭ്യമാണ്.</p>
-                </div>
-              </div>
-              <div class="transport-item">
-                <div class="transport-icon">
-                  <i class="fa-solid fa-bus" aria-hidden="true"></i>
-                </div>
-                <div class="transport-details">
-                  <strong>ബസ് വഴി</strong>
-                  <p>KSRTC, സ്വകാര്യ ബസ്സുകൾ കേരളത്തിലെ പ്രധാന നഗരങ്ങളിൽ നിന്ന് കോഴിക്കോട്ടേക്കുള്ള ബന്ധം ലഭ്യമാണ്. ക്ഷേത്രത്തിലേക്ക് അവസാന ഭാഗം ഓട്ടോ, ടാക്സി ലഭ്യമാണ്.</p>
-                </div>
-              </div>
-            </div>
-
-            <a
-              href="https://maps.app.goo.gl/LaTA1pWM8NhjW4gK6"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-primary btn-directions"
-              aria-label="Google Maps-ൽ ക്ഷേത്ര സ്ഥലം തുറക്കുക (പുതിയ ടാബിൽ)"
-            >
-              <i class="fa-solid fa-diamond-turn-right" aria-hidden="true"></i> Google Maps-ൽ തുറക്കുക
-            </a>
-          </div>
-
-
-          <!-- Google Maps — Open in App Button (no API key needed) -->
-          <div class="map-static-card">
-            <div class="map-static-preview">
-              <div class="map-static-pin">📍</div>
-              <div class="map-static-info">
-                <p class="map-static-name">കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം</p>
-                <p class="map-static-addr">പുറമേരി, കോഴിക്കോട്, Kerala 673503</p>
-                <p class="map-static-dist">Kakkamvelly Sreekrishna Temple · Purameri</p>
-              </div>
-            </div>
-            <div class="map-static-actions">
-              <a href="https://maps.app.goo.gl/LaTA1pWM8NhjW4gK6"
-                 target="_blank" rel="noopener noreferrer"
-                 class="map-open-btn">
-                <i class="fa-solid fa-map-location-dot"></i>
-                Google Maps-ൽ തുറക്കുക
-              </a>
-              <a href="https://maps.apple.com/?q=Kakkamvelly+Sreekrishna+Temple+Purameri+Kerala"
-                 target="_blank" rel="noopener noreferrer"
-                 class="map-open-btn map-open-apple">
-                <i class="fa-solid fa-map"></i>
-                Apple Maps
-              </a>
-            </div>
-          </div>
-
-
-        <!-- end location -->
-        
-
-      </div>
-    </section>
-
-
-    <!-- ── VISITOR INFO (Ruflo content-agent) ── -->
-
-    <section id="contact" class="section section-saffron section-temple-bg" aria-labelledby="contact-heading">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">ബന്ധപ്പെടുക</span>
-          <h2 id="contact-heading" class="section-title">ഞങ്ങളെ ബന്ധപ്പെടുക</h2>
-        </div>
-        <div class="contact-grid">
-          <div class="contact-info">
-            <h3>ക്ഷേത്രവുമായി ബന്ധപ്പെടുക</h3>
-            <ul class="contact-list" role="list">
-              <li>
-                <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-                <span>കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം, പുറമേരി, കോഴിക്കോട്, കേരളം</span>
-              </li>
-              <li>
-                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-                <a href="mailto:kakkamvellytemple@gmail.com">kakkamvellytemple@gmail.com</a>
-              </li>
-              <li>
-                <i class="fa-solid fa-phone" aria-hidden="true"></i>
-                <span>Secretary: <a href="tel:+919446844145" style="color:var(--color-gold);font-weight:700;">+91 94468 44145</a></span></li>
-              <li><i class="fa-solid fa-clock" aria-hidden="true"></i>
-                <span>ക്ഷേത്ര ഓഫീസ്: 8:00 AM – 9:00 AM &amp; 5:45 PM – 6:45 PM</span>
-              </li>
-            </ul>
-            <div class="social-links" role="list" aria-label="സോഷ്യൽ മീഡിയ ലിങ്കുകൾ">
-              <a href="#" class="social-btn" role="listitem" aria-label="ഫേസ്ബുക്ക് പേജ്" rel="noopener noreferrer">
-                <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
-              </a>
-              <a href="#" class="social-btn" role="listitem" aria-label="YouTube ചാനൽ" rel="noopener noreferrer">
-                <i class="fa-brands fa-youtube" aria-hidden="true"></i>
-              </a>
-              <a href="#" class="social-btn" role="listitem" aria-label="WhatsApp ഗ്രൂപ്പ്" rel="noopener noreferrer">
-                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-              </a>
-            </div>
-          </div>
-
-          <form id="contact-form" class="contact-form" action="https://formspree.io/f/kakkamvellytemple" method="POST" novalidate aria-label="ബന്ധപ്പെടൽ ഫോം">
-            <div class="form-group">
-              <label for="name">പൂർണ്ണ നാമം <span aria-hidden="true">*</span></label>
-              <input type="text" id="name" name="name" placeholder="നിങ്ങളുടെ പൂർണ്ണ നാമം" required autocomplete="name" />
-              <span class="field-error" aria-live="polite" id="name-error"></span>
-            </div>
-            <div class="form-group">
-              <label for="email">ഇ-മെയിൽ വിലാസം <span aria-hidden="true">*</span></label>
-              <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email" inputmode="email" />
-              <span class="field-error" aria-live="polite" id="email-error"></span>
-            </div>
-            <div class="form-group">
-              <label for="phone">ഫോൺ നമ്പർ</label>
-              <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" autocomplete="tel" inputmode="numeric" />
-            </div>
-            <div class="form-group">
-              <label for="subject">വിഷയം <span aria-hidden="true">*</span></label>
-              <select id="subject" name="subject" required>
-                <option value="" disabled selected>ഒരു വിഷയം തിരഞ്ഞെടുക്കുക</option>
-                <option value="pooja">പൂജ / സേവ ബുക്കിംഗ്</option>
-                <option value="donation">ദാനം അന്വേഷണം</option>
-                <option value="event">ഉത്സവം / പരിപാടി നടത്തിപ്പ്</option>
-                <option value="volunteer">സ്വമേധയാ പ്രവർത്തകൻ</option>
-                <option value="other">മറ്റുള്ളവ</option>
-              </select>
-              <span class="field-error" aria-live="polite" id="subject-error"></span>
-            </div>
-            <div class="form-group">
-              <label for="message">സന്ദേശം <span aria-hidden="true">*</span></label>
-              <textarea id="message" name="message" rows="4" placeholder="നിങ്ങളുടെ സന്ദേശം…" required></textarea>
-              <span class="field-error" aria-live="polite" id="message-error"></span>
-            </div>
-            <button type="submit" class="btn btn-primary btn-full">
-              <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> സന്ദേശം അയക്കുക
-            </button>
-            <div id="form-success" class="form-success" role="alert" aria-live="assertive" hidden>
-              <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
-              നന്ദി! നിങ്ങളുടെ സന്ദേശം ലഭിച്ചു. ഞങ്ങൾ ഉടൻ ബന്ധപ്പെടും.
-            </div>
-            <input type="text" name="_gotcha" style="display:none" tabindex="-1" />
-    </form>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-
-    <!-- ── DONATE SECTION (Ruflo feature-agent) ── -->
-    <section id="donate" class="section-temple-bg" aria-labelledby="donate-heading">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag" style="color:#ffd700;background:rgba(255,215,0,.1);border-color:rgba(255,215,0,.25);">ദാനം</span>
-          <h2 id="donate-heading" class="section-title" style="color:#ffd700;">ക്ഷേത്ര വഴിപാട് &amp; ദാനം</h2>
-          <p style="color:rgba(255,255,255,.65);font-size:.9rem;margin-top:.8rem;font-family:'Noto Serif Malayalam',serif;">
-            ക്ഷേത്ര നിർമ്മാണത്തിനും നിത്യ പൂജകൾക്കും ഭക്തരുടെ സഹകരണം ക്ഷണിക്കുന്നു
-          </p>
-        </div>
-        <div class="donate-grid">
-          <div class="donate-card">
-            <span class="donate-icon">🪔</span>
-            <span class="donate-name">നിത്യ ദീപം</span>
-            <span class="donate-desc">Daily lamp offering</span>
-          </div>
-          <div class="donate-card">
-            <span class="donate-icon">🪔</span>
-            <span class="donate-name">പൂജ വഴിപാട്</span>
-            <span class="donate-desc">Sponsor a pooja</span>
-          </div>
-          <div class="donate-card">
-            <span class="donate-icon">🍛</span>
-            <span class="donate-name">അന്നദാനം</span>
-            <span class="donate-desc">Feed devotees prasadam</span>
-          </div>
-          <div class="donate-card">
-            <span class="donate-icon">🏗️</span>
-            <span class="donate-name">ക്ഷേത്ര ജീർണ്ണോദ്ധാരണം</span>
-            <span class="donate-desc">Temple renovation fund</span>
-          </div>
-          <div class="donate-card">
-            <span class="donate-icon">🎉</span>
-            <span class="donate-name">ഉത്സവ ആഘോഷം</span>
-            <span class="donate-desc">Festival sponsorship</span>
-          </div>
-          <div class="donate-card">
-            <span class="donate-icon">📚</span>
-            <span class="donate-name">വേദ പഠനം</span>
-            <span class="donate-desc">Support Vedic education</span>
-          </div>
-        </div>
-        <div class="donate-upi">
-          <p>UPI / ഓൺലൈൻ ദാനം — ക്ഷേത്ര ഓഫീസ് വഴി ബന്ധപ്പെടുക</p>
-          <code>kakkamvellytemple@upi</code>
-            <a href="upi://pay?pa=kakkamvellytemple@upi&amp;pn=Kakkamvelly%20Temple&amp;cu=INR"
-               class="btn btn-primary upi-deep-link">
-              <i class="fa-solid fa-mobile-screen" aria-hidden="true"></i>
-              UPI ആപ്പിൽ ദാനം ചെയ്യുക
-            </a>
-        </div>
-        <div style="margin-top:1.2rem;background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.2);border-radius:12px;padding:1rem;max-width:400px;margin-left:auto;margin-right:auto;">
-          <p style="color:#ffd700;font-family:'Noto Serif Malayalam',serif;font-size:.9rem;font-weight:700;margin-bottom:.4rem;">📞 ദാനം / അന്വേഷണം</p>
-          <p style="color:rgba(255,255,255,.7);font-size:.82rem;font-family:'Lato',sans-serif;">Secretary: <a href="tel:+919446844145" style="color:#ffd700;">+91 9446844145</a></p>
-          <p style="color:rgba(255,255,255,.7);font-size:.82rem;font-family:'Lato',sans-serif;">Email: <a href="mailto:kakkamvellytemple@gmail.com" style="color:#ffd700;">kakkamvellytemple@gmail.com</a>
-        </div>
-        </div>
-      </div>
-    </section>
-
-  <!-- ───────────── FOOTER ───────────── -->
-  <footer class="site-footer footer-temple-bg" role="contentinfo">
-    <div class="footer-main">
-      <div class="container">
-
-        <!-- Row 1: Brand + Hours + Direction (horizontal) -->
-        <div class="footer-row-top">
-          <!-- Brand -->
-          <div class="footer-brand-compact">
-            <span class="footer-om" aria-hidden="true">ॐ</span>
-            <div>
-              <p class="footer-name-ml">കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം</p>
-              <p class="footer-name-en">Kakkamvelly Sreekrishna Temple</p>
-              <p class="footer-loc">📍 പുറമേരി, കോഴിക്കോട്, Kerala 673503</p>
-            </div>
-          </div>
-
-          <!-- Hours (horizontal pills) -->
-          <div class="footer-hours-compact">
-            <p class="footer-hours-label">🕐 ദർശന സമയം</p>
-            <div class="footer-hours-row">
-              <span class="footer-hour-pill">
-                <i class="fa-solid fa-sun" aria-hidden="true"></i>
-                5:30 – 9:00 AM
-              </span>
-              <span class="footer-hours-sep">·</span>
-              <span class="footer-hour-pill">
-                <i class="fa-solid fa-moon" aria-hidden="true"></i>
-                5:45 – 6:45 PM
-              </span>
-              <span class="footer-hours-sep">·</span>
-              <span class="footer-hour-note">7 ദിവസവും</span>
-            </div>
-          </div>
-
-          <!-- Direction button -->
-          <a href="https://maps.app.goo.gl/LaTA1pWM8NhjW4gK6"
-             target="_blank" rel="noopener noreferrer"
-             class="footer-direction-btn">
-            <i class="fa-solid fa-diamond-turn-right" aria-hidden="true"></i>
-            Get Directions
-          </a>
-        </div>
-
-        <!-- Row 2: Quick links (horizontal) -->
-        <nav class="footer-links-row" aria-label="Footer navigation">
-          <a href="#home">മുഖ്യ</a>
-          <span aria-hidden="true">·</span>
-          <a href="#about">ക്ഷേത്രം</a>
-          <span aria-hidden="true">·</span>
-          <a href="#timings">സമയം</a>
-          <span aria-hidden="true">·</span>
-          <a href="#gallery">ഗ്യാലറി</a>
-          <span aria-hidden="true">·</span>
-          <a href="#location">സ്ഥലം</a>
-          <span aria-hidden="true">·</span>
-          <a href="#contact">ബന്ധം</a>
-          <span aria-hidden="true">·</span>
-          <a href="#donate">ദാനം</a>
-        </nav>
-
-      </div>
-    </div>
-
-    <!-- Bottom bar -->
-    <div class="footer-bottom">
-      <div class="container footer-bottom-row">
-        <p class="footer-copy">
-          &copy; <span id="footer-year"></span> കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം · All rights reserved
-        </p>
-        <p class="footer-tagline">🪔 ഹരേ കൃഷ്ണ 🪔</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Back to top button -->
-  <button id="back-to-top" class="back-to-top" aria-label="മുകളിലേക്ക് പോകുക" title="Back to top">
-    <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
-    <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
-  </button>
-
-
-
-
-  <!-- Audio unlock — inline (not deferred) for immediate registration -->
-  <script>
+ <img
+ src="images/baby-krishna-hero.png"
+ alt="ഉണ്ണി കൃഷ്ണൻ — Baby Krishna"
+ class="hero-krishna-img"
+ width="400" height="600"
+ fetchpriority="high"
+ decoding="async"
+ />
+ </picture>
+ </div>
+ <p class="hero-tagline">ഹരേ കൃഷ്ണ</p>
+ <h1 class="hero-title">കക്കംവെള്ളി<br />ശ്രീകൃഷ്ണ ക്ഷേത്രം</h1>
+ <p class="hero-subtitle">Kakkamvelly Sreekrishna Temple</p>
+ <p class="hero-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> പുറമേരി, കോഴിക്കോട്, കേരളം</p>
+ <div class="hero-actions">
+ <a href="#location" class="btn btn-primary">
+ <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i> വഴി കാണിക്കുക
+ </a>
+ <a href="#timings" class="btn btn-secondary">
+ <i class="fa-regular fa-clock" aria-hidden="true"></i> ക്ഷേത്ര സമയം
+ </a>
+ </div>
+ <div id="next-darshan-countdown" class="next-darshan-badge nd-loading">
+ ⏳ ദർശന സമയം കണക്കാക്കുന്നു...
+ </div>
+ <a href="https://wa.me/?text=🛕%20കക്കംവെള്ളി%20ശ്രീകൃഷ്ണ%20ക്ഷേത്രം%20-%20Purameri%2C%20Kozhikode%0Ahttps%3A%2F%2Fkakkamvellytemple.page"
+ target="_blank" rel="noopener noreferrer"
+ class="hero-share-btn" aria-label="WhatsApp വഴി പങ്കിടുക">
+ <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+ ക്ഷേത്ര വിവരം പങ്കിടുക
+ </a>
+ </div>
+ <div class="hero-scroll-indicator" aria-hidden="true">
+ <div class="scroll-arrow"></div>
+ </div>
+ <div class="hindu-anim-layer" aria-hidden="true">
+ <div class="anim-lotus anim-lotus--1">🪔</div>
+ <div class="anim-lotus anim-lotus--2">🪔</div>
+ <div class="anim-lotus anim-lotus--3">🪔</div>
+ <div class="anim-lotus anim-lotus--4">🪔</div>
+ <div class="anim-petal anim-petal--1" aria-hidden="true"></div>
+ <div class="anim-petal anim-petal--2" aria-hidden="true"></div>
+ <div class="anim-petal anim-petal--3" aria-hidden="true"></div>
+ <div class="anim-petal anim-petal--4" aria-hidden="true"></div>
+ <div class="anim-petal anim-petal--5" aria-hidden="true"></div>
+ </div>
+ </section>
+ <section id="live-section" aria-label="ക്ഷേത്ര സ്റ്റാറ്റസ്">
+ <div class="live-status-bar container">
+ <div id="darshan-status-widget" class="dsw-main">
+ <span class="dsw-dot"></span>
+ <span class="dsw-text">ദർശന സ്ഥിതി കണക്കാക്കുന്നു...</span>
+ </div>
+ <div class="dsw-actions">
+ <a href="tel:+919446844145" class="dsw-btn dsw-call">
+ <i class="fa-solid fa-phone" aria-hidden="true"></i> വിളിക്കുക
+ </a>
+ <a href="https://maps.app.goo.gl/LaTA1pWM8NhjW4gK6" target="_blank" rel="noopener noreferrer" class="dsw-btn dsw-dir">
+ <i class="fa-solid fa-diamond-turn-right" aria-hidden="true"></i> വഴി
+ </a>
+ <a href="https://wa.me/919446844145" target="_blank" rel="noopener noreferrer" class="dsw-btn dsw-wa">
+ <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp
+ </a>
+ </div>
+ </div>
+ </section>
+ <div class="hindu-deco-strip" aria-hidden="true">
+ <span class="deco-diya deco-diya--1">🪔</span>
+ <span class="deco-om deco-om--1">ॐ</span>
+ <span class="deco-lotus deco-lotus--1">🪔</span>
+ <span class="deco-diya deco-diya--2">🪔</span>
+ <span class="deco-om deco-om--2">ॐ</span>
+ <span class="deco-lotus deco-lotus--2">🪔</span>
+ <span class="deco-diya deco-diya--3">🪔</span>
+ <span class="deco-om deco-om--3">ॐ</span>
+ <span class="deco-lotus deco-lotus--3">🪔</span>
+ <span class="deco-diya deco-diya--4">🪔</span>
+ </div>
+ <section id="timings" class="section section-saffron section-timings-priority" aria-labelledby="timings-heading">
+ <div class="container">
+ <div class="section-header">
+ <span class="section-tag">ദർശനം</span>
+ <h2 id="timings-heading" class="section-title">ക്ഷേത്ര സമയക്രമവും പൂജ ഷെഡ്യൂളും</h2>
+ </div>
+ <div class="timings-grid">
+ <div class="timing-card">
+ <div class="timing-card-header">
+ <i class="fa-solid fa-sun" aria-hidden="true"></i>
+ <h3>രാവിലെ (പ്രഭാത പൂജ)</h3>
+ </div>
+ <table class="timing-table" aria-label="രാവിലത്തെ പൂജ സമയം">
+ <thead>
+ <tr><th scope="col">പൂജ</th><th scope="col">സമയം</th></tr>
+ </thead>
+ <tbody>
+ <tr><td>നിർമ്മാല്യദർശനം</td><td>5:30 AM</td></tr>
+ <tr><td>ഉഷ പൂജ</td><td>6:00 AM</td></tr>
+ <tr><td>ദീപാരാധന</td><td>8:00 AM</td></tr>
+ <tr><td>നട അടക്കൽ</td><td>9:00 AM</td></tr>
+ </tbody>
+ </table>
+ </div>
+ <div class="timing-card">
+ <div class="timing-card-header">
+ <i class="fa-solid fa-moon" aria-hidden="true"></i>
+ <h3>വൈകുന്നേരം (സായഹ്ന പൂജ)</h3>
+ </div>
+ <table class="timing-table" aria-label="വൈകുന്നേരത്തെ പൂജ സമയം">
+ <thead>
+ <tr><th scope="col">പൂജ</th><th scope="col">സമയം</th></tr>
+ </thead>
+ <tbody>
+ <tr><td>ദീപാരാധന</td><td>5:45 PM</td></tr>
+ <tr><td>നട അടക്കൽ</td><td>6:45 PM</td></tr>
+ </tbody>
+ </table>
+ </div>
+ <div class="timing-card timing-card-full">
+ <div class="timing-card-header">
+ <i class="fa-solid fa-door-open" aria-hidden="true"></i>
+ <h3>ക്ഷേത്ര തുറക്കൽ സമയം</h3>
+ </div>
+ <div class="opening-hours-grid">
+ <div class="hours-block">
+ <span class="hours-label">രാവിലെ</span>
+ <span class="hours-time">5:30 AM – 9:00 AM</span>
+ </div>
+ <div class="hours-divider" aria-hidden="true">|</div>
+ <div class="hours-block">
+ <span class="hours-label">വൈകുന്നേരം</span>
+ <span class="hours-time">5:45 PM – 6:45 PM</span>
+ </div>
+ </div>
+ <p class="timing-note">
+ <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+ ഉത്സവ ദിനങ്ങളിൽ സമയക്രമം മാറ്റം വരാം.
+ <strong>വിഷു 2026 (ഏപ്രിൽ 15): 5:00 AM – 7:30 PM</strong> (Special).
+ ക്ഷേത്ര ഓഫീസ്: <a href="tel:+919446844145">+91 94468 44145</a>
+ </p>
+ </div>
+ </div>
+ </div>
+ </section>
+ <div class="annadhanam-kulam-wrapper">
+ <div class="annadhanam-banner" aria-label="Monthly Annadhanam">
+ <div class="ann-flame-left" aria-hidden="true">🪔</div>
+ <div class="ann-content">
+ <div class="ann-icon">🍛</div>
+ <div class="ann-text">
+ <h3 class="ann-title">മാസം തോറും ഒന്നാം ഞായർ — അന്നദാനം</h3>
+ <p class="ann-sub">Monthly First Sunday · Free Prasadam at Noon for All Devotees</p>
+ <p class="ann-desc">
+ ഒരു പ്രാചീന പാരമ്പര്യമനുസരിച്ച്, ഓരോ മാസവും ആദ്യ ഞായറാഴ്ച ഉച്ചയ്ക്ക്
+ ക്ഷേത്ര പരിസരത്ത് അന്നദാനം നടത്തുന്നു. <em>എല്ലാ ഭക്തർക്കും സ്വാഗതം.</em>
+ </p>
+ <div class="ann-next" id="ann-next-date">⏳ Calculating next Annadhanam…</div>
+ </div>
+ </div>
+ <div class="ann-flame-right" aria-hidden="true">🪔</div>
+ </div>
+ <div class="kulam-banner" aria-label="Temple pool renovation donation">
+ <div class="kulam-content">
+ <div class="kulam-icon">🌊</div>
+ <div class="kulam-text">
+ <h3 class="kulam-title">അമ്പലം കുളം നവീകരണം</h3>
+ <p class="kulam-sub">Temple Pool Renovation — Seeking Your Support</p>
+ <p class="kulam-desc">
+ ക്ഷേത്ര കുളത്തിന്റെ നവീകരണ പ്രവർത്തനങ്ങൾക്ക് ക്ഷേത്ര കമ്മിറ്റി
+ ഭക്തരുടെ സഹകരണം അഭ്യർത്ഥിക്കുന്നു. താൽപര്യമുള്ളവർ
+ ഞങ്ങളുമായി ബന്ധപ്പെടുക.
+ </p>
+ </div>
+ <div class="kulam-contact">
+ <a href="tel:+919446844145" class="kulam-btn kulam-call">
+ <i class="fa-solid fa-phone" aria-hidden="true"></i>
+ <span>9446844145</span>
+ <small>Secretary</small>
+ </a>
+ <a href="https://wa.me/919446844145?text=ഹരേ%20കൃഷ്ണ%20🙏%20Ambalam%20Kulam%20Naveekaranam%20donation%20enquiry" target="_blank" rel="noopener noreferrer" class="kulam-btn kulam-wa">
+ <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+ <span>WhatsApp</span>
+ <small>Quick message</small>
+ </a>
+ </div>
+ </div>
+ </div>
+ </div>
+ <div class="temple-parallax-strip" role="img" aria-label="കക്കംവെള്ളി ക്ഷേത്ര മൈദാനം">
+ <div class="parallax-overlay">
+ <p class="parallax-caption">🛕 കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം · Purameri, Kozhikode</p>
+ </div>
+ </div>
+ <section id="about" class="section section-light" aria-labelledby="about-heading">
+ <div class="container">
+ <div class="section-header">
+ <span class="section-tag">ക്ഷേത്രം</span>
+ <h2 id="about-heading" class="section-title">ക്ഷേത്രത്തെ കുറിച്ച്</h2>
+ </div>
+ <div class="about-grid">
+ <div class="about-image-wrapper">
+ <div class="about-real-photo-card" aria-label="ക്ഷേത്ര ദൃശ്യം">
+ <picture><source srcset="images/thumbs/temple-entrance-deepam.webp" type="image/webp" /><img src="images/thumbs/temple-entrance-deepam.webp" data-full="images/temple-entrance-deepam.jpg" alt="ക്ഷേത്ര ദർശനം – ദീപ ആരാധന" width="300" height="200" loading="lazy" decoding="async" class="gallery-real-photo" /></picture>
+ <div class="about-photo-caption">
+ <span class="about-photo-label">🪔 കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം</span>
+ <a href="https://maps.app.goo.gl/LaTA1pWM8NhjW4gK6" target="_blank" rel="noopener noreferrer" class="about-maps-link-pill">
+ <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i> Google Maps
+ </a>
+ </div>
+ </div>
+ </div>
+ <div class="about-content">
+ <h3 class="about-subtitle" lang="ml">ഉണ്ണിക്കൃഷ്ണന്റെ പുണ്യ ഭൂമി</h3>
+ <div class="about-history-badge">
+ <span class="ahb-icon">🛕</span>
+ <span class="ahb-text">ചരിത്രത്തിൽ നിന്ന് പുനർജനിച്ച ഭക്തിയുടെ ഭവനം</span>
+ </div>
+ <p>
+ A small but beautiful temple — once destroyed during Tippu Sultan's rampage through
+ Malabar — Kakkamvelly Sreekrishna Temple stands today as a symbol of enduring faith
+ and devotion. Renovated and lovingly maintained by the local community, it is now a
+ serene place for prayer and worship.
+ </p>
+ <p class="about-ml-text" lang="ml">
+ ടിപ്പുവിന്റെ ആക്രമണത്തിൽ തകർന്നിട്ടുണ്ടായ ഈ ക്ഷേത്രം ഇന്ന്
+ സമാധാനത്തിന്റെയും ഭക്തിയുടെയും ഒരു പ്രതീകമായി നിലനിൽക്കുന്നു.
+ ഗുരുവായൂരിലെ പ്രതിമയെ ഓർമ്മിപ്പിക്കുന്ന കുട്ടികൃഷ്ണന്റെ രൂപത്തിൽ
+ പ്രതിഷ്ഠിതനായ ഭഗവാൻ കൃഷ്ണൻ, ഭക്തിയോടെ പ്രാർത്ഥിക്കുന്നവരുടെ
+ ആഗ്രഹങ്ങൾ സാക്ഷാത്കരിക്കുന്നു എന്ന് വിശ്വസിക്കുന്നു.
+ </p>
+ <p>
+ The presiding deity is <strong>Lord Krishna in his childhood form — Little Krishna (ഉണ്ണിക്കൃഷ്ണൻ)</strong>.
+ Many devotees believe the idol here resembles the sacred form at the famous
+ Guruvayur Temple. A powerful idol who fulfils the wishes of those who believe in
+ him with a whole heart. 🙏
+ </p>
+ <p>
+ This is a <em>quiet, intimate temple</em> — there are no vedikkett (fireworks)
+ during festivals, and elephants are not part of the celebrations here.
+ What you will find is pure, peaceful devotion.
+ </p>
+ <div class="about-highlights">
+ <div class="highlight-item">
+ <i class="fa-solid fa-baby" aria-hidden="true"></i>
+ <span>ഉണ്ണിക്കൃഷ്ണൻ — Little Krishna Form</span>
+ </div>
+ <div class="highlight-item">
+ <i class="fa-solid fa-map-pin" aria-hidden="true"></i>
+ <span>നാടപുരം, കോഴിക്കോട്, കേരളം</span>
+ </div>
+ <div class="highlight-item">
+ <i class="fa-solid fa-dove" aria-hidden="true"></i>
+ <span>ശാന്തവും ആത്മീയവുമായ അന്തരീക്ഷം</span>
+ </div>
+ <div class="highlight-item">
+ <i class="fa-solid fa-users" aria-hidden="true"></i>
+ <span>No vedikkett · No elephants · Pure bhakti</span>
+ </div>
+ </div>
+ </div>
+ </div>
+ </div>
+ </section>
+ <section id="gallery" class="section section-dark" aria-labelledby="gallery-heading">
+ <div class="container">
+ <div class="section-header">
+ <span class="section-tag section-tag-light">ഗ്യാലറി</span>
+ <h2 id="gallery-heading" class="section-title section-title-light">ക്ഷേത്ര ചിത്രങ്ങൾ</h2>
+ </div>
+ <div class="gallery-grid gallery-maps-grid" role="list" aria-label="ക്ഷേത്ര ഫോട്ടോ ഗ്യാലറി">
+ <div class="gallery-item gallery-photo-card" role="listitem">
+ <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
+ <picture><source srcset="images/thumbs/temple-entrance-deepam.webp" type="image/webp" /><img src="images/thumbs/temple-entrance-deepam.webp" data-full="images/temple-entrance-deepam.jpg" alt="ക്ഷേത്ര ദർശനം – ദീപ ആരാധന" width="300" height="200" loading="lazy" decoding="async" class="gallery-real-photo" /></picture>
+ <div class="gallery-card-overlay">
+ <p class="gallery-caption-ml">ക്ഷേത്ര ദർശനം – ദീപ ആരാധന</p>
+ <span class="gallery-photo-tag">📷 ക്ഷേത്ര ചിത്രം</span>
+ </div>
+ </div>
+ </div>
+ <div class="gallery-item gallery-photo-card" role="listitem">
+ <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
+ <picture><source srcset="images/thumbs/deepam-lamp-interior.webp" type="image/webp" /><img src="images/thumbs/deepam-lamp-interior.webp" data-full="images/deepam-lamp-interior.jpg" alt="പഞ്ചദീപം – ആഭ്യന്തര ദൃശ്യം" width="300" height="200" loading="lazy" decoding="async" class="gallery-real-photo" /></picture>
+ <div class="gallery-card-overlay">
+ <p class="gallery-caption-ml">പഞ്ചദീപം – ആഭ്യന്തര ദൃശ്യം</p>
+ <span class="gallery-photo-tag">📷 ക്ഷേത്ര ചിത്രം</span>
+ </div>
+ </div>
+ </div>
+ <div class="gallery-item gallery-photo-card" role="listitem">
+ <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
+ <picture><source srcset="images/thumbs/deepam-closeup.webp" type="image/webp" /><img src="images/thumbs/deepam-closeup.webp" data-full="images/deepam-closeup.jpg" alt="ദീപ ജ്വാല – ഭക്തിയുടെ പ്രകാശം" width="300" height="200" loading="lazy" decoding="async" class="gallery-real-photo" /></picture>
+ <div class="gallery-card-overlay">
+ <p class="gallery-caption-ml">ദീപ ജ്വാല – ഭക്തിയുടെ പ്രകാശം</p>
+ <span class="gallery-photo-tag">📷 ക്ഷേത്ര ചിത്രം</span>
+ </div>
+ </div>
+ </div>
+ <div class="gallery-item gallery-photo-card" role="listitem">
+ <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
+ <picture><source srcset="images/thumbs/hanging-lamps-corridor.webp" type="image/webp" /><img src="images/thumbs/hanging-lamps-corridor.webp" data-full="images/hanging-lamps-corridor.jpg" alt="തൂക്ക് ദീപം – ഇടനാഴി ദൃശ്യം" width="300" height="200" loading="lazy" decoding="async" class="gallery-real-photo" /></picture>
+ <div class="gallery-card-overlay">
+ <p class="gallery-caption-ml">തൂക്ക് ദീപം – ഇടനാഴി ദൃശ്യം</p>
+ <span class="gallery-photo-tag">📷 ക്ഷേത്ര ചിത്രം</span>
+ </div>
+ </div>
+ </div>
+ <div class="gallery-item gallery-photo-card" role="listitem">
+ <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
+ <picture><source srcset="images/thumbs/temple-gate-entrance.webp" type="image/webp" /><img src="images/thumbs/temple-gate-entrance.webp" data-full="images/temple-gate-entrance.jpg" alt="ക്ഷേത്ര കവാടം – പ്രവേശനം" width="300" height="200" loading="lazy" decoding="async" class="gallery-real-photo" /></picture>
+ <div class="gallery-card-overlay">
+ <p class="gallery-caption-ml">ക്ഷേത്ര കവാടം – പ്രവേശനം</p>
+ <span class="gallery-photo-tag">📷 ക്ഷേത്ര ചിത്രം</span>
+ </div>
+ </div>
+ </div>
+ <div class="gallery-item gallery-photo-card" role="listitem">
+ <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
+ <picture><source srcset="images/thumbs/temple-front-view.webp" type="image/webp" /><img src="images/thumbs/temple-front-view.webp" data-full="images/temple-front-view.jpg" alt="ക്ഷേത്രം – മുൻഭാഗ ദൃശ്യം" width="300" height="200" loading="lazy" decoding="async" class="gallery-real-photo" /></picture>
+ <div class="gallery-card-overlay">
+ <p class="gallery-caption-ml">ക്ഷേത്രം – മുൻഭാഗ ദൃശ്യം</p>
+ <span class="gallery-photo-tag">📷 ക്ഷേത്ര ചിത്രം</span>
+ </div>
+ </div>
+ </div>
+ <div class="gallery-item gallery-photo-card" role="listitem">
+ <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
+ <picture><source srcset="images/thumbs/temple-side-grounds.webp" type="image/webp" /><img src="images/thumbs/temple-side-grounds.webp" data-full="images/temple-side-grounds.jpg" alt="ക്ഷേത്ര മൈദാനം – പ്രകൃതി ഭംഗി" width="300" height="200" loading="lazy" decoding="async" class="gallery-real-photo" /></picture>
+ <div class="gallery-card-overlay">
+ <p class="gallery-caption-ml">ക്ഷേത്ര മൈദാനം – പ്രകൃതി ഭംഗി</p>
+ <span class="gallery-photo-tag">📷 ക്ഷേത്ര ചിത്രം</span>
+ </div>
+ </div>
+ </div>
+ <div class="gallery-item gallery-art-card" role="listitem">
+ <div class="gallery-art-scene gallery-art-rangoli" aria-label="CSS Rangoli art">
+ <div class="art-rangoli-container" aria-hidden="true">
+ <div class="art-rangoli-ring art-rangoli-ring--1"></div>
+ <div class="art-rangoli-ring art-rangoli-ring--2"></div>
+ <div class="art-rangoli-ring art-rangoli-ring--3"></div>
+ <div class="art-rangoli-center" aria-hidden="true">ॐ</div>
+ </div>
+ </div>
+ <div class="gallery-card-overlay gallery-card-overlay--visible">
+ <p class="gallery-caption-ml">രംഗോലി കല</p>
+ </div>
+ </div>
+ <div class="gallery-item gallery-art-card" role="listitem">
+ <div class="gallery-art-scene gallery-art-mandala-scene" aria-label="CSS Mandala art">
+ <div class="art-mandala-container" aria-hidden="true">
+ <div class="art-mandala-ring art-mandala-ring--outer"></div>
+ <div class="art-mandala-ring art-mandala-ring--mid"></div>
+ <div class="art-mandala-ring art-mandala-ring--inner"></div>
+ <div class="art-mandala-center" aria-hidden="true">🪔</div>
+ </div>
+ <div class="art-diya-row art-diya-row--mandala" aria-hidden="true">
+ <span class="art-diya">🪔</span><span class="art-diya">🪔</span><span class="art-diya">🪔</span>
+ </div>
+ </div>
+ <div class="gallery-card-overlay gallery-card-overlay--visible">
+ <p class="gallery-caption-ml">ദീപ ആരാധന</p>
+ </div>
+ </div>
+ </div>
+ <div class="gallery-cta" style="text-align:center;margin-top:2rem;">
+ <a href="https://maps.app.goo.gl/LaTA1pWM8NhjW4gK6" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+ <i class="fa-brands fa-google" aria-hidden="true"></i> Google Maps-ൽ എല്ലാ ചിത്രങ്ങളും കാണുക
+ </a>
+ </div>
+ </div>
+ </section>
+ <div class="lamp-parallax-strip" aria-hidden="true" role="presentation">
+ <div class="lamp-parallax-overlay"></div>
+ <div class="lamp-parallax-text">
+ <span class="lamp-mantra">🪔 ദീപ ജ്യോതി നമോഽസ്തു തേ 🪔</span>
+ <span class="lamp-mantra-en">Let the divine light guide us</span>
+ </div>
+ </div>
+ <section id="location" class="section section-light section-temple-bg" aria-labelledby="location-heading">
+ <div class="container">
+ <div class="section-header">
+ <span class="section-tag">സ്ഥലം</span>
+ <h2 id="location-heading" class="section-title">സ്ഥലവും വഴിക്കുറിപ്പും</h2>
+ </div>
+ <div class="location-grid">
+ <div class="location-info">
+ <h3 class="location-subtitle">എങ്ങനെ എത്തിച്ചേരാം</h3>
+ <address class="address-block">
+ <div class="address-item">
+ <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+ <div>
+ <strong>വിലാസം</strong>
+ <p>കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം,<br />പുറമേരി, കോഴിക്കോട്, കേരളം – 673503</p>
+ </div>
+ </div>
+ </address>
+ <div class="transport-options">
+ <div class="transport-item">
+ <div class="transport-icon">
+ <i class="fa-solid fa-plane-arrival" aria-hidden="true"></i>
+ </div>
+ <div class="transport-details">
+ <strong>വിമാനം വഴി</strong>
+ <p>അടുത്ത വിമാനത്താവളം: കാലിക്കറ്റ് ഇന്റർനാഷണൽ എയർപോർട്ട് (CCJ), കരിപ്പൂർ – കോഴിക്കോട് നഗരത്തിൽ നിന്ന് ഏകദേശം 30–40 കി.മീ. ദൂരം.</p>
+ </div>
+ </div>
+ <div class="transport-item">
+ <div class="transport-icon">
+ <i class="fa-solid fa-train" aria-hidden="true"></i>
+ </div>
+ <div class="transport-details">
+ <strong>തീവണ്ടി വഴി</strong>
+ <p>കോഴിക്കോട് (കാലിക്കറ്റ്) റെയിൽവേ സ്റ്റേഷൻ ഇന്ത്യയിലെ പ്രധാന നഗരങ്ങളുമായി നന്നായി ബന്ധിക്കപ്പെട്ടിരിക്കുന്നു. സ്റ്റേഷനിൽ നിന്ന് ലോക്കൽ ബസ്സും ഓട്ടോ റിക്ഷയും ലഭ്യമാണ്.</p>
+ </div>
+ </div>
+ <div class="transport-item">
+ <div class="transport-icon">
+ <i class="fa-solid fa-bus" aria-hidden="true"></i>
+ </div>
+ <div class="transport-details">
+ <strong>ബസ് വഴി</strong>
+ <p>KSRTC, സ്വകാര്യ ബസ്സുകൾ കേരളത്തിലെ പ്രധാന നഗരങ്ങളിൽ നിന്ന് കോഴിക്കോട്ടേക്കുള്ള ബന്ധം ലഭ്യമാണ്. ക്ഷേത്രത്തിലേക്ക് അവസാന ഭാഗം ഓട്ടോ, ടാക്സി ലഭ്യമാണ്.</p>
+ </div>
+ </div>
+ </div>
+ <a
+ href="https://maps.app.goo.gl/LaTA1pWM8NhjW4gK6"
+ target="_blank"
+ rel="noopener noreferrer"
+ class="btn btn-primary btn-directions"
+ aria-label="Google Maps-ൽ ക്ഷേത്ര സ്ഥലം തുറക്കുക (പുതിയ ടാബിൽ)"
+ >
+ <i class="fa-solid fa-diamond-turn-right" aria-hidden="true"></i> Google Maps-ൽ തുറക്കുക
+ </a>
+ </div>
+ <div class="map-static-card">
+ <div class="map-static-preview">
+ <div class="map-static-pin">📍</div>
+ <div class="map-static-info">
+ <p class="map-static-name">കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം</p>
+ <p class="map-static-addr">പുറമേരി, കോഴിക്കോട്, Kerala 673503</p>
+ <p class="map-static-dist">Kakkamvelly Sreekrishna Temple · Purameri</p>
+ </div>
+ </div>
+ <div class="map-static-actions">
+ <a href="https://maps.app.goo.gl/LaTA1pWM8NhjW4gK6"
+ target="_blank" rel="noopener noreferrer"
+ class="map-open-btn">
+ <i class="fa-solid fa-map-location-dot"></i>
+ Google Maps-ൽ തുറക്കുക
+ </a>
+ <a href="https://maps.apple.com/?q=Kakkamvelly+Sreekrishna+Temple+Purameri+Kerala"
+ target="_blank" rel="noopener noreferrer"
+ class="map-open-btn map-open-apple">
+ <i class="fa-solid fa-map"></i>
+ Apple Maps
+ </a>
+ </div>
+ </div>
+ </div>
+ </section>
+ <section id="contact" class="section section-saffron section-temple-bg" aria-labelledby="contact-heading">
+ <div class="container">
+ <div class="section-header">
+ <span class="section-tag">ബന്ധപ്പെടുക</span>
+ <h2 id="contact-heading" class="section-title">ഞങ്ങളെ ബന്ധപ്പെടുക</h2>
+ </div>
+ <div class="contact-grid">
+ <div class="contact-info">
+ <h3>ക്ഷേത്രവുമായി ബന്ധപ്പെടുക</h3>
+ <ul class="contact-list" role="list">
+ <li>
+ <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+ <span>കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം, പുറമേരി, കോഴിക്കോട്, കേരളം</span>
+ </li>
+ <li>
+ <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+ <a href="mailto:kakkamvellytemple@gmail.com">kakkamvellytemple@gmail.com</a>
+ </li>
+ <li>
+ <i class="fa-solid fa-phone" aria-hidden="true"></i>
+ <span>Secretary: <a href="tel:+919446844145" style="color:var(--color-gold);font-weight:700;">+91 94468 44145</a></span></li>
+ <li><i class="fa-solid fa-clock" aria-hidden="true"></i>
+ <span>ക്ഷേത്ര ഓഫീസ്: 8:00 AM – 9:00 AM &amp; 5:45 PM – 6:45 PM</span>
+ </li>
+ </ul>
+ <div class="social-links" role="list" aria-label="സോഷ്യൽ മീഡിയ ലിങ്കുകൾ">
+ <a href="#" class="social-btn" role="listitem" aria-label="ഫേസ്ബുക്ക് പേജ്" rel="noopener noreferrer">
+ <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+ </a>
+ <a href="#" class="social-btn" role="listitem" aria-label="YouTube ചാനൽ" rel="noopener noreferrer">
+ <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+ </a>
+ <a href="#" class="social-btn" role="listitem" aria-label="WhatsApp ഗ്രൂപ്പ്" rel="noopener noreferrer">
+ <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+ </a>
+ </div>
+ </div>
+ <form id="contact-form" class="contact-form" action="https://formspree.io/f/kakkamvellytemple" method="POST" novalidate aria-label="ബന്ധപ്പെടൽ ഫോം">
+ <div class="form-group">
+ <label for="name">പൂർണ്ണ നാമം <span aria-hidden="true">*</span></label>
+ <input type="text" id="name" name="name" placeholder="നിങ്ങളുടെ പൂർണ്ണ നാമം" required autocomplete="name" />
+ <span class="field-error" aria-live="polite" id="name-error"></span>
+ </div>
+ <div class="form-group">
+ <label for="email">ഇ-മെയിൽ വിലാസം <span aria-hidden="true">*</span></label>
+ <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email" inputmode="email" />
+ <span class="field-error" aria-live="polite" id="email-error"></span>
+ </div>
+ <div class="form-group">
+ <label for="phone">ഫോൺ നമ്പർ</label>
+ <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" autocomplete="tel" inputmode="numeric" />
+ </div>
+ <div class="form-group">
+ <label for="subject">വിഷയം <span aria-hidden="true">*</span></label>
+ <select id="subject" name="subject" required>
+ <option value="" disabled selected>ഒരു വിഷയം തിരഞ്ഞെടുക്കുക</option>
+ <option value="pooja">പൂജ / സേവ ബുക്കിംഗ്</option>
+ <option value="donation">ദാനം അന്വേഷണം</option>
+ <option value="event">ഉത്സവം / പരിപാടി നടത്തിപ്പ്</option>
+ <option value="volunteer">സ്വമേധയാ പ്രവർത്തകൻ</option>
+ <option value="other">മറ്റുള്ളവ</option>
+ </select>
+ <span class="field-error" aria-live="polite" id="subject-error"></span>
+ </div>
+ <div class="form-group">
+ <label for="message">സന്ദേശം <span aria-hidden="true">*</span></label>
+ <textarea id="message" name="message" rows="4" placeholder="നിങ്ങളുടെ സന്ദേശം…" required></textarea>
+ <span class="field-error" aria-live="polite" id="message-error"></span>
+ </div>
+ <button type="submit" class="btn btn-primary btn-full">
+ <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> സന്ദേശം അയക്കുക
+ </button>
+ <div id="form-success" class="form-success" role="alert" aria-live="assertive" hidden>
+ <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+ നന്ദി! നിങ്ങളുടെ സന്ദേശം ലഭിച്ചു. ഞങ്ങൾ ഉടൻ ബന്ധപ്പെടും.
+ </div>
+ <input type="text" name="_gotcha" style="display:none" tabindex="-1" />
+ </form>
+ </div>
+ </div>
+ </section>
+ </main>
+ <section id="donate" class="section-temple-bg" aria-labelledby="donate-heading">
+ <div class="container">
+ <div class="section-header">
+ <span class="section-tag" style="color:#ffd700;background:rgba(255,215,0,.1);border-color:rgba(255,215,0,.25);">ദാനം</span>
+ <h2 id="donate-heading" class="section-title" style="color:#ffd700;">ക്ഷേത്ര വഴിപാട് &amp; ദാനം</h2>
+ <p style="color:rgba(255,255,255,.65);font-size:.9rem;margin-top:.8rem;font-family:'Noto Serif Malayalam',serif;">
+ ക്ഷേത്ര നിർമ്മാണത്തിനും നിത്യ പൂജകൾക്കും ഭക്തരുടെ സഹകരണം ക്ഷണിക്കുന്നു
+ </p>
+ </div>
+ <div class="donate-grid">
+ <div class="donate-card">
+ <span class="donate-icon">🪔</span>
+ <span class="donate-name">നിത്യ ദീപം</span>
+ <span class="donate-desc">Daily lamp offering</span>
+ </div>
+ <div class="donate-card">
+ <span class="donate-icon">🪔</span>
+ <span class="donate-name">പൂജ വഴിപാട്</span>
+ <span class="donate-desc">Sponsor a pooja</span>
+ </div>
+ <div class="donate-card">
+ <span class="donate-icon">🍛</span>
+ <span class="donate-name">അന്നദാനം</span>
+ <span class="donate-desc">Feed devotees prasadam</span>
+ </div>
+ <div class="donate-card">
+ <span class="donate-icon">🏗️</span>
+ <span class="donate-name">ക്ഷേത്ര ജീർണ്ണോദ്ധാരണം</span>
+ <span class="donate-desc">Temple renovation fund</span>
+ </div>
+ <div class="donate-card">
+ <span class="donate-icon">🎉</span>
+ <span class="donate-name">ഉത്സവ ആഘോഷം</span>
+ <span class="donate-desc">Festival sponsorship</span>
+ </div>
+ <div class="donate-card">
+ <span class="donate-icon">📚</span>
+ <span class="donate-name">വേദ പഠനം</span>
+ <span class="donate-desc">Support Vedic education</span>
+ </div>
+ </div>
+ <div class="donate-upi">
+ <p>UPI / ഓൺലൈൻ ദാനം — ക്ഷേത്ര ഓഫീസ് വഴി ബന്ധപ്പെടുക</p>
+ <code>kakkamvellytemple@upi</code>
+ <a href="upi://pay?pa=kakkamvellytemple@upi&amp;pn=Kakkamvelly%20Temple&amp;cu=INR"
+ class="btn btn-primary upi-deep-link">
+ <i class="fa-solid fa-mobile-screen" aria-hidden="true"></i>
+ UPI ആപ്പിൽ ദാനം ചെയ്യുക
+ </a>
+ </div>
+ <div style="margin-top:1.2rem;background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.2);border-radius:12px;padding:1rem;max-width:400px;margin-left:auto;margin-right:auto;">
+ <p style="color:#ffd700;font-family:'Noto Serif Malayalam',serif;font-size:.9rem;font-weight:700;margin-bottom:.4rem;">📞 ദാനം / അന്വേഷണം</p>
+ <p style="color:rgba(255,255,255,.7);font-size:.82rem;font-family:'Lato',sans-serif;">Secretary: <a href="tel:+919446844145" style="color:#ffd700;">+91 9446844145</a></p>
+ <p style="color:rgba(255,255,255,.7);font-size:.82rem;font-family:'Lato',sans-serif;">Email: <a href="mailto:kakkamvellytemple@gmail.com" style="color:#ffd700;">kakkamvellytemple@gmail.com</a>
+ </div>
+ </div>
+ </div>
+ </section>
+ <footer class="site-footer footer-temple-bg" role="contentinfo">
+ <div class="footer-main">
+ <div class="container">
+ <div class="footer-row-top">
+ <div class="footer-brand-compact">
+ <span class="footer-om" aria-hidden="true">ॐ</span>
+ <div>
+ <p class="footer-name-ml">കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം</p>
+ <p class="footer-name-en">Kakkamvelly Sreekrishna Temple</p>
+ <p class="footer-loc">📍 പുറമേരി, കോഴിക്കോട്, Kerala 673503</p>
+ </div>
+ </div>
+ <div class="footer-hours-compact">
+ <p class="footer-hours-label">🕐 ദർശന സമയം</p>
+ <div class="footer-hours-row">
+ <span class="footer-hour-pill">
+ <i class="fa-solid fa-sun" aria-hidden="true"></i>
+ 5:30 – 9:00 AM
+ </span>
+ <span class="footer-hours-sep">·</span>
+ <span class="footer-hour-pill">
+ <i class="fa-solid fa-moon" aria-hidden="true"></i>
+ 5:45 – 6:45 PM
+ </span>
+ <span class="footer-hours-sep">·</span>
+ <span class="footer-hour-note">7 ദിവസവും</span>
+ </div>
+ </div>
+ <a href="https://maps.app.goo.gl/LaTA1pWM8NhjW4gK6"
+ target="_blank" rel="noopener noreferrer"
+ class="footer-direction-btn">
+ <i class="fa-solid fa-diamond-turn-right" aria-hidden="true"></i>
+ Get Directions
+ </a>
+ </div>
+ <nav class="footer-links-row" aria-label="Footer navigation">
+ <a href="#home">മുഖ്യ</a>
+ <span aria-hidden="true">·</span>
+ <a href="#about">ക്ഷേത്രം</a>
+ <span aria-hidden="true">·</span>
+ <a href="#timings">സമയം</a>
+ <span aria-hidden="true">·</span>
+ <a href="#gallery">ഗ്യാലറി</a>
+ <span aria-hidden="true">·</span>
+ <a href="#location">സ്ഥലം</a>
+ <span aria-hidden="true">·</span>
+ <a href="#contact">ബന്ധം</a>
+ <span aria-hidden="true">·</span>
+ <a href="#donate">ദാനം</a>
+ </nav>
+ </div>
+ </div>
+ <div class="footer-bottom">
+ <div class="container footer-bottom-row">
+ <p class="footer-copy">
+ &copy; <span id="footer-year"></span> കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം · All rights reserved
+ </p>
+ <p class="footer-tagline">🪔 ഹരേ കൃഷ്ണ 🪔</p>
+ </div>
+ </div>
+ </footer>
+ <button id="back-to-top" class="back-to-top" aria-label="മുകളിലേക്ക് പോകുക" title="Back to top">
+ <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
+ <i class="fa-solid fa-chevron-up" aria-hidden="true"></i>
+ </button>
+ <script>
   (function() {
     'use strict';
     var _audioStarted = false;
@@ -994,38 +894,31 @@
     window._audioStarted = function() { return _audioStarted; };
   })();
   </script>
-
-  <!-- 🎵 Krishna Bhakti Audio — fade in on load -->
-  <audio id="krishna-audio" loop preload="auto">
-    <source src="audio/krishna-loop.mp3" type="audio/mpeg" />
-  </audio>
-
-  <!-- Audio control button -->
-  <button id="audio-toggle" aria-label="Toggle background music" title="ഭക്തി സംഗീതം">
-    <span class="audio-icon">🎵</span>
-    <span class="audio-label">ഭക്തി</span>
-  </button>
-
-  <!-- PWA Install Banner -->
-  <div id="pwa-banner" role="banner" aria-label="Install App">
-    <span class="pwa-icon">🛕</span>
-    <div class="pwa-text">
-      <span class="pwa-title">ആപ്പ് ഇൻസ്റ്റോൾ ചെയ്യൂ</span>
-      <span class="pwa-sub">Offline access · Faster · Home screen</span>
-    </div>
-    <button class="pwa-install">Install</button>
-    <button class="pwa-dismiss" aria-label="Dismiss">✕</button>
-  </div>
-
-  <!-- Scripts -->
-  <script src="js/galaxy.js" defer></script>
-  <script src="js/main.js" defer></script>
-  <script src="js/krishna-animations.js" defer></script>
-  <script src="js/mobile-futuristic.js" defer></script>
-  <script src="js/live-features.js" defer></script>
-  <script src="js/enhancements.js" defer></script>
-  <script src="js/language.js" defer></script>
-  <script>
+ <audio id="krishna-audio" loop preload="auto">
+ <source src="audio/krishna-loop.mp3" type="audio/mpeg" />
+ </audio>
+ <button id="audio-toggle" aria-label="Toggle background music" title="ഭക്തി സംഗീതം">
+ <span class="audio-icon">🎵</span>
+ <span class="audio-label">ഭക്തി</span>
+ </button>
+ <div id="pwa-banner" role="banner" aria-label="Install App">
+ <span class="pwa-icon">🛕</span>
+ <div class="pwa-text">
+ <span class="pwa-title">ആപ്പ് ഇൻസ്റ്റോൾ ചെയ്യൂ</span>
+ <span class="pwa-sub">Offline access · Faster · Home screen</span>
+ </div>
+ <button class="pwa-install">Install</button>
+ <button class="pwa-dismiss" aria-label="Dismiss">✕</button>
+ </div>
+ <script src="js/galaxy.min.js" defer></script>
+ <script src="js/app.min.js" defer></script>
+ 
+ 
+ 
+ 
+ 
+ 
+ <script>
   // Baby Krishna section stars
   (function() {
     var container = document.getElementById('bk-stars');
@@ -1047,16 +940,13 @@
     });
   })();
   </script>
-  <script>document.getElementById("footer-year").textContent=new Date().getFullYear();</script>
-
-  <!-- Gallery Lightbox -->
-  <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="ചിത്രം">
-    <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">✕</button>
-    <img id="lightbox-img" src="" alt="" />
-    <p class="lightbox-caption" id="lightbox-cap"></p>
-  </div>
-
-  <script>
+ <script>document.getElementById("footer-year").textContent=new Date().getFullYear();</script>
+ <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="ചിത്രം">
+ <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">✕</button>
+ <img id="lightbox-img" src="" alt="" />
+ <p class="lightbox-caption" id="lightbox-cap"></p>
+ </div>
+ <script>
   function openLightbox(el) {
     const src = el.querySelector('img').src
       .replace('/thumb/', '/')
@@ -1079,6 +969,5 @@
     if (e.key === 'Escape') closeLightbox();
   });
   </script>
-
 </body>
 </html>
