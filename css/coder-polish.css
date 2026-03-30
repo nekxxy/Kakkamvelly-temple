@@ -871,3 +871,124 @@ html {
 .hero-gradient .hero-title {
   text-shadow: 0 2px 12px rgba(0,0,0,0.7), 0 0 30px rgba(245,211,122,0.2);
 }
+
+/* ══════════════════════════════════════════════
+   PARALLAX STRIP — Temple Grounds
+══════════════════════════════════════════════ */
+.temple-parallax-strip {
+  position: relative;
+  height: clamp(200px, 35vw, 380px);
+  background-image: url('images/temple-grounds-wide.jpg');
+  background-size: cover;
+  background-position: center 40%;
+  background-attachment: fixed; /* parallax */
+  overflow: hidden;
+}
+/* Fallback: no fixed for mobile (fixed attachment causes blur on iOS) */
+@media (max-width: 768px) {
+  .temple-parallax-strip {
+    background-attachment: scroll;
+    background-position: center center;
+    height: 200px;
+  }
+}
+
+.parallax-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.35) 0%,
+    rgba(0,0,0,0.1) 40%,
+    rgba(0,0,0,0.5) 100%
+  );
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 1.2rem;
+}
+.parallax-caption {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(0.72rem, 1.8vw, 0.92rem);
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 0.12em;
+  text-align: center;
+  text-shadow: 0 1px 6px rgba(0,0,0,0.7);
+}
+
+/* ══════════════════════════════════════════════
+   GALLERY — Natural aspect ratio, no crop
+══════════════════════════════════════════════ */
+
+/* Override: remove fixed aspect-ratio from gallery cards */
+.gallery-photo-card {
+  aspect-ratio: unset !important;
+  height: auto !important;
+}
+
+/* Gallery grid: auto rows = natural height */
+.gallery-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 0.85rem !important;
+  align-items: start !important; /* critical: don't stretch cards */
+}
+
+/* Each card wraps its image naturally */
+.gallery-card-link {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #0a0a0a;
+}
+
+/* Image: full width, natural height, NO cropping */
+.gallery-real-photo {
+  width: 100% !important;
+  height: auto !important;
+  object-fit: unset !important; /* was 'cover' — now natural */
+  display: block;
+  border-radius: 10px;
+  transition: transform 0.4s ease;
+}
+.gallery-card-link:hover .gallery-real-photo {
+  transform: scale(1.03);
+}
+
+/* Overlay sits at bottom of each card regardless of height */
+.gallery-card-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.72));
+  padding: 1.5rem 0.9rem 0.7rem;
+  border-radius: 0 0 10px 10px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.gallery-card-link:hover .gallery-card-overlay,
+.gallery-card-link:focus-within .gallery-card-overlay {
+  opacity: 1;
+}
+
+/* Touch devices: always show overlay */
+@media (hover: none) {
+  .gallery-card-overlay { opacity: 1; padding: 0.9rem 0.7rem 0.5rem; }
+  .gallery-card-link:hover .gallery-real-photo { transform: none; }
+}
+
+/* Mobile: 2 col */
+@media (max-width: 768px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.6rem !important;
+  }
+}
+/* Very small: 1 col */
+@media (max-width: 400px) {
+  .gallery-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
