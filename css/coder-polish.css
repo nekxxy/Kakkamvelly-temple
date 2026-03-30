@@ -714,85 +714,98 @@ html {
 
 /* ══════════════════════════════════════════════
    HERO BABY KRISHNA IMAGE
+   Architect sizing: mobile 200px / tablet 240px / desktop 280px
+   Transparent PNG — renders clean over galaxy background
 ══════════════════════════════════════════════ */
 .hero-krishna-img-wrap {
   position: relative;
   display: flex;
   justify-content: center;
-  margin-bottom: 0.5rem;
+  align-items: flex-end;
+  margin-bottom: -10px; /* pull slightly closer to tagline */
+  flex-shrink: 0;
 }
 
+/* Clean transparent image — no blend mode needed */
 .hero-krishna-img {
-  width: clamp(160px, 38vw, 280px);
+  width: 280px;
   height: auto;
   display: block;
   filter:
-    drop-shadow(0 0 30px rgba(255, 215, 0, 0.55))
-    drop-shadow(0 0 60px rgba(255, 180, 0, 0.3));
-  animation: krishna-float 4s ease-in-out infinite;
+    drop-shadow(0 8px 24px rgba(0,0,0,0.45))
+    drop-shadow(0 0 40px rgba(255,215,0,0.5))
+    drop-shadow(0 0 80px rgba(255,180,0,0.25));
+  animation: krishna-hero-float 4s ease-in-out infinite;
   transform-origin: center bottom;
-  /* White background blends with dark hero */
-  mix-blend-mode: normal;
-  border-radius: 0;
+  position: relative;
+  z-index: 2;
 }
 
-/* Remove white background using luminosity blend */
-@supports (mix-blend-mode: multiply) {
-  .hero-section-dark .hero-krishna-img,
-  .hero .hero-krishna-img {
-    mix-blend-mode: luminosity;
-  }
-}
-
-/* Gentle float + subtle glow pulse */
-@keyframes krishna-float {
+/* Gentle float — 10px travel */
+@keyframes krishna-hero-float {
   0%,100% {
-    transform: translateY(0px) scale(1);
+    transform: translateY(0px);
     filter:
-      drop-shadow(0 0 25px rgba(255,215,0,0.5))
-      drop-shadow(0 0 50px rgba(255,180,0,0.25));
+      drop-shadow(0 8px 24px rgba(0,0,0,0.45))
+      drop-shadow(0 0 35px rgba(255,215,0,0.45))
+      drop-shadow(0 0 70px rgba(255,180,0,0.2));
   }
   50% {
-    transform: translateY(-12px) scale(1.02);
+    transform: translateY(-10px);
     filter:
-      drop-shadow(0 0 40px rgba(255,215,0,0.75))
-      drop-shadow(0 0 80px rgba(255,180,0,0.4))
-      drop-shadow(0 20px 30px rgba(0,0,0,0.3));
+      drop-shadow(0 18px 35px rgba(0,0,0,0.35))
+      drop-shadow(0 0 55px rgba(255,215,0,0.7))
+      drop-shadow(0 0 100px rgba(255,180,0,0.35));
   }
 }
 
-/* Halo glow ring behind image */
+/* Divine halo glow behind krishna */
 .hero-krishna-img-wrap::before {
   content: '';
   position: absolute;
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  width: clamp(180px, 42vw, 300px);
-  height: clamp(180px, 42vw, 300px);
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  height: 320px;
   border-radius: 50%;
   background: radial-gradient(
-    circle,
-    rgba(255,215,0,0.18) 0%,
-    rgba(255,165,0,0.08) 50%,
+    circle at 50% 60%,
+    rgba(255,215,0,0.22) 0%,
+    rgba(255,165,0,0.1) 40%,
     transparent 70%
   );
   animation: halo-breathe 4s ease-in-out infinite;
   pointer-events: none;
+  z-index: 1;
 }
 @keyframes halo-breathe {
-  0%,100% { transform: translate(-50%,-50%) scale(1);   opacity: 0.7; }
-  50%      { transform: translate(-50%,-50%) scale(1.15); opacity: 1; }
+  0%,100% { opacity: 0.7; transform: translateX(-50%) scale(1); }
+  50%      { opacity: 1;   transform: translateX(-50%) scale(1.12); }
 }
 
-/* Mobile — slightly smaller */
+/* Tablet */
+@media (max-width: 768px) {
+  .hero-krishna-img { width: 240px; }
+  .hero-krishna-img-wrap::before { width: 270px; height: 270px; }
+}
+
+/* Mobile */
 @media (max-width: 480px) {
-  .hero-krishna-img {
-    width: clamp(130px, 45vw, 200px);
-  }
+  .hero-krishna-img { width: 200px; }
+  .hero-krishna-img-wrap::before { width: 230px; height: 230px; }
+  .hero-krishna-img-wrap { margin-bottom: -6px; }
+}
+
+/* Very small */
+@media (max-width: 360px) {
+  .hero-krishna-img { width: 170px; }
 }
 
 /* Reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .hero-krishna-img { animation: none; }
+  .hero-krishna-img-wrap::before { animation: none; }
+}e; }
   .hero-krishna-img-wrap::before { animation: none; }
 }
