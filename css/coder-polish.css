@@ -992,3 +992,124 @@ html {
     grid-template-columns: 1fr !important;
   }
 }
+
+/* ══════════════════════════════════════════════
+   LOWER SECTIONS — Temple Front View Background
+   Gradient overlays preserve readability while
+   letting the temple image show through softly
+══════════════════════════════════════════════ */
+
+/* Shared background for all lower sections */
+.section-temple-bg,
+.footer-temple-bg {
+  position: relative;
+  background-image: url('../images/temple-front-bg.jpg');
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+  isolation: isolate; /* create stacking context */
+}
+
+/* Mobile: no fixed (iOS blur issue) */
+@media (max-width: 768px) {
+  .section-temple-bg,
+  .footer-temple-bg {
+    background-attachment: scroll;
+  }
+}
+
+/* Gradient overlay — each section has its own tint */
+
+/* Location — warm golden overlay */
+#location.section-temple-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 248, 220, 0.93) 0%,
+    rgba(255, 243, 200, 0.90) 100%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+#location.section-temple-bg > * { position: relative; z-index: 1; }
+
+/* Visitor Info — soft cream overlay */
+#visitor-info.section-temple-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(253, 246, 230, 0.91) 0%,
+    rgba(250, 240, 215, 0.88) 100%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+#visitor-info.section-temple-bg > * { position: relative; z-index: 1; }
+
+/* Contact — saffron-warm overlay */
+#contact.section-temple-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 243, 210, 0.92) 0%,
+    rgba(255, 235, 180, 0.90) 100%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+#contact.section-temple-bg > * { position: relative; z-index: 1; }
+
+/* Donate — deep warm amber overlay */
+#donate.section-temple-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 8, 0, 0.88) 0%,
+    rgba(40, 20, 0, 0.92) 100%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+#donate.section-temple-bg > * { position: relative; z-index: 1; }
+
+/* Footer — dark temple evening */
+.footer-temple-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 5, 0, 0.93) 0%,
+    rgba(5, 2, 0, 0.97) 100%
+  );
+  z-index: 0;
+  pointer-events: none;
+}
+.footer-temple-bg > * { position: relative; z-index: 1; }
+
+/* ── Reveal effect: fade in background on scroll ── */
+.section-temple-bg {
+  transition: background-position 0.1s linear;
+}
+
+/* ── Subtle texture blend at section borders ── */
+.section-temple-bg + .section-temple-bg::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg,
+    transparent,
+    rgba(200, 134, 10, 0.25),
+    transparent
+  );
+  z-index: 2;
+}
