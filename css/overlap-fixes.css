@@ -1022,3 +1022,25 @@ html, body {
   overflow: visible !important;
   position: relative;
 }
+
+/* Performance: CSS contain on sections */
+#home,#about,#timings,#gallery,#location,#contact,#donate,#live-section {
+  contain:layout style;
+}
+/* will-change on animated elements */
+.hero-krishna-img,
+.hero-krishna-img-wrap::before,
+#galaxy-canvas,
+.ann-flame-left,.ann-flame-right,
+#audio-toggle.playing {
+  will-change:transform,opacity;
+}
+/* Reduced motion */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+    scroll-behavior:auto!important;
+  }
+}

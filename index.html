@@ -3,10 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <!-- Resource hints for performance -->
+  <link rel="preload" href="images/baby-krishna-hero.webp" as="image" type="image/webp" />
+  <link rel="preload" href="images/mobile/baby-krishna-hero.webp" as="image" type="image/webp" media="(max-width:480px)" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
-  <link rel="preload" href="css/style.css" as="style" />
+  <link rel="preload" href="css/temple.min.css" as="style" />
   <link rel="preload" href="images/temple-entrance-deepam.jpg" as="image" />
   <link rel="dns-prefetch" href="https://api.open-meteo.com" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -40,15 +42,7 @@
     body.lang-en .lang-en-only { display: block; }
   </style>
   <link rel="manifest" href="manifest.json" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/krishna-animations.css" />
-  <link rel="stylesheet" href="css/baby-krishna.css" />
-  <link rel="stylesheet" href="css/live-widgets.css" />
-  <link rel="stylesheet" href="css/ruflo-v3.css" />
-  <link rel="stylesheet" href="css/mobile-futuristic.css" />
-  <link rel="stylesheet" href="css/galaxy.css" />
-  <link rel="stylesheet" href="css/coder-polish.css" />
-  <link rel="stylesheet" href="css/overlap-fixes.css" />
+  <link rel="stylesheet" href="css/temple.min.css" />
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -148,13 +142,19 @@
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <div class="hero-krishna-img-wrap">
-          <img
-            src="images/baby-krishna-hero.png"
-            alt="ഉണ്ണി കൃഷ്ണൻ — Baby Krishna"
-            class="hero-krishna-img"
-            loading="eager"
-            fetchpriority="high"
-          />
+<picture>
+            <source media="(max-width: 480px)" srcset="images/mobile/baby-krishna-hero.webp" type="image/webp" />
+            <source media="(max-width: 480px)" srcset="images/mobile/baby-krishna-hero.png" />
+            <source srcset="images/baby-krishna-hero.webp" type="image/webp" />
+            <img
+              src="images/baby-krishna-hero.png"
+              alt="ഉണ്ണി കൃഷ്ണൻ — Baby Krishna"
+              class="hero-krishna-img"
+              width="400" height="600"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </picture>
         </div>
         <p class="hero-tagline">ഹരേ കൃഷ്ണ</p>
         <h1 class="hero-title">കക്കംവെള്ളി<br />ശ്രീകൃഷ്ണ ക്ഷേത്രം</h1>
@@ -384,13 +384,7 @@
         <div class="about-grid">
           <div class="about-image-wrapper">
             <div class="about-real-photo-card" aria-label="ക്ഷേത്ര ദൃശ്യം">
-              <picture><source srcset="images/temple-entrance-deepam.webp" type="image/webp" /><img src="images/temple-entrance-deepam.jpg"
-                
-                data-orient="portrait"
-                alt="കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം — ദീപ ആരാധന"
-                class="about-real-photo"
-                loading="lazy"
-              /></picture>
+              <picture><source srcset="images/thumbs/temple-entrance-deepam.webp" type="image/webp" /><img src="images/temple-entrance-deepam.jpg" alt="ക്ഷേത്ര ദർശനം – ദീപ ആരാധന" width="300" height="200" loading="lazy" decoding="async" class="gallery-real-photo" /></picture>
               <div class="about-photo-caption">
                 <span class="about-photo-label">🪔 കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം</span>
                 <a href="https://maps.app.goo.gl/LaTA1pWM8NhjW4gK6" target="_blank" rel="noopener noreferrer" class="about-maps-link-pill">
@@ -475,7 +469,7 @@
           <!-- Card 1 — Real Photo: Temple entrance with deepam -->
           <div class="gallery-item gallery-photo-card" role="listitem">
             <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
-              <picture><source srcset="images/temple-entrance-deepam.webp" type="image/webp" /><img src="images/temple-entrance-deepam.jpg"  alt="കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം — ദീപം ഉഴിച്ചൽ" loading="lazy" class="gallery-real-photo"/></picture>
+              <picture><source srcset="images/thumbs/temple-entrance-deepam.webp" type="image/webp" /><img src="images/temple-entrance-deepam.jpg" alt="ക്ഷേത്ര ദർശനം – ദീപ ആരാധന" width="300" height="200" loading="lazy" decoding="async" class="gallery-real-photo" /></picture>
               <div class="gallery-card-overlay">
                 <p class="gallery-caption-ml">ക്ഷേത്ര ദർശനം – ദീപ ആരാധന</p>
                 <span class="gallery-photo-tag">📷 ക്ഷേത്ര ചിത്രം</span>
@@ -486,7 +480,7 @@
           <!-- Card 2 — Real Photo: Interior deepam lamp -->
           <div class="gallery-item gallery-photo-card" role="listitem">
             <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
-              <picture><source srcset="images/deepam-lamp-interior.webp" type="image/webp" /><img src="images/deepam-lamp-interior.jpg"  alt="ക്ഷേത്ര ദീപം – ആഭ്യന്തര ദൃശ്യം" loading="lazy" class="gallery-real-photo"/></picture>
+              <picture><source srcset="images/thumbs/deepam-lamp-interior.webp" type="image/webp" /><img src="images/deepam-lamp-interior.jpg" alt="പഞ്ചദീപം – ആഭ്യന്തര ദൃശ്യം" width="300" height="200" loading="lazy" decoding="async" class="gallery-real-photo" /></picture>
               <div class="gallery-card-overlay">
                 <p class="gallery-caption-ml">പഞ്ചദീപം – ആഭ്യന്തര ദൃശ്യം</p>
                 <span class="gallery-photo-tag">📷 ക്ഷേത്ര ചിത്രം</span>
@@ -497,7 +491,7 @@
           <!-- Card 3 — Real Photo: Deepam closeup -->
           <div class="gallery-item gallery-photo-card" role="listitem">
             <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
-              <picture><source srcset="images/deepam-closeup.webp" type="image/webp" /><img src="images/deepam-closeup.jpg"  alt="ദീപം അടുത്ത ദൃശ്യം" loading="lazy" class="gallery-real-photo"/></picture>
+              <picture><source srcset="images/thumbs/deepam-closeup.webp" type="image/webp" /><img src="images/deepam-closeup.jpg" alt="ദീപ ജ്വാല – ഭക്തിയുടെ പ്രകാശം" width="300" height="200" loading="lazy" decoding="async" class="gallery-real-photo" /></picture>
               <div class="gallery-card-overlay">
                 <p class="gallery-caption-ml">ദീപ ജ്വാല – ഭക്തിയുടെ പ്രകാശം</p>
                 <span class="gallery-photo-tag">📷 ക്ഷേത്ര ചിത്രം</span>
@@ -508,7 +502,7 @@
           <!-- Card 4 — Real Photo: Hanging lamps corridor -->
           <div class="gallery-item gallery-photo-card" role="listitem">
             <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
-              <picture><source srcset="images/hanging-lamps-corridor.webp" type="image/webp" /><img src="images/hanging-lamps-corridor.jpg"  alt="തൂക്ക് ദീപം – ക്ഷേത്ര ഇടനാഴി" loading="lazy" class="gallery-real-photo"/></picture>
+              <picture><source srcset="images/thumbs/hanging-lamps-corridor.webp" type="image/webp" /><img src="images/hanging-lamps-corridor.jpg" alt="തൂക്ക് ദീപം – ഇടനാഴി ദൃശ്യം" width="300" height="200" loading="lazy" decoding="async" class="gallery-real-photo" /></picture>
               <div class="gallery-card-overlay">
                 <p class="gallery-caption-ml">തൂക്ക് ദീപം – ഇടനാഴി ദൃശ്യം</p>
                 <span class="gallery-photo-tag">📷 ക്ഷേത്ര ചിത്രം</span>
@@ -519,13 +513,7 @@
           <!-- Card 5 — Real Photo: Temple gate entrance -->
           <div class="gallery-item gallery-photo-card" role="listitem">
             <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
-              <picture><source srcset="images/temple-gate-entrance.webp" type="image/webp" /><img src="images/temple-gate-entrance.jpg"
-                
-                data-orient="landscape"
-                alt="കക്കംവെള്ളി ക്ഷേത്രം — പ്രവേശന കവാടം"
-                loading="lazy"
-                class="gallery-real-photo"
-              /></picture>
+              <picture><source srcset="images/thumbs/temple-gate-entrance.webp" type="image/webp" /><img src="images/temple-gate-entrance.jpg" alt="ക്ഷേത്ര കവാടം – പ്രവേശനം" width="300" height="200" loading="lazy" decoding="async" class="gallery-real-photo" /></picture>
               <div class="gallery-card-overlay">
                 <p class="gallery-caption-ml">ക്ഷേത്ര കവാടം – പ്രവേശനം</p>
                 <span class="gallery-photo-tag">📷 ക്ഷേത്ര ചിത്രം</span>
@@ -536,13 +524,7 @@
           <!-- Card 6 — Real Photo: Temple front with lamps -->
           <div class="gallery-item gallery-photo-card" role="listitem">
             <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
-              <picture><source srcset="images/temple-front-view.webp" type="image/webp" /><img src="images/temple-front-view.jpg"
-                
-                alt="കക്കംവെള്ളി ക്ഷേത്രം — മുൻഭാഗ ദൃശ്യം"
-                data-orient="landscape"
-                loading="lazy"
-                class="gallery-real-photo"
-              /></picture>
+              <picture><source srcset="images/thumbs/temple-front-view.webp" type="image/webp" /><img src="images/temple-front-view.jpg" alt="ക്ഷേത്രം – മുൻഭാഗ ദൃശ്യം" width="300" height="200" loading="lazy" decoding="async" class="gallery-real-photo" /></picture>
               <div class="gallery-card-overlay">
                 <p class="gallery-caption-ml">ക്ഷേത്രം – മുൻഭാഗ ദൃശ്യം</p>
                 <span class="gallery-photo-tag">📷 ക്ഷേത്ര ചിത്രം</span>
@@ -553,13 +535,7 @@
           <!-- Card 7 — Real Photo: Temple side grounds -->
           <div class="gallery-item gallery-photo-card" role="listitem">
             <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
-              <picture><source srcset="images/temple-side-grounds.webp" type="image/webp" /><img src="images/temple-side-grounds.jpg"
-                
-                data-orient="landscape"
-                alt="കക്കംവെള്ളി ക്ഷേത്രം — ക്ഷേത്ര മൈദാനം"
-                loading="lazy"
-                class="gallery-real-photo"
-              /></picture>
+              <picture><source srcset="images/thumbs/temple-side-grounds.webp" type="image/webp" /><img src="images/temple-side-grounds.jpg" alt="ക്ഷേത്ര മൈദാനം – പ്രകൃതി ഭംഗി" width="300" height="200" loading="lazy" decoding="async" class="gallery-real-photo" /></picture>
               <div class="gallery-card-overlay">
                 <p class="gallery-caption-ml">ക്ഷേത്ര മൈദാനം – പ്രകൃതി ഭംഗി</p>
                 <span class="gallery-photo-tag">📷 ക്ഷേത്ര ചിത്രം</span>
