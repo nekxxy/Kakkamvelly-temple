@@ -1,0 +1,233 @@
+/* ============================================================
+   GALAXY BACKGROUND + AUDIO PLAYER
+   Kakkamvelly Sreekrishna Temple
+   ============================================================ */
+
+/* ══════════════════════════════════════════════
+   GALAXY CANVAS — full page deep space
+══════════════════════════════════════════════ */
+#galaxy-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  pointer-events: none;
+}
+
+/* Page base — deep space dark */
+body {
+  background: #020008 !important;
+}
+
+/* Override section backgrounds to be translucent over galaxy */
+.section-light {
+  background: rgba(253, 246, 227, 0.88) !important;
+  backdrop-filter: blur(2px);
+}
+.section-saffron {
+  background: linear-gradient(135deg,
+    rgba(255,243,224,0.92) 0%,
+    rgba(255,248,236,0.90) 100%) !important;
+  backdrop-filter: blur(2px);
+}
+.section-dark {
+  background: linear-gradient(135deg,
+    rgba(10,0,30,0.96) 0%,
+    rgba(26,18,8,0.97) 100%) !important;
+}
+
+/* Live section, Baby krishna, donate — keep dark with galaxy showing */
+#live-section,
+#baby-krishna,
+#donate {
+  background: rgba(8,4,25,0.93) !important;
+  backdrop-filter: blur(4px);
+}
+
+/* Visitor info section */
+#visitor-info {
+  background: rgba(253,240,208,0.90) !important;
+  backdrop-filter: blur(2px);
+}
+
+/* Annadhanam / Kulam */
+.annadhanam-banner {
+  background: rgba(26,6,32,0.95) !important;
+}
+.kulam-banner {
+  background: rgba(0,16,40,0.95) !important;
+}
+
+/* Hero — let galaxy show through */
+.hero {
+  background: transparent !important;
+  position: relative;
+}
+.hero::before {
+  background: linear-gradient(160deg,
+    rgba(80,0,0,0.6) 0%,
+    rgba(10,0,40,0.4) 40%,
+    rgba(0,20,10,0.5) 100%) !important;
+}
+
+/* Nebula glow orbs behind hero */
+.galaxy-nebula {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: -1;
+  filter: blur(80px);
+  animation: nebula-drift ease-in-out infinite;
+}
+.galaxy-nebula-1 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(120,0,80,0.35) 0%, transparent 70%);
+  top: -100px; left: -100px;
+  animation-duration: 20s;
+}
+.galaxy-nebula-2 {
+  width: 600px; height: 400px;
+  background: radial-gradient(circle, rgba(0,40,120,0.3) 0%, transparent 70%);
+  top: 30%; right: -150px;
+  animation-duration: 25s;
+  animation-delay: -8s;
+}
+.galaxy-nebula-3 {
+  width: 400px; height: 500px;
+  background: radial-gradient(circle, rgba(60,0,100,0.25) 0%, transparent 70%);
+  bottom: 10%; left: 20%;
+  animation-duration: 18s;
+  animation-delay: -12s;
+}
+
+@keyframes nebula-drift {
+  0%,100% { transform: translate(0,0) scale(1); }
+  33%      { transform: translate(30px,-20px) scale(1.08); }
+  66%      { transform: translate(-20px,30px) scale(0.95); }
+}
+
+/* Shooting star trail */
+.shooting-star {
+  position: fixed;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  animation: shoot linear forwards;
+}
+@keyframes shoot {
+  0%   { transform: translate(0,0) scaleX(1);      opacity: 1; }
+  100% { transform: translate(600px,300px) scaleX(80); opacity: 0; }
+}
+
+/* ══════════════════════════════════════════════
+   AUDIO TOGGLE BUTTON
+══════════════════════════════════════════════ */
+#audio-toggle {
+  position: fixed;
+  bottom: calc(76px + env(safe-area-inset-bottom, 0px) + 60px);
+  right: 1.1rem;
+  z-index: 850;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255,215,0,0.35);
+  background: rgba(10,4,28,0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+  -webkit-tap-highlight-color: transparent;
+}
+#audio-toggle:hover {
+  border-color: rgba(255,215,0,0.7);
+  box-shadow: 0 0 16px rgba(255,215,0,0.3);
+  transform: scale(1.05);
+}
+#audio-toggle:active { transform: scale(0.95); }
+
+.audio-icon  {
+  font-size: 1.1rem;
+  line-height: 1;
+  transition: all 0.3s;
+}
+.audio-label {
+  font-family: 'Noto Serif Malayalam', serif;
+  font-size: 0.5rem;
+  color: rgba(255,215,0,0.7);
+  letter-spacing: 0.04em;
+}
+
+/* Playing state */
+#audio-toggle.playing {
+  border-color: rgba(255,215,0,0.6);
+  background: rgba(255,215,0,0.12);
+  animation: audio-pulse 2s ease-in-out infinite;
+}
+#audio-toggle.playing .audio-icon {
+  animation: note-bounce 0.6s ease-in-out infinite alternate;
+}
+@keyframes audio-pulse {
+  0%,100% { box-shadow: 0 0 8px rgba(255,215,0,0.3); }
+  50%      { box-shadow: 0 0 20px rgba(255,215,0,0.6), 0 0 40px rgba(255,165,0,0.2); }
+}
+@keyframes note-bounce {
+  from { transform: scale(1) rotate(-5deg); }
+  to   { transform: scale(1.2) rotate(5deg); }
+}
+
+/* Muted state */
+#audio-toggle.muted .audio-icon::after {
+  content: '🔇';
+  position: absolute;
+  font-size: 0.8rem;
+}
+
+/* ══════════════════════════════════════════════
+   LANGUAGE SWITCHER — 2 options only
+══════════════════════════════════════════════ */
+.lang-switcher {
+  gap: 2px;
+  padding: 3px 5px;
+}
+.lang-btn {
+  font-size: 0.72rem;
+  padding: 3px 9px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+/* ══════════════════════════════════════════════
+   MOBILE ADJUSTMENTS
+══════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  #audio-toggle {
+    width: 44px;
+    height: 44px;
+    bottom: calc(76px + env(safe-area-inset-bottom,0px) + 56px);
+    right: 0.9rem;
+  }
+  .audio-icon { font-size: 1rem; }
+
+  .galaxy-nebula-1 { width: 300px; height: 300px; }
+  .galaxy-nebula-2 { width: 250px; height: 300px; }
+  .galaxy-nebula-3 { display: none; }
+}
+
+/* ══════════════════════════════════════════════
+   REDUCED MOTION
+══════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+  .galaxy-nebula,
+  .shooting-star { animation: none; }
+  #audio-toggle.playing { animation: none; }
+}

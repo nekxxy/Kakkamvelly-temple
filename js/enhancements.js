@@ -36,7 +36,7 @@
   switcher.setAttribute('role','toolbar');
   switcher.setAttribute('aria-label','Language selector');
 
-  const LABELS = { ml:'മലം', en:'EN', hi:'हि' };
+  const LABELS = { ml:'മലം', en:'EN' };
   let current = localStorage.getItem('kvt-lang') || 'ml';
 
   function apply(lang) {

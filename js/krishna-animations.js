@@ -18,7 +18,7 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
    1. CANVAS DIVINE PARTICLE SYSTEM
       Floating golden sparks + fireflies
 ───────────────────────────────────────────────── */
-(function initDivineCanvas() {
+(function initDivineCanvas() { return; // Replaced by galaxy.js
   if (prefersReducedMotion) return;
 
   const canvas = document.createElement('canvas');
