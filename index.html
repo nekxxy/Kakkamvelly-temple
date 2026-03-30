@@ -10,10 +10,26 @@
   <link rel="preload" href="images/temple-entrance-deepam.jpg" as="image" />
   <link rel="dns-prefetch" href="https://api.open-meteo.com" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Open Graph — WhatsApp/Social sharing -->
+  <meta property="og:type"        content="website" />
+  <meta property="og:site_name"   content="Kakkamvelly Sreekrishna Temple" />
+  <meta property="og:title"       content="കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം — Kakkamvelly Sreekrishna Temple" />
+  <meta property="og:description" content="Kakkamvelly Sreekrishna Temple, Purameri, Kozhikode. Baby Krishna temple. Darshan: 5:30–9:00 AM &amp; 5:45–6:45 PM. Monthly Annadhanam every first Sunday." />
+  <meta property="og:url"         content="https://kakkamvellytemple.page/" />
+  <meta property="og:image"       content="https://kakkamvellytemple.page/images/temple-front-view.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="805" />
+  <meta property="og:locale"      content="ml_IN" />
+  <meta property="og:locale:alternate" content="en_IN" />
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Kakkamvelly Sreekrishna Temple, Purameri, Kozhikode" />
+  <meta name="twitter:description" content="Baby Krishna temple in Purameri, Kozhikode. Daily darshan 5:30–9:00 AM &amp; 5:45–6:45 PM." />
+  <meta name="twitter:image"       content="https://kakkamvellytemple.page/images/temple-front-view.jpg" />
   <meta name="theme-color" content="#1a0620" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="description" content="കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രത്തിന്റെ ഔദ്യോഗിക വെബ്സൈറ്റ്. കോഴിക്കോട് ജില്ലയിൽ സ്ഥിതി ചെയ്യുന്ന ഈ ക്ഷേത്രത്തിലെ സമയക്രമം, പൂജ ഷെഡ്യൂൾ, സ്ഥലം, വഴിക്കുറിപ്പ് എന്നിവ അറിയൂ." />
+  <meta name="description" content="Kakkamvelly Sreekrishna Temple, Purameri, Kozhikode, Kerala. Baby Krishna temple near Nadapuram. Darshan: 5:30 AM–9 AM &amp; 5:45–6:45 PM. Monthly Annadhanam. കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രത്തിന്റെ ഔദ്യോഗിക വെബ്സൈറ്റ്. കോഴിക്കോട് ജില്ലയിൽ സ്ഥിതി ചെയ്യുന്ന ഈ ക്ഷേത്രത്തിലെ സമയക്രമം, പൂജ ഷെഡ്യൂൾ, സ്ഥലം, വഴിക്കുറിപ്പ് എന്നിവ അറിയൂ." />
   <meta name="keywords" content="Kakkamvelly temple, Sreekrishna temple, Kozhikode temple, Kerala Hindu temple, കക്കംവെള്ളി ക്ഷേത്രം, ശ്രീകൃഷ്ണ ക്ഷേത്രം, ക്ഷേത്ര സമയം, പൂജ ഷെഡ്യൂൾ" />
   <title>കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം | കോഴിക്കോട്, കേരളം</title>
   <link rel="manifest" href="manifest.json" />
@@ -78,6 +94,16 @@
   </style>
 </head>
 <body data-audio-ready="true">
+  <!-- Vishu 2026 Special Hours Banner -->
+  <div id="vishu-banner" class="vishu-alert" role="alert" aria-live="polite">
+    <span class="vishu-icon">🌸</span>
+    <span class="vishu-text">
+      <strong>വിഷു 2026 (ഏപ്രിൽ 15)</strong> — ക്ഷേത്രം: 5:00 AM – 7:30 PM &nbsp;·&nbsp; Special Darshan
+    </span>
+    <button class="vishu-close" aria-label="Close" onclick="this.parentElement.remove()">✕</button>
+  </div>
+
+
 
   <!-- ───────────── NAVIGATION ───────────── -->
   <header id="site-header">
@@ -135,6 +161,20 @@
             <i class="fa-regular fa-clock" aria-hidden="true"></i> ക്ഷേത്ര സമയം
           </a>
         </div>
+
+        <!-- Next Darshan Badge -->
+        <div id="next-darshan-countdown" class="next-darshan-badge nd-loading">
+          ⏳ ദർശന സമയം കണക്കാക്കുന്നു...
+        </div>
+
+        <!-- WhatsApp Share -->
+        <a href="https://wa.me/?text=🛕%20കക്കംവെള്ളി%20ശ്രീകൃഷ്ണ%20ക്ഷേത്രം%20-%20Purameri%2C%20Kozhikode%0Ahttps%3A%2F%2Fkakkamvellytemple.page"
+           target="_blank" rel="noopener noreferrer"
+           class="hero-share-btn" aria-label="WhatsApp വഴി പങ്കിടുക">
+          <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+          ക്ഷേത്ര വിവരം പങ്കിടുക
+        </a>
+
       </div>
       <div class="hero-scroll-indicator" aria-hidden="true">
         <div class="scroll-arrow"></div>
@@ -226,13 +266,13 @@
         <div class="about-grid">
           <div class="about-image-wrapper">
             <div class="about-real-photo-card" aria-label="ക്ഷേത്ര ദൃശ്യം">
-              <img
-                src="images/temple-entrance-deepam.jpg"
+              <picture><source srcset="images/temple-entrance-deepam.webp" type="image/webp" /><img src="images/temple-entrance-deepam.jpg"
+                
                 data-orient="portrait"
                 alt="കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം — ദീപ ആരാധന"
                 class="about-real-photo"
                 loading="lazy"
-              />
+              /></picture>
               <div class="about-photo-caption">
                 <span class="about-photo-label">🪔 കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം</span>
                 <a href="https://maps.app.goo.gl/LaTA1pWM8NhjW4gK6" target="_blank" rel="noopener noreferrer" class="about-maps-link-pill">
@@ -246,8 +286,8 @@
 
             <!-- History badge -->
             <div class="about-history-badge">
-              <span class="ahb-icon">⚔️</span>
-              <span class="ahb-text">ടിപ്പുവിന്റെ ആക്രമണത്തിൽ നിന്ന് പുനർജനിച്ച ക്ഷേത്രം</span>
+              <span class="ahb-icon">🛕</span>
+              <span class="ahb-text">ചരിത്രത്തിൽ നിന്ന് പുനർജനിച്ച ഭക്തിയുടെ ഭവനം</span>
             </div>
 
             <p>
@@ -318,8 +358,8 @@
                 <tr><th scope="col">പൂജ</th><th scope="col">സമയം</th></tr>
               </thead>
               <tbody>
-                <tr><td>നിർമ്മാല്യദർശനം</td><td>5:30 AM – 5:30 AM</td></tr>
-                <tr><td>തിടമ്പ് എഴുന്നള്ളിപ്പ്</td><td>5:30 AM – 6:00 AM</td></tr>
+                <tr><td>നിർമ്മാല്യദർശനം</td><td>5:30 AM</td></tr>
+                <tr><td>തിടമ്പ് എഴുന്നള്ളിപ്പ്</td><td>5:30 AM</td></tr>
                 <tr><td>ഉഷ പൂജ</td><td>6:00 AM – 6:30 AM</td></tr>
                 <tr><td>അതിർത്തു പൂജ</td><td>6:30 AM – 7:00 AM</td></tr>
                 <tr><td>പന്തീരടി പൂജ</td><td>7:00 AM – 8:00 AM</td></tr>
@@ -340,7 +380,7 @@
               <tbody>
                 <tr><td>ദീപാരാധന (വൈകുന്നേരം)</td><td>5:30 PM – 6:00 PM</td></tr>
                 <tr><td>അത്താഴ പൂജ</td><td>7:00 PM – 8:00 PM</td></tr>
-                <tr><td>ത്രിപ്പുക</td><td>8:00 PM – 6:45 PM</td></tr>
+                
                 <tr><td>ശ്രീക്കോവിൽ അടക്കൽ</td><td>6:45 PM</td></tr>
               </tbody>
             </table>
@@ -505,7 +545,7 @@
           <!-- Card 1 — Real Photo: Temple entrance with deepam -->
           <div class="gallery-item gallery-photo-card" role="listitem">
             <div class="gallery-card-link">
-              <img src="images/temple-entrance-deepam.jpg" alt="കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം — ദീപം ഉഴിച്ചൽ" loading="lazy" class="gallery-real-photo"/>
+              <picture><source srcset="images/temple-entrance-deepam.webp" type="image/webp" /><img src="images/temple-entrance-deepam.jpg"  alt="കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം — ദീപം ഉഴിച്ചൽ" loading="lazy" class="gallery-real-photo"/></picture>
               <div class="gallery-card-overlay">
                 <p class="gallery-caption-ml">ക്ഷേത്ര ദർശനം – ദീപ ആരാധന</p>
                 <span class="gallery-photo-tag">📷 ക്ഷേത്ര ചിത്രം</span>
@@ -516,7 +556,7 @@
           <!-- Card 2 — Real Photo: Interior deepam lamp -->
           <div class="gallery-item gallery-photo-card" role="listitem">
             <div class="gallery-card-link">
-              <img src="images/deepam-lamp-interior.jpg" alt="ക്ഷേത്ര ദീപം – ആഭ്യന്തര ദൃശ്യം" loading="lazy" class="gallery-real-photo"/>
+              <picture><source srcset="images/deepam-lamp-interior.webp" type="image/webp" /><img src="images/deepam-lamp-interior.jpg"  alt="ക്ഷേത്ര ദീപം – ആഭ്യന്തര ദൃശ്യം" loading="lazy" class="gallery-real-photo"/></picture>
               <div class="gallery-card-overlay">
                 <p class="gallery-caption-ml">പഞ്ചദീപം – ആഭ്യന്തര ദൃശ്യം</p>
                 <span class="gallery-photo-tag">📷 ക്ഷേത്ര ചിത്രം</span>
@@ -527,7 +567,7 @@
           <!-- Card 3 — Real Photo: Deepam closeup -->
           <div class="gallery-item gallery-photo-card" role="listitem">
             <div class="gallery-card-link">
-              <img src="images/deepam-closeup.jpg" alt="ദീപം അടുത്ത ദൃശ്യം" loading="lazy" class="gallery-real-photo"/>
+              <picture><source srcset="images/deepam-closeup.webp" type="image/webp" /><img src="images/deepam-closeup.jpg"  alt="ദീപം അടുത്ത ദൃശ്യം" loading="lazy" class="gallery-real-photo"/></picture>
               <div class="gallery-card-overlay">
                 <p class="gallery-caption-ml">ദീപ ജ്വാല – ഭക്തിയുടെ പ്രകാശം</p>
                 <span class="gallery-photo-tag">📷 ക്ഷേത്ര ചിത്രം</span>
@@ -538,7 +578,7 @@
           <!-- Card 4 — Real Photo: Hanging lamps corridor -->
           <div class="gallery-item gallery-photo-card" role="listitem">
             <div class="gallery-card-link">
-              <img src="images/hanging-lamps-corridor.jpg" alt="തൂക്ക് ദീപം – ക്ഷേത്ര ഇടനാഴി" loading="lazy" class="gallery-real-photo"/>
+              <picture><source srcset="images/hanging-lamps-corridor.webp" type="image/webp" /><img src="images/hanging-lamps-corridor.jpg"  alt="തൂക്ക് ദീപം – ക്ഷേത്ര ഇടനാഴി" loading="lazy" class="gallery-real-photo"/></picture>
               <div class="gallery-card-overlay">
                 <p class="gallery-caption-ml">തൂക്ക് ദീപം – ഇടനാഴി ദൃശ്യം</p>
                 <span class="gallery-photo-tag">📷 ക്ഷേത്ര ചിത്രം</span>
@@ -549,13 +589,13 @@
           <!-- Card 5 — Real Photo: Temple gate entrance -->
           <div class="gallery-item gallery-photo-card" role="listitem">
             <div class="gallery-card-link">
-              <img
-                src="images/temple-gate-entrance.jpg"
+              <picture><source srcset="images/temple-gate-entrance.webp" type="image/webp" /><img src="images/temple-gate-entrance.jpg"
+                
                 data-orient="landscape"
                 alt="കക്കംവെള്ളി ക്ഷേത്രം — പ്രവേശന കവാടം"
                 loading="lazy"
                 class="gallery-real-photo"
-              />
+              /></picture>
               <div class="gallery-card-overlay">
                 <p class="gallery-caption-ml">ക്ഷേത്ര കവാടം – പ്രവേശനം</p>
                 <span class="gallery-photo-tag">📷 ക്ഷേത്ര ചിത്രം</span>
@@ -566,13 +606,13 @@
           <!-- Card 6 — Real Photo: Temple front with lamps -->
           <div class="gallery-item gallery-photo-card" role="listitem">
             <div class="gallery-card-link">
-              <img
-                src="images/temple-front-view.jpg"
+              <picture><source srcset="images/temple-front-view.webp" type="image/webp" /><img src="images/temple-front-view.jpg"
+                
                 alt="കക്കംവെള്ളി ക്ഷേത്രം — മുൻഭാഗ ദൃശ്യം"
                 data-orient="landscape"
                 loading="lazy"
                 class="gallery-real-photo"
-              />
+              /></picture>
               <div class="gallery-card-overlay">
                 <p class="gallery-caption-ml">ക്ഷേത്രം – മുൻഭാഗ ദൃശ്യം</p>
                 <span class="gallery-photo-tag">📷 ക്ഷേത്ര ചിത്രം</span>
@@ -583,13 +623,13 @@
           <!-- Card 7 — Real Photo: Temple side grounds -->
           <div class="gallery-item gallery-photo-card" role="listitem">
             <div class="gallery-card-link">
-              <img
-                src="images/temple-side-grounds.jpg"
+              <picture><source srcset="images/temple-side-grounds.webp" type="image/webp" /><img src="images/temple-side-grounds.jpg"
+                
                 data-orient="landscape"
                 alt="കക്കംവെള്ളി ക്ഷേത്രം — ക്ഷേത്ര മൈദാനം"
                 loading="lazy"
                 class="gallery-real-photo"
-              />
+              /></picture>
               <div class="gallery-card-overlay">
                 <p class="gallery-caption-ml">ക്ഷേത്ര മൈദാനം – പ്രകൃതി ഭംഗി</p>
                 <span class="gallery-photo-tag">📷 ക്ഷേത്ര ചിത്രം</span>
@@ -840,7 +880,7 @@
             </div>
           </div>
 
-          <form id="contact-form" class="contact-form" novalidate aria-label="ബന്ധപ്പെടൽ ഫോം">
+          <form id="contact-form" class="contact-form" action="https://formspree.io/f/kakkamvellytemple" method="POST" novalidate aria-label="ബന്ധപ്പെടൽ ഫോം">
             <div class="form-group">
               <label for="name">പൂർണ്ണ നാമം <span aria-hidden="true">*</span></label>
               <input type="text" id="name" name="name" placeholder="നിങ്ങളുടെ പൂർണ്ണ നാമം" required autocomplete="name" />
@@ -879,7 +919,8 @@
               <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
               നന്ദി! നിങ്ങളുടെ സന്ദേശം ലഭിച്ചു. ഞങ്ങൾ ഉടൻ ബന്ധപ്പെടും.
             </div>
-          </form>
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" />
+    </form>
         </div>
       </div>
     </section>
@@ -986,7 +1027,7 @@
     <div class="footer-bottom">
       <div class="container">
         <p class="footer-copy">
-          &copy; <span id="footer-year">2026</span> കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം. എല്ലാ അവകാശങ്ങളും നിക്ഷിപ്തം.
+          &copy; <span id="footer-year"></span> കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം. എല്ലാ അവകാശങ്ങളും നിക്ഷിപ്തം.
         </p>
         <p class="footer-tagline">🪔 ഹരേ കൃഷ്ണ ഹരേ കൃഷ്ണ കൃഷ്ണ കൃഷ്ണ ഹരേ ഹരേ 🪔</p>
       </div>
@@ -1137,5 +1178,6 @@
     });
   })();
   </script>
+  <script>document.getElementById("footer-year").textContent=new Date().getFullYear();</script>
 </body>
 </html>

@@ -353,3 +353,110 @@ section[id] {
 @media (max-width: 360px) {
   .hero-actions .btn { flex: 1 1 100%; max-width: 100%; }
 }
+
+/* ══════════════════════════════════════════════
+   P7: VISHU ALERT BANNER
+══════════════════════════════════════════════ */
+.vishu-alert {
+  position: fixed;
+  top: calc(var(--mob-nav-h, 64px) + 44px);
+  left: 0; right: 0;
+  z-index: 1002;
+  background: linear-gradient(135deg, #c8860a, #ffd700);
+  color: #1a0800;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 1rem;
+  font-family: 'Noto Serif Malayalam', serif;
+  font-size: clamp(0.72rem, 2vw, 0.85rem);
+  font-weight: 600;
+  box-shadow: 0 2px 12px rgba(200,134,10,0.4);
+}
+.vishu-icon { font-size: 1.1rem; flex-shrink: 0; }
+.vishu-text { flex: 1; }
+.vishu-close {
+  background: none; border: none; cursor: pointer;
+  font-size: 1rem; color: #1a0800; opacity: 0.6;
+  padding: 0 0.3rem; line-height: 1;
+  -webkit-tap-highlight-color: transparent;
+}
+.vishu-close:hover { opacity: 1; }
+
+/* Push nav-strip down when banner is visible */
+.vishu-alert + * .nav-menu,
+body:has(.vishu-alert) .nav-menu { top: calc(var(--mob-nav-h) + 44px + 34px) !important; }
+
+/* Auto-hide banner after Apr 16 */
+@media (prefers-reduced-motion: no-preference) {
+  .vishu-alert { animation: slide-down 0.4s ease; }
+  @keyframes slide-down { from { transform: translateY(-100%); } to { transform: translateY(0); } }
+}
+
+/* ══════════════════════════════════════════════
+   P7: NEXT DARSHAN COUNTDOWN BADGE
+══════════════════════════════════════════════ */
+.next-darshan-badge {
+  font-family: 'Noto Serif Malayalam', serif;
+  font-size: clamp(0.78rem, 2.5vw, 0.92rem);
+  font-weight: 700;
+  padding: 0.45rem 1.1rem;
+  border-radius: 50px;
+  letter-spacing: 0.03em;
+  text-align: center;
+  margin: 0.2rem auto 0;
+  max-width: 340px;
+}
+.nd-open {
+  background: rgba(34, 197, 94, 0.18);
+  border: 1px solid rgba(34,197,94,0.4);
+  color: #22c55e;
+}
+.nd-closed {
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239,68,68,0.3);
+  color: #fca5a5;
+}
+.nd-loading {
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.5);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ══════════════════════════════════════════════
+   P7: HERO WHATSAPP SHARE BUTTON
+══════════════════════════════════════════════ */
+.hero-share-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(37, 211, 102, 0.15);
+  border: 1px solid rgba(37,211,102,0.35);
+  color: #4ade80;
+  padding: 0.45rem 1rem;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-family: 'Noto Serif Malayalam', serif;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+  margin: 0.2rem auto 0;
+  -webkit-tap-highlight-color: transparent;
+}
+.hero-share-btn:hover { background: rgba(37,211,102,0.25); }
+.hero-share-btn i { font-size: 1rem; }
+
+/* ══════════════════════════════════════════════
+   P2: FORM SUCCESS MESSAGE
+══════════════════════════════════════════════ */
+.form-success-msg {
+  background: rgba(34,197,94,0.12);
+  border: 1px solid rgba(34,197,94,0.3);
+  color: #22c55e;
+  border-radius: 10px;
+  padding: 0.9rem 1.2rem;
+  margin-top: 0.8rem;
+  font-family: 'Noto Serif Malayalam', serif;
+  font-size: 0.9rem;
+  text-align: center;
+}

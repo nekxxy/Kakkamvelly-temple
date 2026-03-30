@@ -220,3 +220,26 @@
     });
   });
 })();
+
+// P2: Contact form async submit
+(function() {
+  const form = document.getElementById('contact-form');
+  if (!form) return;
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = form.querySelector('[type="submit"]');
+    const orig = btn ? btn.innerHTML : '';
+    if(btn){btn.innerHTML='⏳ അയക്കുന്നു...';btn.disabled=true;}
+    try {
+      const res = await fetch(form.action||'https://formspree.io/f/kakkamvellytemple',
+        {method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+      if(res.ok){
+        form.reset();
+        const m=document.createElement('p');m.className='form-success-msg';
+        m.innerHTML='✅ സന്ദേശം ലഭിച്ചു! ഞങ്ങൾ ഉടൻ ബന്ധപ്പെടും 🙏';
+        form.after(m); setTimeout(()=>m.remove(),7000);
+      } else throw new Error();
+    } catch { alert('ദയവായി ബന്ധപ്പെടുക: kakkamvellytemple@gmail.com'); }
+    if(btn){btn.innerHTML=orig;btn.disabled=false;}
+  });
+})();

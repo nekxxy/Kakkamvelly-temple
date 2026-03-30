@@ -878,7 +878,7 @@ html {
 .temple-parallax-strip {
   position: relative;
   height: clamp(200px, 35vw, 380px);
-  background-image: url('images/temple-grounds-wide.jpg');
+  background-image: url('images/temple-grounds-wide.webp');
   background-size: cover;
   background-position: center 40%;
   background-attachment: fixed; /* parallax */
@@ -1003,7 +1003,7 @@ html {
 .section-temple-bg,
 .footer-temple-bg {
   position: relative;
-  background-image: url('../images/temple-front-bg.jpg');
+  background-image: url('../images/temple-front-bg.webp');
   background-size: cover;
   background-position: center top;
   background-attachment: fixed;

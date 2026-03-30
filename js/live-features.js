@@ -331,3 +331,43 @@ const isMob = () => window.innerWidth <= 768;
     }
   }
 })();
+
+/* ═══════════════════════════════════════════
+   NEXT DARSHAN COUNTDOWN
+═══════════════════════════════════════════ */
+(function initNextDarshan() {
+  const el = document.getElementById('next-darshan-countdown');
+  if (!el) return;
+
+  function update() {
+    const now = new Date();
+    const mins = now.getHours()*60 + now.getMinutes();
+    const morningOpen=5*60+30, morningClose=9*60;
+    const eveningOpen=17*60+45, eveningClose=18*60+45;
+
+    let label='', diffMins=0, isOpen=false;
+
+    if (mins>=morningOpen && mins<morningClose) {
+      isOpen=true; label='🟢 ദർശനം: തുറന്നിരിക്കുന്നു';
+      diffMins = morningClose - mins;
+      label += ` · ${Math.floor(diffMins/60)}h ${diffMins%60}m കൂടി`;
+    } else if (mins>=eveningOpen && mins<eveningClose) {
+      isOpen=true; label='🟢 ദർശനം: തുറന്നിരിക്കുന്നു';
+      diffMins = eveningClose - mins;
+      label += ` · ${diffMins}m കൂടി`;
+    } else {
+      isOpen=false;
+      if (mins<morningOpen) diffMins=morningOpen-mins;
+      else if (mins<eveningOpen) diffMins=eveningOpen-mins;
+      else diffMins=(24*60-mins)+morningOpen;
+      const h=Math.floor(diffMins/60),m=diffMins%60;
+      label=`🔴 അടഞ്ഞിരിക്കുന്നു · ${h>0?h+'h ':''}${m}m-ൽ തുറക്കും`;
+    }
+
+    el.textContent = label;
+    el.className = `next-darshan-badge ${isOpen?'nd-open':'nd-closed'}`;
+  }
+
+  update();
+  setInterval(update, 60000);
+})();
