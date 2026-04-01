@@ -1236,3 +1236,262 @@ html, body {
   .kulam-photo-grid { grid-template-columns: 1fr; }
   .kp-wide { grid-column: span 1; }
 }
+
+/* ══════════════════════════════════════════════
+   IMPROVEMENT 1: FONT SIZE — 40+ readability
+══════════════════════════════════════════════ */
+html { font-size: 18px; }
+
+body {
+  font-size: 1rem;       /* 18px */
+  line-height: 1.75;
+}
+
+/* Malayalam script — min 18px everywhere */
+.font-ml,
+[lang="ml"],
+.hero-title,
+.hero-tagline,
+.hero-subtitle,
+.hero-location,
+.ann-title, .ann-desc, .ann-sub,
+.kulam-title, .kulam-desc, .kulam-sub,
+.dsw-text,
+.timing-table td,
+.about-ml-text,
+.about-content p,
+.footer-name-ml,
+.footer-tagline,
+.gallery-caption-ml,
+.kulam-photo-label p,
+.section-title,
+.section-tag,
+.mob-nav-label,
+.nav-link,
+p, li, td, th, label {
+  font-family: 'Noto Serif Malayalam', serif;
+  font-size: clamp(1rem, 2.5vw, 1.125rem) !important; /* min 18px */
+  line-height: 1.75;
+}
+
+/* Captions, labels — min 15px */
+.gallery-photo-tag,
+.ke-label,
+.kpl-badge,
+.footer-loc,
+.footer-copy,
+small,
+.audio-label,
+.mob-nav-label,
+.timing-table th {
+  font-size: clamp(0.875rem, 2vw, 1rem) !important; /* min ~15px at 18px base */
+  line-height: 1.6;
+}
+
+/* Body text blocks — ensure generous line-height */
+.about-content p,
+.ann-desc,
+.kulam-desc,
+.kulam-section-desc,
+.timing-note,
+.transport-details p {
+  line-height: 1.85 !important;
+}
+
+/* ══════════════════════════════════════════════
+   IMPROVEMENT 3: DOMINANT DARSHAN STATUS
+══════════════════════════════════════════════ */
+#next-darshan-countdown {
+  font-size: clamp(1.1rem, 4vw, 1.4rem) !important;
+  font-weight: 800 !important;
+  padding: .7rem 1.5rem !important;
+  border-radius: 50px !important;
+  letter-spacing: 0.02em;
+  margin: .5rem auto 0 !important;
+  max-width: 400px !important;
+  text-align: center;
+}
+.nd-open {
+  background: rgba(34,197,94,0.15) !important;
+  border: 2px solid rgba(34,197,94,0.5) !important;
+  color: #4ade80 !important;
+  box-shadow: 0 0 20px rgba(34,197,94,0.25);
+}
+.nd-closed {
+  background: rgba(239,68,68,0.12) !important;
+  border: 2px solid rgba(239,68,68,0.4) !important;
+  color: #fca5a5 !important;
+  box-shadow: 0 0 16px rgba(239,68,68,0.2);
+}
+/* Also enlarge the live status bar text */
+.dsw-text {
+  font-size: clamp(0.95rem, 3vw, 1.1rem) !important;
+  font-weight: 700 !important;
+}
+.dsw-dot { width: 13px !important; height: 13px !important; }
+
+/* ══════════════════════════════════════════════
+   IMPROVEMENT 5: TOUCH TARGETS — 44×44px min
+══════════════════════════════════════════════ */
+a[href^="tel:"],
+a[href^="https://wa.me"],
+a[href^="upi://"],
+.dsw-btn,
+.kulam-btn,
+.map-open-btn,
+.footer-direction-btn,
+.hero-share-btn,
+.mob-nav-btn,
+.nlp-btn,
+.nav-link,
+.btn {
+  min-height: 44px !important;
+  min-width: 44px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+/* Footer quick links — bigger tap targets */
+.footer-links-row a {
+  padding: .6rem .5rem !important;
+  font-size: 1rem !important;
+  min-height: 44px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+}
+
+/* ══════════════════════════════════════════════
+   IMPROVEMENT 6: FOCUS STYLES — accessibility
+══════════════════════════════════════════════ */
+*:focus-visible {
+  outline: 2.5px solid #c8520c !important;
+  outline-offset: 3px !important;
+  border-radius: 4px;
+}
+/* Never hide focus outlines */
+*:focus { outline: revert; }
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2.5px solid #c8520c !important;
+  outline-offset: 3px !important;
+}
+
+/* ══════════════════════════════════════════════
+   IMPROVEMENT 10: FORM — inline error messages
+══════════════════════════════════════════════ */
+.field-error-msg {
+  display: none;
+  color: #dc2626;
+  font-size: 0.875rem !important;
+  margin-top: .25rem;
+  font-family: 'Noto Serif Malayalam', serif;
+}
+.field-error-msg.visible { display: block; }
+
+.form-group input:invalid:not(:placeholder-shown),
+.form-group textarea:invalid:not(:placeholder-shown),
+.form-group select:invalid:not(:placeholder-shown) {
+  border-color: #dc2626 !important;
+}
+
+.form-submit-btn:disabled {
+  opacity: .65;
+  cursor: not-allowed;
+}
+
+.form-success-banner {
+  display: none;
+  background: rgba(34,197,94,.12);
+  border: 1px solid #22c55e;
+  border-radius: 12px;
+  padding: 1rem 1.2rem;
+  margin-top: 1rem;
+  color: #22c55e;
+  font-family: 'Noto Serif Malayalam', serif;
+  font-size: 1rem !important;
+  text-align: center;
+}
+.form-success-banner.visible { display: block; }
+
+/* ══════════════════════════════════════════════
+   IMPROVEMENT 4: EMOJI CLUTTER — donate section
+══════════════════════════════════════════════ */
+/* Limit decorative deepam icons in donate to one */
+.donate-section-deco { display: none; }
+
+/* ══════════════════════════════════════════════
+   IMPROVEMENT 8: UPI SECTION
+══════════════════════════════════════════════ */
+.upi-qr-wrap {
+  display: flex;
+  justify-content: center;
+  margin: .8rem 0;
+}
+.upi-qr-placeholder {
+  width: 140px;
+  height: 140px;
+  border: 2px dashed rgba(255,215,0,.3);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .3rem;
+  background: rgba(255,215,0,.04);
+}
+.upi-qr-icon { font-size: 2.5rem; }
+.upi-qr-hint { font-size: .78rem !important; color: rgba(255,215,0,.6); margin: 0; font-family: 'Cinzel', serif; }
+.upi-qr-hint-sub { font-size: .65rem !important; color: rgba(255,255,255,.4); margin: 0; font-family: monospace; }
+
+.upi-id-copy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .6rem;
+  margin: .6rem 0 .8rem;
+  flex-wrap: wrap;
+}
+.upi-id-copy code {
+  font-size: 1rem !important;
+  color: #ffd700;
+  background: rgba(255,215,0,.08);
+  border: 1px solid rgba(255,215,0,.2);
+  border-radius: 8px;
+  padding: .4rem .9rem;
+  font-family: monospace;
+  letter-spacing: .04em;
+  user-select: all;
+  cursor: text;
+}
+.upi-copy-btn {
+  background: rgba(255,215,0,.1);
+  border: 1px solid rgba(255,215,0,.3);
+  color: #ffd700;
+  border-radius: 8px;
+  padding: .4rem .9rem;
+  font-size: .82rem !important;
+  cursor: pointer;
+  transition: background .2s;
+  min-height: 44px !important;
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  font-family: 'Lato', sans-serif;
+}
+.upi-copy-btn:hover { background: rgba(255,215,0,.2); }
+
+/* ══════════════════════════════════════════════
+   IMPROVEMENT 9: ANNADHANAM static note
+══════════════════════════════════════════════ */
+.ann-static-note {
+  font-family: 'Noto Serif Malayalam', serif;
+  font-size: clamp(.85rem, 2.5vw, .95rem) !important;
+  color: rgba(255,215,0,.75);
+  text-align: center;
+  margin: .3rem 0 .5rem;
+  line-height: 1.6;
+}
+.ann-static-note em { color: rgba(255,215,0,.5); font-style: italic; font-size: .85rem !important; }

@@ -221,25 +221,67 @@
   });
 })();
 
-// P2: Contact form async submit
+// Improvement 10: Contact form — full validation + feedback
 (function() {
   const form = document.getElementById('contact-form');
   if (!form) return;
+
+  function showError(id, show) {
+    const el = document.getElementById(id);
+    if (el) el.classList.toggle('visible', show);
+  }
+
+  function validate() {
+    let ok = true;
+    const name = form.querySelector('[name="name"]');
+    const email = form.querySelector('[name="email"]');
+    const msg = form.querySelector('[name="message"]');
+
+    if (name) {
+      const v = name.value.trim().length >= 2;
+      showError('name-error', !v);
+      if (!v) ok = false;
+    }
+    if (email) {
+      const v = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim());
+      showError('email-error', !v);
+      if (!v) ok = false;
+    }
+    if (msg) {
+      const v = msg.value.trim().length >= 5;
+      showError('message-error', !v);
+      if (!v) ok = false;
+    }
+    return ok;
+  }
+
   form.addEventListener('submit', async function(e) {
     e.preventDefault();
-    const btn = form.querySelector('[type="submit"]');
-    const orig = btn ? btn.innerHTML : '';
-    if(btn){btn.innerHTML='⏳ അയക്കുന്നു...';btn.disabled=true;}
+    if (!validate()) return;
+
+    const btn = document.getElementById('contact-submit');
+    const origHTML = btn ? btn.innerHTML : '';
+    if (btn) { btn.innerHTML = '⏳ അയക്കുന്നു...'; btn.disabled = true; }
+
+    const banner = document.getElementById('form-success-banner');
+
     try {
-      const res = await fetch(form.action||'https://formspree.io/f/kakkamvellytemple',
-        {method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
-      if(res.ok){
+      const res = await fetch(form.action || 'https://formspree.io/f/kakkamvellytemple',
+        { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
+      if (res.ok) {
         form.reset();
-        const m=document.createElement('p');m.className='form-success-msg';
-        m.innerHTML='✅ സന്ദേശം ലഭിച്ചു! ഞങ്ങൾ ഉടൻ ബന്ധപ്പെടും 🙏';
-        form.after(m); setTimeout(()=>m.remove(),7000);
+        // Clear errors
+        form.querySelectorAll('.field-error-msg').forEach(el => el.classList.remove('visible'));
+        if (banner) { banner.classList.add('visible'); setTimeout(() => banner.classList.remove('visible'), 8000); }
       } else throw new Error();
-    } catch { alert('ദയവായി ബന്ധപ്പെടുക: kakkamvellytemple@gmail.com'); }
-    if(btn){btn.innerHTML=orig;btn.disabled=false;}
+    } catch {
+      alert('ദയവായി ബന്ധപ്പെടുക: kakkamvellytemple@gmail.com');
+    }
+    if (btn) { btn.innerHTML = origHTML; btn.disabled = false; }
+  });
+
+  // Live validation on blur
+  form.querySelectorAll('input, textarea').forEach(el => {
+    el.addEventListener('blur', validate);
   });
 })();
