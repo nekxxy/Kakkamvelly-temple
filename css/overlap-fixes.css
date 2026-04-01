@@ -1691,3 +1691,95 @@ textarea:focus-visible {
 @media (min-width: 481px) and (max-width: 768px) {
   .live-cards-row { grid-template-columns: 1fr 1fr 1fr; }
 }
+
+/* ══════════════════════════════════════════════
+   SCROLL PROGRESS BAR (injected by JS)
+══════════════════════════════════════════════ */
+#scroll-progress { border-radius: 0 3px 3px 0; }
+
+/* ══════════════════════════════════════════════
+   LIVE CLOCK in status bar
+══════════════════════════════════════════════ */
+#live-clock {
+  font-variant-numeric: tabular-nums;
+  min-width: 90px;
+}
+@media (max-width: 480px) { #live-clock { display: none; } }
+
+/* ══════════════════════════════════════════════
+   ASTRO CARD — Sunrise/Sunset + Moon
+══════════════════════════════════════════════ */
+.live-card-astro .lic-body { gap: .3rem; }
+
+.sun-row {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .15rem 0;
+}
+.sun-icon { font-size: 1rem; line-height: 1; }
+.sun-label {
+  font-family: 'Noto Serif Malayalam', serif;
+  font-size: .78rem !important;
+  color: rgba(255,255,255,.7);
+  flex: 1;
+}
+.sun-time {
+  font-family: 'Cinzel', serif;
+  font-size: .78rem !important;
+  color: #ffd700;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.moon-phase-wrap {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  margin-top: .3rem;
+  padding-top: .3rem;
+  border-top: 1px solid rgba(255,215,0,.1);
+}
+.moon-icon { font-size: 1.1rem; }
+.moon-name {
+  font-family: 'Noto Serif Malayalam', serif;
+  font-size: .75rem !important;
+  color: rgba(200,200,255,.7);
+}
+
+/* ══════════════════════════════════════════════
+   VISITOR COUNTER STRIP
+══════════════════════════════════════════════ */
+.visitor-strip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: .5rem 1rem;
+  border-top: 1px solid rgba(255,215,0,.08);
+  font-family: 'Noto Serif Malayalam', serif;
+  font-size: .78rem !important;
+  color: rgba(255,255,255,.4);
+}
+.visitor-icon { font-size: .9rem; }
+.visitor-num {
+  color: rgba(255,215,0,.65);
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: .82rem !important;
+}
+
+/* ══════════════════════════════════════════════
+   LIVE CARDS: 4-col on desktop
+══════════════════════════════════════════════ */
+.live-cards-row {
+  grid-template-columns: 1.4fr 1fr 1fr 0.9fr !important;
+}
+@media (max-width: 768px) {
+  .live-cards-row {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+@media (max-width: 420px) {
+  .live-cards-row { grid-template-columns: 1fr !important; }
+}

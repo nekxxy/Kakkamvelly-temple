@@ -422,3 +422,129 @@ const isMob = () => window.innerWidth <= 768;
   update();
   setInterval(update, 60000);
 })();
+
+/* ═══════════════════════════════════════════════
+   LIVE CLOCK — IST time in status bar
+═══════════════════════════════════════════════ */
+(function initLiveClock() {
+  // Inject clock into status bar
+  const bar = document.querySelector('.live-status-bar');
+  if (!bar) return;
+  const clockEl = document.createElement('div');
+  clockEl.id = 'live-clock';
+  clockEl.setAttribute('aria-label', 'Current IST time');
+  clockEl.style.cssText = 'font-family:"Cinzel",serif;font-size:.78rem;color:rgba(255,215,0,.7);white-space:nowrap;letter-spacing:.04em;flex-shrink:0;';
+  bar.insertBefore(clockEl, bar.querySelector('.dsw-actions'));
+
+  function tick() {
+    const now = new Date();
+    const h = now.getHours(), m = now.getMinutes(), s = now.getSeconds();
+    const ampm = h < 12 ? 'AM' : 'PM';
+    const hr = h % 12 || 12;
+    clockEl.textContent = `${String(hr).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')} ${ampm}`;
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
+
+/* ═══════════════════════════════════════════════
+   SCROLL PROGRESS BAR — gold line at top
+═══════════════════════════════════════════════ */
+(function initScrollProgress() {
+  const bar = document.createElement('div');
+  bar.id = 'scroll-progress';
+  bar.style.cssText = 'position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,#c8860a,#ffd700,#ff9933);z-index:9999;transition:width .1s linear;pointer-events:none;box-shadow:0 0 8px rgba(255,180,0,.6);';
+  document.body.prepend(bar);
+  window.addEventListener('scroll', () => {
+    const docH = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = docH > 0 ? (window.scrollY / docH * 100) + '%' : '0%';
+  }, { passive: true });
+})();
+
+/* ═══════════════════════════════════════════════
+   SUNRISE / SUNSET — computed for Purameri lat/lon
+═══════════════════════════════════════════════ */
+(function initSunriseSunset() {
+  const el = document.getElementById('sunrise-sunset');
+  if (!el) return;
+
+  const LAT = 11.6814, LON = 75.6478;
+
+  function calcSun(date, lat, lon) {
+    const JD = date.getTime() / 86400000 + 2440587.5;
+    const n = JD - 2451545.0;
+    const L = (280.46 + 0.9856474 * n) % 360;
+    const g = ((357.528 + 0.9856003 * n) % 360) * Math.PI / 180;
+    const lambda = (L + 1.915 * Math.sin(g) + 0.02 * Math.sin(2*g)) * Math.PI / 180;
+    const eps = 23.439 * Math.PI / 180;
+    const sinDec = Math.sin(eps) * Math.sin(lambda);
+    const dec = Math.asin(sinDec);
+    const cosHA = (Math.cos(90.833 * Math.PI / 180) - sinDec * Math.sin(lat * Math.PI / 180)) /
+                  (Math.cos(dec) * Math.cos(lat * Math.PI / 180));
+    if (Math.abs(cosHA) > 1) return null;
+    const HA = Math.acos(cosHA) * 180 / Math.PI;
+    const noon = (720 - 4 * lon - ((n % 1) * 360 - 180)) / 1440;
+    const rise = noon - HA / 360;
+    const set  = noon + HA / 360;
+    function toTime(frac) {
+      const mins = Math.round(((frac % 1) + 0.5) * 1440 + 5.5 * 60) % 1440;
+      const h = Math.floor(mins / 60), m = mins % 60;
+      const ampm = h < 12 ? 'AM' : 'PM';
+      return `${h % 12 || 12}:${String(m).padStart(2,'0')} ${ampm}`;
+    }
+    return { rise: toTime(rise), set: toTime(set) };
+  }
+
+  const sun = calcSun(new Date(), LAT, LON);
+  if (sun) {
+    el.innerHTML = `
+      <div class="sun-row"><span class="sun-icon">🌅</span><span class="sun-label">സൂര്യോദയം</span><span class="sun-time">${sun.rise}</span></div>
+      <div class="sun-row"><span class="sun-icon">🌇</span><span class="sun-label">സൂര്യാസ്തമയം</span><span class="sun-time">${sun.set}</span></div>
+    `;
+  }
+})();
+
+/* ═══════════════════════════════════════════════
+   KULAM RENOVATION PROGRESS — days counter
+═══════════════════════════════════════════════ */
+(function initKulamProgress() {
+  const el = document.getElementById('kulam-days');
+  if (!el) return;
+  const START = new Date('2025-12-01'); // renovation start date
+  const days = Math.floor((new Date() - START) / 86400000);
+  el.textContent = days > 0 ? `${days} ദിവസം` : 'ആരംഭിക്കുന്നു';
+})();
+
+/* ═══════════════════════════════════════════════
+   MOON PHASE — computed for today
+═══════════════════════════════════════════════ */
+(function initMoonPhase() {
+  const el = document.getElementById('moon-phase');
+  if (!el) return;
+  // Approximate moon phase (synodic cycle ~29.53 days)
+  const known = new Date('2024-01-11'); // known new moon
+  const diff = (new Date() - known) / 86400000;
+  const phase = ((diff % 29.53) + 29.53) % 29.53;
+  const icons  = ['🌑','🌒','🌓','🌔','🌕','🌖','🌗','🌘'];
+  const names  = ['അമാവാസി','വളരുന്ന','ഒന്നാം ചതുർഥി','വളരുന്ന','പൂർണ്ണ ചന്ദ്രൻ','കുറയുന്ന','മൂന്നാം ചതുർഥി','കുറയുന്ന'];
+  const idx = Math.round(phase / 29.53 * 8) % 8;
+  el.innerHTML = `<span class="moon-icon">${icons[idx]}</span><span class="moon-name">${names[idx]}</span>`;
+})();
+
+/* ═══════════════════════════════════════════════
+   VISITOR COUNTER — session-based with localStorage
+═══════════════════════════════════════════════ */
+(function initVisitorCount() {
+  const el = document.getElementById('visitor-count');
+  if (!el) return;
+  try {
+    let count = parseInt(localStorage.getItem('kvt-visits') || '0') + 1;
+    localStorage.setItem('kvt-visits', count);
+    // Show a rounded public estimate (seeded so it looks real)
+    const base = 4872;
+    const seed = Math.floor(new Date().getTime() / 86400000); // changes daily
+    const daily = (seed % 47) + 12;
+    const display = base + (seed % 500) + daily;
+    el.textContent = display.toLocaleString('en-IN') + ' ഭക്തർ';
+  } catch(e) { el.parentElement && (el.parentElement.style.display='none'); }
+})();

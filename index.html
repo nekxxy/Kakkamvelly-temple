@@ -274,6 +274,25 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
               </div>
             </div>
 
+            <!-- Card D: Sun + Moon (astro card) -->
+            <div class="live-info-card live-card-astro">
+              <div class="lic-header">
+                <span class="lic-icon">🌙</span>
+                <span class="lic-title">സൂര്യൻ · ചന്ദ്രൻ</span>
+              </div>
+              <div class="lic-body">
+                <div id="sunrise-sunset"><div class="lic-loading">⏳</div></div>
+                <div id="moon-phase" class="moon-phase-wrap"></div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Visitor counter strip -->
+          <div class="visitor-strip">
+            <span class="visitor-icon">🙏</span>
+            <span>ഈ വർഷം ഞങ്ങളെ സന്ദർശിച്ചവർ:</span>
+            <span id="visitor-count" class="visitor-num">...</span>
           </div>
         </div>
 
@@ -291,7 +310,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
  <span class="deco-lotus deco-lotus--3">🪔</span>
  <span class="deco-diya deco-diya--4">🪔</span>
  </div>
- <section id="timings" class="section section-saffron section-timings-priority" aria-labelledby="timings-heading">
+ <section id="timings" class="section section-saffron section-timings-priority" data-section="timings" aria-labelledby="timings-heading">
  <div class="container">
  <div class="section-header">
  <span class="section-tag">ദർശനം</span>
@@ -400,6 +419,11 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
           <div class="kulam-estimate-item">
             <span class="ke-label">Status</span>
             <span class="ke-value ke-progress">🔨 പ്രവൃത്തി തുടങ്ങിക്കഴിഞ്ഞു</span>
+          </div>
+          <div class="kulam-estimate-sep">·</div>
+          <div class="kulam-estimate-item">
+            <span class="ke-label">നവീകരണം ആരംഭിച്ചിട്ട്</span>
+            <span class="ke-value" id="kulam-days">...</span>
           </div>
           <div class="kulam-estimate-sep">·</div>
           <div class="kulam-estimate-item">
