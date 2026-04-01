@@ -1495,3 +1495,199 @@ textarea:focus-visible {
   line-height: 1.6;
 }
 .ann-static-note em { color: rgba(255,215,0,.5); font-style: italic; font-size: .85rem !important; }
+
+/* ══════════════════════════════════════════════
+   LIVE INFO PANEL — priority cards
+══════════════════════════════════════════════ */
+.live-panel {
+  background: linear-gradient(160deg,#08041c 0%,#14062a 50%,#040e0a 100%);
+  border-bottom: 1px solid rgba(255,215,0,.1);
+}
+
+/* Status bar stays as before */
+.live-status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  padding: .65rem 1rem;
+  background: rgba(10,6,0,.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,215,0,.12);
+  flex-wrap: wrap;
+}
+
+/* Row of 3 cards */
+.live-cards-row {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: .75rem;
+  padding: .9rem 0 1rem;
+}
+
+/* Individual live card */
+.live-info-card {
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,215,0,.12);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: border-color .3s;
+}
+.live-info-card:hover { border-color: rgba(255,215,0,.3); }
+
+.lic-header {
+  display: flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .55rem .85rem;
+  background: rgba(255,215,0,.06);
+  border-bottom: 1px solid rgba(255,215,0,.1);
+}
+.lic-icon { font-size: 1rem; line-height: 1; }
+.lic-title {
+  font-family: 'Noto Serif Malayalam', serif;
+  font-size: .75rem !important;
+  font-weight: 700;
+  color: rgba(255,215,0,.8);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.lic-body {
+  padding: .65rem .85rem;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.lic-loading {
+  font-size: .8rem !important;
+  color: rgba(255,255,255,.35);
+  font-style: italic;
+  font-family: 'Lato', sans-serif;
+}
+
+/* Festival countdown card — larger numbers */
+.live-card-festival .lic-body { min-height: 90px; }
+.fc-label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: .4rem;
+}
+.fc-name {
+  font-family: 'Noto Serif Malayalam', serif;
+  font-size: .95rem !important;
+  font-weight: 700;
+  color: #ffd700;
+  line-height: 1.3;
+}
+.fc-eng {
+  font-family: 'Cinzel', serif;
+  font-size: .68rem !important;
+  color: rgba(255,215,0,.55);
+  letter-spacing: .06em;
+}
+.fc-units {
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+}
+.fc-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255,215,0,.08);
+  border: 1px solid rgba(255,215,0,.15);
+  border-radius: 8px;
+  padding: .25rem .4rem;
+  min-width: 38px;
+}
+.fc-num {
+  font-family: 'Cinzel', serif;
+  font-size: 1.15rem !important;
+  font-weight: 700;
+  color: #ffd700;
+  line-height: 1.1;
+}
+.fc-unit-label {
+  font-family: 'Noto Serif Malayalam', serif;
+  font-size: .55rem !important;
+  color: rgba(255,255,255,.4);
+  letter-spacing: .03em;
+}
+.fc-sep {
+  font-size: 1rem;
+  color: rgba(255,215,0,.35);
+  padding-bottom: .3rem;
+  font-weight: 700;
+}
+
+/* Today's schedule */
+.ts-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .4rem;
+  padding: .2rem 0;
+  border-bottom: 1px solid rgba(255,215,0,.06);
+}
+.ts-row:last-child { border-bottom: none; }
+.ts-name {
+  font-family: 'Noto Serif Malayalam', serif;
+  font-size: .78rem !important;
+  color: rgba(255,255,255,.8);
+  flex: 1;
+}
+.ts-time {
+  font-family: 'Cinzel', serif;
+  font-size: .72rem !important;
+  color: #ffd700;
+  white-space: nowrap;
+  font-weight: 700;
+}
+.ts-row.ts-active .ts-name { color: #4ade80; font-weight: 700; }
+.ts-row.ts-active .ts-time { color: #4ade80; }
+.ts-row.ts-done .ts-name,
+.ts-row.ts-done .ts-time { opacity: .4; }
+
+/* Weather card */
+.weather-main {
+  font-size: 1.6rem;
+  line-height: 1;
+  margin-bottom: .3rem;
+}
+.weather-temp {
+  font-family: 'Cinzel', serif;
+  font-size: 1.3rem !important;
+  font-weight: 700;
+  color: #ffd700;
+}
+.weather-desc {
+  font-size: .78rem !important;
+  color: rgba(255,255,255,.65);
+  font-family: 'Lato', sans-serif;
+  margin: .15rem 0;
+}
+.weather-meta {
+  font-size: .68rem !important;
+  color: rgba(255,255,255,.4);
+  font-family: 'Lato', sans-serif;
+}
+
+/* Mobile — stack to 1-col */
+@media (max-width: 768px) {
+  .live-cards-row {
+    grid-template-columns: 1fr;
+    gap: .55rem;
+    padding: .7rem 0 .8rem;
+  }
+  .live-info-card { border-radius: 12px; }
+  .lic-body { min-height: 70px; }
+  .fc-num { font-size: 1rem !important; }
+  .fc-unit { min-width: 32px; padding: .2rem .3rem; }
+}
+/* Tablet — 3 col still but smaller */
+@media (min-width: 481px) and (max-width: 768px) {
+  .live-cards-row { grid-template-columns: 1fr 1fr 1fr; }
+}

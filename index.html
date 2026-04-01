@@ -211,25 +211,74 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
  <div class="anim-petal anim-petal--5" aria-hidden="true"></div>
  </div>
  </section>
- <section id="live-section" aria-label="ക്ഷേത്ര സ്റ്റാറ്റസ്">
- <div class="live-status-bar container">
- <div id="darshan-status-widget" class="dsw-main">
- <span class="dsw-dot"></span>
- <span class="dsw-text">ദർശന സ്ഥിതി കണക്കാക്കുന്നു...</span>
- </div>
- <div class="dsw-actions">
- <a href="tel:+919446844145" class="dsw-btn dsw-call">
- <i class="fa-solid fa-phone" aria-hidden="true"></i> വിളിക്കുക
- </a>
- <a href="https://maps.app.goo.gl/LaTA1pWM8NhjW4gK6" target="_blank" rel="noopener noreferrer" class="dsw-btn dsw-dir">
- <i class="fa-solid fa-diamond-turn-right" aria-hidden="true"></i> വഴി
- </a>
- <a href="https://wa.me/919446844145" target="_blank" rel="noopener noreferrer" class="dsw-btn dsw-wa">
- <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp
- </a>
- </div>
- </div>
- </section>
+    <!-- ═══════════════════════════════════════════════
+         LIVE INFO PANEL — Top Priority
+         Darshan status · Festival countdown · Weather
+    ═══════════════════════════════════════════════ -->
+    <section id="live-section" aria-labelledby="live-heading">
+      <div class="live-panel">
+
+        <!-- Row 1: Darshan status bar (sticky, always visible) -->
+        <div class="live-status-bar" role="status" aria-live="polite">
+          <div id="darshan-status-widget" class="dsw-main">
+            <span class="dsw-dot" aria-hidden="true"></span>
+            <span class="dsw-text">ദർശന സ്ഥിതി കണക്കാക്കുന്നു...</span>
+          </div>
+          <div class="dsw-actions">
+            <a href="tel:+919446844145" class="dsw-btn dsw-call" aria-label="Call temple">
+              <i class="fa-solid fa-phone" aria-hidden="true"></i> വിളിക്കുക
+            </a>
+            <a href="https://maps.app.goo.gl/LaTA1pWM8NhjW4gK6" target="_blank" rel="noopener noreferrer" class="dsw-btn dsw-dir" aria-label="Get directions">
+              <i class="fa-solid fa-diamond-turn-right" aria-hidden="true"></i> വഴി
+            </a>
+            <a href="https://wa.me/919446844145" target="_blank" rel="noopener noreferrer" class="dsw-btn dsw-wa" aria-label="WhatsApp">
+              <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- Row 2: Live info cards -->
+        <div class="container">
+          <div class="live-cards-row">
+
+            <!-- Card A: Festival Countdown (highest priority) -->
+            <div class="live-info-card live-card-festival">
+              <div class="lic-header">
+                <span class="lic-icon">🎉</span>
+                <span class="lic-title">അടുത്ത ഉത്സവം</span>
+              </div>
+              <div id="festival-countdown" class="lic-body">
+                <div class="lic-loading">⏳ കണക്കാക്കുന്നു...</div>
+              </div>
+            </div>
+
+            <!-- Card B: Today's pooja schedule -->
+            <div class="live-info-card live-card-schedule">
+              <div class="lic-header">
+                <span class="lic-icon">⏰</span>
+                <span class="lic-title">ഇന്നത്തെ പൂജ</span>
+              </div>
+              <div id="today-schedule" class="lic-body">
+                <div class="lic-loading">⏳ കണക്കാക്കുന്നു...</div>
+              </div>
+            </div>
+
+            <!-- Card C: Weather -->
+            <div class="live-info-card live-card-weather">
+              <div class="lic-header">
+                <span class="lic-icon">🌤</span>
+                <span class="lic-title">Purameri കാലാവസ്ഥ</span>
+              </div>
+              <div id="weather-widget" class="lic-body">
+                <div class="lic-loading">⏳ ലോഡ് ചെയ്യുന്നു...</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
  <div class="hindu-deco-strip" aria-hidden="true">
  <span class="deco-diya deco-diya--1">🪔</span>
  <span class="deco-om deco-om--1">ॐ</span>

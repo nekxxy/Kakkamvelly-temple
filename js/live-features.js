@@ -146,7 +146,7 @@ const isMob = () => window.innerWidth <= 768;
     { name: 'അഷ്ടമി രോഹിണി', eng: 'Janmashtami', date: new Date('2025-08-16T00:00:00') },
     { name: 'ഓണം',            eng: 'Onam',         date: new Date('2025-09-05T00:00:00') },
     { name: 'ഗുരുവായൂർ ഏകാദശി',eng:'Guruvayur Ekadasi', date: new Date('2025-12-01T00:00:00') },
-    { name: 'വിഷു',           eng: 'Vishu',         date: new Date('2026-04-14T00:00:00') },
+    { name: 'വിഷു 2026',      eng: 'Vishu',         date: new Date('2026-04-14T05:00:00') },
     { name: 'അഷ്ടമി രോഹിണി', eng: 'Janmashtami',   date: new Date('2026-08-05T00:00:00') },
   ];
 
@@ -164,7 +164,7 @@ const isMob = () => window.innerWidth <= 768;
     el.innerHTML = `
       <div class="fc-label">
         <span class="fc-name">${next.name}</span>
-        <span class="fc-eng">${next.eng}</span>
+        <span class="fc-eng">${next.eng} · ${next.date.toLocaleDateString('en-IN',{day:'numeric',month:'short'})}</span>
       </div>
       <div class="fc-units">
         <div class="fc-unit"><span class="fc-num">${pad(d)}</span><span class="fc-unit-label">ദിവസം</span></div>
