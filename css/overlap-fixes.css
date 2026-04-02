@@ -1901,3 +1901,10 @@ textarea:focus-visible {
   .contact-person { flex-direction: column; gap: .1rem; }
   .cp-role { min-width: unset; font-size: .78rem; }
 }
+
+/* Kulam monsoon badge */
+.kpl-monsoon {
+  background: rgba(0,150,255,.2) !important;
+  color: #60c8ff !important;
+  border-color: rgba(0,150,255,.4) !important;
+}

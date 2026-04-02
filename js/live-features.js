@@ -510,9 +510,8 @@ const isMob = () => window.innerWidth <= 768;
 (function initKulamProgress() {
   const el = document.getElementById('kulam-days');
   if (!el) return;
-  const START = new Date('2025-12-01'); // renovation start date
-  const days = Math.floor((new Date() - START) / 86400000);
-  el.textContent = days > 0 ? `${days} ദിവസം` : 'ആരംഭിക്കുന്നു';
+  // Renovation not yet started — showing planning phase
+  el.textContent = 'ആസൂത്രണ ഘട്ടം';
 })();
 
 /* ═══════════════════════════════════════════════
