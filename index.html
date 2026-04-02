@@ -149,8 +149,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
  <li><a href="#festivals" class="nav-link">ഉത്സവങ്ങൾ</a></li>
  <li><a href="#gallery" class="nav-link">ഗ്യാലറി</a></li>
  <li><a href="#location" class="nav-link">സ്ഥലം</a></li>
- <li><a href="#donate" class="nav-link">ദാനം</a></li>
- <li><a href="#contact" class="nav-link">ബന്ധപ്പെടുക</a></li>
+ <li><a href="#kulam" class="nav-link">ദാനം</a></li>
  </ul>
  </nav>
  </header>
@@ -465,7 +464,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
               <picture>
                 <source srcset="images/kulam-empty-excavated.webp" type="image/webp"/>
                 <img src="images/kulam-empty-excavated.jpg"
-                     alt="കുളം — കുഴിക്കൽ"
+                     alt="Temple pond fully excavated showing laterite stone walls and dry bed"
                      width="400" height="400" loading="lazy" decoding="async"
                      data-full="images/kulam-empty-excavated.jpg"/>
               </picture>
@@ -481,29 +480,13 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
               <picture>
                 <source srcset="images/kulam-workers-cleaning.webp" type="image/webp"/>
                 <img src="images/kulam-workers-cleaning.jpg"
-                     alt="കൂട്ടായ്മ — ഭക്തർ"
+                     alt="Community volunteers working in the temple pond during renovation"
                      width="400" height="400" loading="lazy" decoding="async"
                      data-full="images/kulam-workers-cleaning.jpg"/>
               </picture>
               <div class="kulam-photo-label">
                 <span class="kpl-badge kpl-work">കൂട്ടായ്മ</span>
                 <p>ഭക്തർ ഒന്നിച്ച്</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="kulam-photo-item">
-            <div class="kulam-photo-wrap" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം കാണുക">
-              <picture>
-                <source srcset="images/kulam-workers-closeup.webp" type="image/webp"/>
-                <img src="images/kulam-workers-closeup.jpg"
-                     alt="സ്വയംസേവകർ"
-                     width="400" height="400" loading="lazy" decoding="async"
-                     data-full="images/kulam-workers-closeup.jpg"/>
-              </picture>
-              <div class="kulam-photo-label">
-                <span class="kpl-badge kpl-work">സ്വയംസേവകർ</span>
-                <p>ഐക്യദാർഢ്യം</p>
               </div>
             </div>
           </div>
@@ -543,7 +526,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
               <span>WhatsApp</span>
               <small>Quick enquiry</small>
             </a>
-            <a href="#donate" class="kulam-btn kulam-donate">
+            <a href="#kulam" class="kulam-btn kulam-donate">
               <i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i>
               <span>ദാനം</span>
               <small>UPI / Bank</small>
@@ -644,63 +627,105 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
  <h2 id="gallery-heading" class="section-title section-title-light">ക്ഷേത്ര ചിത്രങ്ങൾ</h2>
  </div>
  <div class="gallery-grid gallery-maps-grid" role="list" aria-label="ക്ഷേത്ര ഫോട്ടോ ഗ്യാലറി">
- <div class="gallery-item gallery-photo-card" role="listitem">
- <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
- <picture>
-              <source media="(max-width:480px)" srcset="images/mobile/temple-front-view.webp" type="image/webp" />
-              <source srcset="images/temple-front-view.webp" type="image/webp" />
-              <img src="images/temple-front-view.jpg"
-                   alt="Front view of Kakkamvelly Sreekrishna Temple with Kerala-style tiled roof and hanging deepam lamps"
-                   class="about-real-photo"
-                   width="600" height="402"
-                   loading="eager"
-                   fetchpriority="high" />
-            </picture>
- </div>
+
+          <div class="gallery-item gallery-photo-card" role="listitem">
+            <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
+              <picture>
+                <source srcset="images/thumbs/temple-entrance-deepam.webp" type="image/webp" />
+                <img src="images/thumbs/temple-entrance-deepam.webp"
+                     data-full="images/temple-entrance-deepam.jpg"
+                     alt="Temple entrance with traditional oil lamp (deepam) lit at the doorway"
+                     width="300" height="200"
+                     loading="lazy" decoding="async"
+                     class="gallery-real-photo" />
+              </picture>
+            </div>
           </div>
- <div class="gallery-item gallery-photo-card" role="listitem">
- <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
- <picture><source srcset="images/thumbs/deepam-lamp-interior.webp" type="image/webp" /><img src="images/thumbs/deepam-lamp-interior.webp" data-full="images/deepam-lamp-interior.jpg" alt="Five-flame deepam lamp inside the temple sanctum" width="300" height="200" loading="lazy" decoding="async" class="gallery-real-photo" /></picture>
- </div>
+
+          <div class="gallery-item gallery-photo-card" role="listitem">
+            <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
+              <picture>
+                <source srcset="images/thumbs/deepam-lamp-interior.webp" type="image/webp" />
+                <img src="images/thumbs/deepam-lamp-interior.webp"
+                     data-full="images/deepam-lamp-interior.jpg"
+                     alt="Five-flame deepam lamp inside the temple sanctum"
+                     width="300" height="200"
+                     loading="lazy" decoding="async"
+                     class="gallery-real-photo" />
+              </picture>
+            </div>
           </div>
- <div class="gallery-item gallery-photo-card" role="listitem">
- <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
- <picture><source srcset="images/thumbs/deepam-closeup.webp" type="image/webp" /><img src="images/thumbs/deepam-closeup.webp" data-full="images/deepam-closeup.jpg" alt="Close-up of a lit deepam lamp with glowing flame" width="300" height="200" loading="lazy" decoding="async" class="gallery-real-photo" /></picture>
- </div>
+
+          <div class="gallery-item gallery-photo-card" role="listitem">
+            <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
+              <picture>
+                <source srcset="images/thumbs/deepam-closeup.webp" type="image/webp" />
+                <img src="images/thumbs/deepam-closeup.webp"
+                     data-full="images/deepam-closeup.jpg"
+                     alt="Close-up of a lit deepam lamp with glowing flame"
+                     width="300" height="200"
+                     loading="lazy" decoding="async"
+                     class="gallery-real-photo" />
+              </picture>
+            </div>
           </div>
- <div class="gallery-item gallery-photo-card" role="listitem">
- <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
- <picture><source srcset="images/thumbs/hanging-lamps-corridor.webp" type="image/webp" /><img src="images/thumbs/hanging-lamps-corridor.webp" data-full="images/hanging-lamps-corridor.jpg" alt="Row of hanging brass deepam lamps along the temple corridor" width="300" height="200" loading="lazy" decoding="async" class="gallery-real-photo" /></picture>
- </div>
+
+          <div class="gallery-item gallery-photo-card" role="listitem">
+            <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
+              <picture>
+                <source srcset="images/thumbs/hanging-lamps-corridor.webp" type="image/webp" />
+                <img src="images/thumbs/hanging-lamps-corridor.webp"
+                     data-full="images/hanging-lamps-corridor.jpg"
+                     alt="Row of hanging brass deepam lamps along the temple corridor"
+                     width="300" height="200"
+                     loading="lazy" decoding="async"
+                     class="gallery-real-photo" />
+              </picture>
+            </div>
           </div>
- <div class="gallery-item gallery-photo-card" role="listitem">
- <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
- <picture><source srcset="images/thumbs/temple-gate-entrance.webp" type="image/webp" /><img src="images/thumbs/temple-gate-entrance.webp" data-full="images/temple-gate-entrance.jpg" alt="Temple entrance gate with stone steps and coconut trees" width="300" height="200" loading="lazy" decoding="async" class="gallery-real-photo" /></picture>
- </div>
+
+          <div class="gallery-item gallery-photo-card" role="listitem">
+            <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
+              <picture>
+                <source srcset="images/thumbs/temple-gate-entrance.webp" type="image/webp" />
+                <img src="images/thumbs/temple-gate-entrance.webp"
+                     data-full="images/temple-gate-entrance.jpg"
+                     alt="Temple entrance gate with stone steps and coconut trees"
+                     width="300" height="200"
+                     loading="lazy" decoding="async"
+                     class="gallery-real-photo" />
+              </picture>
+            </div>
           </div>
- <div class="gallery-item gallery-photo-card" role="listitem">
- <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
- <picture><source srcset="images/thumbs/temple-front-view.webp" type="image/webp" /><img src="images/thumbs/temple-front-view.webp" data-full="images/temple-front-view.jpg" alt="Front view of Kakkamvelly Sreekrishna Temple with Kerala-style tiled roof" width="300" height="200" loading="lazy" decoding="async" class="gallery-real-photo" /></picture>
- </div>
+
+          <div class="gallery-item gallery-photo-card" role="listitem">
+            <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
+              <picture>
+                <source srcset="images/thumbs/temple-front-view.webp" type="image/webp" />
+                <img src="images/thumbs/temple-front-view.webp"
+                     data-full="images/temple-front-view.jpg"
+                     alt="Front view of Kakkamvelly Sreekrishna Temple with Kerala-style tiled roof"
+                     width="300" height="200"
+                     loading="lazy" decoding="async"
+                     class="gallery-real-photo" />
+              </picture>
+            </div>
           </div>
- <div class="gallery-item gallery-photo-card" role="listitem">
- <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
- <picture><source srcset="images/thumbs/temple-side-grounds.webp" type="image/webp" /><img src="images/thumbs/temple-side-grounds.webp" data-full="images/temple-side-grounds.jpg" alt="Temple grounds and side view with green lawn and coconut palm trees" width="300" height="200" loading="lazy" decoding="async" class="gallery-real-photo" /></picture>
- </div>
+
+          <div class="gallery-item gallery-photo-card" role="listitem">
+            <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
+              <picture>
+                <source srcset="images/thumbs/temple-side-grounds.webp" type="image/webp" />
+                <img src="images/thumbs/temple-side-grounds.webp"
+                     data-full="images/temple-side-grounds.jpg"
+                     alt="Temple grounds and side view with green lawn and coconut palm trees"
+                     width="300" height="200"
+                     loading="lazy" decoding="async"
+                     class="gallery-real-photo" />
+              </picture>
+            </div>
           </div>
- <div class="gallery-item gallery-art-card" role="listitem">
- <div class="gallery-art-scene gallery-art-rangoli" aria-label="CSS Rangoli art">
- <div class="art-rangoli-container" aria-hidden="true">
- <div class="art-rangoli-ring art-rangoli-ring--1"></div>
- <div class="art-rangoli-ring art-rangoli-ring--2"></div>
- <div class="art-rangoli-ring art-rangoli-ring--3"></div>
- <div class="art-rangoli-center" aria-hidden="true">ॐ</div>
- </div>
- </div>
- <div class="gallery-card-overlay gallery-card-overlay--visible">
- <p class="gallery-caption-ml">രംഗോലി കല</p>
- </div>
- </div>
+        </div>
  <div class="gallery-item gallery-art-card" role="listitem">
  <div class="gallery-art-scene gallery-art-mandala-scene" aria-label="CSS Mandala art">
  <div class="art-mandala-container" aria-hidden="true">
@@ -852,178 +877,9 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
  </div>
  </div>
  </section>
- <section id="contact" class="section section-saffron section-temple-bg" aria-labelledby="contact-heading">
- <div class="container">
- <div class="section-header">
- <span class="section-tag">ബന്ധപ്പെടുക</span>
- <h2 id="contact-heading" class="section-title">ഞങ്ങളെ ബന്ധപ്പെടുക</h2>
- </div>
- <div class="contact-grid">
- <div class="contact-info">
- <h3>ക്ഷേത്രവുമായി ബന്ധപ്പെടുക</h3>
- <ul class="contact-list" role="list">
- <li>
- <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
- <span>കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം, പുറമേരി, കോഴിക്കോട്, കേരളം</span>
- </li>
- <li>
- <i class="fa-solid fa-envelope" aria-hidden="true"></i>
- <a href="mailto:kakkamvellytemple@gmail.com">kakkamvellytemple@gmail.com</a>
- </li>
- <li>
-          <i class="fa-solid fa-phone" aria-hidden="true"></i>
-          <div class="contact-persons">
-            <div class="contact-person">
-              <span class="cp-role">തിരുമേനി</span>
-              <a href="tel:+919941292222" class="cp-number">+91 99412 92222</a>
-            </div>
-            <div class="contact-person">
-              <span class="cp-role">Secretary — Nanu. T</span>
-              <a href="tel:+919446844145" class="cp-number">+91 94468 44145</a>
-            </div>
-            <div class="contact-person">
-              <span class="cp-role">Joint Secretary — Chandran Pilachery</span>
-              <a href="tel:+918086549927" class="cp-number">+91 80865 49927</a>
-            </div>
-            <div class="contact-person">
-              <span class="cp-role">ഖജാൻജി (Treasurer) — Nijeesh KTK</span>
-              <a href="tel:+918594039468" class="cp-number">+91 85940 39468</a>
-            </div>
-          </div>
-        </li>
- <li><i class="fa-solid fa-clock" aria-hidden="true"></i>
- <span>ക്ഷേത്ര ഓഫീസ്: 8:00 AM – 9:00 AM &amp; 5:45 PM – 6:45 PM</span>
- </li>
- </ul>
- <div class="social-links" role="list" aria-label="സോഷ്യൽ മീഡിയ ലിങ്കുകൾ">
- <a href="#" class="social-btn" role="listitem" aria-label="ഫേസ്ബുക്ക് പേജ്" rel="noopener noreferrer">
- <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
- </a>
- <a href="#" class="social-btn" role="listitem" aria-label="YouTube ചാനൽ" rel="noopener noreferrer">
- <i class="fa-brands fa-youtube" aria-hidden="true"></i>
- </a>
- <a href="#" class="social-btn" role="listitem" aria-label="WhatsApp ഗ്രൂപ്പ്" rel="noopener noreferrer">
- <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
- </a>
- </div>
- </div>
- <form id="contact-form" class="contact-form" action="https://formspree.io/f/kakkamvellytemple" method="POST" novalidate aria-label="ബന്ധപ്പെടൽ ഫോം">
- <div class="form-group">
- <label for="name">പൂർണ്ണ നാമം <span aria-hidden="true">*</span></label>
- <input type="text" id="name" name="name" placeholder="നിങ്ങളുടെ പൂർണ്ണ നാമം" required autocomplete="name" />
- <span class="field-error" aria-live="polite" id="name-error"></span>
- </div>
- <div class="form-group">
- <label for="email">ഇ-മെയിൽ വിലാസം <span aria-hidden="true">*</span></label>
- <input type="email" id="email" name="email" placeholder="your@email.com" required autocomplete="email" inputmode="email" />
- <span class="field-error" aria-live="polite" id="email-error"></span>
- </div>
- <div class="form-group">
- <label for="phone">ഫോൺ നമ്പർ</label>
- <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" autocomplete="tel" inputmode="numeric" />
- </div>
- <div class="form-group">
- <label for="subject">വിഷയം <span aria-hidden="true">*</span></label>
- <select id="subject" name="subject" required>
- <option value="" disabled selected>ഒരു വിഷയം തിരഞ്ഞെടുക്കുക</option>
- <option value="pooja">പൂജ / സേവ ബുക്കിംഗ്</option>
- <option value="donation">ദാനം അന്വേഷണം</option>
- <option value="event">ഉത്സവം / പരിപാടി നടത്തിപ്പ്</option>
- <option value="volunteer">സ്വമേധയാ പ്രവർത്തകൻ</option>
- <option value="other">മറ്റുള്ളവ</option>
- </select>
- <span class="field-error" aria-live="polite" id="subject-error"></span>
- </div>
- <div class="form-group">
- <label for="message">സന്ദേശം <span aria-hidden="true">*</span></label>
- <textarea id="message" name="message" rows="4" placeholder="നിങ്ങളുടെ സന്ദേശം…" required></textarea>
- <span class="field-error" aria-live="polite" id="message-error"></span>
- </div>
- <div id="form-success-banner" class="form-success-banner" role="alert">✅ നന്ദി! ഞങ്ങൾ ഉടൻ ബന്ধപ്പെടും — Thank you! We will contact you soon.</div>
-          <button type="submit" class="btn btn-primary btn-full form-submit-btn" id="contact-submit">
- <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> സന്ദേശം അയക്കുക
- </button>
- <div id="form-success" class="form-success" role="alert" aria-live="assertive" hidden>
- <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
- നന്ദി! നിങ്ങളുടെ സന്ദേശം ലഭിച്ചു. ഞങ്ങൾ ഉടൻ ബന്ധപ്പെടും.
- </div>
- <input type="text" name="_gotcha" style="display:none" tabindex="-1" />
- </form>
- </div>
- </div>
- </section>
+
  </main>
- <section id="donate" class="section-temple-bg" aria-labelledby="donate-heading">
- <div class="container">
- <div class="section-header">
- <span class="section-tag" style="color:#ffd700;background:rgba(255,215,0,.1);border-color:rgba(255,215,0,.25);">ദാനം</span>
- <h2 id="donate-heading" class="section-title" style="color:#ffd700;">ക്ഷേത്ര വഴിപാട് &amp; ദാനം</h2>
- <p style="color:rgba(255,255,255,.65);font-size:.9rem;margin-top:.8rem;font-family:'Noto Serif Malayalam',serif;">
- ക്ഷേത്ര നിർമ്മാണത്തിനും നിത്യ പൂജകൾക്കും ഭക്തരുടെ സഹകരണം ക്ഷണിക്കുന്നു
- </p>
- </div>
- <div class="donate-grid">
- <div class="donate-card">
- <span class="donate-icon">🪔</span>
- <span class="donate-name">നിത്യ ദീപം</span>
- <span class="donate-desc">Daily lamp offering</span>
- </div>
- <div class="donate-card">
- <span class="donate-icon">🪔</span>
- <span class="donate-name">പൂജ വഴിപാട്</span>
- <span class="donate-desc">Sponsor a pooja</span>
- </div>
- <div class="donate-card">
- <span class="donate-icon">🍛</span>
- <span class="donate-name">അന്നദാനം</span>
- <span class="donate-desc">Feed devotees prasadam</span>
- </div>
- <div class="donate-card">
- <span class="donate-icon">🏗️</span>
- <span class="donate-name">ക്ഷേത്ര ജീർണ്ണോദ്ധാരണം</span>
- <span class="donate-desc">Temple renovation fund</span>
- </div>
- <div class="donate-card">
- <span class="donate-icon">🎉</span>
- <span class="donate-name">ഉത്സവ ആഘോഷം</span>
- <span class="donate-desc">Festival sponsorship</span>
- </div>
- <div class="donate-card">
- <span class="donate-icon">📚</span>
- <span class="donate-name">വേദ പഠനം</span>
- <span class="donate-desc">Support Vedic education</span>
- </div>
- </div>
- <div class="donate-upi">
-          <p>UPI വഴി ദാനം ചെയ്യുക / Donate via UPI</p>
-          <!-- QR Code: place upi-qr.png in images/ folder to display here -->
-          <div class="upi-qr-wrap">
-            <div class="upi-qr-placeholder" aria-label="UPI QR Code for kakkamvellytemple@upi">
-              <span class="upi-qr-icon">📱</span>
-              <p class="upi-qr-hint">UPI QR Code</p>
-              <p class="upi-qr-hint-sub">kakkamvellytemple@upi</p>
-            </div>
-          </div>
-          <div class="upi-id-copy">
-            <code id="upi-id-text">kakkamvellytemple@upi</code>
-            <button class="upi-copy-btn" onclick="copyUPI()" aria-label="Copy UPI ID to clipboard">
-              <i class="fa-regular fa-copy" aria-hidden="true"></i> Copy
-            </button>
-          </div>
-          <a href="upi://pay?pa=kakkamvellytemple@upi&amp;pn=Kakkamvelly%20Temple&amp;cu=INR"
-             class="btn upi-deep-link" style="background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.3);color:#ffd700;font-size:.85rem;margin-top:.5rem;">
-            <i class="fa-solid fa-mobile-screen" aria-hidden="true"></i>
-            UPI ആപ്പ് ഉപയോഗിക്കുക (Optional)
-          </a>
-        </div>
- <div style="margin-top:1.2rem;background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.2);border-radius:12px;padding:1rem;max-width:400px;margin-left:auto;margin-right:auto;">
- <p style="color:#ffd700;font-family:'Noto Serif Malayalam',serif;font-size:.9rem;font-weight:700;margin-bottom:.4rem;">📞 ദാനം / അന്വേഷണം</p>
- <p style="color:rgba(255,255,255,.7);font-size:.82rem;font-family:'Lato',sans-serif;">തിരുമേനി: <a href="tel:+919941292222" style="color:#ffd700;">+91 99412 92222</a><br>Secretary Nanu.T: <a href="tel:+919446844145" style="color:#ffd700;">+91 94468 44145</a><br>Joint Sec Chandran: <a href="tel:+918086549927" style="color:#ffd700;">+91 80865 49927</a></p>
- <p style="color:rgba(255,255,255,.7);font-size:.82rem;font-family:'Lato',sans-serif;">Email: <a href="mailto:kakkamvellytemple@gmail.com" style="color:#ffd700;">kakkamvellytemple@gmail.com</a>
- </div>
- </div>
- </div>
- </section>
+
  <footer class="site-footer footer-temple-bg" role="contentinfo">
  <div class="footer-main">
  <div class="container">
@@ -1070,9 +926,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
  <span aria-hidden="true">·</span>
  <a href="#location">സ്ഥലം</a>
  <span aria-hidden="true">·</span>
- <a href="#contact">ബന്ധം</a>
- <span aria-hidden="true">·</span>
- <a href="#donate">ദാനം</a>
+ <a href="#kulam">ദാനം</a>
  </nav>
  </div>
  </div>
@@ -1246,69 +1100,3 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
   </script>
 </body>
 </html>
-          <!-- Kulam Renovation Photos -->
-          <div class="gallery-item gallery-photo-card" role="listitem">
-            <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
-              <picture>
-                <source srcset="images/thumbs/kulam-before-overgrown.webp" type="image/webp" />
-                <img src="images/kulam-before-overgrown.jpg" alt="Temple pond before renovation, covered in green algae and vegetation" width="300" height="200" loading="lazy" decoding="async" class="gallery-real-photo" data-full="images/kulam-before-overgrown.jpg" />
-              </picture>
-              <div class="gallery-card-overlay">
-                <p class="gallery-caption-ml">കുളം — നവീകരണത്തിനു മുൻപ്</p>
-                <span class="gallery-photo-tag">🌿 അമ്പലം കുളം</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item gallery-photo-card" role="listitem">
-            <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
-              <picture>
-                <source srcset="images/thumbs/kulam-empty-excavated.webp" type="image/webp" />
-                <img src="images/kulam-empty-excavated.jpg" alt="Temple pond fully excavated showing laterite stone walls and dry bed" width="300" height="200" loading="lazy" decoding="async" class="gallery-real-photo" data-full="images/kulam-empty-excavated.jpg" />
-              </picture>
-              <div class="gallery-card-overlay">
-                <p class="gallery-caption-ml">കുളം — കുഴിക്കൽ പ്രവർത്തനം</p>
-                <span class="gallery-photo-tag">🏗️ നവീകരണ പ്രവൃത്തി</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item gallery-photo-card" role="listitem">
-            <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
-              <picture>
-                <source srcset="images/thumbs/kulam-workers-cleaning.webp" type="image/webp" />
-                <img src="images/kulam-workers-cleaning.jpg" alt="Community volunteers working in the temple pond during renovation" width="300" height="200" loading="lazy" decoding="async" class="gallery-real-photo" data-full="images/kulam-workers-cleaning.jpg" />
-              </picture>
-              <div class="gallery-card-overlay">
-                <p class="gallery-caption-ml">ഭക്തർ — കൂട്ടായ്മ പ്രവൃത്തി</p>
-                <span class="gallery-photo-tag">🤝 സ്വയംസേവകർ</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item gallery-photo-card" role="listitem">
-            <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
-              <picture>
-                <source srcset="images/thumbs/kulam-workers-closeup.webp" type="image/webp" />
-                <img src="images/kulam-workers-closeup.jpg" alt="Group of volunteers cleaning the temple pond, viewed from above" width="300" height="200" loading="lazy" decoding="async" class="gallery-real-photo" data-full="images/kulam-workers-closeup.jpg" />
-              </picture>
-              <div class="gallery-card-overlay">
-                <p class="gallery-caption-ml">ഐക്യദാർഢ്യത്തിൻ്റെ ശക്തി</p>
-                <span class="gallery-photo-tag">🤝 കൂട്ടായ്മ</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="gallery-item gallery-photo-card" role="listitem">
-            <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
-              <picture>
-                <source srcset="images/thumbs/kulam-filled-water.webp" type="image/webp" />
-                <img src="images/kulam-filled-water.jpg" alt="Renovated temple pond filled with clean water, two people swimming" width="300" height="200" loading="lazy" decoding="async" class="gallery-real-photo" data-full="images/kulam-filled-water.jpg" />
-              </picture>
-              <div class="gallery-card-overlay">
-                <p class="gallery-caption-ml">കുളം — ജലം നിറഞ്ഞ ദൃശ്യം</p>
-                <span class="gallery-photo-tag">💧 നവീകൃത കുളം</span>
-              </div>
-            </div>
-          </div>
-
