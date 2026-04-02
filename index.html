@@ -567,7 +567,16 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
  <div class="about-grid">
  <div class="about-image-wrapper">
  <div class="about-real-photo-card" aria-label="ക്ഷേത്ര ദൃശ്യം">
- <picture><source srcset="images/thumbs/temple-entrance-deepam.webp" type="image/webp" /><img src="images/thumbs/temple-entrance-deepam.webp" data-full="images/temple-entrance-deepam.jpg" alt="Temple entrance with traditional oil lamp (deepam) lit at the doorway" width="300" height="200" loading="lazy" decoding="async" class="gallery-real-photo" /></picture>
+ <picture>
+              <source media="(max-width:480px)" srcset="images/mobile/temple-front-view.webp" type="image/webp" />
+              <source srcset="images/temple-front-view.webp" type="image/webp" />
+              <img src="images/temple-front-view.jpg"
+                   alt="Front view of Kakkamvelly Sreekrishna Temple with Kerala-style tiled roof and hanging deepam lamps"
+                   class="about-real-photo"
+                   width="600" height="402"
+                   loading="eager"
+                   fetchpriority="high" />
+            </picture>
  <div class="about-photo-caption">
  <span class="about-photo-label">🪔 കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം</span>
  <a href="https://maps.app.goo.gl/LaTA1pWM8NhjW4gK6" target="_blank" rel="noopener noreferrer" class="about-maps-link-pill">
@@ -637,7 +646,16 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
  <div class="gallery-grid gallery-maps-grid" role="list" aria-label="ക്ഷേത്ര ഫോട്ടോ ഗ്യാലറി">
  <div class="gallery-item gallery-photo-card" role="listitem">
  <div class="gallery-card-link" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം വലുതായി കാണുക">
- <picture><source srcset="images/thumbs/temple-entrance-deepam.webp" type="image/webp" /><img src="images/thumbs/temple-entrance-deepam.webp" data-full="images/temple-entrance-deepam.jpg" alt="Temple entrance with traditional oil lamp (deepam) lit at the doorway" width="300" height="200" loading="lazy" decoding="async" class="gallery-real-photo" /></picture>
+ <picture>
+              <source media="(max-width:480px)" srcset="images/mobile/temple-front-view.webp" type="image/webp" />
+              <source srcset="images/temple-front-view.webp" type="image/webp" />
+              <img src="images/temple-front-view.jpg"
+                   alt="Front view of Kakkamvelly Sreekrishna Temple with Kerala-style tiled roof and hanging deepam lamps"
+                   class="about-real-photo"
+                   width="600" height="402"
+                   loading="eager"
+                   fetchpriority="high" />
+            </picture>
  </div>
           </div>
  <div class="gallery-item gallery-photo-card" role="listitem">
