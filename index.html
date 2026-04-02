@@ -759,35 +759,87 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
  </div>
  </div>
  </address>
- <div class="transport-options">
- <div class="transport-item">
- <div class="transport-icon">
- <i class="fa-solid fa-plane-arrival" aria-hidden="true"></i>
- </div>
- <div class="transport-details">
- <strong>വിമാനം വഴി</strong>
- <p>അടുത്ത വിമാനത്താവളം: കാലിക്കറ്റ് ഇന്റർനാഷണൽ എയർപോർട്ട് (CCJ), കരിപ്പൂർ – കോഴിക്കോട് നഗരത്തിൽ നിന്ന് ഏകദേശം 30–40 കി.മീ. ദൂരം.</p>
- </div>
- </div>
- <div class="transport-item">
- <div class="transport-icon">
- <i class="fa-solid fa-train" aria-hidden="true"></i>
- </div>
- <div class="transport-details">
- <strong>തീവണ്ടി വഴി</strong>
- <p>കോഴിക്കോട് (കാലിക്കറ്റ്) റെയിൽവേ സ്റ്റേഷൻ ഇന്ത്യയിലെ പ്രധാന നഗരങ്ങളുമായി നന്നായി ബന്ധിക്കപ്പെട്ടിരിക്കുന്നു. സ്റ്റേഷനിൽ നിന്ന് ലോക്കൽ ബസ്സും ഓട്ടോ റിക്ഷയും ലഭ്യമാണ്.</p>
- </div>
- </div>
- <div class="transport-item">
- <div class="transport-icon">
- <i class="fa-solid fa-bus" aria-hidden="true"></i>
- </div>
- <div class="transport-details">
- <strong>ബസ് വഴി</strong>
- <p>KSRTC, സ്വകാര്യ ബസ്സുകൾ കേരളത്തിലെ പ്രധാന നഗരങ്ങളിൽ നിന്ന് കോഴിക്കോട്ടേക്കുള്ള ബന്ധം ലഭ്യമാണ്. ക്ഷേത്രത്തിലേക്ക് അവസാന ഭാഗം ഓട്ടോ, ടാക്സി ലഭ്യമാണ്.</p>
- </div>
- </div>
- </div>
+        <div class="transport-options">
+
+          <!-- Train -->
+          <div class="transport-item">
+            <div class="transport-icon">
+              <i class="fa-solid fa-train" aria-hidden="true"></i>
+            </div>
+            <div class="transport-details">
+              <strong>അടുത്ത റെയിൽവേ സ്റ്റേഷൻ</strong>
+              <p class="transport-primary">
+                <span class="transport-badge">🚉 Vadakara (BDJ)</span>
+                ഏകദേശം 15 കി.മീ. — ക്ഷേത്രത്തിൽ നിന്ന് ഏറ്റവും അടുത്ത സ്റ്റേഷൻ.
+                വടകര സ്റ്റേഷനിൽ നിന്ന് Nadapuram ഭാഗത്തേക്കുള്ള ബസ്സ് / ഓട്ടോ / ടാക്സി ലഭ്യമാണ്.
+              </p>
+              <p class="transport-secondary">
+                കോഴിക്കോട് (CLT) · 45 കി.മീ. — Malabar Express, Parasuram Express, Kerala Express
+              </p>
+              <a href="https://www.google.com/maps/search/Vadakara+Railway+Station"
+                 target="_blank" rel="noopener noreferrer"
+                 class="transport-map-link">
+                <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
+                Vadakara Station Maps-ൽ കാണുക
+              </a>
+            </div>
+          </div>
+
+          <!-- Bus Stand -->
+          <div class="transport-item">
+            <div class="transport-icon">
+              <i class="fa-solid fa-bus" aria-hidden="true"></i>
+            </div>
+            <div class="transport-details">
+              <strong>അടുത്ത ബസ് സ്റ്റാൻഡ്</strong>
+              <p class="transport-primary">
+                <span class="transport-badge">🚌 Nadapuram Bus Stand</span>
+                ഏകദേശം 3–4 കി.മീ. — കോഴിക്കോട്, കണ്ണൂർ, വടകര ഭാഗങ്ങളിൽ നിന്ന്
+                KSRTC / സ്വകാര്യ ബസ്സ് ലഭ്യം.
+              </p>
+              <a href="https://www.google.com/maps/search/Nadapuram+Bus+Stand"
+                 target="_blank" rel="noopener noreferrer"
+                 class="transport-map-link">
+                <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
+                Nadapuram Bus Stand Maps-ൽ
+              </a>
+            </div>
+          </div>
+
+          <!-- Bus Stop -->
+          <div class="transport-item transport-item-highlight">
+            <div class="transport-icon transport-icon-gold">
+              <i class="fa-solid fa-map-pin" aria-hidden="true"></i>
+            </div>
+            <div class="transport-details">
+              <strong>ഏറ്റവും അടുത്ത ബസ് സ്റ്റോപ്പ്</strong>
+              <p class="transport-primary">
+                <span class="transport-badge transport-badge-gold">📍 Purameri Petrol Pump Stop</span>
+                ക്ഷേത്രത്തിൽ നിന്ന് നടന്നെത്താവുന്ന ദൂരത്തിൽ.
+                Nadapuram – Vadakara / Kozhikode റൂട്ടിലെ ബസ്സുകൾ ഇവിടെ നിർത്തും.
+              </p>
+              <p class="transport-tip">
+                💡 <em>Purameri Petrol Pump stop-ൽ ഇറങ്ങി ക്ഷേത്രത്തിലേക്ക് നടക്കാം.</em>
+              </p>
+            </div>
+          </div>
+
+          <!-- Airport -->
+          <div class="transport-item">
+            <div class="transport-icon">
+              <i class="fa-solid fa-plane-arrival" aria-hidden="true"></i>
+            </div>
+            <div class="transport-details">
+              <strong>വിമാനത്തിൽ വരുന്നവർക്ക്</strong>
+              <p class="transport-primary">
+                <span class="transport-badge">✈️ Calicut International Airport (CCJ)</span>
+                ഏകദേശം 45 കി.മീ. — കരിപ്പൂർ. Airport-ൽ നിന്ന് Taxi / Ola-Uber
+                Nadapuram / Purameri-ലേക്ക് ലഭ്യമാണ്.
+              </p>
+            </div>
+          </div>
+
+        </div>
  <a
  href="https://maps.app.goo.gl/LaTA1pWM8NhjW4gK6"
  target="_blank"

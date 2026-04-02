@@ -1783,3 +1783,73 @@ textarea:focus-visible {
 @media (max-width: 420px) {
   .live-cards-row { grid-template-columns: 1fr !important; }
 }
+
+/* ══════════════════════════════════════════════
+   TRANSPORT — improved cards with badges
+══════════════════════════════════════════════ */
+.transport-badge {
+  display: inline-block;
+  background: rgba(200,134,10,.12);
+  border: 1px solid rgba(200,134,10,.3);
+  border-radius: 50px;
+  padding: .18rem .7rem;
+  font-size: .82rem !important;
+  font-weight: 700;
+  color: #c8860a;
+  margin-bottom: .35rem;
+  font-family: 'Cinzel', serif;
+  letter-spacing: .03em;
+}
+.transport-badge-gold {
+  background: rgba(255,215,0,.15) !important;
+  border-color: rgba(255,215,0,.4) !important;
+  color: #b8920a !important;
+}
+
+.transport-primary {
+  font-size: .9rem !important;
+  color: #3a2a00;
+  line-height: 1.7;
+  margin: .2rem 0 .4rem !important;
+}
+.transport-secondary {
+  font-size: .82rem !important;
+  color: #7a6a4a;
+  margin: 0 0 .4rem !important;
+  font-style: italic;
+}
+.transport-tip {
+  font-size: .82rem !important;
+  color: #2d6a2d;
+  background: rgba(45,106,45,.07);
+  border-left: 3px solid #2d6a2d;
+  border-radius: 0 6px 6px 0;
+  padding: .35rem .7rem;
+  margin-top: .4rem !important;
+}
+.transport-tip em { font-style: normal; font-weight: 600; }
+
+.transport-map-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  font-size: .78rem !important;
+  color: #c8860a;
+  text-decoration: underline;
+  font-family: 'Cinzel', serif;
+  margin-top: .3rem;
+  min-height: 44px;
+  padding: 0;
+}
+.transport-map-link:hover { color: #8b5e00; }
+
+/* Highlight the closest bus stop */
+.transport-item-highlight {
+  background: rgba(255,215,0,.04) !important;
+  border: 1px solid rgba(255,215,0,.2) !important;
+  border-radius: 12px;
+  padding: .9rem 1rem !important;
+}
+.transport-icon-gold {
+  background: linear-gradient(135deg,#c8860a,#ffd700) !important;
+}
