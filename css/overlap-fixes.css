@@ -1853,3 +1853,51 @@ textarea:focus-visible {
 .transport-icon-gold {
   background: linear-gradient(135deg,#c8860a,#ffd700) !important;
 }
+
+/* ══════════════════════════════════════════════
+   GALLERY — plain images, no text overlays
+   (overlay still in HTML for accessibility/lightbox
+    but visually hidden)
+══════════════════════════════════════════════ */
+.gallery-photo-card .gallery-card-overlay {
+  display: none !important;
+}
+
+/* ══════════════════════════════════════════════
+   CONTACT PERSONS — committee members list
+══════════════════════════════════════════════ */
+.contact-persons {
+  display: flex;
+  flex-direction: column;
+  gap: .55rem;
+  margin-top: .1rem;
+}
+.contact-person {
+  display: flex;
+  align-items: baseline;
+  gap: .6rem;
+  flex-wrap: wrap;
+}
+.cp-role {
+  font-family: 'Noto Serif Malayalam', serif;
+  font-size: .82rem;
+  color: rgba(0,0,0,.6);
+  font-weight: 600;
+  white-space: nowrap;
+  min-width: 160px;
+}
+.cp-number {
+  font-family: 'Cinzel', serif;
+  font-size: .88rem;
+  font-weight: 700;
+  color: var(--color-gold, #c8860a);
+  text-decoration: none;
+  letter-spacing: .02em;
+  white-space: nowrap;
+}
+.cp-number:hover { text-decoration: underline; }
+
+@media (max-width: 480px) {
+  .contact-person { flex-direction: column; gap: .1rem; }
+  .cp-role { min-width: unset; font-size: .78rem; }
+}
