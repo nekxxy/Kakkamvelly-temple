@@ -3,8 +3,8 @@
 <html lang="ml">
 <head>
  <meta charset="UTF-8" />
- <link rel="preload" href="images/baby-krishna-hero.avif" as="image" type="image/avif" />
- <link rel="preload" href="images/mobile/baby-krishna-hero.avif" as="image" type="image/avif" media="(max-width:480px)" />
+ <link rel="preload" href="images/baby-krishna-hero.webp" as="image" type="image/webp" />
+ <link rel="preload" href="images/mobile/baby-krishna-hero.webp" as="image" type="image/webp" media="(max-width:480px)" />
  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
  <link rel="preload" href="css/temple.min.css" as="style" />
@@ -158,22 +158,21 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
  <div class="hero-overlay"></div>
  <div class="hero-content">
  <div class="hero-krishna-img-wrap">
-<picture>
- <source media="(max-width: 480px)" srcset="images/mobile/baby-krishna-hero.avif" type="image/avif" />
+          <picture>
             <source media="(max-width: 480px)" srcset="images/mobile/baby-krishna-hero.webp" type="image/webp" />
- <source media="(max-width: 480px)" srcset="images/mobile/baby-krishna-hero.png" />
- <source srcset="images/baby-krishna-hero.avif" type="image/avif" />
+            <source media="(max-width: 480px)" srcset="images/mobile/baby-krishna-hero.avif" type="image/avif" />
             <source srcset="images/baby-krishna-hero.webp" type="image/webp" />
- <img
- src="images/baby-krishna-hero.png"
- alt="ഉണ്ണി കൃഷ്ണൻ — Baby Krishna"
- class="hero-krishna-img"
- width="400" height="600"
- fetchpriority="high"
- decoding="async"
- />
- </picture>
- </div>
+            <source srcset="images/baby-krishna-hero.avif" type="image/avif" />
+            <img
+              src="images/baby-krishna-hero.webp"
+              alt="ഉണ്ണി കൃഷ്ണൻ — Baby Krishna"
+              class="hero-krishna-img"
+              width="400" height="600"
+              fetchpriority="high"
+              decoding="async"
+            />
+          </picture>
+        </div>
  <p class="hero-tagline">ഹരേ കൃഷ്ണ</p>
  <h1 class="hero-title">കക്കംവെള്ളി<br />ശ്രീകൃഷ്ണ ക്ഷേത്രം</h1>
  <p class="hero-subtitle">Kakkamvelly Sreekrishna Temple</p>
