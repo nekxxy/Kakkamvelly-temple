@@ -189,14 +189,14 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
   "hasMap": "https://maps.app.goo.gl/LaTA1pWM8NhjW4gK6"
 }
 </script>
-  <meta name="generator" content="Kakkamvelly Temple v1.0.5.27" />
+  <meta name="generator" content="Kakkamvelly Temple v1.0.5.28" />
 </head>
 <body data-audio-ready="true">
   <a href="#main-content" class="skip-to-main" tabindex="0">Skip to main content</a>
 
  <div id="vishu-banner" class="vishu-alert" role="alert" aria-live="polite">
  <span class="vishu-icon">🌸</span>
- <span class="vishu-text">
+ <span class="vishu-text" id="vishu-banner-text">
  <strong>വിഷു 2026 (ഏപ്രിൽ 15)</strong> — ക്ഷേത്രം: 5:00 AM – 7:30 PM &nbsp;·&nbsp; Special Darshan
  </span>
  <button class="vishu-close" aria-label="Close" onclick="this.parentElement.remove()">✕</button>
@@ -206,11 +206,11 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
  <div class="nav-brand">
  <span class="om-symbol">ॐ</span>
  <div class="brand-text">
- <span class="brand-ml">കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം</span>
+ <span class="brand-ml" id="brand-ml">കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം</span>
  <span class="brand-en">Kakkamvelly Sreekrishna Temple</span>
  </div>
  </div>
- <span class="site-version-badge" title="Website version">v1.0.5.27</span>
+ <span class="site-version-badge" title="Website version">v1.0.5.28</span>
  <div class="nav-lang-pill" role="group" aria-label="Language selector">
  <button class="nlp-btn active" data-lang="ml" aria-label="Switch to Malayalam">മലയാളം</button>
  <button class="nlp-btn" data-lang="en" aria-label="Switch to English">English</button>
@@ -249,7 +249,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
  <p class="hero-tagline">ഹരേ കൃഷ്ണ</p>
  <h1 class="hero-title">കക്കംവെള്ളി<br />ശ്രീകൃഷ്ണ ക്ഷേത്രം</h1>
  <p class="hero-subtitle">Kakkamvelly Sreekrishna Temple</p>
- <p class="hero-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> പുറമേരി, കോഴിക്കോട്, കേരളം</p>
+ <p class="hero-location" id="hero-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> പുറമേരി, കോഴിക്കോട്, കേരളം</p>
  <div class="hero-actions">
  <a href="#location" class="btn btn-primary">
  <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i> വഴി കാണിക്കുക
@@ -316,7 +316,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
         <div class="live-status-bar" role="status" aria-live="polite">
           <div id="darshan-status-widget" class="dsw-main">
             <span class="dsw-dot" aria-hidden="true"></span>
-            <span class="dsw-text" id="dsw-text-init">ക്ഷേത്രം അടഞ്ഞിരിക്കുന്നു</span>
+            <span class="dsw-text" id="dsw-text-init">Temple Closed</span>
           </div>
           <script>
           /* Inline IST-forced darshan bar — no-flash initial state */
@@ -348,13 +348,13 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
           })();
           </script>
           <div class="dsw-actions">
-            <a href="tel:+919446844145" class="dsw-btn dsw-call" aria-label="Call temple">
+            <a href="tel:+919446844145" class="dsw-btn dsw-call" id="dsw-call-btn" aria-label="Call temple">
               <i class="fa-solid fa-phone" aria-hidden="true"></i> വിളിക്കുക
             </a>
-            <a href="https://maps.app.goo.gl/LaTA1pWM8NhjW4gK6" target="_blank" rel="noopener noreferrer" class="dsw-btn dsw-dir" aria-label="Get directions">
+            <a href="https://maps.app.goo.gl/LaTA1pWM8NhjW4gK6" target="_blank" rel="noopener noreferrer" class="dsw-btn dsw-dir"  id="dsw-dir-btn" aria-label="Get directions">
               <i class="fa-solid fa-diamond-turn-right" aria-hidden="true"></i> വഴി
             </a>
-            <a href="https://wa.me/919446844145" target="_blank" rel="noopener noreferrer" class="dsw-btn dsw-wa" aria-label="WhatsApp">
+            <a href="https://wa.me/919446844145" target="_blank" rel="noopener noreferrer" class="dsw-btn dsw-wa"   id="dsw-wa-btn" aria-label="WhatsApp">
               <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp
             </a>
           </div>
@@ -368,7 +368,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
             <div class="live-info-card live-card-festival live-card-festival-wide">
               <div class="lic-header">
                 <span class="lic-icon" id="fest-icon" aria-hidden="true">🌸</span>
-                <span class="lic-title" id="fest-name-ml">അടുത്ത ഉത്സവം</span>
+                <span class="lic-title" id="fest-name-ml" data-ml="🎉 അടുത്ത ഉത്സവം" data-en="🎉 Next Festival">അടുത്ത ഉത്സവം</span>
                 <span class="fest-hdr-date" id="fest-date-badge"></span>
               </div>
               <div class="lic-body lic-body-festival">
@@ -379,13 +379,13 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
                     <span class="fc-eng"  id="fest-name-en">Vishu · Kerala New Year</span>
                   </div>
                   <div class="fc-units" id="festival-countdown" aria-live="polite">
-                    <div class="fc-unit"><span class="fc-num" id="fc-d">--</span><span class="fc-unit-label">ദിവസം</span></div>
+                    <div class="fc-unit"><span class="fc-num" id="fc-d">--</span><span class="fc-unit-label" data-ml="ദിവസം" data-en="Days">ദിവസം</span></div>
                     <div class="fc-sep" aria-hidden="true">:</div>
-                    <div class="fc-unit"><span class="fc-num" id="fc-h">--</span><span class="fc-unit-label">മണിക്കൂർ</span></div>
+                    <div class="fc-unit"><span class="fc-num" id="fc-h">--</span><span class="fc-unit-label" data-ml="മണിക്കൂർ" data-en="Hrs">മണിക്കൂർ</span></div>
                     <div class="fc-sep" aria-hidden="true">:</div>
-                    <div class="fc-unit"><span class="fc-num" id="fc-m">--</span><span class="fc-unit-label">മിനിറ്റ്</span></div>
+                    <div class="fc-unit"><span class="fc-num" id="fc-m">--</span><span class="fc-unit-label" data-ml="മിനിറ്റ്" data-en="Mins">മിനിറ്റ്</span></div>
                     <div class="fc-sep" aria-hidden="true">:</div>
-                    <div class="fc-unit"><span class="fc-num" id="fc-s">--</span><span class="fc-unit-label">സെക്കൻഡ്</span></div>
+                    <div class="fc-unit"><span class="fc-num" id="fc-s">--</span><span class="fc-unit-label" data-ml="സെക്കൻഡ്" data-en="Secs">സെക്കൻഡ്</span></div>
                   </div>
                 </div>
                 <!-- Upcoming queue -->
@@ -400,7 +400,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
               <div class="live-info-card live-card-weather">
                 <div class="lic-header">
                   <span class="lic-icon">🌤</span>
-                  <span class="lic-title">Purameri കാലാവസ്ഥ</span>
+                  <span class="lic-title" data-ml="Purameri കാലാവസ്ഥ" data-en="Purameri Weather">Purameri കാലാവസ്ഥ</span>
                 </div>
                 <div id="weather-widget" class="lic-body">
                   <div class="lic-loading" id="weather-init">🌤 Purameri</div>
@@ -411,12 +411,12 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
               <div class="live-info-card live-card-astro">
                 <div class="lic-header">
                   <span class="lic-icon">🌙</span>
-                  <span class="lic-title">സൂര്യൻ · ചന്ദ്രൻ</span>
+                  <span class="lic-title" data-ml="സൂര്യൻ · ചന്ദ്രൻ" data-en="Sun &amp; Moon">സൂര്യൻ · ചന്ദ്രൻ</span>
                 </div>
                 <div class="lic-body">
                   <div id="sunrise-sunset">
-                    <div class="sun-row"><span class="sun-icon">🌅</span><span class="sun-label">സൂര്യോദയം</span><span class="sun-time" id="sr-time">6:10 AM</span></div>
-                    <div class="sun-row"><span class="sun-icon">🌇</span><span class="sun-label">സൂര്യാസ്തമയം</span><span class="sun-time" id="ss-time">6:25 PM</span></div>
+                    <div class="sun-row"><span class="sun-icon">🌅</span><span class="sun-label" data-ml="സൂര്യോദയം" data-en="Sunrise">സൂര്യോദയം</span><span class="sun-time" id="sr-time">6:10 AM</span></div>
+                    <div class="sun-row"><span class="sun-icon">🌇</span><span class="sun-label" data-ml="സൂര്യാസ്തമയം" data-en="Sunset">സൂര്യാസ്തമയം</span><span class="sun-time" id="ss-time">6:25 PM</span></div>
                   </div>
                   <div id="moon-phase" class="moon-phase-wrap"></div>
                 </div>
@@ -446,14 +446,14 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
  <section id="timings" class="section section-saffron section-timings-priority" data-section="timings" aria-labelledby="timings-heading">
  <div class="container">
  <div class="section-header">
- <span class="section-tag" data-ml="ദർശനം" data-en="Darshan">ദർശനം</span>
+ <span class="section-tag" id="timings-tag" data-ml="ദർശനം" data-en="Darshan">ദർശനം</span>
  <h2 id="timings-heading" class="section-title" data-ml="ക്ഷേത്ര സമയക്രമവും പൂജ ഷെഡ്യൂളും" data-en="Temple Timings & Pooja Schedule" data-ml="ക്ഷേത്ര സമയക്രമവും പൂജ ഷെഡ്യൂളും" data-en="Temple Timings &amp; Pooja Schedule">ക്ഷേത്ര സമയക്രമവും പൂജ ഷെഡ്യൂളും</h2>
  </div>
  <div class="timings-grid">
  <div class="timing-card">
  <div class="timing-card-header">
  <i class="fa-solid fa-sun" aria-hidden="true"></i>
- <h3>രാവിലെ (പ്രഭാത പൂജ)</h3>
+ <h3 id="timings-morning-hdr" data-ml="രാവിലെ (പ്രഭാത പൂജ)" data-en="Morning (Prabhatha Pooja)">രാവിലെ (പ്രഭാത പൂജ)</h3>
  </div>
  <table class="timing-table" aria-label="രാവിലത്തെ പൂജ സമയം">
  <thead>
@@ -470,7 +470,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
  <div class="timing-card">
  <div class="timing-card-header">
  <i class="fa-solid fa-moon" aria-hidden="true"></i>
- <h3>വൈകുന്നേരം (സായഹ്ന പൂജ)</h3>
+ <h3 id="timings-evening-hdr" data-ml="വൈകുന്നേരം (സായഹ്ന പൂജ)" data-en="Evening (Sayahna Pooja)">വൈകുന്നേരം (സായഹ്ന പൂജ)</h3>
  </div>
  <table class="timing-table" aria-label="വൈകുന്നേരത്തെ പൂജ സമയം">
  <thead>
@@ -501,7 +501,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
  <p class="timing-note">
  <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
  ഉത്സവ ദിനങ്ങളിൽ സമയക്രമം മാറ്റം വരാം.
- <strong>വിഷു 2026 (ഏപ്രിൽ 15): 5:00 AM – 7:30 PM</strong> (Special).
+ <strong id="timings-vishu" data-ml="വിഷു 2026 (ഏപ്രിൽ 15): 5:00 AM – 7:30 PM (Special)." data-en="Vishu 2026 (April 15): 5:00 AM – 7:30 PM (Special).">വിഷു 2026 (ഏപ്രിൽ 15): 5:00 AM – 7:30 PM</strong> (Special).
  ക്ഷേത്ര ഓഫീസ്: <a href="tel:+919446844145">+91 94468 44145</a> · തിരുമേനി: <a href="tel:+919941292222">+91 99412 92222</a>
  </p>
  </div>
@@ -514,15 +514,15 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
  <div class="ann-content">
  <div class="ann-icon">🍛</div>
  <div class="ann-text">
- <h3 class="ann-title" data-ml="മാസം തോറും ഒന്നാം ഞായർ — അന്നദാനം" data-en="Monthly First Sunday — Annadhanam" data-ml="മാസം തോറും ഒന്നാം ഞായർ — അന്നദാനം" data-en="Monthly First Sunday — Annadhanam">മാസം തോറും ഒന്നാം ഞായർ — അന്നദാനം</h3>
+ <h3 class="ann-title" id="ann-title" data-ml="മാസം തോറും ഒന്നാം ഞായർ — അന്നദാനം" data-en="Monthly First Sunday — Annadhanam" data-ml="മാസം തോറും ഒന്നാം ഞായർ — അന്നദാനം" data-en="Monthly First Sunday — Annadhanam">മാസം തോറും ഒന്നാം ഞായർ — അന്നദാനം</h3>
  <p class="ann-sub" data-ml="Monthly First Sunday · Free Prasadam at Noon" data-en="Monthly First Sunday · Free Prasadam at Noon">Monthly First Sunday · Free Prasadam at Noon for All Devotees</p>
- <p class="ann-desc">
+ <p class="ann-desc" id="ann-desc">
  ഒരു പ്രാചീന പാരമ്പര്യമനുസരിച്ച്, ഓരോ മാസവും ആദ്യ ഞായറാഴ്ച ഉച്ചയ്ക്ക്
  ക്ഷേത്ര പരിസരത്ത് അന്നദാനം നടത്തുന്നു. <em>എല്ലാ ഭക്തർക്കും സ്വാഗതം.</em>
  </p>
  <p class="ann-static-note">📅 ഓരോ മാസവും ആദ്യ ഞായറാഴ്ച ഉച്ചയ്ക്ക് 12:00<br>
         <em>Every 1st Sunday of the month · Noon</em></p>
-      <div class="ann-next" id="ann-next-date">📅 ഓരോ മാസവും ആദ്യ ഞായറാഴ്ച · ഉച്ചക്ക് 12:00</div>
+      <div class="ann-next" id="ann-next-date" id="ann-every" data-ml="📅 ഓരോ മാസവും ആദ്യ ഞായറാഴ്ച · ഉച്ചക്ക് 12:00" data-en="📅 Every First Sunday of the Month · Noon 12:00">📅 ഓരോ മാസവും ആദ്യ ഞായറാഴ്ח · ഉച്ചക്ക് 12:00</div>
  </div>
  </div>
  <div class="ann-flame-right" aria-hidden="true">🪔</div>
@@ -545,28 +545,28 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
         <!-- Cost estimate banner -->
         <div class="kulam-estimate-bar">
           <div class="kulam-estimate-item">
-            <span class="ke-label">ആകെ ചെലവ് (Estimated)</span>
+            <span class="ke-label" id="kulam-cost-lbl">ആകെ ചെലവ് (Estimated)</span>
             <span class="ke-value">₹47,00,000</span>
           </div>
           <div class="kulam-estimate-sep">·</div>
           <div class="kulam-estimate-item">
             <span class="ke-label">Status</span>
-            <span class="ke-value ke-progress">📋 ആസൂത്രണ ഘട്ടം</span>
+            <span class="ke-value ke-progress" id="kulam-status-val">📋 ആസൂത്രണ ഘട്ടം</span>
           </div>
           <div class="kulam-estimate-sep">·</div>
           <div class="kulam-estimate-item">
-            <span class="ke-label">നവീകരണം ആരംഭിച്ചിട്ട്</span>
+            <span class="ke-label" id="kulam-days-lbl">നവീകരണം ആരംഭിച്ചിട്ട്</span>
             <span class="ke-value" id="kulam-days">...</span>
           </div>
           <div class="kulam-estimate-sep">·</div>
           <div class="kulam-estimate-item">
-            <span class="ke-label">ഭക്ത സഹകരണം</span>
-            <span class="ke-value ke-open">തുറന്നിരിക്കുന്നു</span>
+            <span class="ke-label" id="kulam-open-lbl">ഭക്ത സഹകരണം</span>
+            <span class="ke-value ke-open" id="kulam-open-val">തുറന്നിരിക്കുന്നു</span>
           </div>
         </div>
 
         <!-- Description -->
-        <p class="kulam-section-desc">
+        <p class="kulam-section-desc" id="kulam-desc">
           ക്ഷേത്ര കുളത്തിൻ്റെ ചരിത്രപരമായ നവീകരണ പ്രവൃത്തി ആരംഭിച്ചിരിക്കുന്നു.
           വർഷങ്ങളായി ഉപേക്ഷിക്കപ്പെട്ട കുളം ഇപ്പോൾ ആയിരക്കണക്കിന്
           ഭക്തരുടെ കൂട്ടായ്മ ശ്രമഫലമായി പുനർജനിക്കുകയാണ്.
@@ -586,8 +586,8 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
                      data-full="images/kulam-before-overgrown.jpg"/>
               </picture>
               <div class="kulam-photo-label">
-                <span class="kpl-badge">മുൻപ്</span>
-                <p>കുളം — പഴയ അവസ്ഥ</p>
+                <span class="kpl-badge" id="kulam-badge-before">മുൻപ്</span>
+                <p id="kulam-cap-before">കുളം — പഴയ അവസ്ഥ</p>
               </div>
             </div>
           </div>
@@ -602,8 +602,8 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
                      data-full="images/kulam-empty-excavated.jpg"/>
               </picture>
               <div class="kulam-photo-label">
-                <span class="kpl-badge kpl-work">പ്രവൃത്തി</span>
-                <p>കുഴിക്കൽ ഘട്ടം</p>
+                <span class="kpl-badge kpl-work" id="kulam-badge-work">പ്രവൃത്തി</span>
+                <p id="kulam-cap-exc">കുഴിക്കൽ ഘട്ടം</p>
               </div>
             </div>
           </div>
@@ -618,8 +618,8 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
                      data-full="images/kulam-workers-cleaning.jpg"/>
               </picture>
               <div class="kulam-photo-label">
-                <span class="kpl-badge kpl-work">കൂട്ടായ്മ</span>
-                <p>ഭക്തർ ഒന്നിച്ച്</p>
+                <span class="kpl-badge kpl-work" id="kulam-badge-team">കൂട്ടായ്മ</span>
+                <p id="kulam-cap-team">ഭക്തർ ഒന്നിച്ച്</p>
               </div>
             </div>
           </div>
@@ -634,8 +634,8 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
                      data-full="images/kulam-filled-water.jpg"/>
               </picture>
               <div class="kulam-photo-label">
-                <span class="kpl-badge kpl-monsoon">മഴക്കാലം</span>
-                <p>പഴയകാല മഴക്കാല ദൃശ്യം</p>
+                <span class="kpl-badge kpl-monsoon" id="kulam-badge-monsoon">മഴക്കാലം</span>
+                <p id="kulam-cap-monsoon">പഴയകാല മഴക്കാല ദൃശ്യം</p>
               </div>
             </div>
           </div>
@@ -667,7 +667,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
           </div>
 
           <div class="kdb-countdown-wrap">
-            <p class="kdb-countdown-label">🏗️ Renovation starts in</p>
+            <p class="kdb-countdown-label" id="kulam-renovation-lbl">🏗️ Renovation starts in</p>
             <div class="kdb-countdown">
               <div class="kdb-unit"><span id="kulam-cd-days">--</span><small>ദിവസം</small></div>
               <div class="kdb-sep">:</div>
@@ -700,13 +700,13 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
 
         <!-- CTA -->
         <div class="kulam-cta">
-          <p class="kulam-cta-text">
+          <p class="kulam-cta-text" id="kulam-cta-text">
             🙏 ഈ ദൈവകാര്യത്തിൽ പങ്കാളിയാകൂ — ₹47 ലക്ഷം ആവശ്യമുണ്ട്
           </p>
           <div class="kulam-cta-btns">
             <a href="tel:+919446844145" class="kulam-btn kulam-call">
               <i class="fa-solid fa-phone" aria-hidden="true"></i>
-              <span>വിളിക്കൂ</span>
+              <span id="kulam-call-text">വിളിക്കൂ</span>
               <small>Secretary Nanu.T · 9446844145</small>
             </a>
             <a href="https://wa.me/919446844145?text=ഹരേ%20കൃഷ്ണ%20🙏%20കുളം%20നവീകരണ%20സംഭാവനയെ%20കുറിച്ച്%20അന്വേഷിക്കുന്നു"
@@ -717,7 +717,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
             </a>
             <a href="#kulam" class="kulam-btn kulam-donate">
               <i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i>
-              <span>ദാനം</span>
+              <span id="kulam-donate-text">ദാനം</span>
               <small>UPI / Bank</small>
             </a>
           </div>
@@ -750,7 +750,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
                    fetchpriority="high" />
             </picture>
  <div class="about-photo-caption">
- <span class="about-photo-label">🪔 കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം</span>
+ <span class="about-photo-label" id="about-badge" data-ml="🪔 കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം" data-en="🪔 Kakkamvelly Sreekrishna Temple">🪔 കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം</span>
  <a href="https://maps.app.goo.gl/LaTA1pWM8NhjW4gK6" target="_blank" rel="noopener noreferrer" class="about-maps-link-pill">
  <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i> Google Maps
  </a>
@@ -809,7 +809,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
  <div class="container">
  <div class="section-header">
  <span class="section-tag section-tag-light" data-ml="ഗ്യാലറി" data-en="Gallery">ഗ്യാലറി</span>
- <h2 id="gallery-heading" class="section-title section-title-light" data-ml="ക്ഷേത്ര ചിത്രങ്ങൾ" data-en="Temple Gallery" data-ml="ക്ഷേത്ര ചിത്രങ്ങൾ" data-en="Temple Gallery">ക്ഷേത്ര ചിത്രങ്ങൾ</h2>
+ <h2 id="gallery-heading" class="section-title section-title-light" data-ml="ക്ഷേത്ര ചിത്രങ്ങൾ" data-en="Temple Gallery">ക്ഷേത്ര ചിത്രങ്ങൾ</h2>
  </div>
  <div class="gallery-grid gallery-maps-grid" role="list" aria-label="ക്ഷേത്ര ഫോട്ടോ ഗ്യാലറി">
 
@@ -1072,13 +1072,13 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
  <div class="footer-brand-compact">
  <span class="footer-om" aria-hidden="true">ॐ</span>
  <div>
- <p class="footer-name-ml">കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം</p>
+ <p class="footer-name-ml" id="footer-name-ml">കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം</p>
  <p class="footer-name-en">Kakkamvelly Sreekrishna Temple</p>
- <p class="footer-loc">📍 പുറമേരി, കോഴിക്കോട്, Kerala 673503</p>
+ <p class="footer-loc" id="footer-loc-text">📍 പുറമേരി, കോഴിക്കോട്, Kerala 673503</p>
  </div>
  </div>
  <div class="footer-hours-compact">
- <p class="footer-hours-label">🕐 ദർശന സമയം</p>
+ <p class="footer-hours-label" data-ml="🕐 ദർശന സമയം" data-en="🕐 Darshan Hours">🕐 ദർശന സമയം</p>
  <div class="footer-hours-row">
  <span class="footer-hour-pill">
  <i class="fa-solid fa-sun" aria-hidden="true"></i>
@@ -1090,7 +1090,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
  5:45 – 6:45 PM
  </span>
  <span class="footer-hours-sep">·</span>
- <span class="footer-hour-note">7 ദിവസവും</span>
+ <span class="footer-hour-note" data-ml="7 ദിവസവും" data-en="Daily">7 ദിവസവും</span>
  </div>
  </div>
  <a href="https://maps.app.goo.gl/LaTA1pWM8NhjW4gK6"
@@ -1120,7 +1120,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
  <p class="footer-copy">
  &copy; <span id="footer-year"></span> കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം · All rights reserved
  </p>
- <p class="footer-tagline">🪔 ഹരേ കൃഷ്ണ</p>
+ <p class="footer-tagline" data-ml="🪔 ഹരേ കൃഷ്ണ" data-en="🪔 Hare Krishna">🪔 ഹരേ കൃഷ്ണ</p>
  </div>
  </div>
  </footer>
@@ -1293,22 +1293,22 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
   <nav id="mobile-bottom-nav" aria-label="Mobile navigation" role="navigation">
     <a href="#home"     class="mob-nav-btn" aria-label="Home">
       <span class="mob-nav-icon">🏠</span>
-      <span class="mob-nav-label">മുഖ്യ</span>
+      <span class="mob-nav-label" id="mob-lbl-home" data-ml="മുഖ്യ" data-en="Home">മുഖ്യ</span>
     </a>
     <a href="#about"    class="mob-nav-btn" aria-label="About Temple">
       <span class="mob-nav-icon">🛕</span>
-      <span class="mob-nav-label">ക്ഷേത്രം</span>
+      <span class="mob-nav-label" id="mob-lbl-temple" data-ml="ക്ഷേത്രം" data-en="Temple">ക്ഷേത്രം</span>
     </a>
     <a href="#home"     class="mob-nav-btn mob-nav-center" aria-label="OM - Home">
       <span class="mob-nav-icon">ॐ</span>
     </a>
     <a href="#timings"  class="mob-nav-btn" aria-label="Temple Timings">
       <span class="mob-nav-icon">⏰</span>
-      <span class="mob-nav-label">സമയം</span>
+      <span class="mob-nav-label" id="mob-lbl-timings" data-ml="സമയം" data-en="Timings">സമയം</span>
     </a>
     <a href="#location" class="mob-nav-btn" aria-label="Location">
       <span class="mob-nav-icon">📍</span>
-      <span class="mob-nav-label">സ്ഥലം</span>
+      <span class="mob-nav-label" id="mob-lbl-location" data-ml="സ്ഥലം" data-en="Location">സ്ഥലം</span>
     </a>
   </nav>
 
