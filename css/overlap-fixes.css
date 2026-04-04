@@ -1908,3 +1908,40 @@ textarea:focus-visible {
   color: #60c8ff !important;
   border-color: rgba(0,150,255,.4) !important;
 }
+
+
+/* ══════════════════════════════════════════════
+   HERO: Remove black background behind Krishna
+   The hero-gradient goes dark at edges (#0b0b0b)
+   but the image area should be the warm gold zone
+══════════════════════════════════════════════ */
+.hero-krishna-img-wrap {
+  background: transparent !important;
+  /* Ensure no inherited background shows through PNG transparency */
+}
+.hero-krishna-img {
+  /* Remove the heavy black drop-shadow that creates dark edge */
+  filter:
+    drop-shadow(0 0 40px rgba(245, 211, 122, 0.7))
+    drop-shadow(0 0 80px rgba(200, 134, 10, 0.4)) !important;
+  /* mix-blend-mode keeps transparency crisp against gradient */
+  mix-blend-mode: normal;
+  background: transparent !important;
+  -webkit-backface-visibility: hidden;
+}
+/* Fix the gradient — stop at dark amber, not near-black */
+.hero-gradient {
+  background: radial-gradient(
+    circle at 50% 38%,
+    #f5d37a 0%,
+    #d4920c 20%,
+    #6b3500 45%,
+    #1a0800 65%,
+    #080200 100%
+  ) !important;
+}
+/* Ensure galaxy canvas shows through properly */
+.hero-gradient #galaxy-canvas,
+.hero-gradient ~ #galaxy-canvas {
+  mix-blend-mode: screen;
+}
