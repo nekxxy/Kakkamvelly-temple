@@ -120,124 +120,116 @@ function getIST() {
 ══════════════════════════════════════════════ */
 (function initFestivalCountdown() {
 
-  /* ── Festival registry — 2026 to 2029, IST-anchored ────────────── */
-  const FESTIVALS = [
-    // ─── 2026 ───
-    { ml:'വിഷു 2026',              en:'Vishu · Kerala New Year',     icon:'🌸', date:new Date('2026-04-14T05:00:00+05:30'), note:'ക്ഷേത്ര ദർശനം: 5:00 AM – 7:30 PM', special:true },
-    { ml:'അഷ്ടമി രോഹിണി 2026',   en:'Janmashtami · Birth of Krishna',icon:'🪷', date:new Date('2026-08-05T00:00:00+05:30'), note:'ഉണ്ണി കൃഷ്ണൻ ജന്മദിനം', special:true },
-    { ml:'തിരുവോണം 2026',          en:'Onam · Thiruvonam',            icon:'🌺', date:new Date('2026-09-14T00:00:00+05:30'), note:'ഓണ ദർശനം' },
+  /* ── Safe date formatter (no locale dependency) ─────────────── */
+  var MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  function safeDateStr(date) {
+    return date.getDate() + ' ' + MONTHS[date.getMonth()] + ' ' + date.getFullYear();
+  }
+
+  /* ── Festival registry 2026–2029, IST-anchored ──────────────── */
+  var FESTIVALS = [
+    { ml:'വിഷു 2026',              en:'Vishu · Kerala New Year',      icon:'🌸', date:new Date('2026-04-14T05:00:00+05:30'), note:'ദർശനം: 5:00 AM – 7:30 PM' },
+    { ml:'അഷ്ടമി രോഹിണി 2026',   en:'Janmashtami · Birth of Krishna',icon:'🪷', date:new Date('2026-08-05T00:00:00+05:30'), note:'ഉണ്ണി കൃഷ്ണൻ ജന്മദിനം' },
+    { ml:'തിരുവോണം 2026',          en:'Onam · Thiruvonam',             icon:'🌺', date:new Date('2026-09-14T00:00:00+05:30'), note:'ഓണ ദർശനം' },
     { ml:'ഗുരുവായൂർ ഏകാദശി 2026', en:'Guruvayur Ekadasi',             icon:'🛕', date:new Date('2026-11-21T00:00:00+05:30'), note:'ഏകാദശി വ്രതം' },
     { ml:'തിരുവാതിര 2026',          en:'Thiruvathira',                  icon:'💫', date:new Date('2026-12-27T00:00:00+05:30'), note:'ആർദ്ര ദർശനം' },
-    // ─── 2027 ───
     { ml:'ശിവരാത്രി 2027',           en:'Maha Shivaratri',              icon:'🌙', date:new Date('2027-02-19T00:00:00+05:30'), note:'ഊർജ്ജ ആരാധന' },
-    { ml:'വിഷു 2027',              en:'Vishu · Kerala New Year',     icon:'🌸', date:new Date('2027-04-14T05:00:00+05:30'), note:'ക്ഷേത്ര ദർശനം: 5:00 AM – 7:30 PM', special:true },
-    { ml:'അഷ്ടമി രോഹിണി 2027',   en:'Janmashtami · Birth of Krishna',icon:'🪷', date:new Date('2027-08-25T00:00:00+05:30'), note:'ഉണ്ണി കൃഷ്ണൻ ജന്മദിനം', special:true },
-    { ml:'തിരുവോണം 2027',          en:'Onam · Thiruvonam',            icon:'🌺', date:new Date('2027-09-03T00:00:00+05:30'), note:'ഓണ ദർശനം' },
+    { ml:'വിഷു 2027',              en:'Vishu · Kerala New Year',      icon:'🌸', date:new Date('2027-04-14T05:00:00+05:30'), note:'ദർശനം: 5:00 AM – 7:30 PM' },
+    { ml:'അഷ്ടമി രോഹിണി 2027',   en:'Janmashtami · Birth of Krishna',icon:'🪷', date:new Date('2027-08-25T00:00:00+05:30'), note:'ഉണ്ണി കൃഷ്ണൻ ജന്മദിനം' },
+    { ml:'തിരുവോണം 2027',          en:'Onam · Thiruvonam',             icon:'🌺', date:new Date('2027-09-03T00:00:00+05:30'), note:'ഓണ ദർശനം' },
     { ml:'ഗുരുവായൂർ ഏകാദശി 2027', en:'Guruvayur Ekadasi',             icon:'🛕', date:new Date('2027-11-10T00:00:00+05:30'), note:'ഏകാദശി വ്രതം' },
     { ml:'തിരുവാതിര 2027',          en:'Thiruvathira',                  icon:'💫', date:new Date('2027-12-16T00:00:00+05:30'), note:'ആർദ്ര ദർശനം' },
-    // ─── 2028 ───
     { ml:'ശിവരാത്രി 2028',           en:'Maha Shivaratri',              icon:'🌙', date:new Date('2028-03-08T00:00:00+05:30'), note:'ഊർജ്ജ ആരാധന' },
-    { ml:'വിഷു 2028',              en:'Vishu · Kerala New Year',     icon:'🌸', date:new Date('2028-04-13T05:00:00+05:30'), note:'ക്ഷേത്ര ദർശനം: 5:00 AM – 7:30 PM', special:true },
-    { ml:'അഷ്ടമി രോഹിണി 2028',   en:'Janmashtami · Birth of Krishna',icon:'🪷', date:new Date('2028-08-12T00:00:00+05:30'), note:'ഉണ്ണി കൃഷ്ണൻ ജന്മദിനം', special:true },
-    { ml:'തിരുവോണം 2028',          en:'Onam · Thiruvonam',            icon:'🌺', date:new Date('2028-08-22T00:00:00+05:30'), note:'ഓണ ദർശനം' },
+    { ml:'വിഷു 2028',              en:'Vishu · Kerala New Year',      icon:'🌸', date:new Date('2028-04-13T05:00:00+05:30'), note:'ദർശനം: 5:00 AM – 7:30 PM' },
+    { ml:'അഷ്ടമി രോഹിണി 2028',   en:'Janmashtami · Birth of Krishna',icon:'🪷', date:new Date('2028-08-12T00:00:00+05:30'), note:'ഉണ്ണി കൃഷ്ണൻ ജന്മദിനം' },
+    { ml:'തിരുവോണം 2028',          en:'Onam · Thiruvonam',             icon:'🌺', date:new Date('2028-08-22T00:00:00+05:30'), note:'ഓണ ദർശനം' },
     { ml:'ഗുരുവായൂർ ഏകാദശി 2028', en:'Guruvayur Ekadasi',             icon:'🛕', date:new Date('2028-11-28T00:00:00+05:30'), note:'ഏകാദശി വ്രതം' },
-    { ml:'തിരുവാതിര 2028',          en:'Thiruvathira',                  icon:'💫', date:new Date('2028-01-05T00:00:00+05:30'), note:'ആർദ്ര ദർശനം' },
-    // ─── 2029 ───
+    { ml:'തിരുവാതിര 2028',          en:'Thiruvathira',                  icon:'💫', date:new Date('2028-12-15T00:00:00+05:30'), note:'ആർദ്ര ദർശനം' },
     { ml:'ശിവരാത്രി 2029',           en:'Maha Shivaratri',              icon:'🌙', date:new Date('2029-02-25T00:00:00+05:30'), note:'ഊർജ്ജ ആരാധന' },
-    { ml:'വിഷു 2029',              en:'Vishu · Kerala New Year',     icon:'🌸', date:new Date('2029-04-14T05:00:00+05:30'), note:'ക്ഷേത്ര ദർശനം: 5:00 AM – 7:30 PM', special:true },
-    { ml:'അഷ്ടമി രോഹിണി 2029',   en:'Janmashtami · Birth of Krishna',icon:'🪷', date:new Date('2029-09-01T00:00:00+05:30'), note:'ഉണ്ണി കൃഷ്ണൻ ജന്മദിനം', special:true },
-    { ml:'തിരുവോണം 2029',          en:'Onam · Thiruvonam',            icon:'🌺', date:new Date('2029-09-11T00:00:00+05:30'), note:'ഓണ ദർശനം' },
+    { ml:'വിഷു 2029',              en:'Vishu · Kerala New Year',      icon:'🌸', date:new Date('2029-04-14T05:00:00+05:30'), note:'ദർശനം: 5:00 AM – 7:30 PM' },
+    { ml:'അഷ്ടമി രോഹിണി 2029',   en:'Janmashtami · Birth of Krishna',icon:'🪷', date:new Date('2029-09-01T00:00:00+05:30'), note:'ഉണ്ണി കൃഷ്ണൻ ജന്മദിനം' },
+    { ml:'തിരുവോണം 2029',          en:'Onam · Thiruvonam',             icon:'🌺', date:new Date('2029-09-11T00:00:00+05:30'), note:'ഓണ ദർശനം' },
     { ml:'ഗുരുവായൂർ ഏകാദശി 2029', en:'Guruvayur Ekadasi',             icon:'🛕', date:new Date('2029-11-17T00:00:00+05:30'), note:'ഏകാദശി വ്രതം' },
-  ].sort((a,b) => a.date - b.date);  // Always chronological
+    { ml:'തിരുവാതിര 2029',          en:'Thiruvathira',                  icon:'💫', date:new Date('2029-12-05T00:00:00+05:30'), note:'ആർദ്ര ദർശനം' },
+  ].sort(function(a,b){ return a.date - b.date; });
 
-  /* ── Find next festival (re-evaluated every call) ── */
   function getNext() {
-    const now = new Date();
-    return FESTIVALS.find(f => f.date > now) || FESTIVALS[FESTIVALS.length-1];
+    var now = new Date();
+    for (var i = 0; i < FESTIVALS.length; i++) {
+      if (FESTIVALS[i].date > now) return FESTIVALS[i];
+    }
+    return FESTIVALS[FESTIVALS.length - 1];
   }
 
-  /* ── Countdown tick ── */
-  function pad(n) { return String(n).padStart(2,'0'); }
-  let currentNext = null;
-
-  function tick() {
-    const next = getNext();
-
-    // Update hero identity whenever the active festival changes
-    if (!currentNext || next.ml !== currentNext.ml) {
-      currentNext = next;
-      function setTxt(id, val) {
-        const el = document.getElementById(id);
-        if (el) el.textContent = val;
-      }
-      // Header
-      setTxt('fest-icon', next.icon);
-      setTxt('fest-name-ml', '🎉 ' + next.ml);   // card header title
-      // Body
-      setTxt('fest-name-ml-body', next.ml);
-      setTxt('fest-name-en', next.en);
-      // Date badge in header
-      const dateEl = document.getElementById('fest-date-badge');
-      if (dateEl) dateEl.textContent =
-        next.date.toLocaleDateString('en-IN', {day:'numeric', month:'short', year:'numeric'});
-      buildQueue(next);
-    }
-
-    // Countdown digits — write to fc-d / fc-h / fc-m / fc-s
-    const diff = Math.max(0, next.date - new Date());
-    const d = Math.floor(diff / 86400000);
-    const h = Math.floor((diff % 86400000) / 3600000);
-    const m = Math.floor((diff % 3600000)  / 60000);
-    const s = Math.floor((diff % 60000)    / 1000);
-    function setNum(id, v) {
-      const el = document.getElementById(id);
-      if (el) el.textContent = pad(v);
-    }
-    setNum('fc-d', d); setNum('fc-h', h); setNum('fc-m', m); setNum('fc-s', s);
+  function setEl(id, val) {
+    var el = document.getElementById(id);
+    if (el) el.textContent = val;
   }
 
-  /* ── Build upcoming queue (all FUTURE festivals except current) ── */
-  let showAll = true;  // Always show full queue (container is scrollable)
-  window.toggleFestQueue = function() {};  // no-op, kept for compat
+  function pad(n) { return String(Math.floor(n)).padStart(2, '0'); }
+
+  var currentKey = '';
 
   function buildQueue(next) {
-    const qEl = document.getElementById('fest-queue');
+    var qEl = document.getElementById('fest-queue');
     if (!qEl) return;
-    const now = new Date();
-
-    // Upcoming = all festivals strictly after `next` (i.e. queue starts from item after current)
-    let queue = FESTIVALS.filter(f => f !== next && f.date > now);
-    // Full queue — container is scrollable with max-height
-    const limited = queue;
-
-    let html = '';
-    let lastYear = -1;
-
-    limited.forEach(f => {
-      const year = f.date.getFullYear();
+    var now = new Date();
+    var queue = FESTIVALS.filter(function(f) { return f !== next && f.date > now; });
+    var html = '';
+    var lastYear = '';
+    for (var i = 0; i < queue.length; i++) {
+      var f = queue[i];
+      var year = f.date.getFullYear();
       if (year !== lastYear) {
-        html += `<div class="fc-qs-year" role="separator" aria-label="Year ${year}">${year}</div>`;
+        html += '<div class="fc-qs-year">' + year + '</div>';
         lastYear = year;
       }
-      const daysAway = Math.ceil((f.date - now) / 86400000);
-      const dateStr  = f.date.toLocaleDateString('en-IN', { day:'numeric', month:'short', year:'numeric' });
-      const daysStr  = daysAway === 1 ? 'Tomorrow' : `${daysAway} days`;
-      html += `
-        <div class="fc-qi" role="listitem">
-          <span class="fc-qi-icon" aria-hidden="true">${f.icon}</span>
-          <div class="fc-qi-info">
-            <span class="fc-qi-ml">${f.ml}</span>
-            <span class="fc-qi-en">${f.en}</span>
-          </div>
-          <div class="fc-qi-right">
-            <span class="fc-qi-date">${dateStr}</span>
-            <span class="fc-qi-days">${daysStr}</span>
-          </div>
-        </div>`;
-    });
+      var daysAway = Math.ceil((f.date - now) / 86400000);
+      var dStr = daysAway === 1 ? 'Tomorrow' : daysAway + ' days';
+      html += '<div class="fc-qi" role="listitem">'
+            + '<span class="fc-qi-icon">' + f.icon + '</span>'
+            + '<div class="fc-qi-info">'
+            + '<span class="fc-qi-ml">' + f.ml + '</span>'
+            + '<span class="fc-qi-en">' + f.en + '</span>'
+            + '</div>'
+            + '<div class="fc-qi-right">'
+            + '<span class="fc-qi-date">' + safeDateStr(f.date) + '</span>'
+            + '<span class="fc-qi-days">' + dStr + '</span>'
+            + '</div></div>';
+    }
+    qEl.innerHTML = html || '<div style="color:rgba(255,255,255,.3);font-size:.8rem;text-align:center;padding:1rem">All festivals listed ✓</div>';
+  }
 
-    if (!html) html = '<div style="color:rgba(255,255,255,.35);font-size:.82rem;text-align:center;padding:1rem">All 2029 festivals listed ✓</div>';
-    qEl.innerHTML = html;
+  window.toggleFestQueue = function() {};
+
+  function tick() {
+    try {
+      var next = getNext();
+      var key  = next.ml;
+
+      if (key !== currentKey) {
+        currentKey = key;
+        setEl('fest-icon',        next.icon);
+        setEl('fest-name-ml',     '🎉 ' + next.ml);
+        setEl('fest-name-ml-body', next.ml);
+        setEl('fest-name-en',     next.en);
+        setEl('fest-date-badge',  safeDateStr(next.date));
+        setEl('fest-note',        next.note || '');
+        try { buildQueue(next); } catch(e) { /* queue build failed, continue */ }
+      }
+
+      var diff = Math.max(0, next.date.getTime() - Date.now());
+      var d = Math.floor(diff / 86400000);
+      var h = Math.floor((diff % 86400000) / 3600000);
+      var m = Math.floor((diff % 3600000) / 60000);
+      var s = Math.floor((diff % 60000) / 1000);
+
+      setEl('fc-d', pad(d));
+      setEl('fc-h', pad(h));
+      setEl('fc-m', pad(m));
+      setEl('fc-s', pad(s));
+
+    } catch(e) { /* silent fail — retry next second */ }
   }
 
   tick();

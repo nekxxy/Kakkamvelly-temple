@@ -2640,3 +2640,26 @@ textarea:focus-visible {
 @media (max-width: 380px) {
   .live-cards-row-2 { grid-template-columns: 1fr !important; }
 }
+
+/* ══════════════════════════════════════════════
+   ENGLISH LANGUAGE CSS
+   body.lang-en shows English content, hides Malayalam-only spans
+   For hardcoded elements without data-ml/data-en
+══════════════════════════════════════════════ */
+/* Hero subtitle swap (brand name in both) */
+body.lang-en .brand-ml { font-size: .7rem !important; opacity: .6; }
+body.lang-en .brand-en { opacity: 1; color: rgba(255,215,0,.9); }
+
+/* Festival header: show English name in badge area */
+body.lang-en #fest-name-ml { font-size: .78rem; }
+body.lang-en #fest-name-en { color: rgba(255,215,0,.8); font-size: .78rem; }
+
+/* Kulam sub text */
+body.lang-en .kulam-section-sub { opacity: 1; }
+
+/* Footer: show English text more prominently */  
+body.lang-en .footer-name-en { color: rgba(255,215,0,.8); font-weight: 700; }
+body.lang-en .footer-name-ml { opacity: .5; font-size: .75rem; }
+
+/* Highlight active language button */
+.nlp-btn { min-width: 56px; }
