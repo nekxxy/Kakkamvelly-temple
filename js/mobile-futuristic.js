@@ -17,11 +17,11 @@ const isMobile = () => window.innerWidth <= 768;
   nav.setAttribute('aria-label', 'Mobile quick navigation');
 
   const items = [
-    { icon: '🏠', label: 'മുഖ്യ',   href: '#home'        },
-    { icon: '🛕', label: 'ക്ഷേത്രം', href: '#about'       },
+    { icon: '🏠', label: 'മുഖ്യ',   href: '#home',     labelId: 'mob-lbl-home'     },
+    { icon: '🛕', label: 'ക്ഷേത്രം', href: '#about',    labelId: 'mob-lbl-temple'   },
     { icon: null, label: 'OM',       href: '#home', center: true },
-    { icon: '⏰', label: 'സമയം',    href: '#timings'     },
-    { icon: '📍', label: 'സ്ഥലം',   href: '#location'    },
+    { icon: '⏰', label: 'സമയം',    href: '#timings',  labelId: 'mob-lbl-timings'  },
+    { icon: '📍', label: 'സ്ഥലം',   href: '#location', labelId: 'mob-lbl-location' },
   ];
 
   items.forEach(item => {
@@ -38,6 +38,7 @@ const isMobile = () => window.innerWidth <= 768;
     if (!item.center) {
       const labelEl = document.createElement('span');
       labelEl.className = 'mob-nav-label';
+      if (item.labelId) labelEl.id = item.labelId;
       labelEl.textContent = item.label;
       btn.appendChild(labelEl);
     }
