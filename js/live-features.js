@@ -99,18 +99,22 @@ const $ = id => document.getElementById(id);
   if (!el) return;
 
   const festivals = [
-    { name: 'വിഷു 2026',          eng: 'Vishu',              date: new Date('2026-04-14T05:00:00') },
-    { name: 'അഷ്ടമി രോഹിണി 2026', eng: 'Janmashtami',        date: new Date('2026-08-05T00:00:00') },
-    { name: 'ഓണം 2026',           eng: 'Onam',               date: new Date('2026-09-14T00:00:00') },
-    { name: 'ഗുരുവായൂർ ഏകാദശി',  eng: 'Guruvayur Ekadasi',  date: new Date('2026-11-21T00:00:00') },
+    { name: 'വിഷു 2026',          eng: 'Vishu',              date: new Date('2026-04-14T05:00:00+05:30') },
+    { name: 'അഷ്ടമി രോഹിണി 2026', eng: 'Janmashtami',        date: new Date('2026-08-05T00:00:00+05:30') },
+    { name: 'ഓണം 2026',           eng: 'Onam',               date: new Date('2026-09-14T00:00:00+05:30') },
+    { name: 'ഗുരുവായൂർ ഏകാദശി',  eng: 'Guruvayur Ekadasi',  date: new Date('2026-11-21T00:00:00+05:30') },
   ];
 
-  const now = new Date();
-  const next = festivals.find(f => f.date > now) || festivals[festivals.length-1];
+  // FIX: re-evaluated every tick so next festival auto-advances correctly
+  function getNextFestival() {
+    const now = new Date();
+    return festivals.find(f => f.date > now) || festivals[festivals.length-1];
+  }
 
   function pad(n) { return String(n).padStart(2,'0'); }
 
   function update() {
+    const next = getNextFestival();
     const diff = Math.max(0, next.date - new Date());
     const d = Math.floor(diff / 86400000);
     const h = Math.floor((diff % 86400000) / 3600000);
