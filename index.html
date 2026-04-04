@@ -189,7 +189,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
   "hasMap": "https://maps.app.goo.gl/LaTA1pWM8NhjW4gK6"
 }
 </script>
-  <meta name="generator" content="Kakkamvelly Temple v1.0.4.23" />
+  <meta name="generator" content="Kakkamvelly Temple v1.0.4.24" />
 </head>
 <body data-audio-ready="true">
   <a href="#main-content" class="skip-to-main" tabindex="0">Skip to main content</a>
@@ -210,7 +210,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
  <span class="brand-en">Kakkamvelly Sreekrishna Temple</span>
  </div>
  </div>
- <span class="site-version-badge" title="Website version">v1.0.4.23</span>
+ <span class="site-version-badge" title="Website version">v1.0.4.24</span>
  <div class="nav-lang-pill" role="group" aria-label="Language selector">
  <button class="nlp-btn active" data-lang="ml" aria-label="Switch to Malayalam">മലയാളം</button>
  <button class="nlp-btn" data-lang="en" aria-label="Switch to English">English</button>
@@ -260,14 +260,16 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
  </div>
  <div id="next-darshan-countdown" class="next-darshan-badge nd-loading">⏳</div>
           <script>
+          /* IST-forced inline countdown — correct on any device timezone */
           (function(){
-            var mins=new Date().getHours()*60+new Date().getMinutes();
+            var n=new Date(),istMs=n.getTime()+n.getTimezoneOffset()*60000+330*60000,ist=new Date(istMs);
+            var mins=ist.getHours()*60+ist.getMinutes();
             var MO=5*60+30,MC=9*60,EO=17*60+45,EC=18*60+45;
             var el=document.getElementById('next-darshan-countdown');
             if(!el)return;
             var label,isOpen=false,diff;
-            if(mins>=MO&&mins<MC){isOpen=true;diff=MC-mins;label='🟢 ദർശനം തുറന്നിരിക്കുന്നു · '+Math.floor(diff/60)+'h '+diff%60+'m കൂടി';}
-            else if(mins>=EO&&mins<EC){isOpen=true;diff=EC-mins;label='🟢 ദർശനം തുറന്നിരിക്കുന്നു · '+diff+'m കൂടി';}
+            if(mins>=MO&&mins<MC){isOpen=true;diff=MC-mins;label='🟢 ദർശനം: തുറന്നിരിക്കുന്നു · '+Math.floor(diff/60)+'h '+diff%60+'m കൂടി';}
+            else if(mins>=EO&&mins<EC){isOpen=true;diff=EC-mins;label='🟢 ദർശനം: തുറന്നിരിക്കുന്നു · '+diff+'m കൂടി';}
             else{if(mins<MO)diff=MO-mins;else if(mins<EO)diff=EO-mins;else diff=(24*60-mins)+MO;
             label='🔴 അടഞ്ഞിരിക്കുന്നു · '+(diff>=60?Math.floor(diff/60)+'h ':'')+diff%60+'m-ൽ തുറക്കും';}
             el.textContent=label;
@@ -310,8 +312,12 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
             <span class="dsw-text" id="dsw-text-init">ക്ഷേത്രം അടഞ്ഞിരിക്കുന്നു</span>
           </div>
           <script>
+          /* Inline IST-forced darshan bar — no-flash initial state */
           (function(){
-            var cur = new Date().getHours()*60+new Date().getMinutes();
+            var now=new Date();
+            var istMs=now.getTime()+now.getTimezoneOffset()*60000+330*60000;
+            var ist=new Date(istMs);
+            var cur=ist.getHours()*60+ist.getMinutes();
             var MO=5*60+30,MC=9*60,EO=17*60+45,EC=18*60+45;
             var el=document.getElementById('dsw-text-init');
             var dot=document.querySelector('.dsw-dot');
@@ -325,11 +331,11 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
               el.textContent='ക്ഷേത്രം തുറന്നിരിക്കുന്നു · '+left2+'m കൂടി';
               dot.className='dsw-dot open';
             } else {
-              var next='';
-              if(cur<MO)next='5:30 AM';
-              else if(cur<EO)next='5:45 PM';
-              else next='നാളെ 5:30 AM';
-              el.textContent='ക്ഷേത്രം അടഞ്ഞിരിക്കുന്നു · '+next+'-ന് തുറക്കും';
+              var nextLabel='';
+              if(cur<MO)nextLabel='5:30 AM';
+              else if(cur<EO)nextLabel='5:45 PM';
+              else nextLabel='നാളെ 5:30 AM';
+              el.textContent='ക്ഷേത്രം അടഞ്ഞിരിക്കുന്നു · '+nextLabel+'-ന് തുറക്കും';
               dot.className='dsw-dot closed';
             }
           })();
@@ -652,19 +658,23 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
           </div>
 
           <div class="kdb-upi">
-            <div class="kdb-qr-wrap">
-              <div class="kdb-qr-placeholder" aria-label="UPI QR Code">
-                <span style="font-size:2.5rem">📱</span>
-                <p style="font-size:.7rem;color:rgba(255,255,255,.4);margin:.2rem 0 0">UPI QR Code</p>
-                <p style="font-size:.65rem;color:rgba(255,215,0,.5);font-family:monospace">kakkamvellytemple@upi</p>
-              </div>
-            </div>
-            <div class="kdb-upi-id">
-              <p class="kdb-upi-label">UPI ID</p>
-              <code id="kdb-upi-text">kakkamvellytemple@upi</code>
-              <button class="kdb-copy-btn" onclick="copyKulamUPI()" aria-label="Copy UPI ID">
-                <i class="fa-regular fa-copy" aria-hidden="true"></i> Copy
-              </button>
+            <div class="kdb-upi-id" style="width:100%;text-align:center;">
+              <p class="kdb-upi-label" style="margin-bottom:.6rem">📞 Donate via UPI / Bank Transfer</p>
+              <p style="font-size:.85rem;color:rgba(255,255,255,.65);margin:.3rem 0">
+                Contact Secretary for UPI ID &amp; account details
+              </p>
+              <a href="tel:+919446844145" class="kulam-btn kulam-call" style="display:inline-flex;margin:.5rem auto 0;">
+                <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                <span>Nanu. T — Secretary</span>
+                <small>+91 94468 44145</small>
+              </a>
+              <a href="https://wa.me/919446844145?text=ഹരേ%20കൃഷ്ണ%20🙏%20കുളം%20നവീകരണ%20സംഭാവന%20UPI%20വിവരം%20ആവശ്യമുണ്ട്"
+                 target="_blank" rel="noopener noreferrer"
+                 class="kulam-btn kulam-wa" style="display:inline-flex;margin:.4rem auto 0;">
+                <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+                <span>WhatsApp</span>
+                <small>Quick enquiry</small>
+              </a>
             </div>
           </div>
         </div>
@@ -1242,11 +1252,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
   </script>
 
   <script>
-  function copyUPI() {
-    const id = 'kakkamvellytemple@upi';
-    navigator.clipboard.writeText(id).then(() => {
-      const btn = document.querySelector('.upi-copy-btn');
-      if (btn) { btn.innerHTML = '✅ Copied!'; setTimeout(() => { btn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy'; }, 2000); }
+  function copyUPI() { /* UPI ID not yet configured */ }, 2000); }
     }).catch(() => {
       // fallback
       const el = document.getElementById('upi-id-text');
@@ -1256,11 +1262,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
   </script>
 
   <script>
-  function copyKulamUPI() {
-    const id = 'kakkamvellytemple@upi';
-    navigator.clipboard.writeText(id).then(() => {
-      const btn = document.querySelector('.kdb-copy-btn');
-      if (btn) { btn.innerHTML = '✅ Copied!'; setTimeout(() => { btn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy'; }, 2000); }
+  function copyKulamUPI() { /* UPI ID not yet configured */ }, 2000); }
     }).catch(() => {
       const el = document.getElementById('kdb-upi-text');
       if (el) { const r = document.createRange(); r.selectNode(el); window.getSelection().removeAllRanges(); window.getSelection().addRange(r); }
