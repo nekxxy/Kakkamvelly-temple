@@ -189,7 +189,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
   "hasMap": "https://maps.app.goo.gl/LaTA1pWM8NhjW4gK6"
 }
 </script>
-  <meta name="generator" content="Kakkamvelly Temple v1.0.4.24" />
+  <meta name="generator" content="Kakkamvelly Temple v1.0.5.25" />
 </head>
 <body data-audio-ready="true">
   <a href="#main-content" class="skip-to-main" tabindex="0">Skip to main content</a>
@@ -210,7 +210,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
  <span class="brand-en">Kakkamvelly Sreekrishna Temple</span>
  </div>
  </div>
- <span class="site-version-badge" title="Website version">v1.0.4.24</span>
+ <span class="site-version-badge" title="Website version">v1.0.5.25</span>
  <div class="nav-lang-pill" role="group" aria-label="Language selector">
  <button class="nlp-btn active" data-lang="ml" aria-label="Switch to Malayalam">മലയാളം</button>
  <button class="nlp-btn" data-lang="en" aria-label="Switch to English">English</button>
@@ -302,6 +302,65 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
          LIVE INFO PANEL — Top Priority
          Darshan status · Festival countdown · Weather
     ═══════════════════════════════════════════════ -->
+    <!-- ═══════════════════════════════════════════
+         FESTIVAL SECTION — Complete Rebuild
+         Standalone section with hero countdown + queue
+    ═══════════════════════════════════════════ -->
+    <section class="festival-section" aria-labelledby="fest-heading">
+      <div class="container">
+
+        <!-- Header -->
+        <div class="festival-hdr">
+          <div class="festival-hdr-tag">🎊 ഉത്സവ കലണ്ടർ · Festival Calendar</div>
+        </div>
+
+        <div class="festival-section-inner">
+
+          <!-- LEFT: Hero countdown for NEXT festival -->
+          <div>
+            <div class="fest-hero" id="fest-hero-card">
+              <div class="fest-identity">
+                <span class="fest-emoji" id="fest-icon">🌸</span>
+                <div class="fest-names">
+                  <span class="fest-ml" id="fest-name-ml">വിഷു 2026</span>
+                  <span class="fest-en" id="fest-name-en">Vishu · Kerala New Year</span>
+                  <span class="fest-date-badge" id="fest-date-badge">
+                    <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                    April 14, 2026
+                  </span>
+                </div>
+              </div>
+              <div class="fest-countdown" id="festival-countdown" aria-live="polite" aria-label="Festival countdown">
+                <div class="fest-unit"><span class="fest-num" id="fc-d">--</span><span class="fest-unit-lbl">ദിവസം</span></div>
+                <span class="fest-sep" aria-hidden="true">:</span>
+                <div class="fest-unit"><span class="fest-num" id="fc-h">--</span><span class="fest-unit-lbl">മണിക്കൂർ</span></div>
+                <span class="fest-sep" aria-hidden="true">:</span>
+                <div class="fest-unit"><span class="fest-num" id="fc-m">--</span><span class="fest-unit-lbl">മിനിറ്റ്</span></div>
+                <span class="fest-sep" aria-hidden="true">:</span>
+                <div class="fest-unit"><span class="fest-num" id="fc-s">--</span><span class="fest-unit-lbl">സെക്കൻഡ്</span></div>
+              </div>
+              <p class="fest-note" id="fest-note">ക്ഷേത്ര ദർശനം: 5:00 AM – 7:30 PM</p>
+            </div>
+          </div>
+
+          <!-- RIGHT: Upcoming queue -->
+          <div>
+            <div class="fest-queue-title">Upcoming · വരാനിരിക്കുന്ന ഉത്സവങ്ങൾ</div>
+            <div class="fest-queue" id="fest-queue" role="list" aria-label="Upcoming festivals">
+              <!-- Populated by JS -->
+            </div>
+            <div class="fest-show-more">
+              <button class="fest-show-more-btn" id="fest-toggle" aria-expanded="false" onclick="toggleFestQueue()">
+                Show all years ▾
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
     <section id="live-section" aria-labelledby="live-heading">
       <div class="live-panel">
 
@@ -357,25 +416,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
         <div class="container">
           <div class="live-cards-row">
 
-            <!-- Card A: Festival Countdown (highest priority) -->
-            <div class="live-info-card live-card-festival">
-              <div class="lic-header">
-                <span class="lic-icon">🎉</span>
-                <span class="lic-title">അടുത്ത ഉത്സവം</span>
-              </div>
-              <div id="festival-countdown" class="lic-body">
-                <div class="fc-label"><span class="fc-name">വിഷു 2026</span><span class="fc-eng">Vishu · Apr 14</span></div>
-                <div class="fc-units" id="fc-units-init">
-                  <div class="fc-unit"><span class="fc-num">--</span><span class="fc-unit-label">ദിവസം</span></div>
-                  <div class="fc-sep">:</div>
-                  <div class="fc-unit"><span class="fc-num">--</span><span class="fc-unit-label">മണിക്കൂർ</span></div>
-                  <div class="fc-sep">:</div>
-                  <div class="fc-unit"><span class="fc-num">--</span><span class="fc-unit-label">മിനിറ്റ്</span></div>
-                  <div class="fc-sep">:</div>
-                  <div class="fc-unit"><span class="fc-num">--</span><span class="fc-unit-label">സെക്കൻഡ്</span></div>
-                </div>
-              </div>
-            </div>
+
 
 
 

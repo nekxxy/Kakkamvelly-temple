@@ -2247,3 +2247,261 @@ textarea:focus-visible {
   user-select: none;
 }
 @media (max-width: 360px) { .site-version-badge { display: none; } }
+
+/* ══════════════════════════════════════════════
+   FESTIVAL SECTION — Complete Rebuild
+   Standalone full-width section, not inside live-cards
+══════════════════════════════════════════════ */
+
+/* ── Section wrapper ── */
+.festival-section {
+  background:
+    linear-gradient(170deg, #0a0318 0%, #1a0530 40%, #0d0820 70%, #060210 100%);
+  padding: 3rem 0 3.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.festival-section::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 0%,   rgba(255,165,0,.10) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 20% 80%,   rgba(255,100,200,.06) 0%, transparent 60%),
+    radial-gradient(ellipse 30% 30% at 80% 20%,   rgba(100,200,255,.05) 0%, transparent 60%);
+  pointer-events: none;
+}
+/* Floating deepam glow */
+.festival-section::after {
+  content: '🪔';
+  position: absolute; top: 1.5rem; right: 1.5rem;
+  font-size: 1.8rem; opacity: .25;
+  filter: drop-shadow(0 0 12px rgba(255,180,0,.8));
+  animation: deepam-flicker 3s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes deepam-flicker {
+  0%,100%{ opacity:.25; transform:scale(1); }
+  50%    { opacity:.4;  transform:scale(1.08); }
+}
+
+/* ── Section header ── */
+.festival-hdr {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.festival-hdr-tag {
+  display: inline-flex; align-items: center; gap: .4rem;
+  font-family: 'Cinzel', serif;
+  font-size: .68rem; letter-spacing: .18em; text-transform: uppercase;
+  color: rgba(255,200,80,.65);
+  border: 1px solid rgba(255,200,80,.25);
+  border-radius: 50px; padding: .3rem 1rem;
+  margin-bottom: .8rem;
+}
+
+/* ── Current festival hero card ── */
+.fest-hero {
+  background: rgba(255,255,255,.035);
+  border: 1px solid rgba(255,200,80,.2);
+  border-radius: 22px;
+  padding: 2rem 1.5rem 1.75rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 0 60px rgba(255,150,0,.08), inset 0 1px 0 rgba(255,215,0,.12);
+  transition: border-color .4s;
+}
+.fest-hero::before {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255,200,80,.8), rgba(255,120,0,.6), transparent);
+}
+/* Radial glow behind countdown */
+.fest-hero::after {
+  content: '';
+  position: absolute; top: -40%; left: 50%; transform: translateX(-50%);
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(255,180,0,.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Festival emoji + name row */
+.fest-identity {
+  display: flex; align-items: flex-start; gap: 1rem;
+  margin-bottom: 1.5rem; position: relative; z-index: 1;
+}
+.fest-emoji {
+  font-size: 3rem; line-height: 1; flex-shrink: 0;
+  filter: drop-shadow(0 0 16px rgba(255,200,80,.5));
+  animation: fest-float 4s ease-in-out infinite;
+}
+@keyframes fest-float {
+  0%,100%{ transform: translateY(0);  }
+  50%    { transform: translateY(-6px); }
+}
+.fest-names { flex: 1; }
+.fest-ml {
+  font-family: 'Noto Serif Malayalam', serif;
+  font-size: clamp(1.3rem,4.5vw,1.8rem);
+  font-weight: 700; color: #fff; line-height: 1.2;
+  display: block; margin-bottom: .2rem;
+}
+.fest-en {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(.75rem,2.5vw,.9rem);
+  color: rgba(255,200,80,.7); letter-spacing: .06em;
+  display: block; margin-bottom: .2rem;
+}
+.fest-date-badge {
+  display: inline-flex; align-items: center; gap: .3rem;
+  background: rgba(255,200,80,.1); border: 1px solid rgba(255,200,80,.25);
+  border-radius: 50px; padding: .2rem .7rem;
+  font-family: 'Cinzel', serif; font-size: .68rem;
+  color: rgba(255,215,0,.8); letter-spacing: .06em;
+}
+
+/* ── Countdown digits ── */
+.fest-countdown {
+  display: flex; align-items: center; justify-content: center;
+  gap: .5rem; position: relative; z-index: 1;
+  margin-bottom: 1rem;
+}
+.fest-unit {
+  display: flex; flex-direction: column; align-items: center;
+  background: rgba(255,215,0,.07);
+  border: 1px solid rgba(255,215,0,.18);
+  border-radius: 14px;
+  padding: .65rem .75rem .5rem;
+  min-width: clamp(52px,13vw,72px);
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.05);
+}
+.fest-unit::after {
+  content: '';
+  position: absolute; top: 50%; left: 0; right: 0; height: 1px;
+  background: rgba(255,215,0,.08);
+}
+.fest-num {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(1.6rem,6vw,2.4rem);
+  font-weight: 700; color: #ffd700; line-height: 1;
+  letter-spacing: -.02em;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 0 20px rgba(255,200,0,.4);
+}
+.fest-unit-lbl {
+  font-family: 'Noto Serif Malayalam', serif;
+  font-size: clamp(.52rem,1.8vw,.65rem);
+  color: rgba(255,255,255,.4); margin-top: .3rem;
+  letter-spacing: .04em;
+}
+.fest-sep {
+  font-size: clamp(1.4rem,4vw,2rem);
+  color: rgba(255,215,0,.35); font-weight: 700;
+  margin-bottom: .5rem; flex-shrink: 0;
+  animation: sep-blink 1s step-end infinite;
+}
+@keyframes sep-blink { 0%,100%{ opacity:.35; } 50%{ opacity:.08; } }
+
+/* Festival special note */
+.fest-note {
+  text-align: center; position: relative; z-index: 1;
+  font-family: 'Noto Serif Malayalam', serif;
+  font-size: .78rem; color: rgba(255,200,100,.6);
+  font-style: italic;
+}
+
+/* ── Upcoming festivals queue ── */
+.fest-queue-title {
+  font-family: 'Cinzel', serif;
+  font-size: .68rem; letter-spacing: .15em; text-transform: uppercase;
+  color: rgba(255,200,80,.5); margin-bottom: .75rem;
+  display: flex; align-items: center; gap: .5rem;
+}
+.fest-queue-title::before, .fest-queue-title::after {
+  content: ''; flex: 1; height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,200,80,.25), transparent);
+}
+
+/* Horizontal scroll queue on mobile */
+.fest-queue {
+  display: flex; flex-direction: column; gap: .55rem;
+}
+.fest-queue-item {
+  display: flex; align-items: center; gap: .85rem;
+  background: rgba(255,255,255,.025);
+  border: 1px solid rgba(255,200,80,.1);
+  border-radius: 12px; padding: .65rem .9rem;
+  transition: background .25s, border-color .25s;
+  cursor: default;
+}
+.fest-queue-item:hover {
+  background: rgba(255,200,80,.06);
+  border-color: rgba(255,200,80,.22);
+}
+.fqi-emoji { font-size: 1.4rem; flex-shrink: 0; }
+.fqi-info  { flex: 1; min-width: 0; }
+.fqi-ml {
+  font-family: 'Noto Serif Malayalam', serif;
+  font-size: .88rem; font-weight: 700; color: #fff;
+  display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.fqi-en {
+  font-size: .68rem; color: rgba(255,200,80,.6);
+  font-family: 'Cinzel', serif; letter-spacing: .04em;
+}
+.fqi-right { text-align: right; flex-shrink: 0; }
+.fqi-date {
+  font-family: 'Cinzel', serif; font-size: .72rem;
+  color: rgba(255,215,0,.7); display: block; white-space: nowrap;
+}
+.fqi-days {
+  font-size: .65rem; color: rgba(255,255,255,.35);
+  font-family: 'Lato', sans-serif;
+}
+.fqi-year-sep {
+  text-align: center; padding: .3rem 0;
+  font-family: 'Cinzel', serif; font-size: .62rem; letter-spacing: .12em;
+  color: rgba(255,200,80,.3); text-transform: uppercase;
+  position: relative;
+}
+.fqi-year-sep::before {
+  content: attr(data-year);
+  background: rgba(255,200,80,.08);
+  border: 1px solid rgba(255,200,80,.15);
+  border-radius: 50px; padding: .15rem .7rem;
+}
+
+/* Past festival style */
+.fest-queue-item.fqi-past {
+  opacity: .35; pointer-events: none;
+}
+/* Show more / collapse */
+.fest-show-more {
+  text-align: center; margin-top: .5rem;
+}
+.fest-show-more-btn {
+  background: none; border: 1px solid rgba(255,200,80,.2);
+  color: rgba(255,200,80,.6); border-radius: 50px;
+  padding: .35rem 1.2rem; font-size: .72rem; cursor: pointer;
+  font-family: 'Cinzel', serif; letter-spacing: .06em;
+  transition: all .25s;
+}
+.fest-show-more-btn:hover {
+  background: rgba(255,200,80,.08); color: rgba(255,215,0,.9);
+  border-color: rgba(255,200,80,.4);
+}
+
+@media (min-width: 640px) {
+  .fest-queue { display: grid; grid-template-columns: 1fr 1fr; }
+  .fqi-year-sep { grid-column: 1/-1; }
+}
+@media (min-width: 900px) {
+  .fest-hero { padding: 2.5rem 2rem 2rem; }
+  .fest-identity { margin-bottom: 2rem; }
+  .festival-section-inner { display: grid; grid-template-columns: 1.1fr 1fr; gap: 2rem; align-items: start; }
+  .fest-queue { grid-template-columns: 1fr; }
+  .fqi-year-sep { grid-column: 1; }
+}
