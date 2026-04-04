@@ -324,3 +324,36 @@ const $ = id => document.getElementById(id);
     bar.style.width = docH > 0 ? (window.scrollY/docH*100)+'%' : '0%';
   }, {passive:true});
 })();
+
+/* ══════════════════════════════════════════════
+   KULAM RENOVATION COUNTDOWN — May 1 2026
+══════════════════════════════════════════════ */
+(function initKulamCountdown() {
+  const targetDate = new Date('2026-05-01T00:00:00').getTime();
+
+  function update() {
+    const now  = new Date().getTime();
+    const diff = targetDate - now;
+
+    if (diff <= 0) {
+      const cd = document.getElementById('kulam-cd-days');
+      if (cd) cd.closest('.kdb-countdown-wrap').innerHTML =
+        '<p class="kdb-countdown-label" style="color:#22c55e">🔨 Renovation Started!</p>';
+      return;
+    }
+
+    const days  = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const mins  = Math.floor((diff / (1000 * 60)) % 60);
+
+    const dEl = document.getElementById('kulam-cd-days');
+    const hEl = document.getElementById('kulam-cd-hours');
+    const mEl = document.getElementById('kulam-cd-mins');
+    if (dEl) dEl.textContent = days;
+    if (hEl) hEl.textContent = String(hours).padStart(2,'0');
+    if (mEl) mEl.textContent = String(mins).padStart(2,'0');
+  }
+
+  update();
+  setInterval(update, 1000);
+})();

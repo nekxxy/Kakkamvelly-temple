@@ -467,7 +467,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
             <div class="kulam-photo-wrap" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം കാണുക">
               <picture>
                 <source srcset="images/kulam-before-overgrown.webp" type="image/webp"/>
-                <img src="images/kulam-before-overgrown.jpg"
+                <img src="images/kulam-before-overgrown.webp"
                      alt="കുളം — നവീകരണത്തിനു മുൻപ്"
                      width="400" height="600" loading="lazy" decoding="async"
                      data-full="images/kulam-before-overgrown.jpg"/>
@@ -483,7 +483,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
             <div class="kulam-photo-wrap" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം കാണുക">
               <picture>
                 <source srcset="images/kulam-empty-excavated.webp" type="image/webp"/>
-                <img src="images/kulam-empty-excavated.jpg"
+                <img src="images/kulam-empty-excavated.webp"
                      alt="Temple pond fully excavated showing laterite stone walls and dry bed"
                      width="400" height="400" loading="lazy" decoding="async"
                      data-full="images/kulam-empty-excavated.jpg"/>
@@ -499,7 +499,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
             <div class="kulam-photo-wrap" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം കാണുക">
               <picture>
                 <source srcset="images/kulam-workers-cleaning.webp" type="image/webp"/>
-                <img src="images/kulam-workers-cleaning.jpg"
+                <img src="images/kulam-workers-cleaning.webp"
                      alt="Community volunteers working in the temple pond during renovation"
                      width="400" height="400" loading="lazy" decoding="async"
                      data-full="images/kulam-workers-cleaning.jpg"/>
@@ -515,7 +515,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
             <div class="kulam-photo-wrap" onclick="openLightbox(this)" role="button" tabindex="0" aria-label="ചിത്രം കാണുക">
               <picture>
                 <source srcset="images/kulam-filled-water.webp" type="image/webp"/>
-                <img src="images/kulam-filled-water.jpg"
+                <img src="images/kulam-filled-water.webp"
                      alt="Temple pond filled with rainwater during monsoon — historic photograph"
                      width="600" height="400" loading="lazy" decoding="async"
                      data-full="images/kulam-filled-water.jpg"/>
@@ -528,6 +528,58 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
           </div>
 
         </div><!-- /kulam-photo-grid -->
+
+        <!-- Donation Progress Box -->
+        <div class="kulam-donation-box">
+          <h3 class="kdb-title">Support Temple Renovation</h3>
+
+          <div class="kdb-stats">
+            <div class="kdb-stat">
+              <span class="kdb-stat-label">Target</span>
+              <span class="kdb-stat-value">₹47,00,000</span>
+            </div>
+            <div class="kdb-stat">
+              <span class="kdb-stat-label">Collected</span>
+              <span class="kdb-stat-value kdb-collected">₹12,00,000</span>
+            </div>
+            <div class="kdb-stat">
+              <span class="kdb-stat-label">Remaining</span>
+              <span class="kdb-stat-value kdb-remaining">₹35,00,000</span>
+            </div>
+          </div>
+
+          <div class="kdb-progress-wrap" role="progressbar" aria-valuenow="1200000" aria-valuemax="4700000" aria-label="Renovation fund progress">
+            <div class="kdb-progress-bar" style="width:25.5%"></div>
+            <span class="kdb-progress-pct">25.5%</span>
+          </div>
+
+          <div class="kdb-countdown-wrap">
+            <p class="kdb-countdown-label">🏗️ Renovation starts in</p>
+            <div class="kdb-countdown">
+              <div class="kdb-unit"><span id="kulam-cd-days">--</span><small>ദിവസം</small></div>
+              <div class="kdb-sep">:</div>
+              <div class="kdb-unit"><span id="kulam-cd-hours">--</span><small>മണിക്കൂർ</small></div>
+              <div class="kdb-unit"><span id="kulam-cd-mins">--</span><small>മിനിറ്റ്</small></div>
+            </div>
+          </div>
+
+          <div class="kdb-upi">
+            <div class="kdb-qr-wrap">
+              <div class="kdb-qr-placeholder" aria-label="UPI QR Code">
+                <span style="font-size:2.5rem">📱</span>
+                <p style="font-size:.7rem;color:rgba(255,255,255,.4);margin:.2rem 0 0">UPI QR Code</p>
+                <p style="font-size:.65rem;color:rgba(255,215,0,.5);font-family:monospace">kakkamvellytemple@upi</p>
+              </div>
+            </div>
+            <div class="kdb-upi-id">
+              <p class="kdb-upi-label">UPI ID</p>
+              <code id="kdb-upi-text">kakkamvellytemple@upi</code>
+              <button class="kdb-copy-btn" onclick="copyKulamUPI()" aria-label="Copy UPI ID">
+                <i class="fa-regular fa-copy" aria-hidden="true"></i> Copy
+              </button>
+            </div>
+          </div>
+        </div>
 
         <!-- CTA -->
         <div class="kulam-cta">
@@ -573,7 +625,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
  <picture>
               <source media="(max-width:480px)" srcset="images/mobile/temple-front-view.webp" type="image/webp" />
               <source srcset="images/temple-front-view.webp" type="image/webp" />
-              <img src="images/temple-front-view.jpg"
+              <img src="images/temple-front-view.webp"
                    alt="Front view of Kakkamvelly Sreekrishna Temple with Kerala-style tiled roof and hanging deepam lamps"
                    class="about-real-photo"
                    width="600" height="402"
@@ -619,23 +671,19 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
  What you will find is pure, peaceful devotion.
  </p>
  <div class="about-highlights">
- <div class="highlight-item">
- <i class="fa-solid fa-baby" aria-hidden="true"></i>
- <span>ഉണ്ണിക്കൃഷ്ണൻ — Little Krishna Form</span>
- </div>
- <div class="highlight-item">
- <i class="fa-solid fa-map-pin" aria-hidden="true"></i>
- <span>നാടപുരം, കോഴിക്കോട്, കേരളം</span>
- </div>
- <div class="highlight-item">
- <i class="fa-solid fa-dove" aria-hidden="true"></i>
- <span>ശാന്തവും ആത്മീയവുമായ അന്തരീക്ഷം</span>
- </div>
- <div class="highlight-item">
- <i class="fa-solid fa-users" aria-hidden="true"></i>
- <span>No vedikkett · No elephants · Pure bhakti</span>
- </div>
- </div>
+              <div class="highlight-item">
+                <i class="fa-solid fa-om" aria-hidden="true"></i>
+                <span>Ancient temple with rich history</span>
+              </div>
+              <div class="highlight-item">
+                <i class="fa-solid fa-hammer" aria-hidden="true"></i>
+                <span>Renovation started in 2024</span>
+              </div>
+              <div class="highlight-item">
+                <i class="fa-solid fa-indian-rupee-sign" aria-hidden="true"></i>
+                <span>Total cost ₹47 Lakhs</span>
+              </div>
+            </div>
  </div>
  </div>
  </div>
@@ -1114,6 +1162,19 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
     }).catch(() => {
       // fallback
       const el = document.getElementById('upi-id-text');
+      if (el) { const r = document.createRange(); r.selectNode(el); window.getSelection().removeAllRanges(); window.getSelection().addRange(r); }
+    });
+  }
+  </script>
+
+  <script>
+  function copyKulamUPI() {
+    const id = 'kakkamvellytemple@upi';
+    navigator.clipboard.writeText(id).then(() => {
+      const btn = document.querySelector('.kdb-copy-btn');
+      if (btn) { btn.innerHTML = '✅ Copied!'; setTimeout(() => { btn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy'; }, 2000); }
+    }).catch(() => {
+      const el = document.getElementById('kdb-upi-text');
       if (el) { const r = document.createRange(); r.selectNode(el); window.getSelection().removeAllRanges(); window.getSelection().addRange(r); }
     });
   }

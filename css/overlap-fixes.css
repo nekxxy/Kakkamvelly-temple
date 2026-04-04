@@ -1945,3 +1945,197 @@ textarea:focus-visible {
 .hero-gradient ~ #galaxy-canvas {
   mix-blend-mode: screen;
 }
+
+/* ══════════════════════════════════════════════
+   KULAM DONATION BOX
+══════════════════════════════════════════════ */
+.kulam-donation-box {
+  background: rgba(0,200,255,.05);
+  border: 1px solid rgba(0,200,255,.18);
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.kdb-title {
+  font-family: 'Noto Serif Malayalam', serif;
+  font-size: clamp(1rem,3vw,1.15rem);
+  color: #00e5ff;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.kdb-stats {
+  display: flex;
+  justify-content: space-around;
+  gap: .75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+.kdb-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .15rem;
+}
+.kdb-stat-label {
+  font-size: .7rem;
+  color: rgba(255,255,255,.45);
+  font-family: 'Cinzel', serif;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+.kdb-stat-value {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(.9rem,2.5vw,1.1rem);
+  font-weight: 700;
+  color: #ffd700;
+}
+.kdb-collected { color: #22c55e !important; }
+.kdb-remaining { color: #ffa500 !important; }
+
+.kdb-progress-wrap {
+  position: relative;
+  height: 10px;
+  background: rgba(255,255,255,.08);
+  border-radius: 10px;
+  overflow: visible;
+  margin-bottom: .35rem;
+}
+.kdb-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #22c55e, #4ade80);
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(34,197,94,.4);
+  transition: width .5s ease;
+}
+.kdb-progress-pct {
+  position: absolute;
+  right: 0;
+  top: -1.4rem;
+  font-size: .7rem;
+  color: #22c55e;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+}
+
+/* Countdown inside donation box */
+.kdb-countdown-wrap {
+  text-align: center;
+  margin: 1rem 0;
+  padding: .75rem;
+  background: rgba(0,200,255,.05);
+  border-radius: 10px;
+  border: 1px solid rgba(0,200,255,.1);
+}
+.kdb-countdown-label {
+  font-family: 'Noto Serif Malayalam', serif;
+  font-size: .8rem;
+  color: rgba(255,255,255,.55);
+  margin-bottom: .5rem;
+}
+.kdb-countdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+}
+.kdb-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255,215,0,.08);
+  border: 1px solid rgba(255,215,0,.2);
+  border-radius: 8px;
+  padding: .3rem .6rem;
+  min-width: 48px;
+}
+.kdb-unit span {
+  font-family: 'Cinzel', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffd700;
+  line-height: 1.1;
+}
+.kdb-unit small {
+  font-family: 'Noto Serif Malayalam', serif;
+  font-size: .52rem;
+  color: rgba(255,255,255,.35);
+}
+.kdb-sep {
+  font-size: 1.2rem;
+  color: rgba(255,215,0,.3);
+  padding-bottom: .3rem;
+  font-weight: 700;
+}
+
+/* UPI section */
+.kdb-upi {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(0,200,255,.1);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.kdb-qr-wrap {
+  display: flex;
+  justify-content: center;
+}
+.kdb-qr-placeholder {
+  width: 120px;
+  height: 120px;
+  border: 2px dashed rgba(255,215,0,.3);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,215,0,.04);
+}
+.kdb-upi-id {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+.kdb-upi-label {
+  font-size: .7rem;
+  color: rgba(255,255,255,.4);
+  font-family: 'Cinzel', serif;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  margin: 0;
+}
+.kdb-upi-id code {
+  font-family: monospace;
+  font-size: .95rem;
+  color: #ffd700;
+  background: rgba(255,215,0,.08);
+  border: 1px solid rgba(255,215,0,.2);
+  border-radius: 6px;
+  padding: .35rem .8rem;
+  user-select: all;
+  cursor: text;
+}
+.kdb-copy-btn {
+  background: rgba(255,215,0,.1);
+  border: 1px solid rgba(255,215,0,.3);
+  color: #ffd700;
+  border-radius: 8px;
+  padding: .4rem .9rem;
+  font-size: .8rem;
+  cursor: pointer;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: .3rem;
+  font-family: 'Lato', sans-serif;
+  transition: background .2s;
+}
+.kdb-copy-btn:hover { background: rgba(255,215,0,.2); }
+
+@media (max-width: 480px) {
+  .kdb-stats { justify-content: center; gap: 1rem; }
+  .kdb-upi { flex-direction: column; }
+}
