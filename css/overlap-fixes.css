@@ -2229,3 +2229,21 @@ textarea:focus-visible {
   text-decoration: none;
 }
 .skip-to-main:focus { top: 1rem; }
+
+/* ══════════════════════════════════════════════
+   VERSION BADGE
+══════════════════════════════════════════════ */
+.site-version-badge {
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  color: rgba(255,215,0,0.45);
+  border: 1px solid rgba(255,215,0,0.2);
+  border-radius: 50px;
+  padding: 2px 7px;
+  letter-spacing: 0.08em;
+  flex-shrink: 0;
+  align-self: center;
+  white-space: nowrap;
+  user-select: none;
+}
+@media (max-width: 360px) { .site-version-badge { display: none; } }
