@@ -35,8 +35,8 @@ else:
 
 vdata['build'] += 1
 vdata['patch'] += 1 if vdata['build'] % 5 == 0 else 0
-version_str  = f"v{vdata['major']}.{vdata['minor']}.{vdata['patch']}"
-build_str    = f"{version_str}.{vdata['build']}"
+version_str  = f"v{vdata['major']}.{vdata['minor']}.{vdata['patch']}.{vdata['build']}"
+build_str    = version_str
 sw_cache_key = f"kvt-{version_str.replace('.', '-')}-b{vdata['build']}"
 
 with open(vf, 'w') as f: json.dump(vdata, f, indent=2)
