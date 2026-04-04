@@ -2505,3 +2505,138 @@ textarea:focus-visible {
   .fest-queue { grid-template-columns: 1fr; }
   .fqi-year-sep { grid-column: 1; }
 }
+
+/* ══════════════════════════════════════════════
+   FESTIVAL CARD — Redesigned, on-brand
+   Uses exact site colour tokens, matches live-section
+══════════════════════════════════════════════ */
+
+/* Column wrapper replacing the row */
+.live-cards-col {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  padding: .9rem 0 1rem;
+}
+
+/* Festival card spans full width */
+.live-card-festival-wide {
+  width: 100%;
+}
+
+/* Header date badge (right-aligned) */
+.fest-hdr-date {
+  margin-left: auto;
+  font-family: 'Cinzel', serif;
+  font-size: .64rem;
+  color: rgba(255,215,0,.5);
+  letter-spacing: .06em;
+  white-space: nowrap;
+}
+
+/* Festival body — two columns on tablet+ */
+.lic-body-festival {
+  min-height: unset !important;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  gap: .75rem 1.25rem;
+  align-items: start;
+  padding: .75rem .85rem !important;
+}
+@media (max-width: 600px) {
+  .lic-body-festival {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Left: name + countdown */
+.fc-top {
+  display: flex;
+  flex-direction: column;
+  gap: .45rem;
+}
+.fc-label { margin-bottom: 0; }
+
+/* ── Countdown digits — use existing fc-* classes ── */
+/* (fc-unit, fc-num, fc-unit-label, fc-sep already defined) */
+/* Slightly taller digits for the wider card */
+.live-card-festival-wide .fc-num {
+  font-size: 1.35rem !important;
+}
+.live-card-festival-wide .fc-unit {
+  min-width: 42px;
+  padding: .3rem .45rem;
+}
+
+/* ── Right: upcoming queue ── */
+.fc-queue {
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+  max-height: 160px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,215,0,.2) transparent;
+}
+.fc-queue::-webkit-scrollbar { width: 3px; }
+.fc-queue::-webkit-scrollbar-thumb { background: rgba(255,215,0,.2); border-radius: 3px; }
+
+/* Queue item */
+.fc-qi {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  padding: .3rem .45rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255,215,0,.08);
+  background: rgba(255,215,0,.03);
+  transition: background .2s;
+}
+.fc-qi:hover { background: rgba(255,215,0,.07); }
+.fc-qi-icon  {
+  font-size: .95rem; flex-shrink: 0; line-height: 1;
+  width: 1.2rem; text-align: center;
+}
+.fc-qi-info  { flex: 1; min-width: 0; }
+.fc-qi-ml {
+  font-family: 'Noto Serif Malayalam', serif;
+  font-size: .75rem; color: rgba(255,255,255,.85);
+  display: block; white-space: nowrap;
+  overflow: hidden; text-overflow: ellipsis;
+}
+.fc-qi-en {
+  font-family: 'Cinzel', serif;
+  font-size: .58rem; color: rgba(255,215,0,.45);
+  letter-spacing: .04em; display: block;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.fc-qi-right { text-align: right; flex-shrink: 0; }
+.fc-qi-date {
+  font-family: 'Cinzel', serif; font-size: .65rem;
+  color: rgba(255,215,0,.65); display: block; white-space: nowrap;
+}
+.fc-qi-days {
+  font-size: .58rem; color: rgba(255,255,255,.3);
+  font-family: 'Lato', sans-serif;
+}
+
+/* Year separator in queue */
+.fc-qs-year {
+  font-family: 'Cinzel', serif;
+  font-size: .58rem; letter-spacing: .12em;
+  color: rgba(255,215,0,.35); text-align: center;
+  padding: .15rem 0;
+  border-top: 1px solid rgba(255,215,0,.08);
+  margin-top: .05rem;
+}
+
+/* Row 2: weather + astro side by side */
+.live-cards-row-2 {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr;
+  gap: .75rem;
+  padding: 0 !important;
+}
+@media (max-width: 380px) {
+  .live-cards-row-2 { grid-template-columns: 1fr !important; }
+}

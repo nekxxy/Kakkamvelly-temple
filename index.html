@@ -189,7 +189,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
   "hasMap": "https://maps.app.goo.gl/LaTA1pWM8NhjW4gK6"
 }
 </script>
-  <meta name="generator" content="Kakkamvelly Temple v1.0.5.25" />
+  <meta name="generator" content="Kakkamvelly Temple v1.0.5.26" />
 </head>
 <body data-audio-ready="true">
   <a href="#main-content" class="skip-to-main" tabindex="0">Skip to main content</a>
@@ -210,7 +210,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
  <span class="brand-en">Kakkamvelly Sreekrishna Temple</span>
  </div>
  </div>
- <span class="site-version-badge" title="Website version">v1.0.5.25</span>
+ <span class="site-version-badge" title="Website version">v1.0.5.26</span>
  <div class="nav-lang-pill" role="group" aria-label="Language selector">
  <button class="nlp-btn active" data-lang="ml" aria-label="Switch to Malayalam">മലയാളം</button>
  <button class="nlp-btn" data-lang="en" aria-label="Switch to English">English</button>
@@ -306,59 +306,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
          FESTIVAL SECTION — Complete Rebuild
          Standalone section with hero countdown + queue
     ═══════════════════════════════════════════ -->
-    <section class="festival-section" aria-labelledby="fest-heading">
-      <div class="container">
-
-        <!-- Header -->
-        <div class="festival-hdr">
-          <div class="festival-hdr-tag">🎊 ഉത്സവ കലണ്ടർ · Festival Calendar</div>
-        </div>
-
-        <div class="festival-section-inner">
-
-          <!-- LEFT: Hero countdown for NEXT festival -->
-          <div>
-            <div class="fest-hero" id="fest-hero-card">
-              <div class="fest-identity">
-                <span class="fest-emoji" id="fest-icon">🌸</span>
-                <div class="fest-names">
-                  <span class="fest-ml" id="fest-name-ml">വിഷു 2026</span>
-                  <span class="fest-en" id="fest-name-en">Vishu · Kerala New Year</span>
-                  <span class="fest-date-badge" id="fest-date-badge">
-                    <i class="fa-regular fa-calendar" aria-hidden="true"></i>
-                    April 14, 2026
-                  </span>
-                </div>
-              </div>
-              <div class="fest-countdown" id="festival-countdown" aria-live="polite" aria-label="Festival countdown">
-                <div class="fest-unit"><span class="fest-num" id="fc-d">--</span><span class="fest-unit-lbl">ദിവസം</span></div>
-                <span class="fest-sep" aria-hidden="true">:</span>
-                <div class="fest-unit"><span class="fest-num" id="fc-h">--</span><span class="fest-unit-lbl">മണിക്കൂർ</span></div>
-                <span class="fest-sep" aria-hidden="true">:</span>
-                <div class="fest-unit"><span class="fest-num" id="fc-m">--</span><span class="fest-unit-lbl">മിനിറ്റ്</span></div>
-                <span class="fest-sep" aria-hidden="true">:</span>
-                <div class="fest-unit"><span class="fest-num" id="fc-s">--</span><span class="fest-unit-lbl">സെക്കൻഡ്</span></div>
-              </div>
-              <p class="fest-note" id="fest-note">ക്ഷേത്ര ദർശനം: 5:00 AM – 7:30 PM</p>
-            </div>
-          </div>
-
-          <!-- RIGHT: Upcoming queue -->
-          <div>
-            <div class="fest-queue-title">Upcoming · വരാനിരിക്കുന്ന ഉത്സവങ്ങൾ</div>
-            <div class="fest-queue" id="fest-queue" role="list" aria-label="Upcoming festivals">
-              <!-- Populated by JS -->
-            </div>
-            <div class="fest-show-more">
-              <button class="fest-show-more-btn" id="fest-toggle" aria-expanded="false" onclick="toggleFestQueue()">
-                Show all years ▾
-              </button>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
+    
 
 
     <section id="live-section" aria-labelledby="live-heading">
@@ -414,39 +362,69 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
 
         <!-- Row 2: Live info cards -->
         <div class="container">
-          <div class="live-cards-row">
+          <div class="live-cards-col">
 
-
-
-
-
-            <!-- Card C: Weather -->
-            <div class="live-info-card live-card-weather">
+            <!-- ROW 1: Festival card — full width -->
+            <div class="live-info-card live-card-festival live-card-festival-wide">
               <div class="lic-header">
-                <span class="lic-icon">🌤</span>
-                <span class="lic-title">Purameri കാലാവസ്ഥ</span>
+                <span class="lic-icon" id="fest-icon" aria-hidden="true">🌸</span>
+                <span class="lic-title" id="fest-name-ml">അടുത്ത ഉത്സവം</span>
+                <span class="fest-hdr-date" id="fest-date-badge"></span>
               </div>
-              <div id="weather-widget" class="lic-body">
-                <div class="lic-loading" id="weather-init">🌤 Purameri</div>
-              </div>
-            </div>
-
-            <!-- Card D: Sun + Moon (astro card) -->
-            <div class="live-info-card live-card-astro">
-              <div class="lic-header">
-                <span class="lic-icon">🌙</span>
-                <span class="lic-title">സൂര്യൻ · ചന്ദ്രൻ</span>
-              </div>
-              <div class="lic-body">
-                <div id="sunrise-sunset">
-                  <div class="sun-row"><span class="sun-icon">🌅</span><span class="sun-label">സൂര്യോദയം</span><span class="sun-time" id="sr-time">6:10 AM</span></div>
-                  <div class="sun-row"><span class="sun-icon">🌇</span><span class="sun-label">സൂര്യാസ്തമയം</span><span class="sun-time" id="ss-time">6:25 PM</span></div>
+              <div class="lic-body lic-body-festival">
+                <!-- Name + countdown -->
+                <div class="fc-top">
+                  <div class="fc-label">
+                    <span class="fc-name" id="fest-name-ml-body">വിഷു 2026</span>
+                    <span class="fc-eng"  id="fest-name-en">Vishu · Kerala New Year</span>
+                  </div>
+                  <div class="fc-units" id="festival-countdown" aria-live="polite">
+                    <div class="fc-unit"><span class="fc-num" id="fc-d">--</span><span class="fc-unit-label">ദിവസം</span></div>
+                    <div class="fc-sep" aria-hidden="true">:</div>
+                    <div class="fc-unit"><span class="fc-num" id="fc-h">--</span><span class="fc-unit-label">മണിക്കൂർ</span></div>
+                    <div class="fc-sep" aria-hidden="true">:</div>
+                    <div class="fc-unit"><span class="fc-num" id="fc-m">--</span><span class="fc-unit-label">മിനിറ്റ്</span></div>
+                    <div class="fc-sep" aria-hidden="true">:</div>
+                    <div class="fc-unit"><span class="fc-num" id="fc-s">--</span><span class="fc-unit-label">സെക്കൻഡ്</span></div>
+                  </div>
                 </div>
-                <div id="moon-phase" class="moon-phase-wrap"></div>
+                <!-- Upcoming queue -->
+                <div class="fc-queue" id="fest-queue" role="list" aria-label="Upcoming festivals"></div>
               </div>
             </div>
 
-          </div>
+            <!-- ROW 2: Weather + Astro side by side -->
+            <div class="live-cards-row live-cards-row-2">
+
+              <!-- Weather -->
+              <div class="live-info-card live-card-weather">
+                <div class="lic-header">
+                  <span class="lic-icon">🌤</span>
+                  <span class="lic-title">Purameri കാലാവസ്ഥ</span>
+                </div>
+                <div id="weather-widget" class="lic-body">
+                  <div class="lic-loading" id="weather-init">🌤 Purameri</div>
+                </div>
+              </div>
+
+              <!-- Sun + Moon -->
+              <div class="live-info-card live-card-astro">
+                <div class="lic-header">
+                  <span class="lic-icon">🌙</span>
+                  <span class="lic-title">സൂര്യൻ · ചന്ദ്രൻ</span>
+                </div>
+                <div class="lic-body">
+                  <div id="sunrise-sunset">
+                    <div class="sun-row"><span class="sun-icon">🌅</span><span class="sun-label">സൂര്യോദയം</span><span class="sun-time" id="sr-time">6:10 AM</span></div>
+                    <div class="sun-row"><span class="sun-icon">🌇</span><span class="sun-label">സൂര്യാസ്തമയം</span><span class="sun-time" id="ss-time">6:25 PM</span></div>
+                  </div>
+                  <div id="moon-phase" class="moon-phase-wrap"></div>
+                </div>
+              </div>
+
+            </div><!-- /row-2 -->
+
+          </div><!-- /live-cards-col -->
 
 
         </div>

@@ -163,39 +163,42 @@ function getIST() {
   function tick() {
     const next = getNext();
 
-    // If festival changed, update hero identity
+    // Update hero identity whenever the active festival changes
     if (!currentNext || next.ml !== currentNext.ml) {
       currentNext = next;
-      const el   = id => document.getElementById(id);
-      const nameEl = el('fest-name-ml');   if (nameEl) nameEl.textContent  = next.ml;
-      const enEl   = el('fest-name-en');   if (enEl)   enEl.textContent    = next.en;
-      const iconEl = el('fest-icon');      if (iconEl) iconEl.textContent  = next.icon;
-      const noteEl = el('fest-note');      if (noteEl) noteEl.textContent  = next.note || '';
-      const dateEl = el('fest-date-badge');
-      if (dateEl) dateEl.innerHTML =
-        `<i class="fa-regular fa-calendar" aria-hidden="true"></i> ` +
-        next.date.toLocaleDateString('en-IN', {day:'numeric', month:'long', year:'numeric'});
+      function setTxt(id, val) {
+        const el = document.getElementById(id);
+        if (el) el.textContent = val;
+      }
+      // Header
+      setTxt('fest-icon', next.icon);
+      setTxt('fest-name-ml', '🎉 ' + next.ml);   // card header title
+      // Body
+      setTxt('fest-name-ml-body', next.ml);
+      setTxt('fest-name-en', next.en);
+      // Date badge in header
+      const dateEl = document.getElementById('fest-date-badge');
+      if (dateEl) dateEl.textContent =
+        next.date.toLocaleDateString('en-IN', {day:'numeric', month:'short', year:'numeric'});
       buildQueue(next);
     }
 
-    // Countdown digits
+    // Countdown digits — write to fc-d / fc-h / fc-m / fc-s
     const diff = Math.max(0, next.date - new Date());
     const d = Math.floor(diff / 86400000);
     const h = Math.floor((diff % 86400000) / 3600000);
     const m = Math.floor((diff % 3600000)  / 60000);
     const s = Math.floor((diff % 60000)    / 1000);
-    const set = (id, v) => { const el=document.getElementById(id); if(el) el.textContent=pad(v); };
-    set('fc-d', d); set('fc-h', h); set('fc-m', m); set('fc-s', s);
+    function setNum(id, v) {
+      const el = document.getElementById(id);
+      if (el) el.textContent = pad(v);
+    }
+    setNum('fc-d', d); setNum('fc-h', h); setNum('fc-m', m); setNum('fc-s', s);
   }
 
   /* ── Build upcoming queue (all FUTURE festivals except current) ── */
-  let showAll = false;
-  window.toggleFestQueue = function() {
-    showAll = !showAll;
-    const btn = document.getElementById('fest-toggle');
-    if (btn) { btn.textContent = showAll ? 'Show less ▴' : 'Show all years ▾'; btn.setAttribute('aria-expanded', showAll); }
-    buildQueue(currentNext || getNext());
-  };
+  let showAll = true;  // Always show full queue (container is scrollable)
+  window.toggleFestQueue = function() {};  // no-op, kept for compat
 
   function buildQueue(next) {
     const qEl = document.getElementById('fest-queue');
@@ -204,11 +207,8 @@ function getIST() {
 
     // Upcoming = all festivals strictly after `next` (i.e. queue starts from item after current)
     let queue = FESTIVALS.filter(f => f !== next && f.date > now);
-    const PREVIEW = 5;
-    const limited = showAll ? queue : queue.slice(0, PREVIEW);
-
-    const toggle = document.getElementById('fest-toggle');
-    if (toggle) toggle.style.display = queue.length > PREVIEW ? '' : 'none';
+    // Full queue — container is scrollable with max-height
+    const limited = queue;
 
     let html = '';
     let lastYear = -1;
@@ -216,22 +216,22 @@ function getIST() {
     limited.forEach(f => {
       const year = f.date.getFullYear();
       if (year !== lastYear) {
-        html += `<div class="fqi-year-sep" data-year="${year}" role="separator" aria-label="Year ${year}"></div>`;
+        html += `<div class="fc-qs-year" role="separator" aria-label="Year ${year}">${year}</div>`;
         lastYear = year;
       }
       const daysAway = Math.ceil((f.date - now) / 86400000);
       const dateStr  = f.date.toLocaleDateString('en-IN', { day:'numeric', month:'short', year:'numeric' });
       const daysStr  = daysAway === 1 ? 'Tomorrow' : `${daysAway} days`;
       html += `
-        <div class="fest-queue-item" role="listitem">
-          <span class="fqi-emoji" aria-hidden="true">${f.icon}</span>
-          <div class="fqi-info">
-            <span class="fqi-ml">${f.ml}</span>
-            <span class="fqi-en">${f.en}</span>
+        <div class="fc-qi" role="listitem">
+          <span class="fc-qi-icon" aria-hidden="true">${f.icon}</span>
+          <div class="fc-qi-info">
+            <span class="fc-qi-ml">${f.ml}</span>
+            <span class="fc-qi-en">${f.en}</span>
           </div>
-          <div class="fqi-right">
-            <span class="fqi-date">${dateStr}</span>
-            <span class="fqi-days">${daysStr}</span>
+          <div class="fc-qi-right">
+            <span class="fc-qi-date">${dateStr}</span>
+            <span class="fc-qi-days">${daysStr}</span>
           </div>
         </div>`;
     });
