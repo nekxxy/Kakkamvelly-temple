@@ -27,7 +27,7 @@
  <meta name="theme-color" content="#1a0620" />
  <meta name="apple-mobile-web-app-capable" content="yes" />
  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
- <meta name="description" content="Kakkamvelly Sreekrishna Temple, Purameri, Kozhikode, Kerala. Baby Krishna temple near Nadapuram. Darshan: 5:30 AM–9 AM &amp; 5:45–6:45 PM. Monthly Annadhanam. കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രത്തിന്റെ ഔദ്യോഗിക വെബ്സൈറ്റ്. കോഴിക്കോട് ജില്ലയിൽ സ്ഥിതി ചെയ്യുന്ന ഈ ക്ഷേത്രത്തിലെ സമയക്രമം, പൂജ ഷെഡ്യൂൾ, സ്ഥലം, വഴിക്കുറിപ്പ് എന്നിവ അറിയൂ." />
+ <meta name="description" content="Kakkamvelly Sreekrishna Temple, Purameri, Kozhikode, Kerala. Baby Krishna temple — daily darshan 5:30–9 AM &amp; 5:45–6:45 PM. Monthly Annadhanam every first Sunday." />
  <meta name="keywords" content="Kakkamvelly temple, Sreekrishna temple, Kozhikode temple, Kerala Hindu temple, കക്കംവെള്ളി ക്ഷേത്രം, ശ്രീകൃഷ്ണ ക്ഷേത്രം, ക്ഷേത്ര സമയം, പൂജ ഷെഡ്യൂൾ" />
  <title>കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം | കോഴിക്കോട്, കേരളം</title>
  <style id="lang-toggle-css">
@@ -69,7 +69,15 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
 .live-status-bar{display:flex;align-items:center;justify-content:space-between;gap:.75rem;padding:.6rem 1rem;background:rgba(10,6,0,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,215,0,.15);flex-wrap:wrap}
 .dsw-dot{width:10px;height:10px;border-radius:50%;background:#6b7280;flex-shrink:0}
 .dsw-text{font-family:'Noto Serif Malayalam',serif;font-size:clamp(.75rem,2.5vw,.88rem);color:rgba(255,255,255,.9);font-weight:600}
-.nav-menu{position:fixed;top:var(--mob-nav-h);left:0;right:0;background:rgba(8,4,24,.95);border-bottom:1px solid rgba(255,215,0,.12);display:flex;padding:.4rem .6rem;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;z-index:998;height:44px;align-items:center}</style>
+.nav-menu{position:fixed;top:var(--mob-nav-h);left:0;right:0;background:rgba(8,4,24,.95);border-bottom:1px solid rgba(255,215,0,.12);display:flex;padding:.4rem .6rem;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;z-index:998;height:44px;align-items:center}
+.next-darshan-badge{display:inline-block;padding:.5rem 1rem;border-radius:50px;font-family:'Noto Serif Malayalam',serif;font-size:clamp(.85rem,3vw,1rem);font-weight:700;text-align:center;margin:.4rem auto 0;max-width:420px}
+.nd-open{background:rgba(34,197,94,.15);border:2px solid rgba(34,197,94,.5);color:#4ade80}
+.nd-closed{background:rgba(239,68,68,.12);border:2px solid rgba(239,68,68,.4);color:#fca5a5}
+.nd-loading{background:rgba(255,255,255,.05);border:2px solid rgba(255,255,255,.1);color:rgba(255,255,255,.5)}
+#mobile-bottom-nav{display:none}
+@media(max-width:768px){#mobile-bottom-nav{display:flex;position:fixed;bottom:0;left:0;right:0;z-index:900;height:calc(60px + env(safe-area-inset-bottom,0px));background:rgba(15,8,35,.95);border-top:1px solid rgba(255,215,0,.14);align-items:center;justify-content:space-around}}
+.skip-to-main{position:absolute;top:-100px;left:1rem;background:#ffd700;color:#1a0800;padding:.5rem 1rem;border-radius:4px;font-weight:700;z-index:9999;transition:top .2s;text-decoration:none}
+.skip-to-main:focus{top:1rem}</style>
  <link rel="stylesheet" href="css/temple.min.css" media="print" onload="this.media='all';this.onload=null" />
  <noscript><link rel="stylesheet" href="css/temple.min.css" /></noscript>
  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lato:wght@400;700&family=Noto+Serif+Malayalam:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
@@ -120,8 +128,71 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
     @media (max-width: 768px) { .gmaps-photo-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 480px) { .gmaps-photo-grid { grid-template-columns: 1fr; } }
   </style>
+  <link rel="canonical" href="https://kakkamvellytemple.page/" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HinduTemple",
+  "name": "Kakkamvelly Sreekrishna Temple",
+  "alternateName": "കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം",
+  "description": "Ancient Baby Krishna temple in Purameri, Kozhikode. Daily darshan morning and evening. Monthly Annadhanam on first Sundays.",
+  "url": "https://kakkamvellytemple.page/",
+  "telephone": [
+    "+91-9941292222",
+    "+91-9446844145"
+  ],
+  "email": "kakkamvellytemple@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Kakkamvelly",
+    "addressLocality": "Purameri",
+    "addressRegion": "Kozhikode",
+    "postalCode": "673503",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 11.6814,
+    "longitude": 75.6478
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "05:30",
+      "closes": "09:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "opens": "17:45",
+      "closes": "18:45"
+    }
+  ],
+  "image": "https://kakkamvellytemple.page/images/temple-front-view.webp",
+  "hasMap": "https://maps.app.goo.gl/LaTA1pWM8NhjW4gK6"
+}
+</script>
 </head>
 <body data-audio-ready="true">
+  <a href="#main-content" class="skip-to-main" tabindex="0">Skip to main content</a>
+
  <div id="vishu-banner" class="vishu-alert" role="alert" aria-live="polite">
  <span class="vishu-icon">🌸</span>
  <span class="vishu-text">
@@ -153,7 +224,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
  </ul>
  </nav>
  </header>
- <main>
+ <main id="main-content">
  <section id="home" class="hero hero-gradient" aria-label="ക്ഷേത്ര ഹീറോ ബാനർ">
  <div class="hero-overlay"></div>
  <div class="hero-content">
@@ -1178,6 +1249,50 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
       if (el) { const r = document.createRange(); r.selectNode(el); window.getSelection().removeAllRanges(); window.getSelection().addRange(r); }
     });
   }
+  </script>
+
+  <!-- Mobile Bottom Navigation -->
+  <nav id="mobile-bottom-nav" aria-label="Mobile navigation" role="navigation">
+    <a href="#home"     class="mob-nav-btn" aria-label="Home">
+      <span class="mob-nav-icon">🏠</span>
+      <span class="mob-nav-label">മുഖ്യ</span>
+    </a>
+    <a href="#about"    class="mob-nav-btn" aria-label="About Temple">
+      <span class="mob-nav-icon">🛕</span>
+      <span class="mob-nav-label">ക്ഷേത്രം</span>
+    </a>
+    <a href="#home"     class="mob-nav-btn mob-nav-center" aria-label="OM - Home">
+      <span class="mob-nav-icon">ॐ</span>
+    </a>
+    <a href="#timings"  class="mob-nav-btn" aria-label="Temple Timings">
+      <span class="mob-nav-icon">⏰</span>
+      <span class="mob-nav-label">സമയം</span>
+    </a>
+    <a href="#location" class="mob-nav-btn" aria-label="Location">
+      <span class="mob-nav-icon">📍</span>
+      <span class="mob-nav-label">സ്ഥലം</span>
+    </a>
+  </nav>
+
+  <script>
+  (function() {
+    var sections = ['home','about','timings','location'];
+    var btns = document.querySelectorAll('.mob-nav-btn');
+    function setActive() {
+      var scrollY = window.scrollY + 100;
+      var active = 'home';
+      sections.forEach(function(id) {
+        var el = document.getElementById(id);
+        if (el && el.offsetTop <= scrollY) active = id;
+      });
+      btns.forEach(function(btn) {
+        var href = btn.getAttribute('href');
+        btn.classList.toggle('active', href === '#' + active);
+      });
+    }
+    window.addEventListener('scroll', setActive, {passive:true});
+    setActive();
+  })();
   </script>
 </body>
 </html>
