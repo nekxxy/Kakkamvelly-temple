@@ -189,7 +189,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
   "hasMap": "https://maps.app.goo.gl/LaTA1pWM8NhjW4gK6"
 }
 </script>
-  <meta name="generator" content="Kakkamvelly Temple v1.0.6.31" />
+  <meta name="generator" content="Kakkamvelly Temple v1.0.6.32" />
 </head>
 <body data-audio-ready="true">
   <a href="#main-content" class="skip-to-main" tabindex="0">Skip to main content</a>
@@ -199,8 +199,21 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
  <span class="vishu-text" id="vishu-banner-text">
  <strong>വിഷു 2026 (ഏപ്രിൽ 15)</strong> — ക്ഷേത്രം: 5:00 AM – 7:30 PM &nbsp;·&nbsp; Special Darshan
  </span>
- <button class="vishu-close" aria-label="Close" onclick="this.parentElement.remove()">✕</button>
+ <button class="vishu-close" aria-label="Close" onclick="closeVishuBanner()">✕</button>
  </div>
+<script>
+(function(){
+  function closeVishuBanner(){
+    var b=document.getElementById('vishu-banner');
+    if(!b||b.style.display==='none')return;
+    b.style.transition='opacity .6s ease';
+    b.style.opacity='0';
+    setTimeout(function(){ b.style.display='none'; },600);
+  }
+  window.closeVishuBanner=closeVishuBanner;
+  setTimeout(closeVishuBanner,6000);
+})();
+</script>
  <header id="site-header">
  <nav class="navbar" role="navigation" aria-label="പ്രധാന നാവിഗേഷൻ">
  <div class="nav-brand">
@@ -210,7 +223,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
  <span class="brand-en">Kakkamvelly Sreekrishna Temple</span>
  </div>
  </div>
- <span class="site-version-badge" title="Website version">v1.0.6.31</span>
+ <span class="site-version-badge" title="Website version">v1.0.6.32</span>
  <div class="nav-lang-pill" role="group" aria-label="Language selector">
  <button class="nlp-btn active" data-lang="ml" aria-label="Switch to Malayalam">മലയാളം</button>
  <button class="nlp-btn" data-lang="en" aria-label="Switch to English">English</button>
