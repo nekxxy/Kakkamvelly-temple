@@ -2839,11 +2839,16 @@ section, .container, .live-panel {
 /* ── Website owner link — subtle, no number visible ── */
 .footer-dev { text-align: center; padding: .4rem 0 .6rem; margin: 0; }
 .footer-dev-link {
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
   font-family: 'Lato', sans-serif;
   font-size: .72rem;
   color: rgba(255,255,255,.25);
   text-decoration: none;
-  letter-spacing: .06em;
+  letter-spacing: .04em;
   transition: color .2s;
 }
-.footer-dev-link:hover { color: rgba(255,255,255,.5); }
+.footer-dev-link:hover { color: rgba(255,255,255,.45); }
+.footer-dev-wa { font-size: .95rem; color: rgba(150,150,150,.6); }
+.footer-dev-link:hover .footer-dev-wa { color: rgba(37,211,102,.5); }
