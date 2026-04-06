@@ -189,7 +189,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
   "hasMap": "https://maps.app.goo.gl/LaTA1pWM8NhjW4gK6"
 }
 </script>
-  <meta name="generator" content="Kakkamvelly Temple v1.0.6.32" />
+  <meta name="generator" content="Kakkamvelly Temple v1.0.6.34" />
 </head>
 <body data-audio-ready="true">
   <a href="#main-content" class="skip-to-main" tabindex="0">Skip to main content</a>
@@ -205,10 +205,12 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
 (function(){
   function closeVishuBanner(){
     var b=document.getElementById('vishu-banner');
-    if(!b||b.style.display==='none')return;
+    if(!b)return;
     b.style.transition='opacity .6s ease';
     b.style.opacity='0';
-    setTimeout(function(){ b.style.display='none'; },600);
+    setTimeout(function(){
+      if(b.parentNode) b.parentNode.removeChild(b); /* remove from DOM — fixes body:has() CSS */
+    },600);
   }
   window.closeVishuBanner=closeVishuBanner;
   setTimeout(closeVishuBanner,6000);
@@ -223,7 +225,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
  <span class="brand-en">Kakkamvelly Sreekrishna Temple</span>
  </div>
  </div>
- <span class="site-version-badge" title="Website version">v1.0.6.32</span>
+ <span class="site-version-badge" title="Website version">v1.0.6.34</span>
  <div class="nav-lang-pill" role="group" aria-label="Language selector">
  <button class="nlp-btn active" data-lang="ml" aria-label="Switch to Malayalam">മലയാളം</button>
  <button class="nlp-btn" data-lang="en" aria-label="Switch to English">English</button>

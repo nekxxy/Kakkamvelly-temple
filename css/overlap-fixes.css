@@ -757,9 +757,19 @@ body:has(.vishu-alert) .nav-menu { top: calc(var(--mob-nav-h) + 44px + 34px) !im
 #live-section {
   background: transparent;
   padding: 0 !important;
+  position: -webkit-sticky;  /* Safari */
   position: sticky;
   top: calc(var(--mob-nav-h, 64px) + 44px);
   z-index: 990;
+  overflow: visible !important; /* override live-widgets.css overflow:hidden */
+  /* contain MUST NOT be set — breaks sticky */
+  /* -webkit-transform: translateZ(0); forces GPU layer for sticky on Android */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+}
+/* When vishu banner visible, push sticky down to avoid overlap */
+body:has(#vishu-banner) #live-section {
+  top: calc(var(--mob-nav-h, 64px) + 44px + 34px);
 }
 .live-status-bar {
   display: flex;
@@ -1024,7 +1034,7 @@ html, body {
 }
 
 /* Performance: CSS contain on sections */
-#home,#about,#timings,#gallery,#location,#contact,#donate,#live-section {
+#home,#about,#timings,#gallery,#location,#contact,#donate {
   contain:layout style;
 }
 /* will-change on animated elements */
