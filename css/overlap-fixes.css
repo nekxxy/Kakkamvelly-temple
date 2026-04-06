@@ -2835,3 +2835,15 @@ section, .container, .live-panel {
 @media (min-width: 640px) {
   .footer-grid { grid-template-columns: repeat(3, 1fr) !important; }
 }
+
+/* ── Website owner link — subtle, no number visible ── */
+.footer-dev { text-align: center; padding: .4rem 0 .6rem; margin: 0; }
+.footer-dev-link {
+  font-family: 'Lato', sans-serif;
+  font-size: .72rem;
+  color: rgba(255,255,255,.25);
+  text-decoration: none;
+  letter-spacing: .06em;
+  transition: color .2s;
+}
+.footer-dev-link:hover { color: rgba(255,255,255,.5); }
