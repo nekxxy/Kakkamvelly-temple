@@ -2710,3 +2710,128 @@ body.lang-en .footer-name-ml { opacity: .5; font-size: .75rem; }
   .cp-role   { font-size: .75rem; }
   .cp-number { font-size: .75rem; }
 }
+
+/* ══════════════════════════════════════════════
+   MOBILE ALIGNMENT FIXES — v1.0.8 pass
+   Tested baseline: 360px, 375px, 390px, 412px
+══════════════════════════════════════════════ */
+
+/* ── 1. Status bar: prevent overflow on narrow screens ── */
+.live-status-bar {
+  flex-wrap: wrap;
+  gap: .4rem;
+}
+.dsw-main { min-width: 0; flex: 1 1 160px; }
+.dsw-actions { flex-shrink: 0; flex-wrap: nowrap; gap: .3rem; }
+.dsw-btn {
+  padding: .35rem .55rem !important;
+  font-size: .72rem !important;
+  white-space: nowrap;
+}
+@media (max-width: 380px) {
+  .dsw-btn { padding: .3rem .4rem !important; font-size: .68rem !important; }
+}
+
+/* ── 2. Festival card: fc-units fit on any width ── */
+.fc-units {
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: clamp(.15rem, 1vw, .4rem);
+}
+.fc-unit {
+  min-width: clamp(36px, 9vw, 52px) !important;
+  padding: clamp(.2rem,.8vw,.35rem) clamp(.2rem,.8vw,.5rem) !important;
+}
+.fc-num {
+  font-size: clamp(.95rem, 3.5vw, 1.35rem) !important;
+}
+.fc-unit-label {
+  font-size: clamp(.48rem, 1.5vw, .62rem) !important;
+}
+.fc-sep { font-size: clamp(.85rem, 3vw, 1.1rem); padding: 0; }
+
+/* ── 3. Festival queue: proper height + scroll ── */
+.fc-queue {
+  max-height: 130px;
+  min-height: 60px;
+}
+.fc-qi { padding: .28rem .35rem; gap: .4rem; }
+.fc-qi-ml { font-size: .75rem; }
+.fc-qi-en, .fc-qi-date, .fc-qi-days { font-size: .6rem; }
+
+/* ── 4. Live section container full width ── */
+#live-section .container {
+  padding-left: .75rem !important;
+  padding-right: .75rem !important;
+  max-width: 100% !important;
+}
+.live-cards-col { gap: .6rem; padding: .6rem 0 .8rem; }
+.live-info-card { border-radius: 12px; }
+.lic-body { padding: .6rem .75rem !important; min-height: 65px; }
+
+/* ── 5. Weather/astro cards equal height ── */
+.live-cards-row-2 { align-items: stretch; }
+.live-card-weather .lic-body,
+.live-card-astro  .lic-body { min-height: 80px; }
+
+/* ── 6. Sun row mobile ── */
+.sun-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: .25rem 0;
+  gap: .3rem;
+}
+.sun-label { font-size: .78rem; flex: 1; }
+.sun-time  { font-size: .78rem; white-space: nowrap; }
+
+/* ── 7. Timings table mobile alignment ── */
+#timings .container {
+  padding-left: .75rem !important;
+  padding-right: .75rem !important;
+}
+.timing-card { padding: 1rem .85rem; }
+.timings-grid {
+  grid-template-columns: 1fr !important;
+  gap: 1rem;
+}
+@media (min-width: 560px) {
+  .timings-grid { grid-template-columns: 1fr 1fr !important; }
+}
+
+/* ── 8. Hero section alignment ── */
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .6rem;
+  justify-content: center;
+}
+.hero-actions .btn {
+  flex: 1 1 140px;
+  max-width: 200px;
+  text-align: center;
+  justify-content: center;
+}
+
+/* ── 9. Prevent any section from causing horizontal scroll ── */
+section, .container, .live-panel {
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
+/* ── 10. Gallery grid mobile ── */
+@media (max-width: 480px) {
+  .bk-grid, .gallery-swipe-row {
+    gap: .6rem !important;
+  }
+}
+
+/* ── 11. Footer mobile alignment ── */
+.footer-grid {
+  grid-template-columns: 1fr !important;
+  gap: 1.5rem;
+  text-align: center;
+}
+@media (min-width: 640px) {
+  .footer-grid { grid-template-columns: repeat(3, 1fr) !important; }
+}
