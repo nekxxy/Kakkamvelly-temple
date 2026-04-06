@@ -1907,10 +1907,7 @@ textarea:focus-visible {
 }
 .cp-number:hover { text-decoration: underline; }
 
-@media (max-width: 480px) {
-  .contact-person { flex-direction: column; gap: .1rem; }
-  .cp-role { min-width: unset; font-size: .78rem; }
-}
+/* contact-person always single line — no column stack on mobile */
 
 /* Kulam monsoon badge */
 .kpl-monsoon {
@@ -2675,10 +2672,38 @@ body.lang-en .footer-name-ml { opacity: .5; font-size: .75rem; }
 .nlp-btn { min-width: 56px; }
 
 /* Contact persons — name + number on one line each */
-.contact-persons { margin-top: .6rem; display: flex; flex-direction: column; gap: .3rem; }
-.contact-person  { display: flex; align-items: center; justify-content: space-between; gap: .5rem; padding: .3rem 0; border-bottom: 1px solid rgba(200,134,10,.15); }
+.contact-persons {
+  margin-top: .75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.contact-person {
+  display: flex !important;
+  flex-direction: row !important;   /* ALWAYS single line */
+  align-items: center;
+  justify-content: space-between;
+  gap: .5rem;
+  padding: .45rem .1rem;
+  border-bottom: 1px solid rgba(139,90,0,.12);
+  flex-wrap: nowrap !important;
+}
 .contact-person:last-child { border-bottom: none; }
-/* timings section = light cream bg → dark readable text */
-.cp-role   { font-family: 'Noto Serif Malayalam', serif; font-size: .82rem; color: #3a2a00; font-weight: 600; }
-.cp-number { font-family: 'Cinzel', serif; font-size: .82rem; color: #8a5e00; font-weight: 700; white-space: nowrap; text-decoration: none; }
+.cp-role {
+  font-family: 'Noto Serif Malayalam', serif;
+  font-size: .82rem;
+  color: #5a3a00;
+  font-weight: 700;
+  flex: 1;
+  min-width: 0;
+}
+.cp-number {
+  font-family: 'Cinzel', serif;
+  font-size: .82rem;
+  color: #8a5e00;
+  font-weight: 700;
+  white-space: nowrap;
+  text-decoration: none;
+  flex-shrink: 0;
+}
 .cp-number:hover { color: #c8860a; text-decoration: underline; }

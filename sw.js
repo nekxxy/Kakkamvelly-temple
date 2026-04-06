@@ -4,7 +4,7 @@
  * Caches core assets for offline access
  */
 
-const CACHE = 'kvt-v1-0-7-35-b35';
+const CACHE = 'kvt-v1-0-7-36-b36';
 const CORE = [
   '/kakkamvelly-temple/',
   '/kakkamvelly-temple/index.html',
