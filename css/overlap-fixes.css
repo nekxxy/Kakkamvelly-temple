@@ -2663,3 +2663,11 @@ body.lang-en .footer-name-ml { opacity: .5; font-size: .75rem; }
 
 /* Highlight active language button */
 .nlp-btn { min-width: 56px; }
+
+/* Contact persons — name + number on one line each */
+.contact-persons { margin-top: .6rem; display: flex; flex-direction: column; gap: .3rem; }
+.contact-person  { display: flex; align-items: center; justify-content: space-between; gap: .5rem; padding: .25rem 0; border-bottom: 1px solid rgba(255,215,0,.07); }
+.contact-person:last-child { border-bottom: none; }
+.cp-role   { font-family: 'Noto Serif Malayalam', serif; font-size: .78rem; color: rgba(255,255,255,.7); }
+.cp-number { font-family: 'Cinzel', serif; font-size: .78rem; color: #ffd700; white-space: nowrap; text-decoration: none; }
+.cp-number:hover { text-decoration: underline; }
