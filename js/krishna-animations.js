@@ -190,7 +190,7 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 /* ─────────────────────────────────────────────────
    5. FLUTE SOUND WAVE IN HERO
 ───────────────────────────────────────────────── */
-/* initFluteWave removed */);
+/* initFluteWave removed */
 
 /* ─────────────────────────────────────────────────
    6. FLOATING KRISHNA ELEMENTS (page-wide)
