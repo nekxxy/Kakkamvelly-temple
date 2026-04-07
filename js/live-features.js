@@ -128,29 +128,29 @@ function getIST() {
 
   /* ── Festival registry 2026–2029, IST-anchored ──────────────── */
   var FESTIVALS = [
-    { ml:'വിഷു 2026',              en:'Vishu · Kerala New Year',      icon:'🌸', date:new Date('2026-04-14T05:00:00+05:30'), note:'ദർശനം: 5:00 AM – 7:30 PM' },
-    { ml:'അഷ്ടമി രോഹിണി 2026',   en:'Janmashtami · Birth of Krishna',icon:'🪷', date:new Date('2026-08-05T00:00:00+05:30'), note:'ഉണ്ണി കൃഷ്ണൻ ജന്മദിനം' },
-    { ml:'തിരുവോണം 2026',          en:'Onam · Thiruvonam',             icon:'🌺', date:new Date('2026-09-14T00:00:00+05:30'), note:'ഓണ ദർശനം' },
-    { ml:'ഗുരുവായൂർ ഏകാദശി 2026', en:'Guruvayur Ekadasi',             icon:'🛕', date:new Date('2026-11-21T00:00:00+05:30'), note:'ഏകാദശി വ്രതം' },
-    { ml:'തിരുവാതിര 2026',          en:'Thiruvathira',                  icon:'💫', date:new Date('2026-12-27T00:00:00+05:30'), note:'ആർദ്ര ദർശനം' },
-    { ml:'ശിവരാത്രി 2027',           en:'Maha Shivaratri',              icon:'🌙', date:new Date('2027-02-19T00:00:00+05:30'), note:'ഊർജ്ജ ആരാധന' },
-    { ml:'വിഷു 2027',              en:'Vishu · Kerala New Year',      icon:'🌸', date:new Date('2027-04-14T05:00:00+05:30'), note:'ദർശനം: 5:00 AM – 7:30 PM' },
-    { ml:'അഷ്ടമി രോഹിണി 2027',   en:'Janmashtami · Birth of Krishna',icon:'🪷', date:new Date('2027-08-25T00:00:00+05:30'), note:'ഉണ്ണി കൃഷ്ണൻ ജന്മദിനം' },
-    { ml:'തിരുവോണം 2027',          en:'Onam · Thiruvonam',             icon:'🌺', date:new Date('2027-09-03T00:00:00+05:30'), note:'ഓണ ദർശനം' },
-    { ml:'ഗുരുവായൂർ ഏകാദശി 2027', en:'Guruvayur Ekadasi',             icon:'🛕', date:new Date('2027-11-10T00:00:00+05:30'), note:'ഏകാദശി വ്രതം' },
-    { ml:'തിരുവാതിര 2027',          en:'Thiruvathira',                  icon:'💫', date:new Date('2027-12-16T00:00:00+05:30'), note:'ആർദ്ര ദർശനം' },
-    { ml:'ശിവരാത്രി 2028',           en:'Maha Shivaratri',              icon:'🌙', date:new Date('2028-03-08T00:00:00+05:30'), note:'ഊർജ്ജ ആരാധന' },
-    { ml:'വിഷു 2028',              en:'Vishu · Kerala New Year',      icon:'🌸', date:new Date('2028-04-13T05:00:00+05:30'), note:'ദർശനം: 5:00 AM – 7:30 PM' },
-    { ml:'അഷ്ടമി രോഹിണി 2028',   en:'Janmashtami · Birth of Krishna',icon:'🪷', date:new Date('2028-08-12T00:00:00+05:30'), note:'ഉണ്ണി കൃഷ്ണൻ ജന്മദിനം' },
-    { ml:'തിരുവോണം 2028',          en:'Onam · Thiruvonam',             icon:'🌺', date:new Date('2028-08-22T00:00:00+05:30'), note:'ഓണ ദർശനം' },
-    { ml:'ഗുരുവായൂർ ഏകാദശി 2028', en:'Guruvayur Ekadasi',             icon:'🛕', date:new Date('2028-11-28T00:00:00+05:30'), note:'ഏകാദശി വ്രതം' },
-    { ml:'തിരുവാതിര 2028',          en:'Thiruvathira',                  icon:'💫', date:new Date('2028-12-15T00:00:00+05:30'), note:'ആർദ്ര ദർശനം' },
-    { ml:'ശിവരാത്രി 2029',           en:'Maha Shivaratri',              icon:'🌙', date:new Date('2029-02-25T00:00:00+05:30'), note:'ഊർജ്ജ ആരാധന' },
-    { ml:'വിഷു 2029',              en:'Vishu · Kerala New Year',      icon:'🌸', date:new Date('2029-04-14T05:00:00+05:30'), note:'ദർശനം: 5:00 AM – 7:30 PM' },
-    { ml:'അഷ്ടമി രോഹിണി 2029',   en:'Janmashtami · Birth of Krishna',icon:'🪷', date:new Date('2029-09-01T00:00:00+05:30'), note:'ഉണ്ണി കൃഷ്ണൻ ജന്മദിനം' },
-    { ml:'തിരുവോണം 2029',          en:'Onam · Thiruvonam',             icon:'🌺', date:new Date('2029-09-11T00:00:00+05:30'), note:'ഓണ ദർശനം' },
-    { ml:'ഗുരുവായൂർ ഏകാദശി 2029', en:'Guruvayur Ekadasi',             icon:'🛕', date:new Date('2029-11-17T00:00:00+05:30'), note:'ഏകാദശി വ്രതം' },
-    { ml:'തിരുവാതിര 2029',          en:'Thiruvathira',                  icon:'💫', date:new Date('2029-12-05T00:00:00+05:30'), note:'ആർദ്ര ദർശനം' },
+    { ml:'വിഷു 2026',              en:'Vishu · Kerala New Year',      icon:'🌸', date:new Date(Date.UTC(2026,3,13,23,30)), note:'ദർശനം: 5:00 AM – 7:30 PM' },
+    { ml:'അഷ്ടമി രോഹിണി 2026',   en:'Janmashtami · Birth of Krishna',icon:'🪷', date:new Date(Date.UTC(2026,7,4,18,30)), note:'ഉണ്ണി കൃഷ്ണൻ ജന്മദിനം' },
+    { ml:'തിരുവോണം 2026',          en:'Onam · Thiruvonam',             icon:'🌺', date:new Date(Date.UTC(2026,8,13,18,30)), note:'ഓണ ദർശനം' },
+    { ml:'ഗുരുവായൂർ ഏകാദശി 2026', en:'Guruvayur Ekadasi',             icon:'🛕', date:new Date(Date.UTC(2026,10,20,18,30)), note:'ഏകാദശി വ്രതം' },
+    { ml:'തിരുവാതിര 2026',          en:'Thiruvathira',                  icon:'💫', date:new Date(Date.UTC(2026,11,26,18,30)), note:'ആർദ്ര ദർശനം' },
+    { ml:'ശിവരാത്രി 2027',           en:'Maha Shivaratri',              icon:'🌙', date:new Date(Date.UTC(2027,1,18,18,30)), note:'ഊർജ്ജ ആരാധന' },
+    { ml:'വിഷു 2027',              en:'Vishu · Kerala New Year',      icon:'🌸', date:new Date(Date.UTC(2027,3,13,23,30)), note:'ദർശനം: 5:00 AM – 7:30 PM' },
+    { ml:'അഷ്ടമി രോഹിണി 2027',   en:'Janmashtami · Birth of Krishna',icon:'🪷', date:new Date(Date.UTC(2027,7,24,18,30)), note:'ഉണ്ണി കൃഷ്ണൻ ജന്മദിനം' },
+    { ml:'തിരുവോണം 2027',          en:'Onam · Thiruvonam',             icon:'🌺', date:new Date(Date.UTC(2027,8,2,18,30)), note:'ഓണ ദർശനം' },
+    { ml:'ഗുരുവായൂർ ഏകാദശി 2027', en:'Guruvayur Ekadasi',             icon:'🛕', date:new Date(Date.UTC(2027,10,9,18,30)), note:'ഏകാദശി വ്രതം' },
+    { ml:'തിരുവാതിര 2027',          en:'Thiruvathira',                  icon:'💫', date:new Date(Date.UTC(2027,11,15,18,30)), note:'ആർദ്ര ദർശനം' },
+    { ml:'ശിവരാത്രി 2028',           en:'Maha Shivaratri',              icon:'🌙', date:new Date(Date.UTC(2028,2,7,18,30)), note:'ഊർജ്ജ ആരാധന' },
+    { ml:'വിഷു 2028',              en:'Vishu · Kerala New Year',      icon:'🌸', date:new Date(Date.UTC(2028,3,12,23,30)), note:'ദർശനം: 5:00 AM – 7:30 PM' },
+    { ml:'അഷ്ടമി രോഹിണി 2028',   en:'Janmashtami · Birth of Krishna',icon:'🪷', date:new Date(Date.UTC(2028,7,11,18,30)), note:'ഉണ്ണി കൃഷ്ണൻ ജന്മദിനം' },
+    { ml:'തിരുവോണം 2028',          en:'Onam · Thiruvonam',             icon:'🌺', date:new Date(Date.UTC(2028,7,21,18,30)), note:'ഓണ ദർശനം' },
+    { ml:'ഗുരുവായൂർ ഏകാദശി 2028', en:'Guruvayur Ekadasi',             icon:'🛕', date:new Date(Date.UTC(2028,10,27,18,30)), note:'ഏകാദശി വ്രതം' },
+    { ml:'തിരുവാതിര 2028',          en:'Thiruvathira',                  icon:'💫', date:new Date(Date.UTC(2028,11,14,18,30)), note:'ആർദ്ര ദർശനം' },
+    { ml:'ശിവരാത്രി 2029',           en:'Maha Shivaratri',              icon:'🌙', date:new Date(Date.UTC(2029,1,24,18,30)), note:'ഊർജ്ജ ആരാധന' },
+    { ml:'വിഷു 2029',              en:'Vishu · Kerala New Year',      icon:'🌸', date:new Date(Date.UTC(2029,3,13,23,30)), note:'ദർശനം: 5:00 AM – 7:30 PM' },
+    { ml:'അഷ്ടമി രോഹിണി 2029',   en:'Janmashtami · Birth of Krishna',icon:'🪷', date:new Date(Date.UTC(2029,8,31,18,30)), note:'ഉണ്ണി കൃഷ്ണൻ ജന്മദിനം' },
+    { ml:'തിരുവോണം 2029',          en:'Onam · Thiruvonam',             icon:'🌺', date:new Date(Date.UTC(2029,8,10,18,30)), note:'ഓണ ദർശനം' },
+    { ml:'ഗുരുവായൂർ ഏകാദശി 2029', en:'Guruvayur Ekadasi',             icon:'🛕', date:new Date(Date.UTC(2029,10,16,18,30)), note:'ഏകാദശി വ്രതം' },
+    { ml:'തിരുവാതിര 2029',          en:'Thiruvathira',                  icon:'💫', date:new Date(Date.UTC(2029,11,4,18,30)), note:'ആർദ്ര ദർശനം' },
   ].sort(function(a,b){ return a.date - b.date; });
 
   function getNext() {
@@ -272,30 +272,43 @@ function getIST() {
    5. WEATHER (Open-Meteo, no API key)
 ══════════════════════════════════════════════ */
 (function initWeather() {
-  const el = $('weather-widget');
+  var el = $('weather-widget');
   if (!el) return;
 
-  const LAT = 11.6814, LON = 75.6478;
-  const url = `https://api.open-meteo.com/v1/forecast?latitude=${LAT}&longitude=${LON}&current=temperature_2m,weathercode,windspeed_10m,relative_humidity_2m&timezone=Asia%2FKolkata`;
+  var LAT = 11.6814, LON = 75.6478;
+  /* weather_code is the current Open-Meteo API field name (weathercode was old v0) */
+  var url = 'https://api.open-meteo.com/v1/forecast?latitude=' + LAT
+          + '&longitude=' + LON
+          + '&current=temperature_2m,weather_code,wind_speed_10m,relative_humidity_2m'
+          + '&timezone=Asia%2FKolkata';
 
-  const WMO = {
+  var WMO = {
     0:'☀️ Clear', 1:'🌤 Mostly Clear', 2:'⛅ Partly Cloudy', 3:'☁️ Overcast',
-    45:'🌫 Foggy', 51:'🌦 Light Drizzle', 61:'🌧 Light Rain',
-    63:'🌧 Moderate Rain', 65:'🌧 Heavy Rain', 80:'🌦 Showers', 95:'⛈ Thunderstorm',
+    45:'🌫 Foggy', 48:'🌫 Icy Fog', 51:'🌦 Light Drizzle', 53:'🌦 Drizzle',
+    55:'🌦 Heavy Drizzle', 61:'🌧 Light Rain', 63:'🌧 Moderate Rain',
+    65:'🌧 Heavy Rain', 71:'❄️ Light Snow', 73:'❄️ Snow', 75:'❄️ Heavy Snow',
+    77:'🌨 Snow Grains', 80:'🌦 Showers', 81:'🌧 Heavy Showers',
+    82:'⛈ Violent Showers', 85:'🌨 Snow Showers', 86:'🌨 Heavy Snow Showers',
+    95:'⛈ Thunderstorm', 96:'⛈ Thunderstorm with Hail', 99:'⛈ Severe Thunderstorm',
   };
 
   fetch(url)
-    .then(r => r.json())
-    .then(data => {
-      const c    = data.current;
-      const desc = WMO[c.weathercode] || '🌤';
-      el.innerHTML = `
-        <div class="weather-main">${desc.split(' ')[0]}</div>
-        <div class="weather-temp">${Math.round(c.temperature_2m)}°C</div>
-        <div class="weather-desc">${desc.split(' ').slice(1).join(' ')}</div>
-        <div class="weather-meta">💧${c.relative_humidity_2m}% · 💨${Math.round(c.windspeed_10m)}km/h</div>`;
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      var c    = data.current;
+      /* Support both old (weathercode) and new (weather_code) field names */
+      var code = c.weather_code !== undefined ? c.weather_code : c.weathercode;
+      /* Support both old (windspeed_10m) and new (wind_speed_10m) field names */
+      var wind = c.wind_speed_10m !== undefined ? c.wind_speed_10m : c.windspeed_10m;
+      var desc = WMO[code] || '🌤 Fair';
+      var icon = desc.split(' ')[0];
+      var label = desc.split(' ').slice(1).join(' ');
+      el.innerHTML = '<div class="weather-main">' + icon + '</div>'
+        + '<div class="weather-temp">' + Math.round(c.temperature_2m) + '°C</div>'
+        + '<div class="weather-desc">' + label + '</div>'
+        + '<div class="weather-meta">💧' + c.relative_humidity_2m + '% · 💨' + Math.round(wind) + 'km/h</div>';
     })
-    .catch(() => {
+    .catch(function() {
       el.innerHTML = '<div class="weather-desc" style="opacity:.5">കാലാവസ്ഥ ലഭ്യമല്ല</div>';
     });
 })();
