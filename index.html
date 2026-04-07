@@ -192,7 +192,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
   "hasMap": "https://maps.app.goo.gl/LaTA1pWM8NhjW4gK6"
 }
 </script>
-  <meta name="generator" content="Kakkamvelly Temple v1.0.8.44" />
+  <meta name="generator" content="Kakkamvelly Temple v1.0.9.47" />
   <meta name="google-site-verification" content="5WRn2JcHithlteDM66sTVg2rqf8ckaAcOjJnTSzvRXE" />
 </head>
 <body data-audio-ready="true">
@@ -229,7 +229,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
  <span class="brand-en">Kakkamvelly Sreekrishna Temple</span>
  </div>
  </div>
- <span class="site-version-badge" title="Website version">v1.0.8.44</span>
+ <span class="site-version-badge" title="Website version">v1.0.9.47</span>
  <div class="nav-lang-pill" role="group" aria-label="Language selector">
  <button class="nlp-btn active" data-lang="ml" aria-label="Switch to Malayalam">മലയാളം</button>
  <button class="nlp-btn" data-lang="en" aria-label="Switch to English">English</button>
@@ -945,6 +945,43 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
  </div>
  </div>
  </section>
+
+    <!-- TEMPLE VIDEO — Historical footage -->
+    <section class="temple-video-section" aria-label="Temple Video">
+      <div class="container">
+        <div class="tv-header">
+          <span class="tv-tag" data-ml="ക്ഷേത്ര ദൃശ്യങ്ങൾ" data-en="Temple Video">📽 ക്ഷേത്ര ദൃശ്യങ്ങൾ</span>
+          <h3 class="tv-title" data-ml="ക്ഷേത്ര ചരിത്ര ദൃശ്യം" data-en="Historic Temple Footage">ക്ഷേത്ര ചരിത്ര ദൃശ്യം</h3>
+          <p class="tv-sub" data-ml="11 വർഷം മുൻപ് പകർത്തിയ ദൃശ്യം" data-en="Footage captured 11 years ago">11 വർഷം മുൻപ് പകർത്തിയ ദൃശ്യം</p>
+        </div>
+        <div class="tv-player" id="tv-player" role="button" tabindex="0"
+             aria-label="Play temple video"
+             onclick="loadTempleVideo(this)"
+             onkeydown="if(event.key==='Enter')loadTempleVideo(this)">
+          <img src="https://img.youtube.com/vi/SLW7USzalbY/hqdefault.jpg"
+               alt="Kakkamvelly Sreekrishna Temple historic video" class="tv-thumb"
+               width="480" height="360" loading="lazy" />
+          <div class="tv-play-btn" aria-hidden="true">
+            <svg viewBox="0 0 68 48" width="68" height="48">
+              <path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C0 13.05 0 24 0 24s0 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C68 34.95 68 24 68 24S68 13.05 66.52 7.74z" fill="#ff0000" opacity=".9"/>
+              <path d="M45 24 27 14v20" fill="#fff"/>
+            </svg>
+          </div>
+          <div class="tv-overlay" aria-hidden="true"></div>
+        </div>
+        <p class="tv-credit">
+          <i class="fa-brands fa-youtube" aria-hidden="true" style="color:#ff0000"></i>
+          YouTube &middot; 11 years ago
+        </p>
+      </div>
+    </section>
+    <script>
+    function loadTempleVideo(el) {
+      el.innerHTML = '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/SLW7USzalbY?autoplay=1&amp;rel=0&amp;modestbranding=1" title="Kakkamvelly Sreekrishna Temple" frameborder="0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
+      el.style.cursor = 'default'; el.onclick = null;
+    }
+    </script>
+
  <div class="lamp-parallax-strip" aria-hidden="true" role="presentation">
  <div class="lamp-parallax-overlay"></div>
  <div class="lamp-parallax-text">

@@ -2852,3 +2852,85 @@ section, .container, .live-panel {
 .footer-dev-link:hover { color: rgba(255,255,255,.45); }
 .footer-dev-wa { font-size: .95rem; color: rgba(150,150,150,.6); }
 .footer-dev-link:hover .footer-dev-wa { color: rgba(37,211,102,.5); }
+
+/* ══════════════════════════════════════════════
+   TEMPLE VIDEO SECTION
+══════════════════════════════════════════════ */
+.temple-video-section {
+  background: linear-gradient(160deg, #08041c 0%, #14062a 60%, #08041c 100%);
+  padding: 2.5rem 0 3rem;
+  border-top: 1px solid rgba(255,215,0,.08);
+  border-bottom: 1px solid rgba(255,215,0,.08);
+}
+.tv-header { text-align: center; margin-bottom: 1.5rem; }
+.tv-tag {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: .68rem; letter-spacing: .15em;
+  color: rgba(255,200,80,.6);
+  border: 1px solid rgba(255,200,80,.2);
+  border-radius: 50px; padding: .25rem .9rem;
+  margin-bottom: .6rem;
+}
+.tv-title {
+  font-family: 'Noto Serif Malayalam', serif;
+  font-size: clamp(1.1rem,4vw,1.5rem);
+  color: #fff; font-weight: 700; margin: .3rem 0 .2rem;
+}
+.tv-sub {
+  font-size: .82rem; color: rgba(255,255,255,.45);
+  font-family: 'Lato', sans-serif;
+}
+
+/* Click-to-play player */
+.tv-player {
+  position: relative;
+  width: 100%; max-width: 720px;
+  margin: 0 auto;
+  aspect-ratio: 16/9;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #000;
+  box-shadow: 0 8px 40px rgba(0,0,0,.6), 0 0 0 1px rgba(255,215,0,.12);
+  -webkit-tap-highlight-color: transparent;
+}
+.tv-thumb {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  transition: transform .3s;
+}
+.tv-player:hover .tv-thumb,
+.tv-player:focus .tv-thumb { transform: scale(1.03); }
+.tv-overlay {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,.35);
+  transition: background .3s;
+}
+.tv-player:hover .tv-overlay,
+.tv-player:focus .tv-overlay { background: rgba(0,0,0,.2); }
+.tv-play-btn {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  filter: drop-shadow(0 2px 12px rgba(0,0,0,.6));
+  transition: transform .2s;
+  z-index: 2;
+}
+.tv-player:hover .tv-play-btn,
+.tv-player:focus .tv-play-btn { transform: translate(-50%,-50%) scale(1.1); }
+.tv-player iframe {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; border: none;
+}
+
+/* Credit line */
+.tv-credit {
+  text-align: center; margin-top: .75rem;
+  font-size: .72rem; color: rgba(255,255,255,.3);
+  font-family: 'Lato', sans-serif;
+  display: flex; align-items: center; justify-content: center; gap: .35rem;
+}
+
+@media (max-width: 480px) {
+  .tv-player { border-radius: 12px; }
+}
