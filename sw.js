@@ -11,8 +11,8 @@
  *  - Page auto-reloads when new SW takes control
  */
 
-const CACHE = 'kvt-v1-0-9-b48';
-const CACHE_IMAGES = 'kvt-img-v48';
+const CACHE = 'kvt-v1-0-9-b49';
+const CACHE_IMAGES = 'kvt-img-v49';
 
 /* Assets that change with every deploy — always go network-first */
 const NETWORK_FIRST = [

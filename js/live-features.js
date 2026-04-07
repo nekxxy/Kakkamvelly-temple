@@ -203,33 +203,30 @@ function getIST() {
   window.toggleFestQueue = function() {};
 
   function tick() {
-    try {
-      var next = getNext();
-      var key  = next.ml;
+    var next = getNext();
+    var key  = next.ml;
 
-      if (key !== currentKey) {
-        currentKey = key;
-        setEl('fest-icon',        next.icon);
-        setEl('fest-name-ml',     '🎉 ' + next.ml);
-        setEl('fest-name-ml-body', next.ml);
-        setEl('fest-name-en',     next.en);
-        setEl('fest-date-badge',  safeDateStr(next.date));
-        setEl('fest-note',        next.note || '');
-        try { buildQueue(next); } catch(e) { /* queue build failed, continue */ }
-      }
+    if (key !== currentKey) {
+      currentKey = key;
+      setEl('fest-icon',         next.icon);
+      setEl('fest-name-ml',      '🎉 ' + next.ml);
+      setEl('fest-name-ml-body', next.ml);
+      setEl('fest-name-en',      next.en);
+      setEl('fest-date-badge',   safeDateStr(next.date));
+      setEl('fest-note',         next.note || '');
+      try { buildQueue(next); } catch(ignore) {}
+    }
 
-      var diff = Math.max(0, next.date.getTime() - Date.now());
-      var d = Math.floor(diff / 86400000);
-      var h = Math.floor((diff % 86400000) / 3600000);
-      var m = Math.floor((diff % 3600000) / 60000);
-      var s = Math.floor((diff % 60000) / 1000);
+    var diff = Math.max(0, next.date.getTime() - Date.now());
+    var d = Math.floor(diff / 86400000);
+    var h = Math.floor((diff % 86400000) / 3600000);
+    var m2 = Math.floor((diff % 3600000) / 60000);
+    var s = Math.floor((diff % 60000) / 1000);
 
-      setEl('fc-d', pad(d));
-      setEl('fc-h', pad(h));
-      setEl('fc-m', pad(m));
-      setEl('fc-s', pad(s));
-
-    } catch(e) { /* silent fail — retry next second */ }
+    setEl('fc-d', pad(d));
+    setEl('fc-h', pad(h));
+    setEl('fc-m', pad(m2));
+    setEl('fc-s', pad(s));
   }
 
   tick();
@@ -356,28 +353,59 @@ function getIST() {
   const el = $('sunrise-sunset');
   if (!el) return;
   const LAT = 11.6814, LON = 75.6478;
+  const R = Math.PI / 180;
+
+  /* NOAA solar calculator — accurate to ±2 minutes */
   const now = new Date();
-  const JD  = now.getTime()/86400000 + 2440587.5;
-  const n   = JD - 2451545.0;
-  const L   = (280.46 + 0.9856474*n) % 360;
-  const g   = ((357.528 + 0.9856003*n) % 360) * Math.PI/180;
-  const lam = (L + 1.915*Math.sin(g) + 0.02*Math.sin(2*g)) * Math.PI/180;
-  const eps = 23.439 * Math.PI/180;
-  const sinDec = Math.sin(eps)*Math.sin(lam);
-  const dec    = Math.asin(sinDec);
-  const cosHA  = (Math.cos(90.833*Math.PI/180) - sinDec*Math.sin(LAT*Math.PI/180))
-               / (Math.cos(dec)*Math.cos(LAT*Math.PI/180));
+  const y = now.getUTCFullYear(), mo = now.getUTCMonth()+1, d = now.getUTCDate();
+  const A = Math.floor((14-mo)/12);
+  const Y = y + 4800 - A, M2 = mo + 12*A - 3;
+  const JDN = d + Math.floor((153*M2+2)/5) + 365*Y + Math.floor(Y/4)
+            - Math.floor(Y/100) + Math.floor(Y/400) - 32045;
+  const JD = JDN - 0.5;
+  const T = (JD - 2451545.0) / 36525.0;
+
+  const L0 = (280.46646 + T*(36000.76983 + T*0.0003032)) % 360;
+  const Mm = (357.52911 + T*(35999.05029 - 0.0001537*T)) % 360;
+  const Mr = Mm * R;
+  const C  = Math.sin(Mr)*(1.914602 - T*(0.004817+0.000014*T))
+           + Math.sin(2*Mr)*(0.019993-0.000101*T)
+           + Math.sin(3*Mr)*0.000289;
+  const sunLon = L0 + C;
+  const omega  = 125.04 - 1934.136*T;
+  const lam    = sunLon - 0.00569 - 0.00478*Math.sin(omega*R);
+  const eps0   = 23 + (26+((21.448-T*(46.815+T*(0.00059-T*0.001813)))/60))/60;
+  const oblCorr= eps0 + 0.00256*Math.cos(omega*R);
+  const sinDec = Math.sin(oblCorr*R)*Math.sin(lam*R);
+  const dec    = Math.asin(sinDec)*180/Math.PI;
+  const y2     = Math.pow(Math.tan(oblCorr*R/2),2);
+  const EqT    = 4*(180/Math.PI)*(
+    y2*Math.sin(2*L0*R)
+    -2*0.016708634*Math.sin(Mm*R)
+    +4*0.016708634*y2*Math.sin(Mm*R)*Math.cos(2*L0*R)
+    -0.5*y2*y2*Math.sin(4*L0*R)
+    -1.25*Math.pow(0.016708634,2)*Math.sin(2*Mm*R)
+  );
+  const cosHA = (Math.cos(90.833*R) - Math.sin(LAT*R)*Math.sin(dec*R))
+              / (Math.cos(LAT*R)*Math.cos(dec*R));
   if (Math.abs(cosHA) > 1) return;
-  const HA   = Math.acos(cosHA)*180/Math.PI;
-  const noon = (720 - 4*LON - ((n%1)*360-180))/1440;
-  function toIST(frac) {
-    const mins = Math.round(((frac%1)+0.5)*1440 + 330) % 1440;
-    const h=Math.floor(mins/60), m=mins%60;
+  const HA = Math.acos(cosHA)*180/Math.PI;
+  const solarNoon = 720 - 4*LON - EqT;
+  const srUTC = solarNoon - HA*4;
+  const ssUTC = solarNoon + HA*4;
+
+  function minsToIST(utcMins) {
+    const ist = ((utcMins + 330) % 1440 + 1440) % 1440;
+    const h = Math.floor(ist/60), m = Math.floor(ist%60);
     return `${h%12||12}:${String(m).padStart(2,'0')} ${h<12?'AM':'PM'}`;
   }
-  el.innerHTML = `
-    <div class="sun-row"><span class="sun-icon">🌅</span><span class="sun-label">സൂര്യോദയം</span><span class="sun-time">${toIST(noon-HA/360)}</span></div>
-    <div class="sun-row"><span class="sun-icon">🌇</span><span class="sun-label">സൂര്യാസ്തമയം</span><span class="sun-time">${toIST(noon+HA/360)}</span></div>`;
+
+  const srLabel = document.querySelector('.sun-label[data-ml="സൂര്യോദയം"]');
+  const ssLabel = document.querySelector('.sun-label[data-ml="സൂര്യാസ്തമയം"]');
+  const srTime  = document.getElementById('sr-time');
+  const ssTime  = document.getElementById('ss-time');
+  if (srTime) srTime.textContent = minsToIST(srUTC);
+  if (ssTime) ssTime.textContent = minsToIST(ssUTC);
 })();
 
 /* ══════════════════════════════════════════════
