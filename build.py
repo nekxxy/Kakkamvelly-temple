@@ -37,7 +37,7 @@ vdata['build'] += 1
 vdata['patch'] += 1 if vdata['build'] % 5 == 0 else 0
 version_str  = f"v{vdata['major']}.{vdata['minor']}.{vdata['patch']}.{vdata['build']}"
 build_str    = version_str
-sw_cache_key = f"kvt-{version_str.replace('.', '-')}-b{vdata['build']}"
+sw_cache_key = f"kvt-v{vdata['major']}-{vdata['minor']}-{vdata['patch']}-b{vdata['build']}"
 
 with open(vf, 'w') as f: json.dump(vdata, f, indent=2)
 ok(f"Version: {build_str} → SW: {sw_cache_key}")
@@ -133,9 +133,13 @@ print("\nSTEP 5: Service Worker")
 sw_path = os.path.join(ROOT, 'sw.js')
 with open(sw_path) as f: sw = f.read()
 old_cache = re.search(r"const CACHE = '([^']+)'", sw)
+img_cache_key = f"kvt-img-v{vdata['build']}"
 if old_cache:
     sw = sw.replace(f"const CACHE = '{old_cache.group(1)}'",
                     f"const CACHE = '{sw_cache_key}'")
+    # Also update CACHE_IMAGES key
+    sw = re.sub(r"const CACHE_IMAGES = 'kvt-img-v\d+'",
+                f"const CACHE_IMAGES = '{img_cache_key}'", sw)
     with open(sw_path, 'w') as f: f.write(sw)
     ok(f"SW cache: {old_cache.group(1)} → {sw_cache_key}")
 else:

@@ -81,13 +81,64 @@
    2. PWA INSTALL PROMPT
 ───────────────────────────────── */
 (function initPWA() {
-  // Register service worker
+  /* ── Service Worker: auto-update without manual cache clear ── */
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('/kakkamvelly-temple/sw.js')
-        .then(() => console.log('SW registered'))
+        .then(reg => {
+          /* Poll for updates every 60s while page open */
+          setInterval(() => reg.update(), 60000);
+
+          /* New SW waiting → activate it immediately */
+          reg.addEventListener('updatefound', () => {
+            const sw = reg.installing;
+            if (!sw) return;
+            sw.addEventListener('statechange', () => {
+              if (sw.state === 'installed' && navigator.serviceWorker.controller) {
+                showKVTUpdateToast();
+              }
+            });
+          });
+        })
         .catch(() => {});
+
+      /* SW activated → auto reload for fresh assets */
+      let refreshing = false;
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        if (!refreshing) { refreshing = true; window.location.reload(); }
+      });
+
+      /* Handle SW_UPDATED message from new SW after clients.claim() */
+      navigator.serviceWorker.addEventListener('message', e => {
+        if (e.data && e.data.type === 'SW_UPDATED') {
+          if (!refreshing) { refreshing = true; window.location.reload(); }
+        }
+      });
     });
+  }
+
+  function showKVTUpdateToast() {
+    const t = document.createElement('div');
+    t.style.cssText = [
+      'position:fixed',
+      'bottom:calc(80px + env(safe-area-inset-bottom,0px))',
+      'left:50%',
+      'transform:translateX(-50%)',
+      'background:rgba(20,8,0,.97)',
+      'border:1px solid rgba(255,215,0,.4)',
+      'color:#ffd700',
+      'font-family:Lato,sans-serif',
+      'font-size:.82rem',
+      'padding:.6rem 1.4rem',
+      'border-radius:50px',
+      'z-index:9999',
+      'box-shadow:0 4px 24px rgba(0,0,0,.6)',
+      'white-space:nowrap',
+      'pointer-events:none',
+    ].join(';');
+    t.textContent = '✨ Updating website...';
+    document.body.appendChild(t);
+    setTimeout(() => window.location.reload(), 1800);
   }
 
   let deferredPrompt = null;
