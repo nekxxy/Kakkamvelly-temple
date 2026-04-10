@@ -39,7 +39,85 @@
     .lang-en-only { display: none; }
     body.lang-en .lang-ml-only { display: none; }
     body.lang-en .lang-en-only { display: block; }
-  </style>
+  
+/* ── Vazhipad Section ──────────────────────────────────────── */
+.vazhipad-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+@media (max-width: 640px) { .vazhipad-grid { grid-template-columns: 1fr; } }
+
+.vazhipad-category { display: flex; flex-direction: column; gap: 0; }
+
+.vazhipad-cat-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--saffron-dark, #8B5E00);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin: 0 0 8px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--gold, #FFD700);
+}
+
+.vazhipad-list { display: flex; flex-direction: column; gap: 3px; }
+
+.vz {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 12px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.7);
+  font-size: 0.9rem;
+  transition: background 0.15s;
+}
+.vz:hover { background: rgba(255,215,0,0.15); }
+.vz-highlight {
+  background: rgba(255,215,0,0.18);
+  font-weight: 600;
+}
+.vz-amt {
+  font-weight: 700;
+  color: #8B5E00;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  margin-left: 8px;
+}
+
+.vazhipad-footer {
+  margin-top: 28px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+.vazhipad-footer p {
+  font-size: 0.85rem;
+  color: #5A3A00;
+  opacity: 0.85;
+}
+.vazhipad-book-btn {
+  display: inline-block;
+  padding: 10px 28px;
+  background: #8B5E00;
+  color: #fff;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: background 0.2s;
+  margin: 0 6px;
+}
+.vazhipad-book-btn:hover { background: #C8860A; }
+.vazhipad-wa-btn { background: #25D366; }
+.vazhipad-wa-btn:hover { background: #1da851; }
+
+</style>
  <link rel="manifest" href="manifest.json" />
  <style id="critical-css">/* CRITICAL CSS — above fold only */
 *,*::before,*::after{box-sizing:border-box}
@@ -238,6 +316,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
  <li><a href="#home" class="nav-link">മുഖ്യ താൾ</a></li>
  <li><a href="#about" class="nav-link">ക്ഷേത്രത്തെ കുറിച്ച്</a></li>
  <li><a href="#timings" class="nav-link">സമയക്രമം</a></li>
+ <li><a href="#vazhipad" class="nav-link">വഴിപാട്</a></li>
  <li><a href="#festivals" class="nav-link">ഉത്സവങ്ങൾ</a></li>
  <li><a href="#gallery" class="nav-link">ഗ്യാലറി</a></li>
  <li><a href="#location" class="nav-link">സ്ഥലം</a></li>
@@ -528,6 +607,102 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
  </div>
  </div>
  </section>
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!--  VAZHIPAD SECTION                                       -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<section id="vazhipad" class="section section-saffron" aria-labelledby="vazhipad-heading">
+ <div class="section-header">
+  <span class="section-tag" data-ml="🙏 വഴിപാടുകൾ" data-en="🙏 Offerings">🙏 വഴിപാടുകൾ</span>
+  <h2 id="vazhipad-heading" class="section-title"
+      data-ml="ക്ഷേത്രത്തിലെ വഴിപാടുകൾ"
+      data-en="Temple Vazhipad &amp; Offerings">ക്ഷേത്രത്തിലെ വഴിപാടുകൾ</h2>
+  <p class="section-sub" data-ml="രജി. നം. 255/94 · Secretary വഴി മുൻകൂട്ടി ബുക്ക് ചെയ്യൂ"
+     data-en="Reg. No. 255/94 · Book in advance via Secretary">
+     രജി. നം. 255/94 · Secretary വഴി മുൻകൂട്ടി ബുക്ക് ചെയ്യൂ</p>
+ </div>
+
+ <div class="vazhipad-grid">
+
+  <!-- Krishna -->
+  <div class="vazhipad-category">
+   <h3 class="vazhipad-cat-title" data-ml="🛕 കൃഷ്ണൻ — പ്രധാന വഴിപാടുകൾ" data-en="🛕 Krishna — Main Offerings">🛕 കൃഷ്ണൻ — പ്രധാന വഴിപാടുകൾ</h3>
+   <div class="vazhipad-list">
+    <div class="vz"><span data-ml="നിത്യപൂജ" data-en="Nitya Pooja">നിത്യപൂജ</span><span class="vz-amt">₹150</span></div>
+    <div class="vz"><span data-ml="പുഷ്പാഞ്ജലി" data-en="Pushpanjali">പുഷ്പാഞ്ജലി</span><span class="vz-amt">₹10</span></div>
+    <div class="vz"><span data-ml="സുക്ത പുഷ്പാഞ്ജലി" data-en="Suktha Pushpanjali">സുക്ത പുഷ്പാഞ്ജലി</span><span class="vz-amt">₹30</span></div>
+    <div class="vz"><span data-ml="നെയ്വിളക്ക്" data-en="Neyvilakk">നെയ്വിളക്ക്</span><span class="vz-amt">₹30</span></div>
+    <div class="vz"><span data-ml="മാല" data-en="Mala">മാല</span><span class="vz-amt">₹50</span></div>
+    <div class="vz"><span data-ml="തുളസി മാല" data-en="Thulasi Mala">തുളസി മാല</span><span class="vz-amt">₹75</span></div>
+    <div class="vz"><span data-ml="ത്രിമധുരം" data-en="Thrimaduram">ത്രിമധുരം</span><span class="vz-amt">₹30</span></div>
+    <div class="vz"><span data-ml="മലർ നിവേദ്യം" data-en="Malar Nivedyam">മലർ നിവേദ്യം</span><span class="vz-amt">₹20</span></div>
+    <div class="vz"><span data-ml="അവൽ നിവേദ്യം" data-en="Aval Nivedyam">അവൽ നിവേദ്യം</span><span class="vz-amt">₹20</span></div>
+    <div class="vz"><span data-ml="വെള്ള നിവേദ്യം" data-en="Vella Nivedyam">വെള്ള നിവേദ്യം</span><span class="vz-amt">₹50</span></div>
+    <div class="vz"><span data-ml="ഉണ്ണിയപ്പ നിവേദ്യം" data-en="Unniyappa Nivedyam">ഉണ്ണിയപ്പ നിവേദ്യം</span><span class="vz-amt">₹350</span></div>
+    <div class="vz"><span data-ml="നെയ്പ്പായസം" data-en="Neypayasam">നെയ്പ്പായസം</span><span class="vz-amt">₹100</span></div>
+    <div class="vz"><span data-ml="പാൽപ്പായസം (പാൽ കൊണ്ടുവരണം)" data-en="Palpayasam (bring milk)">പാൽപ്പായസം</span><span class="vz-amt">₹100</span></div>
+    <div class="vz"><span data-ml="ലക്ഷ്മിനാരായണ പൂജ" data-en="Lakshminarayana Pooja">ലക്ഷ്മിനാരായണ പൂജ</span><span class="vz-amt">₹750</span></div>
+    <div class="vz"><span data-ml="നിരമാല" data-en="Niramala">നിരമാല</span><span class="vz-amt">₹1,000</span></div>
+    <div class="vz"><span data-ml="കളഭചാർത്ത്" data-en="Kalabhachaarthu">കളഭചാർത്ത്</span><span class="vz-amt">₹1,500</span></div>
+    <div class="vz vz-highlight"><span data-ml="ചുറ്റുവിളക്ക്" data-en="Chuttuvilaakk">ചുറ്റുവിളക്ക്</span><span class="vz-amt">₹3,000</span></div>
+    <div class="vz"><span data-ml="സ്വയംവര പൂജ" data-en="Swayamvara Pooja">സ്വയംവര പൂജ</span><span class="vz-amt">₹1,000</span></div>
+    <div class="vz"><span data-ml="സർവൈശ്വര്യ പൂജ" data-en="Sarvaishwarya Pooja">സർവൈശ്വര്യ പൂജ</span><span class="vz-amt">₹1,500</span></div>
+   </div>
+  </div>
+
+  <!-- Life Events -->
+  <div class="vazhipad-category">
+   <h3 class="vazhipad-cat-title" data-ml="👶 ജീവിത ചടങ്ങുകൾ" data-en="👶 Life Events">👶 ജീവിത ചടങ്ങുകൾ</h3>
+   <div class="vazhipad-list">
+    <div class="vz"><span data-ml="തൊട്ടിലും കുട്ടിയും സമർപ്പണം" data-en="Thottilum Kuttiyum">തൊട്ടിലും കുട്ടിയും സമർപ്പണം</span><span class="vz-amt">₹100</span></div>
+    <div class="vz"><span data-ml="തുലാഭാരം (സായനം കൊണ്ടുവരണം)" data-en="Thulabharam (bring item)">തുലാഭാരം</span><span class="vz-amt">₹100</span></div>
+    <div class="vz"><span data-ml="ചോരൂൺ (അന്നപ്രാശനം)" data-en="Choroon (Anna Prashan)">ചോരൂൺ</span><span class="vz-amt">₹250</span></div>
+    <div class="vz"><span data-ml="എഴുത്തിനിരുത്തൽ (വിദ്യാരംഭം)" data-en="Ezhuthiniruthal (Vidyarambham)">എഴുത്തിനിരുത്തൽ</span><span class="vz-amt">₹100</span></div>
+    <div class="vz"><span data-ml="കെട്ടുനിറ" data-en="Kettunira">കെട്ടുനിറ</span><span class="vz-amt">₹100</span></div>
+    <div class="vz"><span data-ml="മാല പൂജ" data-en="Mala Pooja">മാല പൂജ</span><span class="vz-amt">₹50</span></div>
+    <div class="vz"><span data-ml="താക്കോൽ പൂജ (വാഹനം)" data-en="Thaakkol Pooja (Vehicle)">താക്കോൽ പൂജ</span><span class="vz-amt">₹30</span></div>
+    <div class="vz"><span data-ml="വാഹന പൂജ" data-en="Vahana Pooja">വാഹന പൂജ</span><span class="vz-amt">₹100</span></div>
+    <div class="vz vz-highlight"><span data-ml="വിവാഹം" data-en="Vivaaham (Wedding)">വിവാഹം</span><span class="vz-amt">₹2,000</span></div>
+   </div>
+
+   <!-- Bhagavathi -->
+   <h3 class="vazhipad-cat-title" style="margin-top:20px" data-ml="🌸 ഭഗവതി — പ്രത്യേക വഴിപാടുകൾ" data-en="🌸 Bhagavathi — Special">🌸 ഭഗവതി — പ്രത്യേക</h3>
+   <div class="vazhipad-list">
+    <div class="vz"><span data-ml="സ്വയംവര പുഷ്പാഞ്ജലി" data-en="Swayamvara Pushpanjali">സ്വയംവര പുഷ്പാഞ്ജലി</span><span class="vz-amt">₹20</span></div>
+    <div class="vz"><span data-ml="രക്ത പുഷ്പാഞ്ജലി" data-en="Raktha Pushpanjali">രക്ത പുഷ്പാഞ്ജലി</span><span class="vz-amt">₹30</span></div>
+    <div class="vz"><span data-ml="കുങ്കുമാർച്ചന" data-en="Kunkumarchana">കുങ്കുമാർച്ചന</span><span class="vz-amt">₹30</span></div>
+    <div class="vz"><span data-ml="ഗ്രന്ഥ പൂജ" data-en="Grantha Pooja">ഗ്രന്ഥ പൂജ</span><span class="vz-amt">₹50</span></div>
+    <div class="vz"><span data-ml="ഇരട്ടിപ്പായസം" data-en="Irattipayasam">ഇരട്ടിപ്പായസം</span><span class="vz-amt">₹200</span></div>
+    <div class="vz"><span data-ml="ഭഗവതി സേവ" data-en="Bhagavathi Seva">ഭഗവതി സേവ</span><span class="vz-amt">₹250</span></div>
+   </div>
+
+   <!-- Ganapathi -->
+   <h3 class="vazhipad-cat-title" style="margin-top:20px" data-ml="🐘 ഗണപതി — പ്രത്യേക വഴിപാടുകൾ" data-en="🐘 Ganapathi — Special">🐘 ഗണപതി — പ്രത്യേക</h3>
+   <div class="vazhipad-list">
+    <div class="vz"><span data-ml="തേങ്ങ മുട്ട് (തേങ്ങ കൊണ്ടുവരണം)" data-en="Thenga Muttu (bring coconut)">തേങ്ങ മുട്ട്</span><span class="vz-amt">₹10</span></div>
+    <div class="vz"><span data-ml="കറുക മാല" data-en="Karuka Mala">കറുക മാല</span><span class="vz-amt">₹100</span></div>
+    <div class="vz"><span data-ml="ഒറ്റ നിവേദ്യം" data-en="Otta Nivedyam">ഒറ്റ നിവേദ്യം</span><span class="vz-amt">₹350</span></div>
+    <div class="vz"><span data-ml="ഗണേശ പൂജ" data-en="Ganesha Pooja">ഗണേശ പൂജ</span><span class="vz-amt">₹150</span></div>
+    <div class="vz"><span data-ml="ഗണപതിഹോമം" data-en="Ganapathi Homam">ഗണപതിഹോമം</span><span class="vz-amt">₹200</span></div>
+   </div>
+  </div>
+
+ </div><!-- .vazhipad-grid -->
+
+ <div class="vazhipad-footer">
+  <p data-ml="📞 വഴിപാടുകൾ ബുക്ക് ചെയ്യാൻ ക്ഷേത്ര കമ്മിറ്റി ഓഫീസുമായി ബന്ധപ്പെടുക"
+     data-en="📞 Contact the temple office to book vazhipad in advance">
+     📞 വഴിപാടുകൾ ബുക്ക് ചെയ്യാൻ ക്ഷേത്ര കമ്മിറ്റി ഓഫീസുമായി ബന്ധപ്പെടുക</p>
+  <a href="tel:+919446844145" class="vazhipad-book-btn">
+   <span data-ml="📞 Secretary: 9446844145" data-en="📞 Secretary: 9446844145">📞 Secretary: 9446844145</span>
+  </a>
+  <a href="https://wa.me/919446844145" class="vazhipad-book-btn vazhipad-wa-btn" target="_blank" rel="noopener">
+   <span>WhatsApp</span>
+  </a>
+ </div>
+</section>
+
+
  <div class="annadhanam-kulam-wrapper">
  <div class="annadhanam-banner" aria-label="Monthly Annadhanam">
  <div class="ann-flame-left" aria-hidden="true">🪔</div>
