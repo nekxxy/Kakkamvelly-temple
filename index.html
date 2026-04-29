@@ -196,6 +196,300 @@
 .hero-content  { z-index: 2; position: relative; }
 .hero-scroll-indicator { z-index: 2; position: relative; }
 
+
+/* ── Today's Events Section ───────────────────────────────── */
+.today-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  max-width: 920px;
+  margin: 24px auto 0;
+}
+@media (max-width: 720px) { .today-grid { grid-template-columns: 1fr; } }
+
+.today-card {
+  background: linear-gradient(135deg, #fff 0%, #fffbf0 100%);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 4px 14px rgba(139, 94, 0, 0.08);
+  border: 1px solid rgba(255, 215, 0, 0.18);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.today-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(139, 94, 0, 0.15);
+}
+
+.card-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(139, 94, 0, 0.15);
+}
+.card-head-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #5a3a00;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Pulsing dot animation */
+.pulse-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #4ade80;
+  box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7);
+  animation: pulse-anim 1.5s infinite;
+}
+.pulse-dot.closed { background: #ef4444; box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); animation: pulse-red 1.5s infinite; }
+@keyframes pulse-anim {
+  0%   { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7); }
+  70%  { box-shadow: 0 0 0 10px rgba(74, 222, 128, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
+}
+@keyframes pulse-red {
+  0%   { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
+  70%  { box-shadow: 0 0 0 10px rgba(239, 68, 68, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
+}
+
+.big-status {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1a0800;
+  margin: 8px 0 4px;
+}
+.status-sub {
+  font-size: 0.95rem;
+  color: #5a3a00;
+  margin-bottom: 12px;
+}
+.status-hours {
+  display: flex;
+  gap: 8px;
+  font-size: 0.8rem;
+  color: #8b5e00;
+  border-top: 1px solid rgba(139, 94, 0, 0.15);
+  padding-top: 10px;
+}
+.hours-sep { opacity: 0.4; }
+
+.event-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(139, 94, 0, 0.08);
+  font-size: 0.88rem;
+}
+.event-row:last-of-type { border-bottom: none; }
+.event-icon { font-size: 16px; }
+.event-name { flex: 1; color: #2a1500; }
+.event-time { font-weight: 700; color: #8b5e00; font-size: 0.8rem; white-space: nowrap; }
+
+.event-cta {
+  display: block;
+  margin-top: 12px;
+  text-align: center;
+  background: #8b5e00;
+  color: white;
+  padding: 9px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.event-cta:hover { background: #c8860a; }
+
+.big-counter {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 8px;
+  margin: 10px 0;
+}
+.counter-num {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #c8860a;
+  line-height: 1;
+}
+.counter-label {
+  font-size: 1rem;
+  color: #8b5e00;
+}
+.ann-meta {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #5a3a00;
+}
+.ann-meta div:first-child {
+  font-weight: 700;
+  color: #1a0800;
+  margin-bottom: 2px;
+}
+
+/* Festival countdown */
+.festival-countdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 12px;
+  background: linear-gradient(135deg, #08041C 0%, #1A062E 100%);
+  border-radius: 10px;
+  margin-top: 8px;
+}
+.cd-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 44px;
+  padding: 6px 4px;
+  background: rgba(255,255,255,0.06);
+  border-radius: 6px;
+}
+.cd-num {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #FFD700;
+  font-family: 'Cinzel', serif;
+  line-height: 1.1;
+}
+.cd-lbl {
+  font-size: 0.6rem;
+  color: rgba(255,255,255,0.55);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  margin-top: 2px;
+}
+.cd-sep {
+  color: rgba(255,215,0,0.4);
+  font-weight: 700;
+  padding: 0 2px;
+}
+
+/* ── WhatsApp floating button ─────────────────────────────── */
+.wa-float-btn {
+  position: fixed;
+  bottom: 84px;
+  right: 18px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #25D366;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.4);
+  z-index: 999;
+  text-decoration: none;
+  transition: transform 0.2s, box-shadow 0.2s;
+  animation: wa-float-bob 3s ease-in-out infinite;
+}
+.wa-float-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 22px rgba(37, 211, 102, 0.6);
+}
+@keyframes wa-float-bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-4px); }
+}
+@media (min-width: 901px) {
+  .wa-float-btn { bottom: 24px; }
+}
+
+/* ── Bottom Mobile Nav ────────────────────────────────────── */
+.bottom-mobile-nav {
+  display: none;
+}
+@media (max-width: 900px) {
+  .bottom-mobile-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-top: 1px solid rgba(139, 94, 0, 0.15);
+    padding: 6px 4px calc(6px + env(safe-area-inset-bottom));
+    z-index: 998;
+    justify-content: space-around;
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.08);
+  }
+  .bmn-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    padding: 6px 2px;
+    text-decoration: none;
+    color: #5a3a00;
+    transition: color 0.2s;
+  }
+  .bmn-item:active { color: #c8860a; }
+  .bmn-icon { font-size: 20px; }
+  .bmn-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    line-height: 1;
+  }
+  .bmn-center .bmn-om {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FFD700, #C8860A);
+    color: #1a0800;
+    font-size: 22px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(200, 134, 10, 0.4);
+    margin-top: -16px;
+  }
+  /* Add bottom padding to body so content doesn't hide behind nav */
+  body { padding-bottom: 64px; }
+}
+
+/* ── Smooth scrolling ─────────────────────────────────────── */
+html { scroll-behavior: smooth; }
+
+/* ── Animated counter for kulam donation ─────────────────── */
+.animate-count {
+  display: inline-block;
+}
+
+
+.vazhipad-search {
+  max-width: 640px;
+  margin: 0 auto 20px;
+  text-align: center;
+}
+.vazhipad-search input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid rgba(139, 94, 0, 0.2);
+  border-radius: 50px;
+  font-size: 1rem;
+  background: rgba(255,255,255,0.85);
+  color: #1a0800;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.vazhipad-search input:focus {
+  border-color: #c8860a;
+  box-shadow: 0 0 0 4px rgba(255, 215, 0, 0.15);
+}
+
 </style>
  <link rel="manifest" href="manifest.json" />
  <style id="critical-css">/* CRITICAL CSS — above fold only */
@@ -351,6 +645,10 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
 </script>
   <meta name="generator" content="Kakkamvelly Temple v1.0.10.52" />
   <meta name="google-site-verification" content="5WRn2JcHithlteDM66sTVg2rqf8ckaAcOjJnTSzvRXE" />
+
+<link rel="alternate" hreflang="ml-IN" href="https://kakkamvellytemple.page/" />
+<link rel="alternate" hreflang="en-IN" href="https://kakkamvellytemple.page/?lang=en" />
+<link rel="alternate" hreflang="x-default" href="https://kakkamvellytemple.page/" />
 </head>
 <body data-audio-ready="true">
   <a href="#main-content" class="skip-to-main" tabindex="0">Skip to main content</a>
@@ -635,6 +933,91 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
  <span class="deco-lotus deco-lotus--3">🪔</span>
  <span class="deco-diya deco-diya--4">🪔</span>
  </div>
+
+<!-- ═════════════════ Today's Events + Annadhanam ════════════ -->
+<section id="today-section" class="section section-saffron">
+  <div class="section-header">
+    <span class="section-tag">📅 ഇന്ന്</span>
+    <h2 class="section-title" data-ml="ഇന്നത്തെ കർമ്മങ്ങൾ" data-en="Today at the Temple">ഇന്നത്തെ കർമ്മങ്ങൾ</h2>
+  </div>
+
+  <div class="today-grid">
+
+    <!-- Live darshan with pulsing dot -->
+    <div class="today-card live-darshan-card">
+      <div class="card-head">
+        <span class="pulse-dot" id="live-pulse-dot"></span>
+        <span class="card-head-title" data-ml="ദർശന സ്ഥിതി" data-en="Darshan Status">ദർശന സ്ഥിതി</span>
+      </div>
+      <div class="big-status" id="live-status-text">⏳</div>
+      <div class="status-sub" id="live-status-sub"></div>
+      <div class="status-hours">
+        <span>☀️ 5:30–9:00 AM</span>
+        <span class="hours-sep">·</span>
+        <span>🌙 5:45–6:45 PM</span>
+      </div>
+    </div>
+
+    <!-- Today's special events -->
+    <div class="today-card events-card">
+      <div class="card-head">
+        <span style="font-size:18px">📿</span>
+        <span class="card-head-title" data-ml="ഇന്നത്തെ പ്രത്യേക കർമ്മങ്ങൾ" data-en="Today's Special Events">ഇന്നത്തെ പ്രത്യേക കർമ്മങ്ങൾ</span>
+      </div>
+      <div class="event-row">
+        <span class="event-icon">🙏</span>
+        <span class="event-name" data-ml="നിത്യ പൂജ — രാഘവൻ കുടുംബം" data-en="Nitya Pooja — Raghavan Family">നിത്യ പൂജ — രാഘവൻ കുടുംബം</span>
+        <span class="event-time">5:30 AM</span>
+      </div>
+      <div class="event-row">
+        <span class="event-icon">🪔</span>
+        <span class="event-name" data-ml="ചുറ്റുവിളക്ക് — ദേവദാസ്" data-en="Chuttuvilaakk — Devadas">ചുറ്റുവിളക്ക് — ദേവദാസ്</span>
+        <span class="event-time">6:00 AM</span>
+      </div>
+      <div class="event-row">
+        <span class="event-icon">🌸</span>
+        <span class="event-name" data-ml="പുഷ്പാഞ്ജലി — ശ്രേയ" data-en="Pushpanjali — Shreya">പുഷ്പാഞ്ജലി — ശ്രേയ</span>
+        <span class="event-time">8:00 AM</span>
+      </div>
+      <a href="tel:+919446844145" class="event-cta" data-ml="📞 വഴിപാട് ബുക്ക് ചെയ്യാൻ" data-en="📞 Book a Vazhipad">📞 വഴിപാട് ബുക്ക് ചെയ്യാൻ</a>
+    </div>
+
+    <!-- Annadhanam countdown -->
+    <div class="today-card ann-card">
+      <div class="card-head">
+        <span style="font-size:24px">🍛</span>
+        <span class="card-head-title" data-ml="അടുത്ത അന്നദാനം" data-en="Next Annadhanam">അടുത്ത അന്നദാനം</span>
+      </div>
+      <div class="big-counter">
+        <div class="counter-num" id="ann-days">--</div>
+        <div class="counter-label" data-ml="ദിവസം" data-en="days">ദിവസം</div>
+      </div>
+      <div class="ann-meta">
+        <div id="ann-date">—</div>
+        <div data-ml="ഓരോ ഒന്നാം ഞായർ · ഉച്ചക്ക് 12:00" data-en="Every 1st Sunday · 12 noon">ഓരോ ഒന്നാം ഞായർ · ഉച്ചക്ക് 12:00</div>
+      </div>
+    </div>
+
+    <!-- Festival countdown (live ticking) -->
+    <div class="today-card festival-card">
+      <div class="card-head">
+        <span style="font-size:24px">🌸</span>
+        <span class="card-head-title" id="next-fest-name" data-ml="അടുത്ത ഉത്സവം" data-en="Next Festival">അടുത്ത ഉത്സവം</span>
+      </div>
+      <div class="festival-countdown">
+        <div class="cd-unit"><div class="cd-num" id="cd-d">00</div><div class="cd-lbl" data-ml="ദിവസം" data-en="days">ദിവസം</div></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-unit"><div class="cd-num" id="cd-h">00</div><div class="cd-lbl" data-ml="മണിക്കൂർ" data-en="hrs">മണിക്കൂർ</div></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-unit"><div class="cd-num" id="cd-m">00</div><div class="cd-lbl" data-ml="മിനിറ്റ്" data-en="min">മിനിറ്റ്</div></div>
+        <div class="cd-sep">:</div>
+        <div class="cd-unit"><div class="cd-num" id="cd-s">00</div><div class="cd-lbl" data-ml="സെക്കൻഡ്" data-en="sec">സെക്കൻഡ്</div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
  <section id="timings" class="section section-saffron section-timings-priority" data-section="timings" aria-labelledby="timings-heading">
  <div class="container">
  <div class="section-header">
@@ -943,7 +1326,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
           <div class="kdb-stats">
             <div class="kdb-stat">
               <span class="kdb-stat-label">Target</span>
-              <span class="kdb-stat-value">₹47,00,000</span>
+              <span class="kdb-stat-value animate-count" data-target="4700000">₹0</span>
             </div>
             <div class="kdb-stat">
               <span class="kdb-stat-label">Collected</span>
@@ -951,7 +1334,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
             </div>
             <div class="kdb-stat">
               <span class="kdb-stat-label">Remaining</span>
-              <span class="kdb-stat-value kdb-remaining">₹47,00,000</span>
+              <span class="kdb-stat-value kdb-remaining animate-count" data-target="4700000">₹0</span>
             </div>
           </div>
 
@@ -1269,6 +1652,14 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
  <span class="section-tag">സ്ഥലം</span>
  <h2 id="location-heading" class="section-title" data-ml="സ്ഥലവും വഴിക്കുറിപ്പും" data-en="Location & Directions" data-ml="സ്ഥലവും വഴിക്കുറിപ്പും" data-en="Location &amp; Directions">സ്ഥലവും വഴിക്കുറിപ്പും</h2>
  </div>
+<div class="map-embed-container" style="position:relative;width:100%;max-width:680px;margin:24px auto;border-radius:16px;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,0.15)">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3899.2521!2d75.6478!3d11.6814!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTHCsDQwJzUzLjAiTiA3NcKwMzgnNTIuMCJF!5e0!3m2!1sen!2sin!4v1700000000000"
+    width="100%" height="380" style="border:0;display:block"
+    loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+    title="Kakkamvelly Sreekrishna Temple location"></iframe>
+</div>
+
  <div class="location-grid">
  <div class="location-info">
  <h3 class="location-subtitle">എങ്ങനെ എത്തിച്ചേരാം</h3>
@@ -1571,7 +1962,7 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
  <script>document.getElementById("footer-year").textContent=new Date().getFullYear();</script>
  <div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="ചിത്രം">
  <button class="lightbox-close" onclick="closeLightbox()" aria-label="Close">✕</button>
- <img id="lightbox-img" src="" alt="" />
+ <img id="lightbox-img" src="" alt=""  loading="lazy" decoding="async" />
  <p class="lightbox-caption" id="lightbox-cap"></p>
  </div>
  <script>
@@ -1692,5 +2083,244 @@ body{margin:0;padding:0;background:#020008;color:#f0e8d0;font-family:'Lato',syst
   });
 })();
 </script>
+
+<!-- WhatsApp floating button (mobile + desktop) -->
+<a href="https://wa.me/919446844145?text=Namaskaram%2C+I+have+a+query+about+the+temple"
+   class="wa-float-btn" target="_blank" rel="noopener" aria-label="WhatsApp Secretary">
+  <svg viewBox="0 0 24 24" width="28" height="28" fill="white">
+    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413z"/>
+  </svg>
+</a>
+
+<!-- Sticky bottom mobile nav (mobile only) -->
+<nav class="bottom-mobile-nav" aria-label="Quick navigation">
+  <a href="#home" class="bmn-item">
+    <span class="bmn-icon">🏠</span>
+    <span class="bmn-label" data-ml="മുഖ്യ" data-en="Home">മുഖ്യ</span>
+  </a>
+  <a href="#today-section" class="bmn-item">
+    <span class="bmn-icon">⏰</span>
+    <span class="bmn-label" data-ml="ഇന്ന്" data-en="Today">ഇന്ന്</span>
+  </a>
+  <a href="#vazhipad" class="bmn-item bmn-center">
+    <span class="bmn-om">ॐ</span>
+    <span class="bmn-label" data-ml="വഴിപാട്" data-en="Vazhipad">വഴിപാട്</span>
+  </a>
+  <a href="#kulam" class="bmn-item">
+    <span class="bmn-icon">💧</span>
+    <span class="bmn-label" data-ml="ദാനം" data-en="Donate">ദാനം</span>
+  </a>
+  <a href="#location" class="bmn-item">
+    <span class="bmn-icon">📍</span>
+    <span class="bmn-label" data-ml="സ്ഥലം" data-en="Map">സ്ഥലം</span>
+  </a>
+</nav>
+
+
+<script>
+/* Live Darshan + Festival Countdown + Annadhanam */
+(function(){
+  var MO = 5*60+30, MC = 9*60, EO = 17*60+45, EC = 18*60+45;
+  var lang = (document.documentElement.getAttribute('data-lang') || 'ml');
+
+  function nowIST() {
+    var n = new Date();
+    return new Date(n.getTime() + n.getTimezoneOffset()*60000 + 330*60000);
+  }
+
+  function updateDarshan() {
+    var ist = nowIST();
+    var mins = ist.getHours()*60 + ist.getMinutes();
+    var dot   = document.getElementById('live-pulse-dot');
+    var stat  = document.getElementById('live-status-text');
+    var sub   = document.getElementById('live-status-sub');
+    if (!dot || !stat || !sub) return;
+
+    var isOpen = (mins>=MO && mins<MC) || (mins>=EO && mins<EC);
+    var en = document.documentElement.getAttribute('data-lang') === 'en';
+
+    if (isOpen) {
+      dot.classList.remove('closed');
+      var diff = (mins>=MO && mins<MC) ? (MC - mins) : (EC - mins);
+      stat.textContent = en ? '🟢 Temple is Open' : '🟢 ക്ഷേത്രം തുറന്നിരിക്കുന്നു';
+      stat.style.color = '#16a34a';
+      sub.textContent = en
+        ? 'Closes in ' + Math.floor(diff/60) + 'h ' + (diff%60) + 'm'
+        : Math.floor(diff/60) + 'h ' + (diff%60) + 'm കൂടി';
+    } else {
+      dot.classList.add('closed');
+      var nextOpen, label;
+      if (mins < MO) { nextOpen = MO - mins; label = '5:30 AM'; }
+      else if (mins < EO) { nextOpen = EO - mins; label = '5:45 PM'; }
+      else { nextOpen = (24*60 - mins) + MO; label = '5:30 AM'; }
+      stat.textContent = en ? '🔴 Temple is Closed' : '🔴 ക്ഷേത്രം അടഞ്ഞിരിക്കുന്നു';
+      stat.style.color = '#dc2626';
+      sub.textContent = en ? 'Opens at ' + label : label + '-ന് തുറക്കും';
+    }
+  }
+
+  /* Annadhanam — first Sunday of each month */
+  function nextFirstSunday() {
+    var t = nowIST();
+    var y = t.getFullYear(), m = t.getMonth();
+    function firstSundayOfMonth(yr, mo) {
+      var d = new Date(yr, mo, 1);
+      while (d.getDay() !== 0) d.setDate(d.getDate() + 1);
+      d.setHours(12, 0, 0, 0);
+      return d;
+    }
+    var thisMonth = firstSundayOfMonth(y, m);
+    if (t > thisMonth) {
+      var nm = m === 11 ? 0 : m + 1;
+      var ny = m === 11 ? y + 1 : y;
+      thisMonth = firstSundayOfMonth(ny, nm);
+    }
+    return thisMonth;
+  }
+
+  function updateAnnadhanam() {
+    var n = nowIST();
+    var next = nextFirstSunday();
+    var diff = next - n;
+    var days = Math.ceil(diff / (1000*60*60*24));
+    var en = document.documentElement.getAttribute('data-lang') === 'en';
+    var daysEl = document.getElementById('ann-days');
+    var dateEl = document.getElementById('ann-date');
+    if (!daysEl || !dateEl) return;
+    if (days === 0) {
+      daysEl.textContent = '🎉';
+      daysEl.style.fontSize = '2.4rem';
+    } else {
+      daysEl.textContent = days;
+      daysEl.style.fontSize = '3rem';
+    }
+    var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    dateEl.textContent = next.getDate() + ' ' + months[next.getMonth()] + ' ' + next.getFullYear();
+  }
+
+  /* Festival countdown — find next from list */
+  var FESTIVALS = [
+    { mlName: 'വിഷു 2026', enName: 'Vishu', date: new Date('2026-04-14T05:00:00+05:30') },
+    { mlName: 'അഷ്ടമി രോഹിണി 2026', enName: 'Janmashtami', date: new Date('2026-08-04T18:30:00+05:30') },
+    { mlName: 'തിരുവോണം 2026', enName: 'Onam', date: new Date('2026-09-13T06:30:00+05:30') },
+    { mlName: 'ഗുരുവായൂർ ഏകാദശി 2026', enName: 'Guruvayur Ekadasi', date: new Date('2026-11-29T05:30:00+05:30') },
+    { mlName: 'തിരുവാതിര 2026', enName: 'Thiruvathira', date: new Date('2026-12-26T05:30:00+05:30') },
+  ];
+
+  function updateFestival() {
+    var n = nowIST();
+    var en = document.documentElement.getAttribute('data-lang') === 'en';
+    var next = FESTIVALS.find(function(f){ return f.date > n; }) || FESTIVALS[0];
+    var nameEl = document.getElementById('next-fest-name');
+    if (nameEl) nameEl.textContent = en ? next.enName : next.mlName;
+
+    var diff = next.date - n;
+    if (diff < 0) diff = 0;
+    var d = Math.floor(diff / 86400000);
+    var h = Math.floor((diff % 86400000) / 3600000);
+    var m = Math.floor((diff % 3600000) / 60000);
+    var s = Math.floor((diff % 60000) / 1000);
+    var pad = function(x){ return x < 10 ? '0' + x : '' + x; };
+
+    ['cd-d','cd-h','cd-m','cd-s'].forEach(function(id, i){
+      var el = document.getElementById(id);
+      if (el) el.textContent = pad([d,h,m,s][i]);
+    });
+  }
+
+  // Initial + interval updates
+  updateDarshan();
+  updateAnnadhanam();
+  updateFestival();
+  setInterval(updateDarshan, 30000);  // every 30s
+  setInterval(updateAnnadhanam, 60000);  // every 60s
+  setInterval(updateFestival, 1000);  // every 1s for live ticking
+
+  // Re-run on language change
+  document.addEventListener('languagechange', function(){
+    updateDarshan(); updateAnnadhanam(); updateFestival();
+  });
+
+  // MutationObserver to watch data-lang changes
+  var observer = new MutationObserver(function(){
+    updateDarshan(); updateAnnadhanam(); updateFestival();
+  });
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-lang'] });
+})();
+</script>
+
+<script>
+/* Animated counter for kulam donation */
+(function(){
+  function animateNumber(el, target, duration) {
+    var start = 0;
+    var stepTime = 16;
+    var increment = target / (duration / stepTime);
+    var current = start;
+    var formatter = new Intl.NumberFormat('en-IN');
+    var animFrame;
+    function step() {
+      current += increment;
+      if (current >= target) {
+        el.textContent = '₹' + formatter.format(target);
+        return;
+      }
+      el.textContent = '₹' + formatter.format(Math.floor(current));
+      animFrame = requestAnimationFrame(step);
+    }
+    step();
+  }
+
+  var observer = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (entry.isIntersecting) {
+        var el = entry.target;
+        if (el.dataset.animated) return;
+        el.dataset.animated = '1';
+        var target = parseInt(el.getAttribute('data-target') || '0', 10);
+        if (target > 0) animateNumber(el, target, 1500);
+        observer.unobserve(el);
+      }
+    });
+  }, { threshold: 0.4 });
+
+  document.querySelectorAll('.animate-count').forEach(function(el){
+    observer.observe(el);
+  });
+})();
+</script>
+
+<script>
+/* Vazhipad search/filter */
+(function(){
+  // Add search box if vazhipad section exists
+  var vazhipadSection = document.getElementById('vazhipad');
+  if (!vazhipadSection) return;
+
+  var grid = vazhipadSection.querySelector('.vazhipad-grid');
+  if (!grid) return;
+
+  var searchBox = document.createElement('div');
+  searchBox.className = 'vazhipad-search';
+  searchBox.innerHTML = '<input type="text" id="vazhipad-search" placeholder="🔍 Search vazhipad..." />';
+  vazhipadSection.insertBefore(searchBox, grid);
+
+  var input = document.getElementById('vazhipad-search');
+  input.addEventListener('input', function(e){
+    var q = e.target.value.toLowerCase().trim();
+    var rows = vazhipadSection.querySelectorAll('.vz');
+    rows.forEach(function(row){
+      var text = row.textContent.toLowerCase();
+      row.style.display = (q === '' || text.indexOf(q) !== -1) ? 'flex' : 'none';
+    });
+    // Hide categories with all hidden rows
+    vazhipadSection.querySelectorAll('.vazhipad-category').forEach(function(cat){
+      var visible = cat.querySelectorAll('.vz:not([style*="none"])').length;
+      cat.style.opacity = visible > 0 ? '1' : '0.3';
+    });
+  });
+})();
+</script>
+
 </body>
 </html>
