@@ -16,16 +16,19 @@
 - Fonts: Noto Serif Malayalam, Cinzel, Lato (already loaded)
 - Images live in /images/ — never hotlink external images
 
-## File Structure
-index.html          — main page
-css/style.css       — base styles
-css/krishna-animations.css — animation styles  
-css/baby-krishna.css — baby krishna SVG styles
-css/mobile-futuristic.css — mobile overrides
-js/main.js          — core JS
-js/krishna-animations.js — particle animations
-js/mobile-futuristic.js — mobile interactions
-images/             — real temple photos
+## File Structure (2026 redesign)
+index.html          — the whole site (single page, no build step)
+css/temple.css      — single stylesheet (design tokens in :root)
+js/temple.js        — all interactivity (lang toggle, live widgets, slider, lightbox…)
+sw.js               — service worker (bump VERSION when cached assets change)
+manifest.json       — PWA manifest
+images/             — real temple photos (+ /mobile and /thumbs variants)
+audio/              — devotional background loop
+
+## Yearly Maintenance
+- Festival dates (lunar calendar) live in the FESTIVALS array in js/temple.js —
+  update each year after confirming with the temple committee
+- Annadhanam (first Sunday) and darshan status are computed automatically
 
 ## Quality Gates
 - Lighthouse mobile score target: ≥85
