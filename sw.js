@@ -1,15 +1,16 @@
 /* Service Worker — Kakkamvelly Sreekrishna Temple
    Caching strategy: Cache-First for assets, Network-First for HTML */
 
-const VERSION = 'kvt-v3';
+const VERSION = 'kvt-v4-redesign';
 const CACHE_NAME = `kvt-cache-${VERSION}`;
 
 const STATIC_ASSETS = [
   '/',
   '/index.html',
+  '/css/temple.css',
+  '/js/temple.js',
   '/manifest.json',
-  '/images/baby-krishna-hero.webp',
-  '/images/baby-krishna-hero.avif'
+  '/images/baby-krishna-hero.webp'
 ];
 
 self.addEventListener('install', event => {

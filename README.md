@@ -1,81 +1,62 @@
 # Kakkamvelly Sreekrishna Temple
 
-> Official static website for **Kakkamvelly Sreekrishna Temple**, Kozhikode District, Kerala.
+> Official static website for **Kakkamvelly Sreekrishna Temple** (കക്കംവെള്ളി ശ്രീകൃഷ്ണ ക്ഷേത്രം), Purameri, Kozhikode District, Kerala.
+
+🌐 **Live site:** https://kakkamvellytemple.page/
 
 ## 🛕 About
 
-A fully responsive static website dedicated to the Kakkamvelly Sreekrishna Temple located in the Kozhikode district of Kerala, India. The site provides devotees and visitors with:
+A fully responsive, Malayalam-first static website for devotees and visitors:
 
-- Temple history and deity information
-- Daily pooja schedule and opening hours
-- Festival calendar
-- Photo gallery (placeholder – ready for real images)
-- **Google Maps embed** showing the temple location with directions
-- Contact form with client-side validation
+- **Live darshan status** — open/closed badge computed in IST, works in any timezone
+- **Festival countdown** — live ticking countdown plus upcoming festival queue
+- **Annadhanam tracker** — days until the next first-Sunday Annadhanam
+- **Weather & panchang touches** — Purameri weather, sunrise/sunset (Open-Meteo) and moon phase
+- **Complete vazhipad price list** with instant search (Malayalam + English)
+- Temple timings, pooja schedule and committee contacts
+- **Kulam (temple pond) renovation** project section with donation contacts
+- Photo gallery with lightbox + historic YouTube footage (click-to-load)
+- Location section with lazy-loaded Google Maps embed and transport guidance
+- Optional devotional background music toggle
+- PWA: installable, offline-capable via service worker
 
-## �� Project Structure
+## 📦 Project Structure
 
 ```
 kakkamvelly-temple/
-├── index.html        # Main HTML page
-├── css/
-│   └── style.css     # All styles (responsive, Kerala temple aesthetic)
-├── js/
-│   └── main.js       # Navigation, Maps embed, form validation, animations
-└── images/           # (add temple images here)
+├── index.html        # The whole site (single page)
+├── css/temple.css    # Single hand-written stylesheet (design system in :root)
+├── js/temple.js      # All interactivity (vanilla JS, no dependencies)
+├── sw.js             # Service worker (offline cache)
+├── manifest.json     # PWA manifest
+├── privacy.html      # Privacy policy
+├── images/           # Real temple photos (webp + jpg, mobile + thumbs variants)
+└── audio/            # Devotional background loop
 ```
 
-## 🗺️ Google Maps Integration
-
-The site uses the **Google Maps Embed API v1** (`/maps/embed/v1/search`) to display an interactive map of the temple location. The embed is loaded as an `<iframe>` so it works without any JavaScript SDK.
-
-A direct link to the [Google Maps listing](https://maps.google.com/?q=Kakkamvelly+Sreekrishna+Temple+Kozhikode+Kerala) is also provided for mobile users who prefer to open the native Maps app.
-
-> **API Key:** Replace the `key` parameter in the `<iframe src="…">` inside `index.html` with your own Maps Embed API key restricted to your domain.
+No build step, no frameworks, no npm. Edit the files and push.
 
 ## 🚀 Running Locally
 
-No build step is required – this is a plain static site.
-
 ```bash
-# Using Python's built-in server
 python3 -m http.server 8080
-
-# Or using Node's npx serve
-npx serve .
+# open http://localhost:8080
 ```
-
-Then open [http://localhost:8080](http://localhost:8080) in your browser.
-
-## 📦 Deployment
-
-Deploy to any static hosting platform:
-
-| Platform | Command |
-|---|---|
-| GitHub Pages | Push to `gh-pages` branch or configure via *Settings → Pages* |
-| Netlify | Drag-and-drop the project folder, or connect via Git |
-| Vercel | `vercel --prod` |
-| Firebase Hosting | `firebase deploy` |
-
-## ✅ Features
-
-- **Fully responsive** – works on mobile, tablet, and desktop
-- **Accessible** – ARIA labels, semantic HTML, keyboard navigation, focus-visible outlines
-- **No build tools** – plain HTML/CSS/JS, zero dependencies to install
-- **Performance** – lazy-loaded map iframe, IntersectionObserver animations, `prefers-reduced-motion` support
-- **Kerala temple aesthetic** – saffron, gold and deep red colour palette; Malayalam typography
 
 ## 🔧 Customisation
 
 | What | Where |
 |---|---|
-| Temple address / phone | `index.html` – `#contact` and `#location` sections |
-| Pooja timings | `index.html` – `#timings` section tables |
-| Festival dates | `index.html` – `#festivals` section |
-| Colour scheme | `css/style.css` – `:root` CSS custom properties |
-| Google Maps location | `index.html` – `<iframe src>` `q=` query parameter |
-| Social media links | `index.html` – `.social-links` anchors |
+| Pooja timings | `index.html` — `#timings` section |
+| Vazhipad prices | `index.html` — `#vazhipad` section |
+| Festival dates (update yearly!) | `js/temple.js` — `FESTIVALS` array |
+| Temple hours used by live status | `js/temple.js` — `MORNING_OPEN` … `EVENING_CLOSE` |
+| Colours / design tokens | `css/temple.css` — `:root` custom properties |
+| Contacts / phone numbers | `index.html` — search for `tel:+91` |
+
+> **⚠️ Yearly maintenance:** festival dates follow the lunar calendar. Update the
+> `FESTIVALS` array in `js/temple.js` each year after confirming dates with the
+> temple committee. When the cached assets change, bump `VERSION` in `sw.js`.
 
 ## 📜 License
 
